@@ -118,6 +118,7 @@ class monster : public Creature
         void refill_udders();
         void spawn( const tripoint &p );
         void spawn( const tripoint_abs_ms &loc );
+        std::vector<material_id> get_absorb_material() const;
         creature_size get_size() const override;
         units::mass get_weight() const override;
         units::mass weight_capacity() const override;
@@ -391,6 +392,7 @@ class monster : public Creature
         float  hit_roll() const override;  // For the purposes of comparing to player::dodge_roll()
         float  dodge_roll() const override;  // For the purposes of comparing to player::hit_roll()
 
+        bool can_attack_high() const override; // Can we attack upper limbs?
         int get_grab_strength() const; // intensity of grabbed effect
 
         monster_horde_attraction get_horde_attraction();
@@ -419,6 +421,8 @@ class monster : public Creature
         void set_special( const std::string &special_name, int time );
         /** Sets the enabled flag for the given special to false */
         void disable_special( const std::string &special_name );
+        /** Test whether the monster has the specified special regardless of readiness. */
+        bool has_special( const std::string &special_name ) const;
         /** Test whether the specified special is ready. */
         bool special_available( const std::string &special_name ) const;
 

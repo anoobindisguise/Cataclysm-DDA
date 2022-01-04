@@ -725,7 +725,8 @@ void Creature::deal_melee_hit( Creature *source, int hit_spread, bool critical_h
         }
     }
     damage_instance d = dam; // copy, since we will mutate in block_hit
-    bodypart_id bp_hit = bp == nullptr ? select_body_part( source, hit_spread ) : *bp;
+    bodypart_id bp_hit = bp == nullptr ? select_body_part( -1, -1, source->can_attack_high(),
+                         hit_spread ) : *bp;
     block_hit( source, bp_hit, d );
 
     // Stabbing effects
@@ -1207,10 +1208,19 @@ void Creature::deal_damage_handle_type( const effect_source &source, const damag
             }
             break;
 
-        case damage_type::ELECTRIC:
+        case damage_type::ELECTRIC: {
             // Electrical damage adds a major speed/dex debuff
-            add_effect( source, effect_zapped, 1_turns * std::max( adjusted_damage, 2 ) );
+            double multiplier = 1.0;
+            if( monster *mon = as_monster() ) {
+                multiplier = mon->type->status_chance_multiplier;
+            }
+            const int chance = std::log10( ( adjusted_damage + 2 ) * 0.5 ) * 100 * multiplier;
+            if( x_in_y( chance, 100 ) ) {
+                const int duration = std::max( adjusted_damage / 10.0 * multiplier, 2.0 );
+                add_effect( source, effect_zapped, 1_turns * duration );
+            }
             break;
+        }
 
         case damage_type::ACID:
             // Acid damage and acid burns are more painful
@@ -2378,6 +2388,19 @@ std::vector<bodypart_id> Creature::get_all_body_parts_of_type(
     return bodyparts;
 }
 
+std::vector<bodypart_id> Creature::get_all_body_parts_with_flag( const json_character_flag &flag )
+const
+{
+    std::vector<bodypart_id> bodyparts;
+
+    for( const std::pair<const bodypart_str_id, bodypart> &elem : body ) {
+        if( elem.first->has_flag( flag ) ) {
+            bodyparts.emplace_back( elem.first );
+        }
+    }
+    return bodyparts;
+}
+
 int Creature::get_hp( const bodypart_id &bp ) const
 {
     if( bp != bodypart_str_id::NULL_ID() ) {
@@ -2640,16 +2663,22 @@ std::unordered_map<std::string, std::string> &Creature::get_values()
     return values;
 }
 
-bodypart_id Creature::select_body_part( Creature *source, int hit_roll ) const
+
+bodypart_id Creature::select_body_part( int min_hit, int max_hit, bool can_attack_high,
+                                        int hit_roll ) const
 {
-    int szdif = source->get_size() - get_size();
-
     add_msg_debug( debugmode::DF_CREATURE, "hit roll = %d", hit_roll );
-    add_msg_debug( debugmode::DF_CREATURE, "source size = %d", source->get_size() );
-    add_msg_debug( debugmode::DF_CREATURE, "target size = %d", get_size() );
-    add_msg_debug( debugmode::DF_CREATURE, "difference = %d", szdif );
+    if( !is_monster() && !can_attack_high ) {
+        can_attack_high = as_character()->is_on_ground();
+    }
 
-    return anatomy( get_all_body_parts() ).select_body_part( szdif, hit_roll );
+    return anatomy( get_all_body_parts() ).select_body_part( min_hit, max_hit, can_attack_high,
+            hit_roll );
+}
+
+bodypart_id Creature::select_blocking_part( bool arm, bool leg, bool nonstandard ) const
+{
+    return anatomy( get_all_body_parts() ).select_blocking_part( this, arm, leg, nonstandard );
 }
 
 bodypart_id Creature::random_body_part( bool main_parts_only ) const

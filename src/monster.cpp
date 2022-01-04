@@ -1078,6 +1078,11 @@ bool monster::made_of( phase_id p ) const
     return type->phase == p;
 }
 
+std::vector<material_id> monster::get_absorb_material() const
+{
+    return type->absorb_material;
+}
+
 void monster::set_patrol_route( const std::vector<point> &patrol_pts_rel_ms )
 {
     const tripoint_abs_ms base_abs_ms = project_to<coords::ms>( global_omt_location() );
@@ -2107,8 +2112,9 @@ int monster::get_armor_type( damage_type dt, bodypart_id bp ) const
         case damage_type::HEAT:
             return worn_armor + static_cast<int>( type->armor_fire );
         case damage_type::COLD:
-        case damage_type::ELECTRIC:
             return worn_armor;
+        case damage_type::ELECTRIC:
+            return worn_armor + static_cast<int>( type->armor_elec );
         case damage_type::NONE:
         case damage_type::NUM:
             // Let it error below
@@ -2203,6 +2209,12 @@ float monster::dodge_roll() const
     return get_dodge() * 5;
 }
 
+bool monster::can_attack_high() const
+{
+    return  !( ( type->size < creature_size::medium && !has_flag( MF_FLIES ) &&
+                 !has_flag( MF_ATTACK_UPPER ) ) || has_flag( MF_ATTACK_LOWER ) )  ;
+}
+
 int monster::get_grab_strength() const
 {
     return type->grab_strength;
@@ -2294,6 +2306,14 @@ bool monster::special_available( const std::string &special_name ) const
                 special_name );
     return iter != special_attacks.end() && iter->second.enabled && iter->second.cooldown == 0;
 }
+
+bool monster::has_special( const std::string &special_name ) const
+{
+    std::map<std::string, mon_special_attack>::const_iterator iter = special_attacks.find(
+                special_name );
+    return iter != special_attacks.end() && iter->second.enabled;
+}
+
 
 void monster::explode()
 {
@@ -2534,12 +2554,18 @@ void monster::die( Creature *nkiller )
     if( death_drops && !no_extra_death_drops ) {
         drop_items_on_death( corpse );
     }
-    if( death_drops && !is_hallucination() && corpse ) {
+    if( death_drops && !is_hallucination() ) {
         for( const auto &it : inv ) {
-            corpse->put_in( it, item_pocket::pocket_type::CONTAINER );
+            if( corpse ) {
+                corpse->put_in( it, item_pocket::pocket_type::CONTAINER );
+            } else {
+                get_map().add_item_or_charges( pos(), it );
+            }
         }
-        for( item_pocket *pocket : corpse->get_all_contained_pockets().value() ) {
-            pocket->set_usability( false );
+        if( corpse ) {
+            for( item_pocket *pocket : corpse->get_all_contained_pockets().value() ) {
+                pocket->set_usability( false );
+            }
         }
     }
     if( death_drops ) {
@@ -2633,15 +2659,18 @@ void monster::drop_items_on_death( item *corpse )
     std::vector<item> new_items = item_group::items_from( type->death_drops,
                                   calendar::start_of_cataclysm,
                                   spawn_flags::use_spawn_rate );
-    if( corpse ) {
-        for( item &it : new_items ) {
-            if( has_flag( MF_FILTHY ) ) {
-                if( ( it.is_armor() || it.is_pet_armor() ) && !it.is_gun() ) {
-                    // handle wearable guns as a special case
-                    it.set_flag( STATIC( flag_id( "FILTHY" ) ) );
-                }
+
+    for( item &it : new_items ) {
+        if( has_flag( MF_FILTHY ) ) {
+            if( ( it.is_armor() || it.is_pet_armor() ) && !it.is_gun() ) {
+                // handle wearable guns as a special case
+                it.set_flag( STATIC( flag_id( "FILTHY" ) ) );
             }
+        }
+        if( corpse ) {
             corpse->put_in( it, item_pocket::pocket_type::CONTAINER );
+        } else {
+            get_map().add_item_or_charges( pos(), it );
         }
     }
 }

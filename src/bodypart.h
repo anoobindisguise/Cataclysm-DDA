@@ -10,6 +10,7 @@
 #include <utility>
 #include <vector>
 
+#include "damage.h"
 #include "enums.h"
 #include "flat_set.h"
 #include "int_id.h"
@@ -183,10 +184,8 @@ struct body_part_type {
         std::string legacy_id;
         // Legacy enum "int id"
         body_part token = num_bp;
-        /** Size of the body part when doing an unweighted selection. */
+        /** Size of the body part for melee targeting. */
         float hit_size = 0.0f;
-        /** Hit sizes for attackers who are smaller, equal in size, and bigger. */
-        std::array<float, 3> hit_size_relative = {{ 0.0f, 0.0f, 0.0f }};
 
         /** Sub-location of the body part used for encumberance, coverage and determining protection
          */
@@ -291,10 +290,15 @@ struct body_part_type {
         int bionic_slots() const {
             return bionic_slots_;
         }
+
+        float damage_resistance( const damage_type &dt ) const;
+        float damage_resistance( const damage_unit &du ) const;
     private:
         int bionic_slots_ = 0;
         // limb score values
         std::vector<bp_limb_score> limb_scores;
+        // Protection from various damage types
+        resistances armor;
 };
 
 
@@ -437,7 +441,8 @@ class bodypart
         float get_wetness_percentage() const;
 
         int get_encumbrance_threshold() const;
-        int get_encumbrance_limit() const;
+        // Check if we're above our encumbrance limit
+        bool is_limb_overencumbered() const;
 
         // Get modified limb score as defined in limb_scores.json.
         // override forces the limb score to be affected by encumbrance/wounds (-1 == no override).
