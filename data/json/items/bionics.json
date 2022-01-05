@@ -71,8 +71,8 @@
     "id": "bio_armor_arms",
     "copy-from": "bionic_general_npc_usable",
     "type": "BIONIC_ITEM",
-    "name": { "str": "Arms Intradermal Alloy CBM" },
-    "description": "An advanced protective mesh that weaves into the user's flesh.  Provides passive protection at the cost of some encumbrance and can be used in conjunction with bionic martial arts.",
+    "name": { "str": "Arms Alloy Plating CBM" },
+    "description": "Dummy item. If you see this, something went wrong.",
     "price": 350000,
     "difficulty": 6,
     "installation_data": "AID_bio_armor_arms"
@@ -92,9 +92,9 @@
     "id": "bio_armor_head",
     "copy-from": "bionic_general_npc_usable",
     "type": "BIONIC_ITEM",
-    "name": { "str": "Head Intradermal Alloy CBM" },
+    "name": { "str": "Head Alloy Plating CBM" },
     "looks_like": "bio_int_enhancer",
-    "description": "An advanced protective mesh that weaves into the user's flesh, protecting both their head and jaw regions at the cost of some encumbrance.",
+    "description": "Dummy item. If you see this, something went wrong.",
     "price": 350000,
     "weight": "1000 g",
     "difficulty": 6
@@ -103,9 +103,9 @@
     "id": "bio_armor_legs",
     "copy-from": "bionic_general_npc_usable",
     "type": "BIONIC_ITEM",
-    "name": { "str": "Legs Intradermal Alloy CBM" },
+    "name": { "str": "Legs Alloy Plating CBM" },
     "looks_like": "bio_int_enhancer",
-    "description": "An advanced protective mesh that weaves into the user's flesh.  Provides passive protection at the cost of some encumbrance and can be used in conjunction with bionic martial arts.",
+    "description": "Dummy item. If you see this, something went wrong.",
     "price": 350000,
     "difficulty": 6,
     "installation_data": "AID_bio_armor_legs"
@@ -114,12 +114,12 @@
     "id": "bio_armor_torso",
     "copy-from": "bionic_general_npc_usable",
     "type": "BIONIC_ITEM",
-    "name": { "str": "Torso Intradermal Alloy CBM" },
+    "name": { "str": "Artificial Skin CBM" },
     "looks_like": "bio_int_enhancer",
-    "description": "An advanced protective mesh that weaves into the user's flesh, protecting it from physical trauma at the cost of some encumbrance.",
-    "price": 350000,
-    "weight": "3000 g",
-    "difficulty": 6
+    "description": "A full-body replacement for the user's epidermis derived from advanced stem cells and quasi-organic polymers that makes you look like a real android.  Has superior defensive capability but is slightly less flexible than normal skin and cannot be removed once installed.",
+    "price": 1000000,
+    "weight": "6000 g",
+    "difficulty": 12
   },
   {
     "id": "bio_batteries",
