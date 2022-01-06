@@ -330,7 +330,7 @@
     "type": "bionic",
     "name": { "str": "Cable Charger System" },
     "description": "You have a complex port surgically mounted above your hip.  While active, it will recharge bionic power when connected to a power source via jumper cable.",
-    "occupied_bodyparts": [ [ "torso", 7 ] ],
+    "occupied_bodyparts": [ [ "torso", 4 ] ],
     "is_remote_fueled": true,
     "time": 1,
     "fuel_efficiency": 1,
@@ -492,7 +492,7 @@
     "type": "bionic",
     "name": { "str": "Expanded Digestive System" },
     "description": "You have been outfitted with three synthetic stomachs and industrial-grade intestines.  Not only can you extract much more nutrition from food, but you are highly resistant to foodborne illness, and can sometimes eat rotten food.",
-    "occupied_bodyparts": [ [ "torso", 10 ] ],
+    "occupied_bodyparts": [ [ "torso", 15 ] ],
     "vitamin_absorb_mod": 1.5,
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF", "PARAIMMUNE", "IMMUNE_SPOIL" ],
     "mutation_conflicts": [
