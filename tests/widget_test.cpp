@@ -7,7 +7,27 @@
 #include "weather_type.h"
 #include "widget.h"
 
+// Needed for screen scraping
+#if !(defined(TILES) || defined(_WIN32))
+namespace cata_curses_test
+{
+#define NCURSES_NOMACROS
+#if defined(__CYGWIN__)
+#include <ncurses/curses.h>
+#else
+#include <curses.h>
+#endif
+}
+#else
+#include "cursesport.h"
+#endif
+
 static const itype_id itype_rad_badge( "rad_badge" );
+
+static const move_mode_id move_mode_crouch( "crouch" );
+static const move_mode_id move_mode_prone( "prone" );
+static const move_mode_id move_mode_run( "run" );
+static const move_mode_id move_mode_walk( "walk" );
 
 static const weather_type_id weather_acid_rain( "acid_rain" );
 static const weather_type_id weather_cloudy( "cloudy" );
@@ -33,6 +53,9 @@ static const widget_id widget_test_hp_head_num( "test_hp_head_num" );
 static const widget_id widget_test_int_num( "test_int_num" );
 static const widget_id widget_test_mana_num( "test_mana_num" );
 static const widget_id widget_test_morale_num( "test_morale_num" );
+static const widget_id widget_test_move_cost_num( "test_move_cost_num" );
+static const widget_id widget_test_move_mode_letter( "test_move_mode_letter" );
+static const widget_id widget_test_move_mode_text( "test_move_mode_text" );
 static const widget_id widget_test_move_num( "test_move_num" );
 static const widget_id widget_test_per_num( "test_per_num" );
 static const widget_id widget_test_pool_graph( "test_pool_graph" );
@@ -45,6 +68,39 @@ static const widget_id widget_test_str_num( "test_str_num" );
 static const widget_id widget_test_text_widget( "test_text_widget" );
 static const widget_id widget_test_weariness_num( "test_weariness_num" );
 static const widget_id widget_test_weather_text( "test_weather_text" );
+static const widget_id widget_test_weather_text_height5( "test_weather_text_height5" );
+
+// dseguin 2022 - Ugly hack to scrape content from the window object.
+// Scrapes the window w at origin, reading the number of cols and rows.
+static std::vector<std::string> scrape_win_at(
+    catacurses::window &w, const point &origin, int cols, int rows )
+{
+    std::vector<std::string> lines;
+
+#if defined(TILES) || defined(_WIN32)
+    cata_cursesport::WINDOW *win = static_cast<cata_cursesport::WINDOW *>( w.get() );
+
+    for( int i = origin.y; i < rows && static_cast<size_t>( i ) < win->line.size(); i++ ) {
+        lines.emplace_back( std::string() );
+        for( int j = origin.x; j < cols && static_cast<size_t>( j ) < win->line[i].chars.size(); j++ ) {
+            lines[i] += win->line[i].chars[j].ch;
+        }
+    }
+#else
+    cata_curses_test::WINDOW *win = static_cast<cata_curses_test::WINDOW *>( w.get() );
+
+    int max_y = catacurses::getmaxy( w );
+    for( int i = origin.y; i < rows && i < max_y; i++ ) {
+        wchar_t *buf = static_cast<wchar_t *>( ::malloc( sizeof( *buf ) * ( cols + 1 ) ) );
+        cata_curses_test::mvwinnwstr( win, i, origin.x, buf, cols );
+        std::wstring line( buf, static_cast<size_t>( cols ), std::allocator<wchar_t>() );
+        lines.emplace_back( std::string( line.begin(), line.end() ) );
+        ::free( buf );
+    }
+#endif
+
+    return lines;
+}
 
 TEST_CASE( "widget value strings", "[widget][value][string]" )
 {
@@ -375,6 +431,57 @@ TEST_CASE( "widgets showing avatar attributes", "[widget][avatar]" )
     }
 }
 
+TEST_CASE( "widgets showing movement mode", "[widget][move_mode]" )
+{
+    widget mode_letter_w = widget_test_move_mode_letter.obj();
+    widget mode_text_w = widget_test_move_mode_text.obj();
+
+    avatar &ava = get_avatar();
+    clear_avatar();
+
+    ava.set_movement_mode( move_mode_walk );
+    CHECK( mode_letter_w.layout( ava ) == "MODE: <color_c_white>W</color>" );
+    CHECK( mode_text_w.layout( ava ) == "MODE: <color_c_white>walking</color>" );
+    ava.set_movement_mode( move_mode_run );
+    CHECK( mode_letter_w.layout( ava ) == "MODE: <color_c_red>R</color>" );
+    CHECK( mode_text_w.layout( ava ) == "MODE: <color_c_red>running</color>" );
+    ava.set_movement_mode( move_mode_crouch );
+    CHECK( mode_letter_w.layout( ava ) == "MODE: <color_c_light_blue>C</color>" );
+    CHECK( mode_text_w.layout( ava ) == "MODE: <color_c_light_blue>crouching</color>" );
+    ava.set_movement_mode( move_mode_prone );
+    CHECK( mode_letter_w.layout( ava ) == "MODE: <color_c_green>P</color>" );
+    CHECK( mode_text_w.layout( ava ) == "MODE: <color_c_green>prone</color>" );
+}
+
+TEST_CASE( "widgets showing movement cost", "[widget][move_cost]" )
+{
+    widget cost_num_w = widget_test_move_cost_num.obj();
+
+    avatar &ava = get_avatar();
+    clear_avatar();
+
+    SECTION( "without shoes" ) {
+        REQUIRE_FALSE( ava.is_wearing_shoes() );
+        // Having no shoes adds +8 per foot to base run cost
+        REQUIRE( ava.run_cost( 100 ) == 116 );
+        CHECK( cost_num_w.layout( ava ) == "MOVE COST: 116" );
+    }
+    SECTION( "wearing sneakers" ) {
+        // Sneakers eliminate the no-shoes penalty
+        ava.wear_item( item( "sneakers" ) );
+        REQUIRE( ava.is_wearing_shoes() );
+        REQUIRE( ava.run_cost( 100 ) == 100 );
+        CHECK( cost_num_w.layout( ava ) == "MOVE COST: 100" );
+    }
+    SECTION( "wearing swim fins" ) {
+        // Swim fins multiply cost by 1.5
+        ava.wear_item( item( "swim_fins" ) );
+        REQUIRE( ava.is_wearing_shoes() );
+        REQUIRE( ava.run_cost( 100 ) == 167 );
+        CHECK( cost_num_w.layout( ava ) == "MOVE COST: 167" );
+    }
+}
+
 TEST_CASE( "radiation badge widget", "[widget][radiation]" )
 {
     widget rads_w = widget_test_rad_badge_text.obj();
@@ -567,5 +674,68 @@ TEST_CASE( "widgets showing weather conditions", "[widget][weather]" )
             ava.setpos( tripoint_below );
             CHECK( weather_w.layout( ava ) == "Weather: <color_c_light_gray>Underground</color>" );
         }
+    }
+}
+
+TEST_CASE( "Custom widget height and multiline formatting", "[widget]" )
+{
+    const int cols = 32;
+    const int rows = 5;
+    widget height1 = widget_test_weather_text.obj();
+    widget height5 = widget_test_weather_text_height5.obj();
+
+    avatar &ava = get_avatar();
+    clear_avatar();
+    scoped_weather_override forcast( weather_sunny );
+
+    SECTION( "Height field does not impact text content" ) {
+        std::string layout1 = height1.layout( ava );
+        std::string layout5 = height5.layout( ava );
+        CHECK( height1._height == 1 );
+        CHECK( height5._height == 5 );
+        CHECK( layout1 == "Weather: <color_c_light_cyan>Sunny</color>" );
+        CHECK( layout5 == "Weather: <color_c_light_cyan>Sunny</color>" );
+    }
+
+    SECTION( "Multiline drawing splits newlines correctly" ) {
+#if !(defined(TILES) || defined(_WIN32))
+        // Running the tests in a developer environment works fine, but
+        // the CI env has no interactive shell, so we skip the screen scraping.
+        const char *term_env = ::getenv( "TERM" );
+        // The tests don't initialize the curses window, so initialize it here...
+        if( term_env != nullptr && std::string( term_env ) != "unknown" &&
+            cata_curses_test::initscr() != nullptr ) {
+#endif
+            catacurses::window w = catacurses::newwin( rows, cols, point_zero );
+
+            werase( w );
+            SECTION( "Single-line layout" ) {
+                std::string layout1 = "abcd efgh ijkl mnop qrst";
+                CHECK( widget::custom_draw_multiline( layout1, w, 1, 30, 0 ) == 1 );
+                std::vector<std::string> lines = scrape_win_at( w, point_zero, cols, rows );
+                CHECK( lines[0] == " abcd efgh ijkl mnop qrst       " );
+                CHECK( lines[1] == "                                " );
+                CHECK( lines[2] == "                                " );
+                CHECK( lines[3] == "                                " );
+                CHECK( lines[4] == "                                " );
+            }
+
+            werase( w );
+            SECTION( "Single-line layout" ) {
+                std::string layout5 = "abcd\nefgh\nijkl\nmnop\nqrst";
+                CHECK( widget::custom_draw_multiline( layout5, w, 1, 30, 0 ) == 5 );
+                std::vector<std::string> lines = scrape_win_at( w, point_zero, cols, rows );
+                CHECK( lines[0] == " abcd                           " );
+                CHECK( lines[1] == " efgh                           " );
+                CHECK( lines[2] == " ijkl                           " );
+                CHECK( lines[3] == " mnop                           " );
+                CHECK( lines[4] == " qrst                           " );
+            }
+
+#if !(defined(TILES) || defined(_WIN32))
+            // ... and free it here
+            cata_curses_test::endwin();
+        }
+#endif
     }
 }
