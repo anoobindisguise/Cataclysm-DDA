@@ -119,7 +119,8 @@
     "description": "A full-body replacement for the user's epidermis derived from advanced stem cells and quasi-organic polymers that makes you look like an android.  Has superior defensive capability but cannot be removed once installed.",
     "price": 1000000,
     "weight": "6000 g",
-    "difficulty": 10
+    "difficulty": 10,
+    "installation_data": "AID_bio_armor_torso"
   },
   {
     "id": "bio_batteries",
