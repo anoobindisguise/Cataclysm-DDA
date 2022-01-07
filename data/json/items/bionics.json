@@ -72,7 +72,7 @@
     "copy-from": "bionic_general_npc_usable",
     "type": "BIONIC_ITEM",
     "name": { "str": "Arms Alloy Plating CBM" },
-    "description": "Dummy item. If you see this, something went wrong.",
+    "description": "No longer used. If you have this, don't install it.",
     "price": 350000,
     "difficulty": 6,
     "installation_data": "AID_bio_armor_arms"
@@ -94,7 +94,7 @@
     "type": "BIONIC_ITEM",
     "name": { "str": "Head Alloy Plating CBM" },
     "looks_like": "bio_int_enhancer",
-    "description": "Dummy item. If you see this, something went wrong.",
+    "description": "No longer used. If you have this, don't install it.",
     "price": 350000,
     "weight": "1000 g",
     "difficulty": 6
@@ -105,7 +105,7 @@
     "type": "BIONIC_ITEM",
     "name": { "str": "Legs Alloy Plating CBM" },
     "looks_like": "bio_int_enhancer",
-    "description": "Dummy item. If you see this, something went wrong.",
+    "description": "No longer used. If you have this, don't install it.",
     "price": 350000,
     "difficulty": 6,
     "installation_data": "AID_bio_armor_legs"
@@ -116,10 +116,10 @@
     "type": "BIONIC_ITEM",
     "name": { "str": "Artificial Skin CBM" },
     "looks_like": "bio_int_enhancer",
-    "description": "A full-body replacement for the user's epidermis derived from advanced stem cells and quasi-organic polymers that makes you look like a real android.  Has superior defensive capability but is slightly less flexible than normal skin and cannot be removed once installed.",
+    "description": "A full-body replacement for the user's epidermis derived from advanced stem cells and quasi-organic polymers that makes you look like an android.  Has superior defensive capability but cannot be removed once installed.",
     "price": 1000000,
     "weight": "6000 g",
-    "difficulty": 12
+    "difficulty": 10
   },
   {
     "id": "bio_batteries",
