@@ -19,7 +19,9 @@
     "charges": 8,
     "flags": [ "EATEN_HOT" ],
     "vitamins": [ [ "iron", 10 ] ],
-    "fun": 20
+    "fun": 20,
+    "addiction_potential": 5,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -35,7 +37,9 @@
     "name": { "str": "toast-em" },
     "copy-from": "toastem",
     "description": "Dry toaster pastries, usually coated with solid frosting.  Sadly, these are not.",
-    "fun": 10
+    "fun": 10,
+    "addiction_potential": 1,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -43,7 +47,9 @@
     "name": { "str": "homemade toast-em" },
     "copy-from": "toastem",
     "description": "Homemade toaster pastries, lacking icing but at least fruit filled.",
-    "fun": 10
+    "fun": 10,
+    "addiction_potential": 1,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -65,7 +71,9 @@
     "charges": 2,
     "flags": [ "EATEN_HOT" ],
     "fun": -10,
-    "vitamins": [ [ "iron", 10 ] ]
+    "vitamins": [ [ "iron", 10 ] ],
+    "addiction_potential": 7,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -74,7 +82,9 @@
     "copy-from": "toasterpastryfrozen",
     "quench": 4,
     "description": "A delicious fruit-filled pastry that you've cooked.  It even comes with frosting!",
-    "fun": 20
+    "fun": 20,
+    "addiction_potential": 8,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -93,7 +103,9 @@
     "quench": 6,
     "calories": 730,
     "description": "A delicious homemade fruit-filled pastry that you've cooked.  It even comes with buttercream!",
-    "fun": 30
+    "fun": 30,
+    "addiction_potential": 18,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -112,7 +124,9 @@
     "volume": "1 L",
     "charges": 8,
     "flags": [ "EDIBLE_FROZEN" ],
-    "fun": 6
+    "fun": 6,
+    "addiction_potential": 25,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -236,7 +250,9 @@
     "volume": "300 ml",
     "flags": [ "EDIBLE_FROZEN" ],
     "charges": 3,
-    "fun": 6
+    "fun": 6,
+    "addiction_potential": 6,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -256,7 +272,9 @@
     "volume": "250 ml",
     "charges": 3,
     "flags": [ "EDIBLE_FROZEN" ],
-    "fun": 10
+    "fun": 10,
+    "addiction_potential": 11,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -276,7 +294,9 @@
     "material": [ "junk" ],
     "volume": "250 ml",
     "flags": [ "EDIBLE_FROZEN" ],
-    "fun": 10
+    "fun": 10,
+    "addiction_potential": 16,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -296,7 +316,9 @@
     "volume": "250 ml",
     "flags": [ "EDIBLE_FROZEN" ],
     "vitamins": [ [ "calcium", 4 ], [ "iron", 6 ] ],
-    "fun": 20
+    "fun": 20,
+    "addiction_potential": 15,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -318,7 +340,9 @@
     "volume": "90 ml",
     "flags": [ "EDIBLE_FROZEN" ],
     "charges": 3,
-    "fun": 4
+    "fun": 4,
+    "addiction_potential": 15,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -340,7 +364,9 @@
     "flags": [ "EDIBLE_FROZEN" ],
     "charges": 3,
     "vitamins": [ [ "iron", 9 ] ],
-    "fun": 3
+    "fun": 3,
+    "addiction_potential": 16,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -361,7 +387,9 @@
     "volume": "90 ml",
     "flags": [ "EDIBLE_FROZEN" ],
     "charges": 3,
-    "fun": 3
+    "fun": 3,
+    "addiction_potential": 19,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -382,7 +410,9 @@
     "volume": "90 ml",
     "flags": [ "EDIBLE_FROZEN" ],
     "charges": 3,
-    "fun": 5
+    "fun": 5,
+    "addiction_potential": 19,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -403,7 +433,9 @@
     "volume": "90 ml",
     "flags": [ "EDIBLE_FROZEN" ],
     "charges": 3,
-    "fun": 4
+    "fun": 4,
+    "addiction_potential": 18,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -440,7 +472,9 @@
     "charges": 4,
     "stim": 1,
     "fun": 7,
-    "flags": [ "EDIBLE_FROZEN" ]
+    "flags": [ "EDIBLE_FROZEN" ],
+    "addiction_potential": 12,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -461,7 +495,9 @@
     "volume": "250 ml",
     "flags": [ "EDIBLE_FROZEN" ],
     "charges": 5,
-    "fun": 6
+    "fun": 6,
+    "addiction_potential": 23,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -483,7 +519,9 @@
     "volume": "100 ml",
     "flags": [ "EDIBLE_FROZEN" ],
     "charges": 2,
-    "fun": 10
+    "fun": 10,
+    "addiction_potential": 6,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -505,7 +543,9 @@
     "flags": [ "EDIBLE_FROZEN" ],
     "charges": 8,
     "vitamins": [ [ "calcium", 4 ], [ "iron", 6 ] ],
-    "fun": 2
+    "fun": 2,
+    "addiction_potential": 3,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -535,7 +575,9 @@
     "flags": [ "EDIBLE_FROZEN" ],
     "stack_size": 20,
     "vitamins": [ [ "calcium", 2 ], [ "iron", 6 ] ],
-    "fun": 7
+    "fun": 7,
+    "addiction_potential": 6,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -564,7 +606,9 @@
     "charges": 16,
     "fun": 5,
     "vitamins": [ [ "calcium", 2 ] ],
-    "freezing_point": -57
+    "freezing_point": -57,
+    "addiction_potential": 2,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -584,7 +628,9 @@
     "volume": "250 ml",
     "phase": "liquid",
     "vitamins": [ [ "iron", 34 ] ],
-    "charges": 16
+    "charges": 16,
+    "addiction_potential": 4,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -603,7 +649,9 @@
     "volume": "2 L",
     "charges": 12,
     "vitamins": [ [ "calcium", 3 ], [ "iron", 6 ] ],
-    "fun": 15
+    "fun": 15,
+    "addiction_potential": 16,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -612,7 +660,9 @@
     "spoils_in": "4 days",
     "copy-from": "jihelucake",
     "calories": 280,
-    "description": "Delicious chocolate cake.  It has all the icing.  All of it."
+    "description": "Delicious chocolate cake.  It has all the icing.  All of it.",
+    "addiction_potential": 20,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -623,7 +673,9 @@
     "calories": 295,
     "quench": -5,
     "description": "A cake coated in the thickest icing you've ever seen.  Someone has written guff in quotation marks on it…",
-    "fun": 20
+    "fun": 20,
+    "addiction_potential": 23,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -649,7 +701,9 @@
     "charges": 5,
     "stack_size": 30,
     "fun": 2,
-    "flags": [ "EDIBLE_FROZEN", "NO_AUTO_CONSUME" ]
+    "flags": [ "EDIBLE_FROZEN", "NO_AUTO_CONSUME" ],
+    "addiction_potential": 7,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -700,7 +754,9 @@
     "volume": "250 ml",
     "flags": [ "EDIBLE_FROZEN" ],
     "charges": 3,
-    "fun": 4
+    "fun": 4,
+    "addiction_potential": 14,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -722,7 +778,9 @@
     "volume": "40 ml",
     "charges": 3,
     "flags": [ "EDIBLE_FROZEN" ],
-    "fun": 4
+    "fun": 4,
+    "addiction_potential": 12,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -737,14 +795,16 @@
     "quench": -1,
     "healthy": -1,
     "calories": 130,
-    "description": "Candy sticks.  Slightly more healthy than tobacco cigarettes, but with no possibility of addiction.",
+    "description": "Candy sticks.  Slightly more healthy than tobacco cigarettes, but with no possibility of nicotine addiction.",
     "price": 130,
     "price_postapoc": 100,
     "material": [ "junk" ],
     "volume": "90 ml",
     "flags": [ "EDIBLE_FROZEN" ],
     "charges": 3,
-    "fun": 4
+    "fun": 4,
+    "addiction_potential": 15,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -765,7 +825,9 @@
     "volume": "150 ml",
     "charges": 5,
     "vitamins": [ [ "calcium", 9 ] ],
-    "fun": 2
+    "fun": 2,
+    "addiction_potential": 25,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -784,7 +846,9 @@
     "material": [ "junk", "fruit" ],
     "volume": "150 ml",
     "vitamins": [ [ "calcium", 9 ], [ "vitC", 14 ], [ "iron", 1 ] ],
-    "fun": 5
+    "fun": 5,
+    "addiction_potential": 5,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -1159,7 +1223,9 @@
     "material": [ "wheat", "junk", "milk" ],
     "primary_material": "processed_food",
     "fun": 6,
-    "vitamins": [ [ "calcium", 5 ], [ "iron", 17 ] ]
+    "vitamins": [ [ "calcium", 5 ], [ "iron", 17 ] ],
+    "addiction_potential": 15,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -1179,7 +1245,9 @@
     "volume": "250 ml",
     "flags": [ "EATEN_HOT" ],
     "fun": 12,
-    "vitamins": [ [ "calcium", 25 ], [ "iron", 25 ] ]
+    "vitamins": [ [ "calcium", 25 ], [ "iron", 25 ] ],
+    "addiction_potential": 15,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -1370,7 +1438,9 @@
     "flags": [ "EDIBLE_FROZEN" ],
     "charges": 4,
     "vitamins": [ [ "calcium", 4 ] ],
-    "fun": 6
+    "fun": 6,
+    "addiction_potential": 10,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -1394,7 +1464,9 @@
     "material": [ "junk", "nut" ],
     "flags": [ "EDIBLE_FROZEN" ],
     "fun": 6,
-    "vitamins": [ [ "calcium", 1 ], [ "iron", 3 ] ]
+    "vitamins": [ [ "calcium", 1 ], [ "iron", 3 ] ],
+    "addiction_potential": 8,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -1472,7 +1544,9 @@
     "material": [ "flesh", "junk" ],
     "volume": "250ml",
     "flags": [ "EATEN_COLD" ],
-    "fun": -2
+    "fun": -2,
+    "addiction_potential": 8,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -1491,7 +1565,9 @@
     "material": [ "flesh", "junk" ],
     "volume": "250 ml",
     "phase": "solid",
-    "fun": 5
+    "fun": 5,
+    "addiction_potential": 11,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -1499,7 +1575,9 @@
     "name": "processed gelatin dessert",
     "description": "A jiggly, sugary treat made from gelatin and sugar.  Comes in a variety of flavors.  A kid favorite pre-Cataclysm.",
     "fun": 20,
-    "copy-from": "gelatin_dessert_base"
+    "copy-from": "gelatin_dessert_base",
+    "addiction_potential": 11,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -1508,7 +1586,9 @@
     "color": "light_red",
     "description": "A homemade jiggly, sugary treat made from gelatin and sugar flavored with fruit juice.  A kid favorite pre-Cataclysm.",
     "fun": 25,
-    "copy-from": "gelatin_dessert_base"
+    "copy-from": "gelatin_dessert_base",
+    "addiction_potential": 10,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
