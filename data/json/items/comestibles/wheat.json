@@ -293,7 +293,9 @@
     "charges": 4,
     "flags": [ "EATEN_HOT" ],
     "fun": 3,
-    "vitamins": [ [ "calcium", 6 ], [ "iron", 4 ] ]
+    "vitamins": [ [ "calcium", 6 ], [ "iron", 4 ] ],
+    "addiction_potential": 5,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -307,7 +309,9 @@
     "price": 650,
     "price_postapoc": 75,
     "fun": 4,
-    "vitamins": [ [ "vitC", 30 ], [ "calcium", 4 ], [ "iron", 3 ] ]
+    "vitamins": [ [ "vitC", 30 ], [ "calcium", 4 ], [ "iron", 3 ] ],
+    "addiction_potential": 5,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -364,7 +368,9 @@
     "volume": "250 ml",
     "flags": [ "EATEN_HOT" ],
     "fun": 5,
-    "vitamins": [ [ "calcium", 15 ], [ "iron", 9 ] ]
+    "vitamins": [ [ "calcium", 15 ], [ "iron", 9 ] ],
+    "addiction_potential": 5,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -385,7 +391,9 @@
     "volume": "375 ml",
     "flags": [ "EATEN_HOT" ],
     "fun": 6,
-    "vitamins": [ [ "vitC", 120 ], [ "calcium", 2 ], [ "iron", 2 ] ]
+    "vitamins": [ [ "vitC", 120 ], [ "calcium", 2 ], [ "iron", 2 ] ],
+    "addiction_potential": 5,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -445,7 +453,9 @@
     "flags": [ "EATEN_HOT" ],
     "fun": 3,
     "//": "these vitamins are only for pies that may spawn.  generally they will be inherited from the fruit used.",
-    "vitamins": [ [ "vitC", 6 ], [ "calcium", 1 ], [ "iron", 3 ] ]
+    "vitamins": [ [ "vitC", 6 ], [ "calcium", 1 ], [ "iron", 3 ] ],
+    "addiction_potential": 4,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -600,7 +610,9 @@
     "fun": 4,
     "spoils_in": 420,
     "vitamins": [ [ "calcium", 2 ], [ "iron", 5 ] ],
-    "flags": [ "EATEN_HOT" ]
+    "flags": [ "EATEN_HOT" ],
+    "addiction_potential": 4,
+    "addiction_type": "sugar"
   },
   {
     "id": "space_cake",
@@ -621,7 +633,9 @@
     "price_postapoc": 400,
     "weight": "45 g",
     "calories": 292,
-    "fun": 7
+    "fun": 7,
+    "addiction_potential": 6,
+    "addiction_type": "sugar"
   },
   {
     "id": "brownie_weed",
