@@ -49,7 +49,9 @@
     "description": "Foodplace brand Snicker-Snack cereal.  Each tiny \"Snicker-Snack\" is shaped like human food!",
     "material": [ "foodplace_foodstuff" ],
     "charges": 6,
-    "copy-from": "cereal_tpl"
+    "copy-from": "cereal_tpl",
+    "addiction_potential": 18,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -81,21 +83,27 @@
     "addiction_potential": 10,
     "stim": 20,
     "spoils_in": "540 days",
-    "copy-from": "cereal_fpsugar_tpl"
+    "copy-from": "cereal_fpsugar_tpl",
+    "addiction_potential": 35,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
     "id": "cereal_fp5",
     "name": { "str_sp": "Honey Pellet cereal" },
     "description": "Foodplace brand \"Amorphous Honey Pellet\" cereal.  The box promises \"Inconceivable sustenance in tiny morsels of yellow honey.\"",
-    "copy-from": "cereal_fpsugar_tpl"
+    "copy-from": "cereal_fpsugar_tpl",
+    "addiction_potential": 17,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
     "id": "cereal_fp6",
     "name": { "str": "Fructose Flakes cereal", "str_pl": "Fructose Flakes" },
     "description": "Foodplace brand Fructose Flakes cereal.  Fortified with energy enriched FoodSyrup™ that supports life most efficiently.",
-    "copy-from": "cereal_fpsugar_tpl"
+    "copy-from": "cereal_fpsugar_tpl",
+    "addiction_potential": 28,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -104,7 +112,9 @@
     "description": "Foodplace brand \"Foodios\" cereal.  Foodios™ are Foodalicious™!",
     "material": [ "foodplace_foodstuff" ],
     "charges": 6,
-    "copy-from": "cereal_tpl"
+    "copy-from": "cereal_tpl",
+    "addiction_potential": 10,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
@@ -125,7 +135,9 @@
     "material": [ "junk" ],
     "volume": "250 ml",
     "vitamins": [ [ "vitC", 17 ], [ "calcium", 13 ], [ "iron", 48 ] ],
-    "fun": 10
+    "fun": 10,
+    "addiction_potential": 10,
+    "addiction_type": "sugar"
   },
   {
     "type": "COMESTIBLE",
