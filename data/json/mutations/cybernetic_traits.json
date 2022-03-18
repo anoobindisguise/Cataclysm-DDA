@@ -45,5 +45,29 @@
       }
     ],
     "weight_capacity_modifier": 3
+  },
+  {
+    "type": "mutation",
+    "id": "REMOVED_DIGESTIVE",
+    "name": { "str": "Simplified Digestive System" },
+    "points": 0,
+    "description": "You have had most of your digestive tract removed in order to make room for more bionics.  You can no longer process solid foods and you get full much more quickly as a result.",
+    "stomach_size_multiplier": 0.5,
+    "types": [ "DIET" ],
+    "purifiable": false,
+    "bionic_slot_bonuses": { "torso": 20 }
+  },
+  {
+    "type": "mutation",
+    "id": "REMOVED_BRAIN",
+    "name": { "str": "Optimized Partial Lobotomy" },
+    "points": 0,
+    "description": "Most of your cerebellum as well as other less-essential parts of your brain have been removed and partially replaced with bionic equivalents, freeing up some space in your cranium with only slight impairment to motor functions, memory and logic processing.",
+    "stomach_size_multiplier": 0.5,
+    "types": [ "INT" ],
+    "purifiable": false,
+    "bionic_slot_bonuses": { "head": 5 },
+    "skill_rust_multiplier": 1.1,
+    "passive_mods": { "int_mod": -1, "dex_mod": -1 },
   }
 ]
