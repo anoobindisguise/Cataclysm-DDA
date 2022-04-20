@@ -112,7 +112,7 @@
     "container": "condiment_bottle_sealed",
     "sealed": false,
     "fun": -1,
-    "calories": 10,
+    "calories": 0,
     "spoils_in": 600,
     "charges": 48,
     "phase": "liquid",
