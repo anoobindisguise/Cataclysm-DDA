@@ -731,7 +731,7 @@
     ]
   },
   {
-    "id": "armor_bio_arms", //superalloy represents aluminum-magnesium alloy such as AZ80A. plastic is fictional scifi stuff.
+    "id": "armor_bio_arms",
     "type": "ARMOR",
     "category": "armor",
     "weight": "2480 g",
@@ -809,7 +809,7 @@
     ]
   },
   {
-    "id": "armor_bio_legs", //superalloy represents aluminum-magnesium alloy such as AZ80A. plastic is fictional scifi stuff.
+    "id": "armor_bio_legs",
     "type": "ARMOR",
     "category": "armor",
     "weight": "2700 g",
@@ -885,7 +885,7 @@
     ]
   },
   {
-    "id": "armor_bio_torso", //superalloy represents aluminum-magnesium alloy such as AZ80A. plastic is fictional scifi stuff.
+    "id": "armor_bio_torso",
     "type": "ARMOR",
     "category": "armor",
     "weight": "4760 g",
@@ -938,7 +938,7 @@
     ]
   },
   {
-    "id": "armor_bio_head", //superalloy represents aluminum-magnesium alloy such as AZ80A. plastic is fictional scifi stuff.
+    "id": "armor_bio_head",
     "type": "ARMOR",
     "category": "armor",
     "weight": "3210 g",
