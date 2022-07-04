@@ -734,20 +734,20 @@
     "id": "armor_bio_arms",
     "type": "ARMOR",
     "category": "armor",
-    "weight": "2480 g",
+    "weight": "2180 g",
     "volume": "500 ml",
     "price": 0,
     "price_postapoc": 0,
     "symbol": ",",
     "color": "brown",
     "warmth": 15,
-    "bashing": 10,
+    "bashing": 12,
     "to_hit": -1,
     "environmental_protection": 10,
     "material_thickness": 3,
-    "flags": [ "INTEGRATED", "UNARMED_WEAPON", "UNBREAKABLE", "SKINTIGHT", "NORMAL", "PADDED", "WATER_FRIENDLY" ],
+    "flags": [ "INTEGRATED", "UNARMED_WEAPON", "UNBREAKABLE", "SKINTIGHT", "NORMAL", "PADDED", "WATER_FRIENDLY", "DURABLE_MELEE", "BLOCK_WHILE_WORN" ],
     "material": [ "plastic", "superalloy" ],
-    "name": { "str": "alloy plating - arms" },
+    "name": { "str_sp": "alloy plating - arms" },
     "description": "A complex armor integrated into your arms and hands, made of lightweight metal encasing a chemical-resistant layer of synthetic skin.  Various service ports, CBM connectors, and dump points for sweat can be seen along its exterior.  It has steel pads on the elbows and shoulders for protection, while the inner hands are more bare to maintain grip and dexterity.",
     "armor": [
       {
@@ -770,28 +770,32 @@
         "covers": [ "arm_l", "arm_r" ],
         "specifically_covers": [ "arm_elbow_l", "arm_shoulder_l", "arm_elbow_r", "arm_shoulder_r" ],
         "coverage": 100,
+        "cover_vitals": 75,
         "encumbrance": 0,
         "breathability": "POOR"
       },
       {
         "material": [
-          { "type": "plastic", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "superalloy", "covered_by_mat": 80, "thickness": 1.0 }
+          { "type": "plastic", "covered_by_mat": 100, "thickness": 2.0 },
+          { "type": "superalloy", "covered_by_mat": 70, "thickness": 1.0 }
         ],
         "covers": [ "hand_l", "hand_r" ],
         "specifically_covers": [ "hand_palm_r", "hand_wrist_r", "hand_palm_l", "hand_wrist_l" ],
         "coverage": 100,
+        "cover_vitals": 60,
         "encumbrance": 5,
         "breathability": "AVERAGE"
       },
       {
         "material": [
-          { "type": "plastic", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "superalloy", "covered_by_mat": 75, "thickness": 1.0 }
+          { "type": "plastic", "covered_by_mat": 100, "thickness": 2.0 },
+          { "type": "superalloy", "covered_by_mat": 75, "thickness": 1.0 },
+          { "type": "qt_steel", "covered_by_mat": 50, "thickness": 0.5 }
         ],
         "covers": [ "hand_l", "hand_r" ],
         "specifically_covers": [ "hand_fingers_r", "hand_fingers_l" ],
         "coverage": 100,
+        "cover_vitals": 60,
         "encumbrance": 0,
         "breathability": "AVERAGE"
       },
@@ -803,6 +807,7 @@
         "covers": [ "hand_l", "hand_r" ],
         "specifically_covers": [ "hand_back_r", "hand_back_l" ],
         "coverage": 100,
+        "cover_vitals": 70,
         "encumbrance": 0,
         "breathability": "AVERAGE"
       }
@@ -812,7 +817,7 @@
     "id": "armor_bio_legs",
     "type": "ARMOR",
     "category": "armor",
-    "weight": "2700 g",
+    "weight": "2500 g",
     "volume": "500 ml",
     "price": 0,
     "price_postapoc": 0,
@@ -821,9 +826,9 @@
     "warmth": 15,
     "environmental_protection": 10,
     "material_thickness": 3,
-    "flags": [ "INTEGRATED", "UNBREAKABLE", "SKINTIGHT", "NORMAL", "PADDED", "WATER_FRIENDLY" ],
+    "flags": [ "INTEGRATED", "UNBREAKABLE", "SKINTIGHT", "NORMAL", "PADDED", "WATER_FRIENDLY", "BLOCK_WHILE_WORN" ],
     "material": [ "plastic", "superalloy" ],
-    "name": { "str": "alloy plating - legs" },
+    "name": { "str_sp": "alloy plating - legs" },
     "description": "A complex armor integrated into your legs and feet, made of lightweight metal encasing a chemical-resistant layer of synthetic skin.  Various service ports, CBM connectors, and dump points for sweat can be seen along its exterior.  It has steel kneepads and toecaps for protection.",
     "armor": [
       {
@@ -835,6 +840,7 @@
         "specifically_covers": [ "leg_upper_l", "leg_lower_l", "leg_upper_r", "leg_lower_r", "leg_hip_r", "leg_hip_l" ],
         "coverage": 100,
         "encumbrance": 10,
+        "cover_vitals": 60,
         "breathability": "AVERAGE"
       },
       {
@@ -846,6 +852,7 @@
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_knee_l", "leg_knee_r" ],
         "coverage": 100,
+        "cover_vitals": 75,
         "encumbrance": 0,
         "breathability": "POOR"
       },
@@ -858,6 +865,7 @@
         ],
         "encumbrance": 10,
         "coverage": 100,
+        "cover_vitals": 60,
         "breathability": "AVERAGE"
       },
       {
@@ -869,6 +877,7 @@
           { "type": "qt_steel", "covered_by_mat": 100, "thickness": 0.75 }
         ],
         "coverage": 100,
+        "cover_vitals": 60,
         "breathability": "POOR"
       },
       {
@@ -880,6 +889,7 @@
           { "type": "rubber", "covered_by_mat": 100, "thickness": 3.0 }
         ],
         "coverage": 100,
+        "cover_vitals": 60,
         "breathability": "POOR"
       }
     ]
@@ -899,7 +909,7 @@
     "material_thickness": 4,
     "flags": [ "INTEGRATED", "UNBREAKABLE", "SKINTIGHT", "NORMAL", "PADDED", "WATER_FRIENDLY" ],
     "material": [ "plastic", "superalloy" ],
-    "name": { "str": "alloy plating - torso" },
+    "name": { "str_sp": "alloy plating - torso" },
     "description": "A complex armor integrated into your torso, made of lightweight metal encasing a chemical-resistant layer of synthetic skin  Various service ports, CBM connectors, and dump points for sweat can be seen along its exterior.  It is particularly thickly armored around your vital organs.",
     "armor": [
       {
@@ -911,6 +921,7 @@
         "specifically_covers": [ "torso_neck", "torso_lower" ],
         "coverage": 100,
         "encumbrance": 10,
+        "cover_vitals": 85,
         "breathability": "AVERAGE"
       },
       {
@@ -922,6 +933,7 @@
         "specifically_covers": [ "torso_upper" ],
         "coverage": 100,
         "encumbrance": 0,
+        "cover_vitals": 65,
         "breathability": "POOR"
       },
       {
@@ -932,6 +944,7 @@
         "covers": [ "torso" ],
         "specifically_covers": [ "torso_neck" ],
         "coverage": 100,
+        "cover_vitals": 65,
         "encumbrance": 0,
         "breathability": "AVERAGE"
       }
@@ -948,12 +961,12 @@
     "symbol": ",",
     "color": "brown",
     "warmth": 15,
-    "environmental_protection": 10,
+    "environmental_protection": 5,
     "material_thickness": 3,
     "flags": [ "INTEGRATED", "UNBREAKABLE", "SKINTIGHT", "PADDED", "WATER_FRIENDLY" ],
     "material": [ "plastic", "superalloy" ],
-    "name": { "str": "alloy plating - head" },
-    "description": "A complex armor integrated into your head and jaw, made of lightweight metal encasing a chemical-resistant layer of synthetic skin. Various service ports, CBM connectors, and dump points for sweat can be seen along its exterior.  Has an additional steel layer around your cranium for protection and artificial hair to help maintain your sense of self.",
+    "name": { "str_sp": "alloy plating - head" },
+    "description": "A complex armor integrated into your head, made of lightweight metal encasing a chemical-resistant layer of synthetic skin. Various service ports, CBM connectors, and dump points for sweat can be seen along its exterior.  Has an additional steel layer around your cranium for protection and artificial hair to help maintain your sense of self.",
     "armor": [
       {
         "material": [
@@ -962,6 +975,7 @@
         ],
         "covers": [ "head" ],
         "coverage": 100,
+        "cover_vitals": 65,
         "encumbrance": 10,
         "breathability": "AVERAGE"
       },
@@ -973,16 +987,7 @@
         "covers": [ "head" ],
         "specifically_covers": [ "head_forehead" ],
         "coverage": 100,
-        "encumbrance": 0,
-        "breathability": "POOR"
-      },
-      {
-        "material": [
-          { "type": "plastic", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "superalloy", "covered_by_mat": 100, "thickness": 2.0 }
-        ],
-        "covers": [ "mouth" ],
-        "coverage": 100,
+        "cover_vitals": 85,
         "encumbrance": 0,
         "breathability": "POOR"
       }
@@ -992,8 +997,8 @@
     "id": "armor_bio_eyes",
     "type": "ARMOR",
     "category": "armor",
-    "name": { "str": "protective lenses" },
-    "description": "Highly protective lenses which seal off your eyes from danger.",
+    "name": { "str_sp": "protective lenses" },
+    "description": "Highly protective lenses which seal off your eyes from danger, routing your tear ducts to your mouth.",
     "weight": "250 g",
     "volume": "250 ml",
     "price": 0,
@@ -1003,9 +1008,21 @@
     "symbol": "[",
     "color": "dark_gray",
     "warmth": 5,
-    "material_thickness": 2.5,
+    "material_thickness": 3.0,
     "environmental_protection": 10,
     "flags": [ "INTEGRATED", "UNBREAKABLE", "SKINTIGHT", "SOFT", "WATER_FRIENDLY", "SUN_GLASSES" ],
-    "armor": [ { "encumbrance": 5, "coverage": 100, "covers": [ "eyes" ], "rigid_layer_only": true } ]
+    "armor": [
+      {
+        "material": [
+          { "type": "plastic", "covered_by_mat": 100, "thickness": 1.8 },
+          { "type": "lvl4ballisticglass", "covered_by_mat": 100, "thickness": 1.2 }
+        ],
+        "covers": [ "eyes" ],
+        "coverage": 100,
+        "encumbrance": 5,
+        "rigid_layer_only": true,
+        "cover_vitals": 90
+      }
+    ]
   }
 ]
