@@ -745,7 +745,17 @@
     "to_hit": -1,
     "environmental_protection": 10,
     "material_thickness": 3,
-    "flags": [ "INTEGRATED", "UNARMED_WEAPON", "UNBREAKABLE", "SKINTIGHT", "NORMAL", "PADDED", "WATER_FRIENDLY", "DURABLE_MELEE", "BLOCK_WHILE_WORN" ],
+    "flags": [
+      "INTEGRATED",
+      "UNARMED_WEAPON",
+      "UNBREAKABLE",
+      "SKINTIGHT",
+      "NORMAL",
+      "PADDED",
+      "WATER_FRIENDLY",
+      "DURABLE_MELEE",
+      "BLOCK_WHILE_WORN"
+    ],
     "material": [ "plastic", "superalloy" ],
     "name": { "str_sp": "alloy plating - arms" },
     "description": "A complex armor integrated into your arms and hands, made of lightweight metal encasing a chemical-resistant layer of synthetic skin.  Various service ports, CBM connectors, and dump points for sweat can be seen along its exterior.  It has steel pads on the elbows and shoulders for protection, while the inner hands are more bare to maintain grip and dexterity.",
