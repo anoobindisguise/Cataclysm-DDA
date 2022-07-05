@@ -339,23 +339,5 @@
     "looks_like": "battery",
     "flags": [ "NO_SALVAGE", "NO_UNLOAD", "NO_RELOAD", "BATTERY_HEAVY" ],
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "battery": 1000 } } ]
-  },
-  {
-    "type": "AMMO",
-    "id": "plut_cell",
-    "category": "spare_parts",
-    "price": 150000,
-    "price_postapoc": 1250,
-    "name": { "str": "plutonium fuel cell" },
-    "symbol": "=",
-    "color": "green",
-    "description": "This is neither a fuel cell, nor nuclear, but the name stuck.  It uses plutonium-244 as a catalyst to stabilize a complicated nanocompound that can store enormous amounts of power.  Unfortunately it cannot be recharged by conventional means: expended cells had to be sent to a central reprocessing facility that almost certainly doesn't exist anymore.",
-    "material": [ "plut_cell" ],
-    "flags": [ "LEAK_DAM", "RADIOACTIVE" ],
-    "volume": "250 ml",
-    "weight": "80 g",
-    "ammo_type": "plutonium",
-    "count": 5,
-    "effects": [ "COOKOFF", "NEVER_MISFIRES" ]
   }
 ]
