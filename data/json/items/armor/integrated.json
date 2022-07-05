@@ -734,7 +734,7 @@
     "id": "armor_bio_arms",
     "type": "ARMOR",
     "category": "armor",
-    "weight": "2180 g",
+    "weight": "1580 g",
     "volume": "500 ml",
     "price": 0,
     "price_postapoc": 0,
@@ -827,7 +827,7 @@
     "id": "armor_bio_legs",
     "type": "ARMOR",
     "category": "armor",
-    "weight": "2500 g",
+    "weight": "2100 g",
     "volume": "500 ml",
     "price": 0,
     "price_postapoc": 0,
@@ -895,7 +895,7 @@
         "specifically_covers": [ "foot_sole_r", "foot_sole_l" ],
         "material": [
           { "type": "plastic", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "superalloy", "covered_by_mat": 100, "thickness": 0.5 },
+          { "type": "superalloy", "covered_by_mat": 100, "thickness": 1.0 },
           { "type": "rubber", "covered_by_mat": 100, "thickness": 3.0 }
         ],
         "coverage": 100,
@@ -908,7 +908,7 @@
     "id": "armor_bio_torso",
     "type": "ARMOR",
     "category": "armor",
-    "weight": "4760 g",
+    "weight": "4260 g",
     "volume": "500 ml",
     "price": 0,
     "price_postapoc": 0,
@@ -952,7 +952,7 @@
     "id": "armor_bio_head",
     "type": "ARMOR",
     "category": "armor",
-    "weight": "3210 g",
+    "weight": "1610 g",
     "volume": "500 ml",
     "price": 0,
     "price_postapoc": 0,
@@ -961,7 +961,7 @@
     "warmth": 15,
     "environmental_protection": 5,
     "material_thickness": 3,
-    "flags": [ "INTEGRATED", "UNBREAKABLE", "SKINTIGHT", "PADDED", "WATER_FRIENDLY" ],
+    "flags": [ "INTEGRATED", "UNBREAKABLE", "SKINTIGHT", "PADDED", "WATER_FRIENDLY", "HELMET_COMPAT" ],
     "material": [ "plastic", "superalloy" ],
     "name": { "str_sp": "alloy plating - head" },
     "description": "A complex armor integrated into your head, made of lightweight metal encasing a chemical-resistant layer of synthetic skin. Various service ports, CBM connectors, and dump points for sweat can be seen along its exterior.  Has an additional steel layer around your cranium for protection and artificial hair to help maintain your sense of self.",
@@ -981,7 +981,7 @@
       {
         "material": [
           { "type": "plastic", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "superalloy", "covered_by_mat": 100, "thickness": 1.6 },
+          { "type": "superalloy", "covered_by_mat": 100, "thickness": 2.1 },
           { "type": "qt_steel", "covered_by_mat": 100, "thickness": 0.75 }
         ],
         "covers": [ "head" ],
