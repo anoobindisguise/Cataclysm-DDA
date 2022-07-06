@@ -137,7 +137,7 @@
       "MUCUS_SECRETION",
       "MUCUS_SECRETION2"
     ],
-    "passive_pseudo_items": [ "armor_bio_arms" ]
+    "passive_pseudo_items": [ "armor_bio_arms", "armor_bio_hands" ]
   },
   {
     "id": "bio_armor_eyes",
