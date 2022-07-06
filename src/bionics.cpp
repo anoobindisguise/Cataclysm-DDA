@@ -2936,7 +2936,7 @@ bionic_uid Character::add_bionic( const bionic_id &b, bionic_uid parent_uid )
 
     for( const itype_id &pseudo : b->passive_pseudo_items ) {
         item tmparmor( pseudo );
-        if tmparmor.has_flag( flag_INTEGRATED ) {
+        if( tmparmor.has_flag( flag_INTEGRATED ) ) {
             wear_item( tmparmor, false );
         }
     }
