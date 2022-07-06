@@ -244,7 +244,9 @@ void bionic::initialize_pseudo_items( bool create_weapon )
     for( const itype_id &id : bid.passive_pseudo_items ) {
         if( !id.is_empty() && id.is_valid() ) {
             item pseudo( id );
-            pseudo.set_flag( flag_PSEUDO );
+            if ( !pseudo.has_flag( flag_INTEGRATED ) {
+                pseudo.set_flag( flag_PSEUDO ); //integrated armor uses pseudo item structure to be convenient but these should be visible in inventory
+            }
             passive_pseudo_items.emplace_back( pseudo );
         }
     }
@@ -2334,7 +2336,7 @@ bool Character::uninstall_bionic( const bionic &bio, Character &installer, bool 
     activity.values.push_back( bio.get_uid() );
     activity.values.push_back( pl_skill );
     activity.str_values.emplace_back( "uninstall" );
-    activity.str_values.push_back( bio.id.str() );
+    activity.str_values.push_back( bio.id.str() ); 
     activity.str_values.emplace_back( "" ); // installer_name is unused for uninstall
     if( autodoc ) {
         activity.str_values.emplace_back( "true" );
@@ -2930,6 +2932,13 @@ bionic_uid Character::add_bionic( const bionic_id &b, bionic_uid parent_uid )
 
     for( const proficiency_id &learned : b->proficiencies ) {
         add_proficiency( learned );
+    }
+
+    for( const itype_id &pseudo : b->passive_pseudo_items ) {
+        item tmparmor( pseudo );
+        if tmparmor.has_flag( flag_INTEGRATED ) {
+            wear_item( tmparmor, false );
+        }
     }
 
     update_bionic_power_capacity();
