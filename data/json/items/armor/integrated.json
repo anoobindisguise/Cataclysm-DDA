@@ -741,8 +741,6 @@
     "symbol": ",",
     "color": "brown",
     "warmth": 15,
-    "bashing": 12,
-    "to_hit": -1,
     "environmental_protection": 10,
     "material_thickness": 3,
     "flags": [
@@ -757,7 +755,7 @@
       "BLOCK_WHILE_WORN",
       "SOFT"
     ],
-    "material": [ "plastic", "superalloy" ],
+    "material": [ "plastic", "superalloy", "qt_steel" ],
     "name": { "str_sp": "alloy plating - arms" },
     "description": "A complex armor integrated into your arms and hands, made of lightweight metal encasing a chemical-resistant layer of synthetic skin.  Various service ports, CBM connectors, and dump points for sweat can be seen along its exterior.  It has steel pads on the elbows and shoulders for protection, while the inner hands are more bare to maintain grip and dexterity.",
     "armor": [
@@ -784,7 +782,39 @@
         "cover_vitals": 75,
         "encumbrance": 0,
         "breathability": "POOR"
-      },
+      }
+    ]
+  },
+  {
+    "id": "armor_bio_hands",
+    "type": "ARMOR",
+    "category": "armor",
+    "weight": "280 g",
+    "volume": "500 ml",
+    "price": 0,
+    "price_postapoc": 0,
+    "symbol": ",",
+    "color": "brown",
+    "warmth": 15,
+    "bashing": 12,
+    "to_hit": -1,
+    "environmental_protection": 10,
+    "material_thickness": 3,
+    "flags": [
+      "INTEGRATED",
+      "UNARMED_WEAPON",
+      "UNBREAKABLE",
+      "UNBREAKABLE_MELEE",
+      "SKINTIGHT",
+      "NORMAL",
+      "PADDED",
+      "WATER_FRIENDLY",
+      "SOFT"
+    ],
+    "material": [ "plastic", "superalloy", "qt_steel" ],
+    "name": { "str_sp": "alloy plating - hands" },
+    "description": "A complex armor integrated into your hands, made of lightweight metal encasing a chemical-resistant layer of synthetic skin. The knuckles are reinforced with steel for extra protection and striking power, while the inner hands are more bare to maintain grip and dexterity.",
+    "armor": [
       {
         "material": [
           { "type": "plastic", "covered_by_mat": 100, "thickness": 2.0 },
@@ -828,7 +858,7 @@
     "id": "armor_bio_legs",
     "type": "ARMOR",
     "category": "armor",
-    "weight": "2100 g",
+    "weight": "2800 g",
     "volume": "500 ml",
     "price": 0,
     "price_postapoc": 0,
@@ -838,7 +868,7 @@
     "environmental_protection": 10,
     "material_thickness": 3,
     "flags": [ "INTEGRATED", "UNBREAKABLE", "SKINTIGHT", "NORMAL", "PADDED", "WATER_FRIENDLY", "BLOCK_WHILE_WORN", "SOFT" ],
-    "material": [ "plastic", "superalloy" ],
+    "material": [ "plastic", "superalloy", "qt_steel" ],
     "name": { "str_sp": "alloy plating - legs" },
     "description": "A complex armor integrated into your legs and feet, made of lightweight metal encasing a chemical-resistant layer of synthetic skin.  Various service ports, CBM connectors, and dump points for sweat can be seen along its exterior.  It has steel kneepads and toecaps for protection.",
     "armor": [
@@ -909,7 +939,7 @@
     "id": "armor_bio_torso",
     "type": "ARMOR",
     "category": "armor",
-    "weight": "4260 g",
+    "weight": "4360 g",
     "volume": "500 ml",
     "price": 0,
     "price_postapoc": 0,
@@ -921,7 +951,7 @@
     "flags": [ "INTEGRATED", "UNBREAKABLE", "SKINTIGHT", "NORMAL", "PADDED", "WATER_FRIENDLY", "SOFT" ],
     "material": [ "plastic", "superalloy" ],
     "name": { "str_sp": "alloy plating - torso" },
-    "description": "A complex armor integrated into your torso, made of lightweight metal encasing a chemical-resistant layer of synthetic skin  Various service ports, CBM connectors, and dump points for sweat can be seen along its exterior.  It is particularly thickly armored around your vital organs.",
+    "description": "A complex armor integrated into your torso, made of lightweight metal encasing a chemical-resistant layer of synthetic skin.  Various service ports, CBM connectors, and dump points for sweat can be seen along its exterior.  It is particularly thickly armored around your vital organs.",
     "armor": [
       {
         "material": [
@@ -953,19 +983,19 @@
     "id": "armor_bio_head",
     "type": "ARMOR",
     "category": "armor",
-    "weight": "1610 g",
+    "weight": "1710 g",
     "volume": "500 ml",
     "price": 0,
     "price_postapoc": 0,
     "symbol": ",",
     "color": "brown",
     "warmth": 15,
-    "environmental_protection": 5,
+    "environmental_protection": 10,
     "material_thickness": 3,
     "flags": [ "INTEGRATED", "UNBREAKABLE", "SKINTIGHT", "PADDED", "WATER_FRIENDLY", "HELMET_COMPAT", "SOFT" ],
-    "material": [ "plastic", "superalloy" ],
+    "material": [ "plastic", "superalloy", "qt_steel" ],
     "name": { "str_sp": "alloy plating - head" },
-    "description": "A complex armor integrated into your head, made of lightweight metal encasing a chemical-resistant layer of synthetic skin. Various service ports, CBM connectors, and dump points for sweat can be seen along its exterior.  Has an additional steel layer around your cranium for protection and artificial hair to help maintain your sense of self.",
+    "description": "A complex armor integrated into your head, made of lightweight metal encasing a chemical-resistant layer of synthetic skin.  Various service ports, CBM connectors, and dump points for sweat can be seen along its exterior.  Has an additional steel layer around your cranium for protection and artificial hair to help maintain your sense of self.",
     "armor": [
       {
         "material": [
