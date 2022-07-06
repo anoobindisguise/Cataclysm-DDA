@@ -137,7 +137,7 @@
       "MUCUS_SECRETION",
       "MUCUS_SECRETION2"
     ],
-    "integrated_armor": [ "armor_bio_arms" ]
+    "passive_pseudo_items": [ "armor_bio_arms" ]
   },
   {
     "id": "bio_armor_eyes",
@@ -147,7 +147,7 @@
     "occupied_bodyparts": [ [ "eyes", 1 ] ],
     "mutation_conflicts": [ "COMPOUND_EYES", "CEPH_VISION", "CEPH_EYES", "EYEBULGE", "EYESTALKS1", "EYESTALKS2" ],
     "social_modifiers": { "intimidate": 10 },
-    "integrated_armor": [ "armor_bio_eyes" ]
+    "passive_pseudo_items": [ "armor_bio_eyes" ]
   },
   {
     "id": "bio_armor_head",
@@ -260,7 +260,7 @@
       "MUCUS_SECRETION2",
       "WIDE_MOUTH"
     ],
-    "integrated_armor": [ "armor_bio_head" ]
+    "passive_pseudo_items": [ "armor_bio_head" ]
   },
   {
     "id": "bio_armor_legs",
@@ -353,7 +353,7 @@
       "MUCUS_SECRETION",
       "MUCUS_SECRETION2"
     ],
-    "integrated_armor": [ "armor_bio_legs" ]
+    "passive_pseudo_items": [ "armor_bio_legs" ]
   },
   {
     "id": "bio_armor_torso",
@@ -438,7 +438,7 @@
       "MUCUS_SECRETION2",
       "SHELL3"
     ],
-    "integrated_armor": [ "armor_bio_torso" ]
+    "passive_pseudo_items": [ "armor_bio_torso" ]
   },
   {
     "id": "bio_batteries",
