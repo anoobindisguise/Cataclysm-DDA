@@ -813,7 +813,7 @@
     ],
     "material": [ "plastic", "superalloy", "qt_steel" ],
     "name": { "str_sp": "alloy plating - hands" },
-    "description": "A complex armor integrated into your hands, made of lightweight metal encasing a chemical-resistant layer of synthetic skin. The knuckles are reinforced with steel for extra protection and striking power, while the inner hands are more bare to maintain grip and dexterity.",
+    "description": "A complex armor integrated into your hands, made of lightweight metal encasing a chemical-resistant layer of synthetic skin.  The knuckles are reinforced with steel for extra protection and striking power, while the inner hands are more bare to maintain grip and dexterity.",
     "armor": [
       {
         "material": [
