@@ -959,7 +959,7 @@
           { "type": "superalloy", "covered_by_mat": 100, "thickness": 3.2 }
         ],
         "covers": [ "torso" ],
-        "specifically_covers": [ "torso_neck", "torso_lower" ],
+        "specifically_covers": [ "torso_lower" ],
         "coverage": 100,
         "encumbrance": 10,
         "cover_vitals": 85,
