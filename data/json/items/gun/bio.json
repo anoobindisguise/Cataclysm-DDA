@@ -119,5 +119,27 @@
     "range": 6,
     "loudness": 5,
     "flags": [ "PSEUDO", "NEVER_JAMS", "TRADER_AVOID" ]
+  },
+  {
+    "id": "bio_blaster_gun",
+    "type": "GUN",
+    "name": "energy blaster",
+    "description": "this a pseudo item",
+    "volume": 3 L,
+    "price": 0,
+    "material": [ "qt_steel", "superalloy" ],
+    "symbol": "(",
+    "color": "magenta",
+    "skill": "smg",
+    "range": 30,
+    "ranged_damage": { "damage_type": "heat", "amount": 22, "armor_penetration": 15 },
+    "dispersion": 30,
+    "durability": 10,
+    "loudness": 12,
+    "modes": [ [ "DEFAULT", "triple shot", 3 ] ],
+    "reload": 0,
+    "built_in_mods": [ "bio_powershot" ],
+    "ammo_effects": [ "LASER", "PLASMA_BUBBLE", "INCENDIARY" ],
+    "flags": [ "PSEUDO", "NEVER_JAMS", "TRADER_AVOID", "BIONIC_WEAPON", "FIRESTARTER", "NON_FOULING", "NEEDS_NO_LUBE" ]
   }
 ]
