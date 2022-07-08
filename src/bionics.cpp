@@ -3019,6 +3019,12 @@ void Character::remove_bionic( const bionic &bio )
         lose_proficiency( lost );
     }
 
+    for( const itype_id &popped_armor : bio.passive_pseudo_items ) {
+        remove_worn_items_with( [&]( item & armor ) {
+            return armor.typeId() == popped_armor;
+        } );
+    }
+
     const bool has_enchantments = !bio.id->enchantments.empty();
     *my_bionics = new_my_bionics;
     update_bionic_power_capacity();
