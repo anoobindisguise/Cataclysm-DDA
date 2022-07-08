@@ -3019,7 +3019,7 @@ void Character::remove_bionic( const bionic &bio )
         lose_proficiency( lost );
     }
 
-    for( const itype_id &popped_armor : bio->passive_pseudo_items ) {
+    for( const itype_id &popped_armor : bio.id->passive_pseudo_items ) {
         remove_worn_items_with( [&]( item & armor ) {
             return armor.typeId() == popped_armor;
         } );
