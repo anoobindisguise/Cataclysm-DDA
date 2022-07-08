@@ -470,7 +470,7 @@
     "description": "Your left hand and forearm have been replaced with a powerful energy cannon.  It is extremely inconvenient, as you can no longer use your left hand for any purpose.  Activate to fire either a light triple burst or a singular explosive blast.",
     "occupied_bodyparts": [ [ "arm_l", 3 ], [ "hand_l", 3 ] ],
     "act_cost": "50 kJ",
-    "fake_item": "bio_blaster_gun",
+    "fake_weapon": "bio_blaster_gun",
     "flags": [ "BIONIC_GUN", "BIONIC_NPC_USABLE", "USES_BIONIC_POWER" ],
     "passive_pseudo_items": [ "armor_bio_blaster" ],
     "cant_remove_reason": "Removing this would leave the patient with a useless stump!"
