@@ -1089,5 +1089,58 @@
         "cover_vitals": 90
       }
     ]
+  },
+  {
+    "id": "armor_bio_blaster",
+    "type": "ARMOR",
+    "category": "armor",
+    "weight": "3500 g",
+    "volume": "1000 ml",
+    "price": 0,
+    "price_postapoc": 0,
+    "symbol": ",",
+    "color": "brown",
+    "warmth": 15,
+    "bashing": 16,
+    "to_hit": -1,
+    "environmental_protection": 10,
+    "material_thickness": 6,
+    "sided": true,
+    "flags": [
+      "INTEGRATED",
+      "RESTRICTS_HANDS",
+      "UNBREAKABLE",
+      "UNBREAKABLE_MELEE",
+      "OUTER",
+      "BELTED",
+      "WATER_FRIENDLY",
+      "OVERSIZED"
+    ],
+    "material": [ "unobtanium", "superalloy", "qt_steel" ],
+    "name": { "str_sp": "energy blaster arm" },
+    "description": "An energy cannon that replaced your left hand and forearm.  Although it does seem powerful, it is extremely inconvenient.",
+    "armor": [
+      {
+        "material": [
+          { "type": "qt_steel", "covered_by_mat": 100, "thickness": 3.0 },
+          { "type": "superalloy", "covered_by_mat": 100, "thickness": 3.0 }
+        ],
+        "covers": [ "hand_l" ],
+        "coverage": 100,
+        "cover_vitals": 100,
+        "encumbrance": 100
+      },
+      {
+        "material": [
+          { "type": "qt_steel", "covered_by_mat": 100, "thickness": 3.0 },
+          { "type": "superalloy", "covered_by_mat": 100, "thickness": 3.0 }
+        ],
+        "covers": [ "arm_l" ],
+        "specifically_covers": [ "arm_lower_l" ],
+        "coverage": 100,
+        "cover_vitals": 100,
+        "encumbrance": 10
+      }
+    ]
   }
 ]
