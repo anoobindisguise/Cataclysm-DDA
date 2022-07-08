@@ -125,7 +125,7 @@
     "type": "GUN",
     "name": "energy blaster",
     "description": "this a pseudo item",
-    "volume": 3 L,
+    "volume": "3 L",
     "price": 0,
     "material": [ "qt_steel", "superalloy" ],
     "symbol": "(",
