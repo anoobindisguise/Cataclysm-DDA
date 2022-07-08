@@ -127,19 +127,19 @@
     "description": "this a pseudo item",
     "volume": "3 L",
     "price": 0,
-    "material": [ "qt_steel", "superalloy" ],
+    "material": [ "qt_steel", "carbide" ],
     "symbol": "(",
     "color": "magenta",
     "skill": "smg",
     "range": 30,
-    "ranged_damage": { "damage_type": "heat", "amount": 22, "armor_penetration": 15 },
-    "dispersion": 30,
+    "ranged_damage": { "damage_type": "heat", "amount": 50, "armor_penetration": 50 },
+    "dispersion": 5,
     "durability": 10,
     "loudness": 12,
-    "modes": [ [ "DEFAULT", "triple shot", 3 ] ],
+    "modes": [ [ "DEFAULT", "energy blast", 1 ] ],
     "reload": 0,
     "built_in_mods": [ "bio_powershot" ],
-    "ammo_effects": [ "LASER", "PLASMA_BUBBLE", "INCENDIARY" ],
-    "flags": [ "PSEUDO", "NEVER_JAMS", "TRADER_AVOID", "BIONIC_WEAPON", "FIRESTARTER", "NON_FOULING", "NEEDS_NO_LUBE" ]
+    "ammo_effects": [ "LASER", "PLASMA", "FLAME", "INCENDIARY", "NPC_AVOID" ],
+    "flags": [ "PSEUDO", "NEVER_JAMS", "TRADER_AVOID", "BIONIC_WEAPON", "NON_FOULING", "NEEDS_NO_LUBE" ]
   }
 ]
