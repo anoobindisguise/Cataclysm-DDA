@@ -1107,13 +1107,13 @@
     "material_thickness": 6,
     "flags": [
       "INTEGRATED",
-      "RESTRICTS_HANDS",
+      "RESTRICT_HANDS",
       "UNBREAKABLE",
       "UNBREAKABLE_MELEE",
       "OUTER",
       "BELTED",
       "WATER_FRIENDLY",
-      "OVERSIZED",
+      "OVERSIZE",
       "PADDED"
     ],
     "material": [ "unobtanium", "carbide", "qt_steel" ],
