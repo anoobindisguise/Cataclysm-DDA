@@ -18,7 +18,7 @@
     "field_of_view": 3000,
     "flags": [ "IRREMOVABLE", "LASER_SIGHT" ],
     "handling_modifier": 50,
-  	"aim_speed_modifier": 250,
-   	"dispersion_modifier": -10
+    "aim_speed_modifier": 250,
+    "dispersion_modifier": -10
   }
 ]
