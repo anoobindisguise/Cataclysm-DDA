@@ -753,7 +753,8 @@
       "WATER_FRIENDLY",
       "DURABLE_MELEE",
       "BLOCK_WHILE_WORN",
-      "SOFT"
+      "SOFT",
+      "NO_REPAIR"
     ],
     "material": [ "plastic", "superalloy", "qt_steel" ],
     "name": { "str_sp": "alloy plating - arms" },
@@ -811,7 +812,8 @@
       "PADDED",
       "WATER_FRIENDLY",
       "SOFT",
-      "ALLOWS_NATURAL_ATTACKS"
+      "ALLOWS_NATURAL_ATTACKS",
+      "NO_REPAIR"
     ],
     "material": [ "plastic", "superalloy", "qt_steel" ],
     "name": { "str_sp": "alloy plating - hands" },
@@ -869,7 +871,7 @@
     "warmth": 15,
     "environmental_protection": 10,
     "material_thickness": 3,
-    "flags": [ "INTEGRATED", "UNBREAKABLE", "SKINTIGHT", "NORMAL", "PADDED", "WATER_FRIENDLY", "BLOCK_WHILE_WORN", "SOFT" ],
+    "flags": [ "INTEGRATED", "UNBREAKABLE", "SKINTIGHT", "NORMAL", "PADDED", "WATER_FRIENDLY", "BLOCK_WHILE_WORN", "SOFT", "NO_REPAIR" ],
     "material": [ "plastic", "superalloy", "qt_steel" ],
     "name": { "str_sp": "alloy plating - legs" },
     "description": "A complex armor integrated into your legs and feet, made of lightweight metal encasing a chemical-resistant layer of synthetic skin.  Various service ports, CBM connectors, and dump points for sweat can be seen along its exterior.  It has steel kneepads and toecaps for protection.",
@@ -950,7 +952,7 @@
     "warmth": 15,
     "environmental_protection": 10,
     "material_thickness": 4,
-    "flags": [ "INTEGRATED", "UNBREAKABLE", "SKINTIGHT", "NORMAL", "PADDED", "WATER_FRIENDLY", "SOFT" ],
+    "flags": [ "INTEGRATED", "UNBREAKABLE", "SKINTIGHT", "NORMAL", "PADDED", "WATER_FRIENDLY", "SOFT", "NO_REPAIR" ],
     "material": [ "plastic", "superalloy" ],
     "name": { "str_sp": "alloy plating - torso" },
     "description": "A complex armor integrated into your torso, made of lightweight metal encasing a chemical-resistant layer of synthetic skin.  Various service ports, CBM connectors, and dump points for sweat can be seen along its exterior.  It is particularly thickly armored around your vital organs.",
@@ -994,7 +996,7 @@
     "warmth": 15,
     "environmental_protection": 10,
     "material_thickness": 3,
-    "flags": [ "INTEGRATED", "UNBREAKABLE", "SKINTIGHT", "PADDED", "WATER_FRIENDLY", "HELMET_COMPAT", "SOFT" ],
+    "flags": [ "INTEGRATED", "UNBREAKABLE", "SKINTIGHT", "PADDED", "WATER_FRIENDLY", "HELMET_COMPAT", "SOFT", "NO_REPAIR" ],
     "material": [ "plastic", "superalloy", "qt_steel" ],
     "name": { "str_sp": "alloy plating - head" },
     "description": "A complex armor integrated into your head, made of lightweight metal encasing a chemical-resistant layer of synthetic skin.  Various service ports, CBM connectors, and dump points for sweat can be seen along its exterior.  Has an additional steel layer around your cranium for protection and artificial hair to help maintain your sense of self.",
@@ -1039,7 +1041,7 @@
     "warmth": 10,
     "environmental_protection": 2,
     "material_thickness": 2,
-    "flags": [ "INTEGRATED", "UNBREAKABLE", "SKINTIGHT", "PADDED", "WATER_FRIENDLY", "SOFT" ],
+    "flags": [ "INTEGRATED", "UNBREAKABLE", "SKINTIGHT", "PADDED", "WATER_FRIENDLY", "SOFT", "NO_REPAIR" ],
     "material": [ "plastic", "superalloy" ],
     "name": { "str_sp": "alloy plating - mouth" },
     "description": "A complex armor integrated into your jaw, made of lightweight metal partially encasing a chemical-resistant layer of synthetic skin.",
@@ -1075,7 +1077,7 @@
     "warmth": 5,
     "material_thickness": 3.0,
     "environmental_protection": 10,
-    "flags": [ "INTEGRATED", "UNBREAKABLE", "SKINTIGHT", "SOFT", "WATER_FRIENDLY", "SUN_GLASSES" ],
+    "flags": [ "INTEGRATED", "UNBREAKABLE", "SKINTIGHT", "SOFT", "WATER_FRIENDLY", "SUN_GLASSES", "NO_REPAIR" ],
     "armor": [
       {
         "material": [
@@ -1091,6 +1093,7 @@
     ]
   },
   {
+    "//": "Unobtanium suggests nether screwery may be at play here"
     "id": "armor_bio_blaster",
     "type": "ARMOR",
     "category": "armor",
@@ -1114,7 +1117,9 @@
       "BELTED",
       "WATER_FRIENDLY",
       "OVERSIZE",
-      "PADDED"
+      "PADDED",
+      "NO_REPAIR",
+      "BLOCK_WHILE_WORN"
     ],
     "material": [ "unobtanium", "carbide", "qt_steel" ],
     "name": { "str_sp": "energy blaster arm" },
