@@ -93,6 +93,7 @@
 #include "morale.h"
 #include "morale_types.h"
 #include "mtype.h"
+#include "mutation.h"
 #include "npc.h"
 #include "npc_class.h"
 #include "optional.h"
@@ -142,8 +143,6 @@ static const itype_id itype_usb_drive( "usb_drive" );
 
 static const matype_id style_none( "style_none" );
 
-static const proficiency_id proficiency_prof_parkour( "prof_parkour" );
-
 static const relic_procgen_id relic_procgen_data_cult( "cult" );
 
 static const skill_id skill_chemistry( "chemistry" );
@@ -154,8 +153,6 @@ static const ter_str_id ter_t_pwr_sb_switchgear_l( "t_pwr_sb_switchgear_l" );
 static const ter_str_id ter_t_pwr_sb_switchgear_s( "t_pwr_sb_switchgear_s" );
 static const ter_str_id ter_t_rubble( "t_rubble" );
 static const ter_str_id ter_t_wreckage( "t_wreckage" );
-
-static const trait_id trait_PARKOUR( "PARKOUR" );
 
 static const vpart_id vpart_turret_mount( "turret_mount" );
 
@@ -524,6 +521,10 @@ void Character::trait_data::serialize( JsonOut &json ) const
     json.member( "charge", charge );
     json.member( "powered", powered );
     json.member( "show_sprite", show_sprite );
+    if( variant != nullptr ) {
+        json.member( "variant-parent", variant->parent );
+        json.member( "variant-id", variant->id );
+    }
     json.end_object();
 }
 
@@ -534,6 +535,19 @@ void Character::trait_data::deserialize( const JsonObject &data )
     data.read( "charge", charge );
     data.read( "powered", powered );
     data.read( "show_sprite", show_sprite );
+    if( data.has_member( "variant-parent" ) ) {
+        trait_id parent;
+        std::string variant_id;
+
+        data.read( "variant-parent", parent );
+        data.read( "variant-id", variant_id );
+
+        // No parent == nowhere to look up this variant. It's effectively lost
+        if( !parent.is_valid() ) {
+            return;
+        }
+        variant = parent->variant( variant_id );
+    }
 }
 
 void consumption_event::serialize( JsonOut &json ) const
@@ -742,36 +756,67 @@ void Character::load( const JsonObject &data )
     data.read( "underwater", underwater );
 
     data.read( "traits", my_traits );
+    // If a trait has been migrated, we'll need to add it.
+    // Queue them up to add at the end, because adding and removing at the same time is hard
+    std::set<trait_id> traits_to_add;
     for( auto it = my_traits.begin(); it != my_traits.end(); ) {
         const auto &tid = *it;
         if( tid.is_valid() ) {
             ++it;
-            // Remove after 0.G
-        } else if( tid == trait_PARKOUR ) {
-            it = my_traits.erase( it );
-            add_proficiency( proficiency_prof_parkour );
-        } else {
-            debugmsg( "character %s has invalid trait %s, it will be ignored", get_name(), tid.c_str() );
-            my_traits.erase( it++ );
+            continue;
         }
+
+        const trait_replacement &rules = mutation_branch::trait_migration( tid );
+        if( rules.prof ) {
+            add_proficiency( *rules.prof );
+        } else if( rules.trait ) {
+            traits_to_add.emplace( rules.trait->trait );
+        } else {
+            if( rules.error ) {
+                debugmsg( "character %s has invalid trait %s, it will be ignored", get_name(), tid.str() );
+            }
+        }
+        it = my_traits.erase( it );
+    }
+    for( const trait_id &add : traits_to_add ) {
+        my_traits.emplace( add );
     }
 
     data.read( "mutations", my_mutations );
 
+    // Hold onto the mutations to add at the end...
+    std::map<trait_id, trait_data> muts_to_add;
     for( auto it = my_mutations.begin(); it != my_mutations.end(); ) {
         const trait_id &mid = it->first;
         if( mid.is_valid() ) {
-            on_mutation_gain( mid );
-            cached_mutations.push_back( &mid.obj() );
             ++it;
-            // Remove after 0.G
-        } else if( mid == trait_PARKOUR ) {
-            it = my_mutations.erase( it );
-            add_proficiency( proficiency_prof_parkour );
-        } else {
-            debugmsg( "character %s has invalid mutation %s, it will be ignored", get_name(), mid.c_str() );
-            it = my_mutations.erase( it );
+            continue;
         }
+
+        const trait_replacement &rules = mutation_branch::trait_migration( mid );
+        if( rules.prof ) {
+            add_proficiency( *rules.prof );
+        } else if( rules.trait ) {
+            const trait_id &added = rules.trait->trait;
+            const std::string &added_var = rules.trait->variant;
+            auto add_it = muts_to_add.emplace( added, it->second ).first;
+            add_it->second.variant = added->variant( added_var );
+        } else {
+            if( rules.error ) {
+                debugmsg( "character %s has invalid mutation %s, it will be ignored", get_name(), mid.str() );
+            }
+        }
+        it = my_mutations.erase( it );
+    }
+    for( const std::pair<const trait_id, trait_data> &add : muts_to_add ) {
+        my_mutations.emplace( add.first, add.second );
+    }
+    // We need to ensure that my_mutations contains no invalid mutations before we do this
+    // As every time we add a mutation, we rebuild the enchantment cache, causing errors if
+    // we have invalid mutations.
+    for( const std::pair<const trait_id, trait_data> &mut : my_mutations ) {
+        on_mutation_gain( mut.first );
+        cached_mutations.push_back( &mut.first.obj() );
     }
     recalculate_size();
 
@@ -1530,9 +1575,13 @@ void avatar::load( const JsonObject &data )
         data.read( "grab_type", fake );
     }
 
+    // On Visual Studio array iterators are not pointers, so prevent clang-tidy
+    // from converting this to a pointer type.
+    // NOLINTNEXTLINE(readability-qualified-auto)
     const auto iter = std::find( obj_type_name.begin(), obj_type_name.end(), grab_typestr );
     grab( iter == obj_type_name.end() ?
-          object_type::NONE : static_cast<object_type>( std::distance( obj_type_name.begin(), iter ) ),
+          object_type::NONE : static_cast<object_type>(
+              std::distance( obj_type_name.begin(), iter ) ),
           grab_point );
 
     data.read( "magic", magic );
@@ -2324,7 +2373,7 @@ void inventory::json_save_invcache( JsonOut &json ) const
         json.start_object();
         json.member( elem.first.str() );
         json.start_array();
-        for( const auto &_sym : elem.second ) {
+        for( const char &_sym : elem.second ) {
             json.write( static_cast<int>( _sym ) );
         }
         json.end_array();
@@ -2363,7 +2412,7 @@ void inventory::json_save_items( JsonOut &json ) const
 {
     json.start_array();
     for( const auto &elem : items ) {
-        for( const auto &elem_stack_iter : elem ) {
+        for( const item &elem_stack_iter : elem ) {
             elem_stack_iter.serialize( json );
         }
     }
@@ -3963,6 +4012,7 @@ void mm_region::serialize( JsonOut &jsout ) const
 {
     jsout.start_array();
     for( size_t y = 0; y < MM_REG_SIZE; y++ ) {
+        // NOLINTNEXTLINE(modernize-loop-convert)
         for( size_t x = 0; x < MM_REG_SIZE; x++ ) {
             const shared_ptr_fast<mm_submap> &sm = submaps[x][y];
             if( sm->is_empty() ) {
@@ -3979,6 +4029,7 @@ void mm_region::deserialize( JsonIn &jsin )
 {
     jsin.start_array();
     for( size_t y = 0; y < MM_REG_SIZE; y++ ) {
+        // NOLINTNEXTLINE(modernize-loop-convert)
         for( size_t x = 0; x < MM_REG_SIZE; x++ ) {
             shared_ptr_fast<mm_submap> &sm = submaps[x][y];
             sm = make_shared_fast<mm_submap>();
@@ -4162,7 +4213,7 @@ void addiction::deserialize( const JsonObject &jo )
 void serialize( const recipe_subset &value, JsonOut &jsout )
 {
     jsout.start_array();
-    for( const auto &entry : value ) {
+    for( const recipe * const &entry : value ) {
         jsout.write( entry->ident() );
     }
     jsout.end_array();
@@ -4252,7 +4303,7 @@ void basecamp::serialize( JsonOut &json ) const
             json.start_object();
             json.member( "dir" );
             json.start_array();
-            for( const auto &miss_id : list ) {
+            for( const ui_mission_id &miss_id : list ) {
                 json.start_object();
                 json.member( "mission_id", string_of( miss_id.id ) );
                 json.end_object();
@@ -4299,13 +4350,13 @@ void basecamp::serialize( JsonOut &json ) const
         json.end_array();
         json.member( "salt_water_pipes" );
         json.start_array();
-        for( const auto &pipe : salt_water_pipes ) {
+        for( expansion_salt_water_pipe * const &pipe : salt_water_pipes ) {
             json.start_object();
             json.member( "expansion", pipe->expansion );
             json.member( "connection_direction", pipe->connection_direction );
             json.member( "segments" );
             json.start_array();
-            for( const auto &segment : pipe->segments ) {
+            for( const expansion_salt_water_pipe_segment &segment : pipe->segments ) {
                 json.start_object();
                 json.member( "point", segment.point );
                 json.member( "started", segment.started );
@@ -4670,7 +4721,7 @@ void submap::store( JsonOut &jsout ) const
     // Write out as array of arrays of single entries
     jsout.member( "cosmetics" );
     jsout.start_array();
-    for( const auto &cosm : cosmetics ) {
+    for( const submap::cosmetic_t &cosm : cosmetics ) {
         jsout.start_array();
         jsout.write( cosm.pos.x );
         jsout.write( cosm.pos.y );
@@ -4683,7 +4734,7 @@ void submap::store( JsonOut &jsout ) const
     // Output the spawn points
     jsout.member( "spawns" );
     jsout.start_array();
-    for( const auto &elem : spawns ) {
+    for( const spawn_point &elem : spawns ) {
         jsout.start_array();
         // TODO: json should know how to write string_ids
         jsout.write( elem.type.str() );
@@ -4716,7 +4767,7 @@ void submap::store( JsonOut &jsout ) const
         jsout.write( elem.second.counter );
         jsout.write( elem.second.id.id() );
         jsout.start_array();
-        for( const auto &it : elem.second.components ) {
+        for( const item &it : elem.second.components ) {
             jsout.write( it );
         }
         jsout.end_array();

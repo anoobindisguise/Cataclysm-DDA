@@ -884,8 +884,36 @@
     "id": "WORLDGEN_CONFIRM.QUIT",
     "category": "WORLDGEN_CONFIRM_DIALOG",
     "name": "Exit worldgen screen",
-    "//2": "separate entry, because the global entry also has 'q' and 'Q' listed, which conflicts with the world name entry feature of this dialog",
-    "bindings": [ { "input_method": "keyboard_any", "key": "ESC" }, { "input_method": "mouse", "key": "MOUSE_RIGHT" } ]
+    "bindings": [
+      { "input_method": "keyboard_any", "key": "ESC" },
+      { "input_method": "keyboard_any", "key": "q" },
+      { "input_method": "keyboard_char", "key": "Q" },
+      { "input_method": "keyboard_code", "key": "q", "mod": [ "shift" ] },
+      { "input_method": "keyboard_any", "key": "SPACE" },
+      { "input_method": "mouse", "key": "MOUSE_RIGHT" }
+    ]
+  },
+  {
+    "type": "keybinding",
+    "id": "PICK_MODS",
+    "category": "WORLDGEN_CONFIRM_DIALOG",
+    "name": "Pick random world name",
+    "bindings": [
+      { "input_method": "keyboard_any", "key": "m" },
+      { "input_method": "keyboard_char", "key": "M" },
+      { "input_method": "keyboard_code", "key": "m", "mod": [ "shift" ] }
+    ]
+  },
+  {
+    "type": "keybinding",
+    "id": "ADVANCED_SETTINGS",
+    "category": "WORLDGEN_CONFIRM_DIALOG",
+    "name": "Pick random world name",
+    "bindings": [
+      { "input_method": "keyboard_any", "key": "s" },
+      { "input_method": "keyboard_char", "key": "S" },
+      { "input_method": "keyboard_code", "key": "s", "mod": [ "shift" ] }
+    ]
   },
   {
     "type": "keybinding",
@@ -2178,14 +2206,14 @@
   },
   {
     "type": "keybinding",
-    "name": "Eat",
+    "name": "Consume item (all items)",
     "category": "DEFAULTMODE",
     "id": "eat",
     "bindings": [ { "input_method": "keyboard_char", "key": "E" }, { "input_method": "keyboard_code", "key": "e", "mod": [ "shift" ] } ]
   },
   {
     "type": "keybinding",
-    "name": "Consume item",
+    "name": "Consume item (by type)",
     "category": "DEFAULTMODE",
     "id": "open_consume"
   },
@@ -4020,6 +4048,12 @@
     "category": "NEW_CHAR_TRAITS",
     "name": "Sort traits list",
     "bindings": [ { "input_method": "keyboard_any", "key": "s" } ]
+  },
+  {
+    "type": "keybinding",
+    "id": "SELECT_TRAIT_VARIANT",
+    "name": "Select variant for trait",
+    "bindings": [ { "input_method": "keyboard_char", "key": "S" }, { "input_method": "keyboard_code", "key": "s", "mod": [ "shift" ] } ]
   },
   {
     "type": "keybinding",

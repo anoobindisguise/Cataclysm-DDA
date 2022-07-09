@@ -63,6 +63,7 @@ Use the `Home` key to return to the top.
       - [`flags`](#flags)
       - [`cbms`](#cbms)
       - [`traits`](#traits)
+      - [`requirement`](#requirement)
     - [Recipes](#recipes)
       - [Practice recipes](#practice-recipes)
       - [Recipe requirements](#recipe-requirements)
@@ -81,6 +82,7 @@ Use the `Home` key to return to the top.
     - [Mood Face](#mood-face)
     - [Tool Qualities](#tool-qualities)
     - [Traits/Mutations](#traitsmutations)
+    - [Trait Migrations](#trait-migrations)
     - [Traps](#traps)
     - [Vehicle Groups](#vehicle-groups)
     - [Vehicle Parts](#vehicle-parts)
@@ -221,6 +223,7 @@ Use the `Home` key to return to the top.
   - [`start_name`](#start_name)
   - [`professions`](#professions)
   - [`map_special`](#map_special)
+      - [`requirement`](#requirement-1)
   - [`eocs`](#eocs)
   - [`missions`](#missions-1)
   - [`custom_initial_date`](#custom_initial_date)
@@ -238,6 +241,9 @@ Use the `Home` key to return to the top.
   - [`compatibility`](#compatibility)
   - [`tiles-new`](#tiles-new)
 - [Field types](#field-types)
+- [Option sliders](#option-sliders)
+  - [Option sliders - Fields](#option-sliders---fields)
+  - [Option sliders - Levels](#option-sliders---levels)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -1333,6 +1339,7 @@ A Mutation Category identifies a set of interrelated mutations that as a whole e
 | `memorial_message` | The memorial message to display when a character crosses the associated mutation threshold.
 | `wip`              | A flag indicating that a mutation category is unfinished and shouldn't have consistency tests run on it. See tests/mutation_test.cpp.
 
+
 ### Names
 
 ```C++
@@ -1459,10 +1466,10 @@ Example:
   "junk_threshold": "10 cent", // items below this price will be consumed completely regardless of matches below
   "rates": [ // lower entries override higher ones
       { "item": "hammer", "rate": 1 },
-      { 
+      {
         "item": "hammer",
         "rate": 10,
-        "condition": { "npc_has_var": "hammer_eater", "type": "bool", "context": "dinner", "value": "yes" } 
+        "condition": { "npc_has_var": "hammer_eater", "type": "bool", "context": "dinner", "value": "yes" }
       },
       { "category": "ammo", "rate": 10 },
       { "group": "EXODII_basic_trade", "rate": 100 }
@@ -1478,7 +1485,7 @@ Similar to `shopkeeper_consumption_rates`
   "type": "shopkeeper_blacklist",
   "id": "basic_blacklist",
   "entries": [
-      { 
+      {
         "item": "hammer",
         "condition": { "npc_has_var": "hammer_hater", "type": "bool", "context": "test", "value": "yes" },
         "message": "<npcname> hates this item"
@@ -1586,6 +1593,12 @@ A list of CBM ids that are implanted in the character.
 (optional, array of strings)
 
 A list of trait/mutation ids that are applied to the character.
+
+#### `requirement`
+
+(optional, an achievement ID)
+
+The achievement you need to do to access this profession
 
 ### Recipes
 
@@ -2383,6 +2396,15 @@ at level `2` to the item.
 "debug": false,     //Trait is for debug purposes (default: false)
 "player_display": true, //Trait is displayed in the `@` player display menu and mutations screen
 "vanity": false, //Trait can be changed any time with no cost, like hair, eye color and skin color
+"variants": [ // Cosmetic variants of this mutation
+  {
+    "id": "red", // String (mandatory): id of the variant
+    "name": { "str": "Glass-Half-Full Optimist" } // Name displayed in place of the mutation name
+    "description": "You think the glass is half-full." // Description displayed in place of mutation description, unless append_desc is true.
+    "apped_desc": false // If true, append the description, instead of replacing.
+    "weight": 1 // Used to randomly select variant when this is mutated. Chance of being selected is weight/sum-of-all-weights. If no weight is specified or weight is 0, variant will not be selected.
+  }
+]
 "category": ["MUTCAT_BIRD", "MUTCAT_INSECT"], // Categories containing this mutation
 // prereqs and prereqs2 specify prerequisites of the current mutation
 // Both are optional, but if prereqs2 is specified prereqs must also be specified
@@ -2496,6 +2518,42 @@ at level `2` to the item.
 "mana_modifier": 100               // Positive or negative change to total mana pool
 
 ```
+
+### Trait Migrations
+
+A mutation migration can be used to migrate a mutation that formerly existed gracefully into a proficiency, another mutation (potentially a specific variant), or to simply remove it without noise.
+
+```json
+[
+  {
+    "type": "TRAIT_MIGRATION",
+    "id": "dead_trait1",
+    "trait": "new_trait",
+    "variant": "correct_variant"
+  },
+  {
+    "type": "TRAIT_MIGRATION",
+    "id": "trait_now_prof",
+    "proficiency": "prof_old_trait"
+  },
+  {
+    "type": "TRAIT_MIGRATION",
+    "id": "deleted_trait",
+    "remove": true
+  }
+]
+```
+
+| Identifier    | Description
+|---            |---
+| `type`        | Mandatory. String. Must be `"TRAIT_MIGRATION"`
+| `id`          | Mandatory. String. Id of the trait that has been removed.
+| `trait`       | Optional\*. String. Id of the trait this trait is being migrated to.
+| `variant`     | Optional. String. Can only be specified if `trait` is specified. Id of a variant of `trait` that this mutation will be set to.
+| `proficiency` | Optional\*. String. Id of proficiency that will replace this trait.
+| `remove`      | Optional\*. Boolean. If neither `trait` or `variant` are specified, this must be true.
+
+\*One of these three must be specified.
 
 ### Traps
 
@@ -4800,6 +4858,8 @@ A list of CBM ids that are implanted in the character.
 
 Lists of trait/mutation ids. Traits in "forbidden_traits" are forbidden and can't be selected during the character creation. Traits in "forced_traits" are automatically added to character. Traits in "traits" enables them to be chosen, even if they are not starting traits.
 
+`forced_traits` can also be specified with a variant, as `{ "trait": "trait_id", "variant": "variant_id" }` (replacing just `"trait_id"`).
+
 ## `allowed_locs`
 (optional, array of strings)
 
@@ -4819,6 +4879,12 @@ A list of allowed professions that can be chosen when using this scenario. The f
 (optional, string)
 
 Add a map special to the starting location, see JSON_FLAGS for the possible specials.
+
+#### `requirement`
+
+(optional, an achievement ID)
+
+The achievement you need to do to access this scenario
 
 ## `eocs`
 (optional, array of strings)
@@ -5046,3 +5112,63 @@ Setting of sprite sheets. Same as `tiles-new` field in `tile_config`. Sprite fil
     }
   }
 ```
+
+# Option sliders
+
+```JSON
+{
+  "type": "option_slider",
+  "id": "world_difficulty",
+  "context": "WORLDGEN",
+  "name": "Difficulty",
+  "default": 3,
+  "levels": [
+    {
+      "level": 0,
+      "name": "Cakewalk?",
+      "description": "Monsters are much easier to deal with, and plenty of items can be found.",
+      "options": [
+        { "option": "MONSTER_SPEED", "type": "int", "val": 90 },
+        { "option": "MONSTER_RESILIENCE", "type": "int", "val": 75 },
+        { "option": "SPAWN_DENSITY", "type": "float", "val": 0.8 },
+        { "option": "MONSTER_UPGRADE_FACTOR", "type": "float", "val": 8 },
+        { "option": "ITEM_SPAWNRATE", "type": "float", "val": 1.5 }
+      ]
+    },
+    ...
+  ]
+}
+```
+
+## Option sliders - Fields
+
+| Field       | Description
+|---          |---
+| `"type"`    | _(mandatory)_ Always `"option_slider"`
+| `"id"`      | _(mandatory)_ Uniquely identifies this `option_slider`
+| `"context"` | The hardcoded context in which this `option_slider` is used (ex: the world creation menu shows option sliders in the `WORLDGEN` context)
+| `"name"`    | _(mandatory)_ The translated name of this `option_slider`
+| `"default"` | The default level for this `option_slider` (defaults to 0)
+| `"levels"`  | _(mandatory)_ A list of definitions for each level of this `option_slider`
+
+## Option sliders - Levels
+
+Each object in the `"levels"` field uses these fields:
+
+| Field | Description
+|--- |---
+| `"level"` | _(mandatory)_ The numeric index of this level in the slider.  Indexes start at 0 and increase sequentially.
+| `"name"` | _(mandatory)_ The name of this slider level, acts as a short descriptor for the selected level.
+| `"description"` | A longer description for the effects of this slider level.
+| `"options"` | _(mandatory)_ A list of option values to apply when selecting this slider level.
+
+Each option defines an `"option"` tag that corresponds to an option ID as listed in the
+`options_manager::add_options_*` functions in src/options.cpp. The `"type"` field determines
+how the `"val"` field is interpreted:
+
+| `type`     | `val`
+|---         |---
+| `"int"`    | An integer.  Ex: `"type": "int", "val": 5`
+| `"float"`  | A decimal number.  Ex: `"type": "float", "val": 0.8`
+| `"bool"`   | A boolean.  Ex: `"type": "bool", "val": false`
+| `"string"` | A text value.  Ex: `"type": "string", "val": "crops"`
