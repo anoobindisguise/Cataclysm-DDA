@@ -266,7 +266,7 @@
     "id": "bio_armor_legs",
     "type": "bionic",
     "name": { "str": "Legs Alloy Plating" },
-    "description": "Your legs and feet has been sealed inside an advanced integrated armor, protecting them from physical trauma.",
+    "description": "Your legs and feet have been sealed inside an advanced integrated armor, protecting them from physical trauma.",
     "occupied_bodyparts": [ [ "leg_l", 6 ], [ "leg_r", 6 ], [ "foot_l", 3 ], [ "foot_r", 3 ] ],
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ],
     "mutation_conflicts": [
