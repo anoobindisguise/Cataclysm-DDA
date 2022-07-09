@@ -14,7 +14,11 @@
     "symbol": ":",
     "color": "light_red",
     "location": "underbarrel",
-    "flags": [ "IRREMOVABLE" ],
-    "handling_modifier": 250
+	  "sight_dispersion": 5,
+	  "field_of_view": 3000,
+    "flags": [ "IRREMOVABLE", "LASER_SIGHT" ],
+    "handling_modifier": 50,
+  	"aim_speed_modifier": 250,
+   	"dispersion_modifier": -10
   }
 ]
