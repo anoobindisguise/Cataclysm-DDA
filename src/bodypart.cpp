@@ -399,6 +399,12 @@ void body_part_type::load( const JsonObject &jo, const std::string & )
     optional( jo, was_loaded, "squeamish_penalty", squeamish_penalty, 0 );
 
     optional( jo, was_loaded, "bionic_slots", bionic_slots_, 0 );
+    
+    optional( jo, was_loaded, "is_mechanized", is_mechanized_, false );
+    optional( jo, was_loaded, "artificial_strength", artificial_strength_, 8 );
+    optional( jo, was_loaded, "artificial_dexterity", artificial_dexterity_, 8 );
+    optional( jo, was_loaded, "artificial_intelligence", artificial_intelligence_, 8 );
+    optional( jo, was_loaded, "artificial_perception", artificial_perception_, 8 );
 
     optional( jo, was_loaded, "flags", flags );
     optional( jo, was_loaded, "conditional_flags", conditional_flags );
@@ -1010,6 +1016,26 @@ int bodypart::get_temp_cur() const
 int bodypart::get_temp_conv() const
 {
     return temp_conv;
+}
+
+int bodypart::get_artificial_strength() const
+{
+    return artificial_strength;
+}
+
+int bodypart::get_artificial_dexterity() const
+{
+    return artificial_dexterity;
+}
+
+int bodypart::get_artificial_intelligence() const
+{
+    return artificial_intelligence;
+}
+
+int bodypart::get_artificial_intelligence() const
+{
+    return artificial_perception;
 }
 
 std::array<int, NUM_WATER_TOLERANCE> bodypart::get_mut_drench() const
