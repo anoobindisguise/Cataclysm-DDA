@@ -280,6 +280,13 @@ struct body_part_type {
         body_part_type::type _primary_limb_type = body_part_type::type::num_types;
         // Protection from various damage types
         resistances armor;
+        //mechanization should be set by bionics and will cause the limb to be treated as a machine with various relevant properties
+        bool is_mechanized = false;
+        //fake stats to be used in place of your human ones
+        int artificial_strength = 8;
+        int artifical_dexterity = 8;
+        int artificial_intelligence = 8;
+        int artificial_perception = 8;
 
     public:
         stat_hp_mods hp_mods;
