@@ -1834,7 +1834,7 @@
     "name": { "str": "Cyborg Life Support System" },
     "description": "Your brain and other vital organs are kept alive by an extremely complicated homeostasis system.",
     "occupied_bodyparts": [ [ "torso", 8 ], [ "head", 4 ] ],
-    "flags": [ "BIONIC_POWER_SOURCE", "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ],
+    "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ],
     "canceled_mutations": [
       "FLEET",
       "BIOLUM0",
