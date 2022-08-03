@@ -54,8 +54,10 @@
     "valid": false,
     "purifiable": false,
     "profession": false,
+    "hp_adjustment": 80,
     "points": 0,
     "scent_type": "ROBOT",
+    "types": [ "Cyberframe", "Cybernetic" ],
     "thirst_modifier": -0.75,
     "hunger_modifier": -0.6,
     "can_only_heal_with": [],
@@ -65,7 +67,7 @@
     "healing_resting": -1.0,
     "healthy_rate": 0.0,
     "bleed_resist": 1000,
-    "sweat_multiplier": 0.0
+    "sweat_multiplier": 0.0,
     "flags": [ "NO_DISEASE", "NO_RADIATION", "NO_MINIMAL_HEALING" ]
   }
 ]
