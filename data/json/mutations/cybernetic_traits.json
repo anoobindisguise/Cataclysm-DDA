@@ -66,7 +66,6 @@
     "healthy_rate": 0.0,
     "bleed_resist": 1000,
     "sweat_multiplier": 0.0
-    ],
     "flags": [ "NO_DISEASE", "NO_RADIATION", "NO_MINIMAL_HEALING" ]
   }
 ]
