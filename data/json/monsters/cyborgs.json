@@ -26,8 +26,8 @@
     "armor_bullet": 34,
     "vision_day": 50,
     "revert_to_itype": "bot_broken_cyborg",
-    "special_attacks": [ 
-      [ "PARROT", 800 ] ,
+    "special_attacks": [
+      [ "PARROT", 800 ],
       { "id": "scratch", "damage_max_instance": [ { "damage_type": "cut", "amount": 20, "armor_multiplier": 0.8 } ] },
       { "id": "cut_throat" }
     ],
