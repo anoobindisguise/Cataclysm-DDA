@@ -708,6 +708,19 @@
     "flags": [ "BIONIC_TOGGLED" ]
   },
   {
+    "id": "bio_cqb_faulty",
+    "type": "bionic",
+    "name": { "str": "Faulty Combat Protocols Module" },
+    "description": "A bionic implant that would interface with your nervous system and improve your combat abilities.  However, something seems to have gone wrong - you are unable to shut it off and while in combat, you no longer feel in control of your own body...",
+    "occupied_bodyparts": [ [ "head", 2 ] ],
+    "act_cost": "1 J",
+    "react_cost": "1 J",
+    "deactivate_cost": "2500 kJ",
+    "time": "1 s",
+    "known_ma_styles": [ "style_biojutsu" ],
+    "flags": [ "BIONIC_TOGGLED", "BIONIC_FAULTY" ]
+  },
+  {
     "id": "bio_deformity",
     "type": "bionic",
     "name": { "str": "Bionic-Induced Deformity" },
