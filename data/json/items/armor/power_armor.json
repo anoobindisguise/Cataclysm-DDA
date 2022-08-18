@@ -17,7 +17,7 @@
     "looks_like": "power_armor_basic",
     "color": "light_gray",
     "pocket_data": [
-      { 
+      {
         "pocket_type": "MAGAZINE",
         "rigid": true,
         "ammo_restriction": { "battery": 5000 }
@@ -193,7 +193,7 @@
     "looks_like": "depowered_armor",
     "color": "light_gray",
     "pocket_data": [
-      { 
+      {
         "pocket_type": "MAGAZINE",
         "rigid": true,
         "ammo_restriction": { "battery": 10000 }
@@ -527,7 +527,7 @@
     "looks_like": "power_armor_basic",
     "color": "dark_gray",
     "pocket_data": [
-      { 
+      {
         "pocket_type": "MAGAZINE",
         "rigid": true,
         "ammo_restriction": { "battery": 8000 }
@@ -707,7 +707,7 @@
     "revert_to": "power_armor_heavy",
     "use_action": { "type": "transform", "menu_text": "Turn off", "msg": "The %s armor disengages.", "target": "power_armor_heavy" },
     "pocket_data": [
-      { 
+      {
         "pocket_type": "MAGAZINE",
         "rigid": true,
         "ammo_restriction": { "battery": 8000 }
