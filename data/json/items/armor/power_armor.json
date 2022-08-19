@@ -1088,7 +1088,7 @@
         "material": [
           { "type": "carbide", "covered_by_mat": 100, "thickness": 1.0 },
           { "type": "kevlar_rigid", "covered_by_mat": 100, "thickness": 3.5 },
-          { "type": "superalloy", "covered_by_mat": 100 "thickness": 2.5 },
+          { "type": "superalloy", "covered_by_mat": 100, "thickness": 2.5 },
           { "type": "superalloy", "covered_by_mat": 92, "thickness": 2.0 }
         ],
         "//": "helmet should stop a 5.56x45 in most cases",
@@ -1129,7 +1129,7 @@
         "material": [
           { "type": "carbide", "covered_by_mat": 100, "thickness": 1.0 },
           { "type": "kevlar_rigid", "covered_by_mat": 100, "thickness": 3.5 },
-          { "type": "superalloy", "covered_by_mat": 100 "thickness": 2.5 },
+          { "type": "superalloy", "covered_by_mat": 100, "thickness": 2.5 },
           { "type": "superalloy", "covered_by_mat": 92, "thickness": 2.0 }
         ],
         "//": "powered systems help maanage the weight",
