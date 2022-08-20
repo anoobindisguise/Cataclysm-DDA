@@ -1153,7 +1153,24 @@
     },
     "material_thickness": 7,
     "environmental_protection": 16,
-    "flags": [ "WATCH", "WATERPROOF", "RAINPROOF", "GAS_PROOF", "STURDY", "THERMOMETER", "NORMAL", "OUTER", "SUN_GLASSES", "SWIM_GOGGLES", "COMBAT_TOGGLEABLE", "USE_UPS", "NO_REPAIR", "NANOFAB_REPAIR", "NO_SALVAGE", "PADDED" ],
+    "flags": [
+      "WATCH",
+      "WATERPROOF",
+      "RAINPROOF",
+      "GAS_PROOF",
+      "STURDY",
+      "THERMOMETER",
+      "NORMAL",
+      "OUTER",
+      "SUN_GLASSES",
+      "SWIM_GOGGLES",
+      "COMBAT_TOGGLEABLE",
+      "USE_UPS",
+      "NO_REPAIR",
+      "NANOFAB_REPAIR",
+      "NO_SALVAGE",
+      "PADDED"
+    ],
     "armor": [
       {
         "material": [
