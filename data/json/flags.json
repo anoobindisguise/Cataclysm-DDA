@@ -889,6 +889,11 @@
     "type": "json_flag"
   },
   {
+    "id": "WEAPONS_PLATFORM",
+    "type": "json_flag",
+    "info": "This armor allows you to use emplacement guns without mounting them first."
+  },
+  {
     "id": "POWERARMOR_COMPATIBLE",
     "type": "json_flag",
     "//": "Allows power armor to be worn with compatible armors like ear plugs and mouthpieces.",
