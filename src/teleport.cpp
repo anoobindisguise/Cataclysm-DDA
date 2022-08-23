@@ -192,6 +192,14 @@ bool teleport::teleport_to_point( Creature &critter, tripoint target, bool safe,
                 }
                 //teleport the victim out of the way instead of them being telefragged.
                 teleport( *poor_soul ):
+                }
+            }
+            critter.setpos( target );
+        //player and npc exclusive teleporting effects
+        if( p ) {
+            g->place_player( p->pos() );
+            if( add_teleglow ) {
+                p->add_effect( effect_teleglow, 30_minutes );
             }
         }
         critter.setpos( target );
