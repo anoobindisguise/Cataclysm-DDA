@@ -191,7 +191,7 @@ bool teleport::teleport_to_point( Creature &critter, tripoint target, bool safe,
                     }
                 }
                 //teleport the victim out of the way instead of them being telefragged.
-                poor_soul->teleport():
+                teleport( poor_soul ):
                 }
             }
         }
