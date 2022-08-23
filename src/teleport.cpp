@@ -143,8 +143,8 @@ bool teleport::teleport_to_point( Creature &critter, tripoint target, bool safe,
             const bool poor_soul_is_u = poor_soul->is_avatar();
             bool frag = false;
             //decide whether to frag the target. if it's not the player it's a coinflip. the player is immune unless they have teleglow in which case it's also a coinflip.
-            if( ( one_in( 2 ) && !poor_soul_is_u ) || ( poor_soul_is_u &&
-                    poor_soul->has_effect( effect_teleglow ) && one_in( 2 ) ) ) {
+            if( ( one_in( 2 ) && !poor_soul_is_u && !teleport( *poor_soul ) || ( poor_soul_is_u &&
+                    poor_soul->has_effect( effect_teleglow ) && one_in( 2 ) !teleport( *poor_soul ) ) ) {
                 frag = true;
             }
             if( frag ) {
