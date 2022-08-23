@@ -148,7 +148,7 @@ bool teleport::teleport_to_point( Creature &critter, tripoint target, bool safe,
                 frag = true;
             }
             if( frag ) {
-            if( poor_soul_is_u && display_message ) {
+                if( poor_soul_is_u && display_message ) {
                     add_msg( m_bad, _( "…" ) );
                     add_msg( m_bad, _( "You explode into thousands of fragments." ) );
                 }
