@@ -141,29 +141,57 @@ bool teleport::teleport_to_point( Creature &critter, tripoint target, bool safe,
             return false;
         } else {
             const bool poor_soul_is_u = poor_soul->is_avatar();
-            if( poor_soul_is_u && display_message ) {
-                add_msg( m_bad, _( "…" ) );
-                add_msg( m_bad, _( "You explode into thousands of fragments." ) );
-            }
-            if( p ) {
-                if( display_message ) {
-                    p->add_msg_player_or_npc( m_warning,
-                                              _( "You teleport into %s, and they explode into thousands of fragments." ),
-                                              _( "<npcname> teleports into %s, and they explode into thousands of fragments." ),
-                                              poor_soul->disp_name() );
+            bool frag = false;
+            //decide whether to frag the target. if it's not the player it's a coinflip. the player is immune unless they have teleglow in which case it's also a coinflip.
+            if ( ( one_in( 2 ) && !poor_soul_is_u ) ) || ( poor_soul_is_u && poor_soul->has_effect( effect_teleglow ) && one_in( 2 ) ) ) {
+                frag = true;
+            }            
+            if( frag ) {
+                if( poor_soul_is_u && display_message ) {
+                    add_msg( m_bad, _( "…" ) );
+                    add_msg( m_bad, _( "You explode into thousands of fragments." ) );
                 }
-                get_event_bus().send<event_type::telefrags_creature>( p->getID(), poor_soul->get_name() );
-            } else {
-                if( get_player_view().sees( *poor_soul ) ) {
+                if( p ) {
                     if( display_message ) {
-                        add_msg( m_good, _( "%1$s teleports into %2$s, killing them!" ),
-                                 critter.disp_name(), poor_soul->disp_name() );
+                        p->add_msg_player_or_npc( m_warning,
+                                                  _( "You teleport into %s, and they explode into thousands of fragments." ),
+                                                  _( "<npcname> teleports into %s, and they explode into thousands of fragments." ),
+                                                  poor_soul->disp_name() );
+                    }
+                    get_event_bus().send<event_type::telefrags_creature>( p->getID(), poor_soul->get_name() );
+                } else {
+                    if( get_player_view().sees( *poor_soul ) ) {
+                        if( display_message ) {
+                            add_msg( m_good, _( "%1$s teleports into %2$s, killing them!" ),
+                                     critter.disp_name(), poor_soul->disp_name() );
+                        }
                     }
                 }
+                //Splatter real nice.
+                poor_soul->apply_damage( nullptr, bodypart_id( "torso" ), 9999 );
+                poor_soul->check_dead_state();
+            } else {
+                if( poor_soul_is_u && display_message ) {
+                    add_msg( m_bad, _( "You're forcibly teleported out of the way!" ) );
+                }
+                if( p ) {
+                    if( display_message ) {
+                        p->add_msg_player_or_npc( m_warning,
+                                                  _( "You teleport, causing %s to be forcibly teleported out of your way." ),
+                                                  _( "<npcname> teleports, forcing %s to be forcibly teleported out of their way." ),
+                                                  poor_soul->disp_name() );
+                    }
+                } else {
+                    if( get_player_view().sees( *poor_soul ) ) {
+                        if( display_message ) {
+                            add_msg( m_good, _( "%1$s teleports, causing %2$s to be forcibly teleported out of its way!" ),
+                                     critter.disp_name(), poor_soul->disp_name() );
+                        }
+                    }
+                }
+                //teleport the victim out of the way instead of them being telefragged.
+                poor_soul->teleport():
             }
-            //Splatter real nice.
-            poor_soul->apply_damage( nullptr, bodypart_id( "torso" ), 9999 );
-            poor_soul->check_dead_state();
         }
     }
     critter.setpos( target );
