@@ -191,7 +191,7 @@ bool teleport::teleport_to_point( Creature &critter, tripoint target, bool safe,
                     }
                 }
                 //teleport the victim out of the way instead of them being telefragged.
-                teleport( *poor_soul ):
+                teleport( *poor_soul );
                 }
             }
             critter.setpos( target );
