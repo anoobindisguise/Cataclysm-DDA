@@ -2,8 +2,8 @@
   {
     "id": "gambeson",
     "type": "ARMOR",
-    "name": { "str": "gambeson" },
-    "description": "A thick jacket of quilted fabric, designed to be worn underneath mail or other armor.  Or worn on its own, if you can't afford proper armor.  Use it to loosen it if you want to wear it over your clothes.",
+    "name": { "str": "stuffed cotton gambeson" },
+    "description": "A thick jacket stuffed with fabric scraps, designed to be worn underneath mail or other armor.  Or worn on its own, if you can't afford proper armor.  Gambesons like these are inferior to the quilted version, but they're a lot cheaper and faster to create. Use it to loosen it if you want to wear it over your clothes.",
     "weight": "2800 g",
     "volume": "3 L",
     "price": 20000,
@@ -15,19 +15,37 @@
     "color": "light_gray",
     "warmth": 50,
     "material_thickness": 5,
-    "valid_mods": [ "steel_padded" ],
+    "environmental_protection": 1,
     "flags": [ "VARSIZE", "STURDY" ],
     "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "gambeson_loose", "menu_text": "Loosen" },
     "armor": [
-      { "covers": [ "torso" ], "coverage": 100, "encumbrance": 20 },
-      { "covers": [ "arm_l", "arm_r" ], "coverage": 100, "encumbrance": 20 }
+      {
+        "material": [
+          { "type": "cotton", "covered_by_mat": 100, "thickness": 2 },
+          { "type": "cotton", "covered_by_mat": 95, "thickness": 1.5 },
+          { "type": "cotton", "covered_by_mat": 95, "thickness": 1.5 }
+        ],
+        "covers": [ "torso" ],
+        "coverage": 100,
+        "encumbrance": 20
+      },
+      {
+        "material": [
+          { "type": "cotton", "covered_by_mat": 100, "thickness": 2 },
+          { "type": "cotton", "covered_by_mat": 95, "thickness": 1.5 },
+          { "type": "cotton", "covered_by_mat": 95, "thickness": 1.5 }
+        ],
+        "covers": [ "arm_l", "arm_r" ],
+        "coverage": 100,
+        "encumbrance": 20
+      }
     ]
   },
   {
     "id": "gambeson_vest",
     "type": "ARMOR",
     "name": { "str": "gambeson vest" },
-    "description": "A thick vest of quilted fabric, designed to be worn underneath mail or other armor.  This one has had its sleeves removed.  Use it to loosen it if you want to wear it over your clothes.",
+    "description": "A thick jacket stuffed with fabric scraps, designed to be worn underneath mail or other armor.  Gambesons like these are inferior to the quilted version, but they're a lot cheaper and faster to create.  This one has had its sleeves removed.  Use it to loosen it if you want to wear it over your clothes.",
     "weight": "1400 g",
     "volume": "2 L",
     "price": 20000,
@@ -35,21 +53,32 @@
     "to_hit": -5,
     "material": [ "cotton" ],
     "symbol": "[",
-    "looks_like": "coat_winter",
+    "looks_like": "vest",
     "color": "light_gray",
     "warmth": 50,
     "material_thickness": 5,
-    "valid_mods": [ "steel_padded" ],
+    "environmental_protection": 1,
     "flags": [ "VARSIZE", "STURDY" ],
     "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "gambeson_loose_vest", "menu_text": "Loosen" },
-    "armor": [ { "covers": [ "torso" ], "coverage": 100, "encumbrance": 20 } ]
+    "armor": [
+      {
+        "material": [
+          { "type": "cotton", "covered_by_mat": 100, "thickness": 2 },
+          { "type": "cotton", "covered_by_mat": 95, "thickness": 1.5 },
+          { "type": "cotton", "covered_by_mat": 95, "thickness": 1.5 }
+        ],
+        "covers": [ "leg_l", "leg_r" ],
+        "coverage": 100,
+        "encumbrance": 20
+      }
+    ]
   },
   {
     "id": "gambeson_loose",
     "repairs_like": "gambeson",
     "type": "ARMOR",
     "name": { "str": "gambeson (loose)", "str_pl": "gambesons (loose)" },
-    "description": "A thick jacket of quilted fabric, loosened to be worn as outer armor.  Use it to wear it tighter and be able to put proper armor over it.",
+    "description": "A thick jacket stuffed with fabric scraps, loosened to be worn as outer armor.  Use it to wear it tighter and be able to put proper armor over it.",
     "copy-from": "gambeson",
     "extend": { "flags": [ "OUTER" ] },
     "use_action": {
@@ -64,7 +93,7 @@
     "repairs_like": "gambeson",
     "type": "ARMOR",
     "name": { "str": "gambeson vest (loose)", "str_pl": "gambeson vests (loose)" },
-    "description": "A thick jacket of quilted fabric, loosened to be worn as outer armor.  Use it to wear it tighter and be able to put proper armor over it.",
+    "description": "A thick jacket stuffed with fabric scraps, loosened to be worn as outer armor.  Use it to wear it tighter and be able to put proper armor over it.",
     "copy-from": "gambeson_vest",
     "extend": { "flags": [ "OUTER" ] },
     "use_action": {
@@ -77,8 +106,8 @@
   {
     "id": "gambeson_pants",
     "type": "ARMOR",
-    "name": { "str_sp": "arming pants" },
-    "description": "Thick pants made of quilted fabric, meant to be worn alongside a gambeson under or without armor.",
+    "name": { "str_sp": "stuffed cotton arming pants" },
+    "description": "Thick pants made of cotton stuffed with fabric scraps, meant to be worn alongside a gambeson under or without armor.",
     "weight": "2100 g",
     "volume": "2 L",
     "price": 14000,
@@ -86,91 +115,18 @@
     "to_hit": -5,
     "material": [ "cotton" ],
     "symbol": "[",
-    "looks_like": "pants_ski",
+    "looks_like": "pants",
     "color": "light_gray",
     "warmth": 50,
     "material_thickness": 5,
-    "valid_mods": [ "steel_padded" ],
+    "environmental_protection": 1,
     "flags": [ "VARSIZE", "STURDY" ],
-    "armor": [ { "covers": [ "leg_l", "leg_r" ], "coverage": 100, "encumbrance": 20 } ]
-  },
-  {
-    "id": "k_gambeson",
-    "type": "ARMOR",
-    "name": { "str": "Kevlar gambeson" },
-    "description": "Designed to mimic a thick jacket of quilted fabric that would be worn underneath mail or other armor.  A base layer of aramid fabric has had strips of soft body armor sewn into it to mimic quilting.  Use it to loosen it if you want to wear it over your clothes.",
-    "weight": "11556 g",
-    "volume": "2520 ml",
-    "price": 20000,
-    "price_postapoc": 750,
-    "to_hit": -5,
-    "material": [ { "type": "kevlar_layered" }, { "type": "kevlar" } ],
-    "symbol": "[",
-    "looks_like": "coat_winter",
-    "color": "light_gray",
-    "warmth": 50,
-    "material_thickness": 3.2,
-    "valid_mods": [ "steel_padded" ],
-    "flags": [ "VARSIZE", "STURDY", "NONCONDUCTIVE" ],
-    "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "k_gambeson_loose", "menu_text": "Loosen" },
-    "//": "materials on this guy are slightly weird since it is trying to quilt soft armor panels, so at thickest it is their thickness",
     "armor": [
       {
         "material": [
-          { "type": "kevlar_layered", "covered_by_mat": 95, "thickness": 3.4, "ignore_sheet_thickness": true },
-          { "type": "kevlar", "covered_by_mat": 100, "thickness": 1.0 }
-        ],
-        "covers": [ "torso" ],
-        "coverage": 100,
-        "encumbrance": 20
-      },
-      {
-        "material": [
-          { "type": "kevlar_layered", "covered_by_mat": 95, "thickness": 3.4, "ignore_sheet_thickness": true },
-          { "type": "kevlar", "covered_by_mat": 100, "thickness": 1.0 }
-        ],
-        "covers": [ "arm_l", "arm_r" ],
-        "specifically_covers": [ "arm_upper_l", "arm_lower_l", "arm_upper_r", "arm_lower_r" ],
-        "coverage": 100,
-        "encumbrance": 20
-      },
-      {
-        "material": [
-          { "type": "kevlar_layered", "covered_by_mat": 70, "thickness": 3.4, "ignore_sheet_thickness": true },
-          { "type": "kevlar", "covered_by_mat": 100, "thickness": 1.0 }
-        ],
-        "covers": [ "arm_l", "arm_r" ],
-        "specifically_covers": [ "arm_elbow_l", "arm_shoulder_l", "arm_elbow_r", "arm_shoulder_r" ],
-        "coverage": 100,
-        "encumbrance": 0,
-        "//": "skip second entry for arm encumbrance"
-      }
-    ]
-  },
-  {
-    "id": "k_gambeson_vest",
-    "type": "ARMOR",
-    "name": { "str": "Kevlar gambeson vest" },
-    "description": "Designed to mimic a thick vest of quilted fabric that would be worn underneath mail or other armor.  A base layer of aramid fabric has had strips of soft body armor sewn into it to mimic quilting.  Use it to loosen it if you want to wear it over your clothes.",
-    "weight": "6200 g",
-    "volume": "1670 ml",
-    "price": 20000,
-    "price_postapoc": 600,
-    "to_hit": -5,
-    "material": [ { "type": "kevlar_layered" }, { "type": "kevlar" } ],
-    "symbol": "[",
-    "looks_like": "coat_winter",
-    "color": "light_gray",
-    "warmth": 50,
-    "material_thickness": 3.2,
-    "valid_mods": [ "steel_padded" ],
-    "flags": [ "VARSIZE", "STURDY", "NONCONDUCTIVE" ],
-    "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "k_gambeson_vest_loose", "menu_text": "Loosen" },
-    "armor": [
-      {
-        "material": [
-          { "type": "kevlar_layered", "covered_by_mat": 95, "thickness": 3.4, "ignore_sheet_thickness": true },
-          { "type": "kevlar", "covered_by_mat": 100, "thickness": 1.0 }
+          { "type": "cotton", "covered_by_mat": 100, "thickness": 2 },
+          { "type": "cotton", "covered_by_mat": 95, "thickness": 1.5 },
+          { "type": "cotton", "covered_by_mat": 95, "thickness": 1.5 }
         ],
         "covers": [ "torso" ],
         "coverage": 100,
@@ -179,54 +135,36 @@
     ]
   },
   {
-    "id": "k_gambeson_loose",
-    "repairs_like": "k_gambeson",
+    "id": "gambeson_sleeve",
     "type": "ARMOR",
-    "name": { "str": "Kevlar gambeson (loose)", "str_pl": "Kevlar gambesons (loose)" },
-    "description": "A thick jacket of quilted fabric, loosened to be worn as outer armor.  This one incorporates Kevlar layers added for better protection.  Use it to wear it tighter and be able to put proper armor over it.",
-    "copy-from": "k_gambeson",
-    "extend": { "flags": [ "OUTER" ] },
-    "use_action": {
-      "type": "transform",
-      "msg": "You adjust your Kevlar gambeson a bit tighter.",
-      "target": "k_gambeson",
-      "menu_text": "Adjust tighter"
-    }
-  },
-  {
-    "id": "k_gambeson_vest_loose",
-    "repairs_like": "k_gambeson",
-    "type": "ARMOR",
-    "name": { "str": "Kevlar gambeson vest (loose)", "str_pl": "Kevlar gambeson vests (loose)" },
-    "description": "A thick vest of quilted fabric, loosened to be worn as outer armor.  This one incorporates Kevlar layers added for better protection.  Use it to wear it tighter and be able to put proper armor over it.",
-    "copy-from": "k_gambeson_vest",
-    "extend": { "flags": [ "OUTER" ] },
-    "use_action": {
-      "type": "transform",
-      "msg": "You adjust your Kevlar gambeson a bit tighter.",
-      "target": "k_gambeson_vest",
-      "menu_text": "Adjust tighter"
-    }
-  },
-  {
-    "id": "k_gambeson_pants",
-    "type": "ARMOR",
-    "name": { "str": "Kevlar arming pants", "str_pl": "pairs of Kevlar arming pants" },
-    "description": "Thick pants made of quilted fabric, meant to be worn alongside a gambeson under or without armor.  This one incorporates Kevlar layers added for better protection.",
-    "weight": "9300 g",
-    "volume": "2000 ml",
-    "price": 14000,
-    "price_postapoc": 600,
-    "to_hit": -5,
-    "material": [ { "type": "kevlar_layered", "portion": 6 }, { "type": "kevlar", "portion": 4 } ],
+    "category": "armor",
+    "name": { "str": "pair of stuffed cotton gambeson sleeves", "str_pl": "pairs of stuffed cotton gambeson sleeves" },
+    "description": "A pair of thick cotton sleeves stuffed with fabric scraps.",
+    "weight": "1380 g",
+    "volume": "500 ml",
+    "price": 1200,
+    "price_postapoc": 400,
+    "to_hit": 1,
+    "material": [ "cotton" ],
     "symbol": "[",
-    "looks_like": "pants_ski",
+    "looks_like": "arm_warmers",
     "color": "light_gray",
     "warmth": 50,
-    "material_thickness": 3.2,
-    "valid_mods": [ "steel_padded" ],
-    "flags": [ "VARSIZE", "STURDY", "NONCONDUCTIVE" ],
-    "armor": [ { "covers": [ "leg_l", "leg_r" ], "coverage": 100, "encumbrance": 20 } ]
+    "material_thickness": 5,
+    "environmental_protection": 1,
+    "flags": [ "VARSIZE", "STURDY" ],
+    "armor": [
+      {
+        "material": [
+          { "type": "cotton", "covered_by_mat": 100, "thickness": 2 },
+          { "type": "cotton", "covered_by_mat": 95, "thickness": 1.5 },
+          { "type": "cotton", "covered_by_mat": 95, "thickness": 1.5 }
+        ],
+        "covers": [ "arm_l", "arm_r" ],
+        "coverage": 100,
+        "encumbrance": 20
+      }
+    ]
   },
   {
     "id": "xl_gambeson",
@@ -261,7 +199,7 @@
     "repairs_like": "gambeson",
     "type": "ARMOR",
     "name": { "str": "XS gambeson (loose)", "str_pl": "XS gambesons (loose)" },
-    "description": "A thick vest of quilted fabric, loosened to be worn as outer armor, coming in size XS.  Use it to wear it tighter and be able to put proper armor over it.",
+    "description": "A thick jacket stuffed with fabric scraps, loosened to be worn as outer armor, coming in size XS.  Use it to wear it tighter and be able to put proper armor over it.",
     "copy-from": "gambeson_xs",
     "extend": { "flags": [ "OUTER" ] },
     "use_action": {
@@ -286,7 +224,7 @@
     "repairs_like": "gambeson_vest",
     "type": "ARMOR",
     "name": { "str": "XS gambeson vest (loose)", "str_pl": "XS gambeson vests (loose)" },
-    "description": "A thick vest of quilted fabric, loosened to be worn as outer armor, coming in size XS with removed sleeves.  Use it to wear it tighter and be able to put proper armor over it.",
+    "description": "A thick vest stuffed with fabric scraps, loosened to be worn as outer armor, coming in size XS with removed sleeves.  Use it to wear it tighter and be able to put proper armor over it.",
     "copy-from": "gambeson_vest_xs",
     "extend": { "flags": [ "OUTER" ] },
     "use_action": {
@@ -331,6 +269,160 @@
       "target": "xl_gambeson_vest",
       "menu_text": "Adjust tighter"
     }
+  },
+  {
+    "id": "xl_gambeson_sleeve",
+    "type": "ARMOR",
+    "name": { "str": "pair of XL gambeson sleeves", "str_pl": "pairs of XL gambeson sleeves" },
+    "description": "A pair of extra large thick cotton sleeves stuffed with fabric scraps.",
+    "copy-from": "gambeson_sleeve",
+    "proportional": { "weight": 1.125, "volume": 1.13, "price": 1.25 },
+    "extend": { "flags": [ "OVERSIZE" ] }
+  },
+  {
+    "id": "xs_gambeson_sleeve",
+    "type": "ARMOR",
+    "name": { "str": "pair of XS gambeson sleeves", "str_pl": "pairs of XS gambeson sleeves" },
+    "description": "A pair of extra small thick cotton sleeves stuffed with fabric scraps.",
+    "copy-from": "gambeson_sleeve",
+    "proportional": { "weight": 0.75, "volume": 0.75, "price": 0.5 },
+    "extend": { "flags": [ "UNDERSIZE" ] }
+  },
+  {
+    "id": "k_gambeson",
+    "type": "ARMOR",
+    "name": { "str": "Kevlar gambeson" },
+    "description": "A gambeson-equivalent made of the best fabrics the pre-Cataclysm world had to offer.  Sheets of Kevlar are tightly layered and coated in a waterproof outerlayer to protect them from sun degradation.  Use it to loosen it if you want to wear it over your clothes.",
+    "weight": "11556 g",
+    "volume": "2520 ml",
+    "price": 20000,
+    "price_postapoc": 750,
+    "to_hit": -5,
+    "material": [ "kevlar", "kevlar_layered", "nylon", "WATERPROOF" ],
+    "symbol": "[",
+    "looks_like": "gambeson",
+    "color": "light_gray",
+    "warmth": 50,
+    "material_thickness": 5.0,
+    "environmental_protection": 2,
+    "flags": [ "VARSIZE", "STURDY", "NONCONDUCTIVE" ],
+    "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "k_gambeson_loose", "menu_text": "Loosen" },
+    "//": "You're essentially constructing a jacket by layering individual kevlar sheets, creating a layered kevlar panel in the shape of a jacket",
+    "armor": [
+      {
+        "material": [
+          { "type": "kevlar_layered", "covered_by_mat": 100, "thickness": 4.4 },
+          { "type": "kevlar", "covered_by_mat": 100, "thickness": 0.3 },
+          { "type": "nylon", "covered_by_mat": 100, "thickness": 0.3 }
+        ],
+        "covers": [ "torso" ],
+        "coverage": 100,
+        "encumbrance": 20
+      },
+      {
+        "material": [
+          { "type": "kevlar_layered", "covered_by_mat": 100, "thickness": 4.4 },
+          { "type": "kevlar", "covered_by_mat": 100, "thickness": 0.3 },
+          { "type": "nylon", "covered_by_mat": 100, "thickness": 0.3 }
+        ],
+        "covers": [ "arm_l", "arm_r" ],
+        "coverage": 100,
+        "encumbrance": 20
+      }
+    ]
+  },
+  {
+    "id": "k_gambeson_vest",
+    "type": "ARMOR",
+    "name": { "str": "Kevlar gambeson vest" },
+    "description": "A gambeson-equivalent made of the best fabrics the pre-Cataclysm world had to offer, with the sleeves removed.  Sheets of Kevlar are tightly layered and coated in a waterproof outerlayer to protect them from sun degradation. Use it to loosen it if you want to wear it over your clothes.",
+    "weight": "6200 g",
+    "volume": "1670 ml",
+    "price": 20000,
+    "price_postapoc": 600,
+    "to_hit": -5,
+    "material": [ "kevlar", "kevlar_layered", "nylon" ],
+    "symbol": "[",
+    "looks_like": "gambeson_vest",
+    "color": "light_gray",
+    "warmth": 50,
+    "material_thickness": 5.0,
+    "environmental_protection": 2,
+    "flags": [ "VARSIZE", "STURDY", "NONCONDUCTIVE", "WATERPROOF" ],
+    "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "k_gambeson_vest_loose", "menu_text": "Loosen" },
+    "armor": [
+      {
+        "material": [
+          { "type": "kevlar_layered", "covered_by_mat": 100, "thickness": 4.4 },
+          { "type": "kevlar", "covered_by_mat": 100, "thickness": 0.3 },
+          { "type": "nylon", "covered_by_mat": 100, "thickness": 0.3 }
+        ],
+        "covers": [ "torso" ],
+        "coverage": 100,
+        "encumbrance": 20
+      }
+    ]
+  },
+  {
+    "id": "k_gambeson_loose",
+    "repairs_like": "k_gambeson",
+    "type": "ARMOR",
+    "name": { "str": "Kevlar gambeson (loose)", "str_pl": "Kevlar gambesons (loose)" },
+    "description": "A gambeson-equivalent made of the best fabrics the pre-Cataclysm world had to offer.  Sheets of Kevlar are tightly layered and coated in a waterproof outerlayer to protect them from sun degradation. Use it to wear it tighter and be able to put proper armor over it.",
+    "copy-from": "k_gambeson",
+    "extend": { "flags": [ "OUTER" ] },
+    "use_action": {
+      "type": "transform",
+      "msg": "You adjust your Kevlar gambeson a bit tighter.",
+      "target": "k_gambeson",
+      "menu_text": "Adjust tighter"
+    }
+  },
+  {
+    "id": "k_gambeson_vest_loose",
+    "repairs_like": "k_gambeson",
+    "type": "ARMOR",
+    "name": { "str": "Kevlar gambeson vest (loose)", "str_pl": "Kevlar gambeson vests (loose)" },
+    "description": "A gambeson-equivalent made of the best fabrics the pre-Cataclysm world had to offer, with the sleeves removed.  Sheets of Kevlar are tightly layered and coated in a waterproof outerlayer to protect them from sun degradation.  Use it to wear it tighter and be able to put proper armor over it.",
+    "copy-from": "k_gambeson_vest",
+    "extend": { "flags": [ "OUTER" ] },
+    "use_action": {
+      "type": "transform",
+      "msg": "You adjust your Kevlar gambeson a bit tighter.",
+      "target": "k_gambeson_vest",
+      "menu_text": "Adjust tighter"
+    }
+  },
+  {
+    "id": "k_gambeson_pants",
+    "type": "ARMOR",
+    "name": { "str": "Kevlar arming pants", "str_pl": "pairs of Kevlar arming pants" },
+    "description": "A modern equivalent of historical arming pants made of the best fabrics the pre-Cataclysm world had to offer.  Sheets of Kevlar are tightly layered and coated in a waterproof outerlayer to protect them from sun degradation.",
+    "weight": "9300 g",
+    "volume": "2000 ml",
+    "price": 14000,
+    "price_postapoc": 600,
+    "to_hit": -5,
+    "material": [ "kevlar", "kevlar_layered", "nylon" ],
+    "symbol": "[",
+    "looks_like": "gambeson_pants",
+    "color": "light_gray",
+    "warmth": 50,
+    "material_thickness": 5.0,
+    "environmental_protection": 3,
+    "flags": [ "VARSIZE", "STURDY", "NONCONDUCTIVE", "WATERPROOF" ],
+    "armor": [
+      {
+        "material": [
+          { "type": "kevlar_layered", "covered_by_mat": 100, "thickness": 4.4 },
+          { "type": "kevlar", "covered_by_mat": 100, "thickness": 0.3 },
+          { "type": "nylon", "covered_by_mat": 100, "thickness": 0.3 }
+        ],
+        "covers": [ "leg_l", "leg_r" ],
+        "coverage": 100,
+        "encumbrance": 20
+      }
+    ]
   },
   {
     "id": "xl_k_gambeson",
@@ -390,5 +482,757 @@
       "target": "xl_k_gambeson",
       "menu_text": "Adjust tighter"
     }
+  },
+  {
+    "id": "k_gambeson_sleeve",
+    "type": "ARMOR",
+    "category": "armor",
+    "name": { "str": "pair of Kevlar gambeson sleeves", "str_pl": "pairs of Kevlar gambeson sleeves" },
+    "description": "Thick sleeves made of the best fabrics the pre-Cataclysm world had to offer, roughly equivalent to those of a historical gambeson.  Sheets of Kevlar are tightly layered and coated in a waterproof outerlayer to protect them from sun degradation.",
+    "weight": "986 g",
+    "volume": "840 ml",
+    "price": 1200,
+    "price_postapoc": 400,
+    "to_hit": 1,
+    "material": [ "kevlar", "kevlar_layered", "nylon", "WATERPROOF" ],
+    "symbol": "[",
+    "looks_like": "gambeson_sleeve",
+    "color": "light_gray",
+    "warmth": 50,
+    "material_thickness": 5.0,
+    "environmental_protection": 3,
+    "flags": [ "VARSIZE", "STURDY" ],
+    "armor": [
+      {
+        "material": [
+          { "type": "kevlar_layered", "covered_by_mat": 100, "thickness": 4.4 },
+          { "type": "kevlar", "covered_by_mat": 100, "thickness": 0.3 },
+          { "type": "nylon", "covered_by_mat": 100, "thickness": 0.3 }
+        ],
+        "covers": [ "arm_l", "arm_r" ],
+        "coverage": 100,
+        "encumbrance": 20
+      }
+    ]
+  },
+  {
+    "id": "xl_k_gambeson_sleeve",
+    "type": "ARMOR",
+    "name": { "str": "pair of XL Kevlar gambeson sleeves", "str_pl": "pairs of XL Kevlar gambeson sleeves" },
+    "description": "A pair of extra large arm sleeves made from layers of Kevlar.",
+    "copy-from": "k_gambeson_sleeve",
+    "proportional": { "weight": 1.125, "volume": 1.13, "price": 1.25 },
+    "extend": { "flags": [ "OVERSIZE" ] }
+  },
+  {
+    "id": "xs_k_gambeson_sleeve",
+    "type": "ARMOR",
+    "name": { "str": "pair of XS Kevlar gambeson sleeves", "str_pl": "pairs of XS Kevlar gambeson sleeves" },
+    "description": "A pair of extra small arm sleeves made from heavy quilted fabric and Kevlar.",
+    "copy-from": "k_gambeson_sleeve",
+    "proportional": { "weight": 0.75, "volume": 0.75, "price": 0.5 },
+    "extend": { "flags": [ "UNDERSIZE" ] }
+  },
+  {
+    "id": "q_gambeson",
+    "type": "ARMOR",
+    "name": { "str": "quilted cotton gambeson" },
+    "description": "A thick jacket of quilted cotton, designed to be worn underneath mail or other armor.  Or worn on its own, if you can't afford proper armor.  Due to its more rigorous construction it is more protective than a stuffed variant.  Use it to loosen it if you want to wear it over your clothes.",
+    "weight": "2800 g",
+    "volume": "3000 L ml",
+    "price": 20000,
+    "price_postapoc": 750,
+    "to_hit": -5,
+    "material": [ "cotton" ],
+    "symbol": "[",
+    "looks_like": "gambeson",
+    "color": "light_gray",
+    "warmth": 50,
+    "material_thickness": 5.0,
+    "environmental_protection": 2,
+    "flags": [ "VARSIZE", "STURDY", "NONCONDUCTIVE" ],
+    "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "q_gambeson_loose", "menu_text": "Loosen" },
+    "armor": [
+      {
+        "material": [
+          { "type": "cotton", "covered_by_mat": 100, "thickness": 5.0 }
+        ],
+        "covers": [ "torso" ],
+        "coverage": 100,
+        "encumbrance": 20
+      },
+      {
+        "material": [
+          { "type": "cotton", "covered_by_mat": 100, "thickness": 5.0 }
+        ],
+        "covers": [ "arm_l", "arm_r" ],
+        "coverage": 100,
+        "encumbrance": 20
+      }
+    ]
+  },
+  {
+    "id": "q_gambeson_vest",
+    "type": "ARMOR",
+    "name": { "str": "quilted cotton gambeson vest" },
+    "description": "A thick vest of quilted cotton, designed to be worn underneath mail or other armor.  This one has had its sleeves removed.  Use it to loosen it if you want to wear it over your clothes.",
+    "weight": "1400 g",
+    "volume": "2000 ml",
+    "price": 20000,
+    "price_postapoc": 600,
+    "to_hit": -5,
+    "material": [ "cotton" ],
+    "symbol": "[",
+    "looks_like": "gambeson_vest",
+    "color": "light_gray",
+    "warmth": 50,
+    "material_thickness": 5.0,
+    "environmental_protection": 2,
+    "flags": [ "VARSIZE", "STURDY", "NONCONDUCTIVE" ],
+    "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "q_gambeson_vest_loose", "menu_text": "Loosen" },
+    "armor": [
+      {
+        "material": [
+          { "type": "cotton", "covered_by_mat": 100, "thickness": 5.0 }
+        ],
+        "covers": [ "torso" ],
+        "coverage": 100,
+        "encumbrance": 20
+      }
+    ]
+  },
+  {
+    "id": "q_gambeson_loose",
+    "repairs_like": "q_gambeson",
+    "type": "ARMOR",
+    "name": { "str": "quilted cotton gambeson (loose)", "str_pl": "quilted cotton gambesons (loose)" },
+    "description": "A thick jacket of quilted cotton, designed to be worn underneath mail or other armor.  Due to its more rigorous construction it is more protective than a stuffed variant.  Use it to wear it tighter and be able to put proper armor over it.",
+    "copy-from": "q_gambeson",
+    "extend": { "flags": [ "OUTER" ] },
+    "use_action": {
+      "type": "transform",
+      "msg": "You adjust your %s a bit tighter.",
+      "target": "q_gambeson",
+      "menu_text": "Adjust tighter"
+    }
+  },
+  {
+    "id": "q_gambeson_vest_loose",
+    "repairs_like": "q_gambeson",
+    "type": "ARMOR",
+    "name": { "str": "quilted cotton gambeson vest (loose)", "str_pl": "quilted cotton gambeson vests (loose)" },
+    "description": "A thick vest of quilted cotton, designed to be worn underneath mail or other armor.  Due to its more rigorous construction it is more protective than a stuffed variant.  This one has had its sleeves removed.  Use it to wear it tighter and be able to put proper armor over it.",
+    "copy-from": "q_gambeson_vest",
+    "extend": { "flags": [ "OUTER" ] },
+    "use_action": {
+      "type": "transform",
+      "msg": "You adjust your %s a bit tighter.",
+      "target": "q_gambeson_vest",
+      "menu_text": "Adjust tighter"
+    }
+  },
+  {
+    "id": "q_gambeson_pants",
+    "type": "ARMOR",
+    "name": { "str": "quilted cotton arming pants", "str_pl": "pairs of quilted cotton arming pants" },
+    "description": "Thick pants made of quilted cotton, meant to be worn alongside a gambeson under or without armor.  Due to its more rigorous construction it is more protective than a stuffed variant.",
+    "weight": "2100 g",
+    "volume": "2000 ml",
+    "price": 14000,
+    "price_postapoc": 600,
+    "to_hit": -5,
+    "material": [ "cotton" ],
+    "symbol": "[",
+    "looks_like": "gambeson_pants",
+    "color": "light_gray",
+    "warmth": 50,
+    "material_thickness": 5.0,
+    "environmental_protection": 2,
+    "flags": [ "VARSIZE", "STURDY", "NONCONDUCTIVE" ],
+    "armor": [
+      {
+        "material": [
+          { "type": "cotton", "covered_by_mat": 100, "thickness": 5.0 }
+        ],
+        "covers": [ "leg_l", "leg_r" ],
+        "coverage": 100,
+        "encumbrance": 20
+      }
+    ]
+  },
+  {
+    "id": "xl_q_gambeson",
+    "type": "ARMOR",
+    "name": { "str": "XL quilted cotton gambeson" },
+    "copy-from": "q_gambeson",
+    "proportional": { "weight": 1.125, "volume": 1.13, "price": 1.25 },
+    "extend": { "flags": [ "OVERSIZE" ] },
+    "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "xl_q_gambeson_loose", "menu_text": "Loosen" }
+  },
+  {
+    "id": "xl_q_gambeson_vest",
+    "type": "ARMOR",
+    "name": { "str": "XL quilted cotton gambeson vest" },
+    "copy-from": "q_gambeson_vest",
+    "proportional": { "weight": 1.125, "volume": 1.13, "price": 1.25 },
+    "extend": { "flags": [ "OVERSIZE" ] },
+    "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "xl_q_gambeson_vest_loose", "menu_text": "Loosen" }
+  },
+  {
+    "id": "q_gambeson_xs",
+    "type": "ARMOR",
+    "copy-from": "q_gambeson",
+    "looks_like": "gambeson_vest",
+    "name": { "str": "XS quilted cotton gambeson" },
+    "proportional": { "weight": 0.75, "volume": 0.75, "price": 0.5 },
+    "extend": { "flags": [ "UNDERSIZE" ] }
+  },
+  {
+    "id": "q_gambeson_vest_xs",
+    "type": "ARMOR",
+    "copy-from": "q_gambeson_vest",
+    "looks_like": "q_gambeson_vest",
+    "name": { "str": "XS quilted cotton gambeson vest" },
+    "proportional": { "weight": 0.75, "volume": 0.75, "price": 0.5 },
+    "extend": { "flags": [ "UNDERSIZE" ] },
+    "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "q_gambeson_vest_xs_loose", "menu_text": "Loosen" }
+  },
+  {
+    "id": "xl_q_gambeson_pants",
+    "type": "ARMOR",
+    "name": { "str": "XL quilted cotton arming pants", "str_pl": "pairs of XL quilted cotton arming pants" },
+    "copy-from": "q_gambeson_pants",
+    "proportional": { "weight": 1.125, "volume": 1.13, "price": 1.25 },
+    "extend": { "flags": [ "OVERSIZE" ] }
+  },
+  {
+    "id": "xl_q_gambeson_loose",
+    "repairs_like": "xl_q_gambeson",
+    "type": "ARMOR",
+    "name": { "str": "XL quilted cotton gambeson (loose)", "str_pl": "XL quilted cotton gambesons (loose)" },
+    "copy-from": "xl_q_gambeson",
+    "extend": { "flags": [ "OUTER" ] },
+    "use_action": {
+      "type": "transform",
+      "msg": "You adjust your %s a bit tighter.",
+      "target": "xl_q_gambeson",
+      "menu_text": "Adjust tighter"
+    }
+  },
+  {
+    "id": "q_gambeson_sleeve",
+    "type": "ARMOR",
+    "category": "armor",
+    "name": { "str": "pair of quilted cotton gambeson sleeves", "str_pl": "pairs of quilted cotton gambeson sleeves" },
+    "description": "A pair of thick sleeves made of quilted cotton.  Due to its more rigorous construction it is more protective than a stuffed variant.",
+    "weight": "1400 g",
+    "volume": "500 ml",
+    "price": 1200,
+    "price_postapoc": 400,
+    "to_hit": 1,
+    "material": [ "cotton" ],
+    "symbol": "[",
+    "looks_like": "gambeson_sleeve",
+    "color": "light_gray",
+    "warmth": 50,
+    "material_thickness": 5.0,
+    "environmental_protection": 2,
+    "flags": [ "VARSIZE", "STURDY" ],
+    "armor": [
+      {
+        "material": [
+          { "type": "cotton", "covered_by_mat": 100, "thickness": 5.0 }
+        ],
+        "covers": [ "arm_l", "arm_r" ],
+        "coverage": 100,
+        "encumbrance": 20
+      }
+    ]
+  },
+  {
+    "id": "xl_q_gambeson_sleeve",
+    "type": "ARMOR",
+    "name": { "str": "pair of XL quilted cotton gambeson sleeves", "str_pl": "pairs of XL quilted cotton gambeson sleeves" },
+    "description": "A pair of extra large thick sleeves made of quilted cotton.  Due to its more rigorous construction it is more protective than a stuffed variant.",
+    "copy-from": "q_gambeson_sleeve",
+    "proportional": { "weight": 1.125, "volume": 1.13, "price": 1.25 },
+    "extend": { "flags": [ "OVERSIZE" ] }
+  },
+  {
+    "id": "xs_q_gambeson_sleeve",
+    "type": "ARMOR",
+    "name": { "str": "pair of XS quilted cotton gambeson sleeves", "str_pl": "pairs of XS quilted cotton gambeson sleeves" },
+    "description": "A pair of extra small thick sleeves made of quilted cotton.  Due to its more rigorous construction it is more protective than a stuffed variant.",
+    "copy-from": "q_gambeson_sleeve",
+    "proportional": { "weight": 0.75, "volume": 0.75, "price": 0.5 },
+    "extend": { "flags": [ "UNDERSIZE" ] }
+  },
+  {
+    "id": "w_gambeson",
+    "type": "ARMOR",
+    "name": { "str": "wool gambeson" },
+    "description": "A thick jacket of quilted wool, designed to be worn underneath mail or other armor.  Or worn on its own, if you can't afford proper armor.  Use it to loosen it if you want to wear it over your clothes.",
+    "weight": "2800 g",
+    "volume": "3000 L ml",
+    "price": 20000,
+    "price_postapoc": 750,
+    "to_hit": -5,
+    "material": [ "wool" ],
+    "symbol": "[",
+    "looks_like": "gambeson",
+    "color": "light_gray",
+    "warmth": 50,
+    "material_thickness": 5.0,
+    "environmental_protection": 2,
+    "flags": [ "VARSIZE", "STURDY", "NONCONDUCTIVE" ],
+    "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "w_gambeson_loose", "menu_text": "Loosen" },
+    "armor": [
+      {
+        "material": [
+          { "type": "wool", "covered_by_mat": 100, "thickness": 5.0 }
+        ],
+        "covers": [ "torso" ],
+        "coverage": 100,
+        "encumbrance": 20
+      },
+      {
+        "material": [
+          { "type": "wool", "covered_by_mat": 100, "thickness": 5.0 }
+        ],
+        "covers": [ "arm_l", "arm_r" ],
+        "coverage": 100,
+        "encumbrance": 20
+      }
+    ]
+  },
+  {
+    "id": "w_gambeson_vest",
+    "type": "ARMOR",
+    "name": { "str": "wool gambeson vest" },
+    "description": "A thick vest of quilted wool, designed to be worn underneath mail or other armor.  This one has had its sleeves removed.  Use it to loosen it if you want to wear it over your clothes.",
+    "weight": "1400 g",
+    "volume": "2000 ml",
+    "price": 20000,
+    "price_postapoc": 600,
+    "to_hit": -5,
+    "material": [ "wool" ],
+    "symbol": "[",
+    "looks_like": "gambeson_vest",
+    "color": "light_gray",
+    "warmth": 50,
+    "material_thickness": 5.0,
+    "environmental_protection": 2,
+    "flags": [ "VARSIZE", "STURDY", "NONCONDUCTIVE" ],
+    "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "w_gambeson_vest_loose", "menu_text": "Loosen" },
+    "armor": [
+      {
+        "material": [
+          { "type": "wool", "covered_by_mat": 100, "thickness": 5.0 }
+        ],
+        "covers": [ "torso" ],
+        "coverage": 100,
+        "encumbrance": 20
+      }
+    ]
+  },
+  {
+    "id": "w_gambeson_loose",
+    "repairs_like": "w_gambeson",
+    "type": "ARMOR",
+    "name": { "str": "wool gambeson (loose)", "str_pl": "wool gambesons (loose)" },
+    "description": "A thick jacket of quilted wool, designed to be worn underneath mail or other armor.  Use it to wear it tighter and be able to put proper armor over it.",
+    "copy-from": "w_gambeson",
+    "extend": { "flags": [ "OUTER" ] },
+    "use_action": {
+      "type": "transform",
+      "msg": "You adjust your %s a bit tighter.",
+      "target": "w_gambeson",
+      "menu_text": "Adjust tighter"
+    }
+  },
+  {
+    "id": "w_gambeson_vest_loose",
+    "repairs_like": "w_gambeson",
+    "type": "ARMOR",
+    "name": { "str": "wool gambeson vest (loose)", "str_pl": "wool gambeson vests (loose)" },
+    "description": "A thick vest of quilted wool, designed to be worn underneath mail or other armor.  This one has had its sleeves removed.  Use it to wear it tighter and be able to put proper armor over it.",
+    "copy-from": "q_gambeson_vest",
+    "extend": { "flags": [ "OUTER" ] },
+    "use_action": {
+      "type": "transform",
+      "msg": "You adjust your %s a bit tighter.",
+      "target": "w_gambeson_vest",
+      "menu_text": "Adjust tighter"
+    }
+  },
+  {
+    "id": "w_gambeson_pants",
+    "type": "ARMOR",
+    "name": { "str": "wool arming pants", "str_pl": "pairs of wool arming pants" },
+    "description": "Thick pants made of quilted wool, meant to be worn alongside a gambeson under or without armor.",
+    "weight": "2100 g",
+    "volume": "2000 ml",
+    "price": 14000,
+    "price_postapoc": 600,
+    "to_hit": -5,
+    "material": [ "wool" ],
+    "symbol": "[",
+    "looks_like": "gambeson_pants",
+    "color": "light_gray",
+    "warmth": 50,
+    "material_thickness": 5.0,
+    "environmental_protection": 2,
+    "flags": [ "VARSIZE", "STURDY", "NONCONDUCTIVE" ],
+    "armor": [
+      {
+        "material": [
+          { "type": "wool", "covered_by_mat": 100, "thickness": 5.0 }
+        ],
+        "covers": [ "leg_l", "leg_r" ],
+        "coverage": 100,
+        "encumbrance": 20
+      }
+    ]
+  },
+  {
+    "id": "xl_w_gambeson",
+    "type": "ARMOR",
+    "name": { "str": "XL wool gambeson" },
+    "copy-from": "w_gambeson",
+    "proportional": { "weight": 1.125, "volume": 1.13, "price": 1.25 },
+    "extend": { "flags": [ "OVERSIZE" ] },
+    "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "xl_w_gambeson_loose", "menu_text": "Loosen" }
+  },
+  {
+    "id": "xl_w_gambeson_vest",
+    "type": "ARMOR",
+    "name": { "str": "XL wool gambeson vest" },
+    "copy-from": "w_gambeson_vest",
+    "proportional": { "weight": 1.125, "volume": 1.13, "price": 1.25 },
+    "extend": { "flags": [ "OVERSIZE" ] },
+    "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "xl_w_gambeson_vest_loose", "menu_text": "Loosen" }
+  },
+  {
+    "id": "w_gambeson_xs",
+    "type": "ARMOR",
+    "copy-from": "w_gambeson",
+    "looks_like": "w_gambeson",
+    "name": { "str": "XS wool gambeson" },
+    "proportional": { "weight": 0.75, "volume": 0.75, "price": 0.5 },
+    "extend": { "flags": [ "UNDERSIZE" ] }
+  },
+  {
+    "id": "w_gambeson_vest_xs",
+    "type": "ARMOR",
+    "copy-from": "w_gambeson_vest",
+    "looks_like": "w_gambeson",
+    "name": { "str": "XS wool gambeson vest" },
+    "proportional": { "weight": 0.75, "volume": 0.75, "price": 0.5 },
+    "extend": { "flags": [ "UNDERSIZE" ] },
+    "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "q_gambeson_vest_xs_loose", "menu_text": "Loosen" }
+  },
+  {
+    "id": "xl_w_gambeson_pants",
+    "type": "ARMOR",
+    "name": { "str": "XL wool arming pants", "str_pl": "pairs of XL wool arming pants" },
+    "copy-from": "w_gambeson_pants",
+    "proportional": { "weight": 1.125, "volume": 1.13, "price": 1.25 },
+    "extend": { "flags": [ "OVERSIZE" ] }
+  },
+  {
+    "id": "xl_w_gambeson_loose",
+    "repairs_like": "xl_w_gambeson",
+    "type": "ARMOR",
+    "name": { "str": "XL wool gambeson (loose)", "str_pl": "XL wool gambesons (loose)" },
+    "copy-from": "xl_w_gambeson",
+    "extend": { "flags": [ "OUTER" ] },
+    "use_action": {
+      "type": "transform",
+      "msg": "You adjust your %s a bit tighter.",
+      "target": "xl_w_gambeson",
+      "menu_text": "Adjust tighter"
+    }
+  },
+  {
+    "id": "w_gambeson_sleeve",
+    "type": "ARMOR",
+    "category": "armor",
+    "name": { "str": "pair of wool gambeson sleeves", "str_pl": "pairs of wool gambeson sleeves" },
+    "description": "A pair of thick sleeves made of quilted wool.",
+    "weight": "1400 g",
+    "volume": "500 ml",
+    "price": 1200,
+    "price_postapoc": 400,
+    "to_hit": 1,
+    "material": [ "wool" ],
+    "symbol": "[",
+    "looks_like": "gambeson_sleeve",
+    "color": "light_gray",
+    "warmth": 50,
+    "material_thickness": 5.0,
+    "environmental_protection": 2,
+    "flags": [ "VARSIZE", "STURDY" ],
+    "armor": [
+      {
+        "material": [
+          { "type": "wool", "covered_by_mat": 100, "thickness": 5.0 }
+        ],
+        "covers": [ "arm_l", "arm_r" ],
+        "coverage": 100,
+        "encumbrance": 20
+      }
+    ]
+  },
+  {
+    "id": "xl_w_gambeson_sleeve",
+    "type": "ARMOR",
+    "name": { "str": "pair of XL wool gambeson sleeves", "str_pl": "pairs of XL wool gambeson sleeves" },
+    "description": "A pair of extra large thick sleeves made of quilted wool.",
+    "copy-from": "w_gambeson_sleeve",
+    "proportional": { "weight": 1.125, "volume": 1.13, "price": 1.25 },
+    "extend": { "flags": [ "OVERSIZE" ] }
+  },
+  {
+    "id": "xs_w_gambeson_sleeve",
+    "type": "ARMOR",
+    "name": { "str": "pair of XS wool gambeson sleeves", "str_pl": "pairs of XS wool gambeson sleeves" },
+    "description": "A pair of extra small thick sleeves made of quilted wool.",
+    "copy-from": "w_gambeson_sleeve",
+    "proportional": { "weight": 0.75, "volume": 0.75, "price": 0.5 },
+    "extend": { "flags": [ "UNDERSIZE" ] }
+  },
+  {
+    "id": "n_gambeson",
+    "type": "ARMOR",
+    "name": { "str": "Nylon gambeson" },
+    "description": "A thick jacket of quilted Nylon, designed to be worn underneath mail or other armor.  It is similar to a flak jacket from WW1 or WW2.  Use it to loosen it if you want to wear it over your clothes.",
+    "weight": "2800 g",
+    "volume": "3000 L ml",
+    "price": 20000,
+    "price_postapoc": 750,
+    "to_hit": -5,
+    "material": [ "nylon" ],
+    "symbol": "[",
+    "looks_like": "gambeson",
+    "color": "light_gray",
+    "warmth": 50,
+    "material_thickness": 5.0,
+    "environmental_protection": 3,
+    "flags": [ "VARSIZE", "STURDY", "NONCONDUCTIVE", "WATERPROOF" ],
+    "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "n_gambeson_loose", "menu_text": "Loosen" },
+    "armor": [
+      {
+        "material": [
+          { "type": "nylon", "covered_by_mat": 100, "thickness": 5.0 }
+        ],
+        "covers": [ "torso" ],
+        "coverage": 100,
+        "encumbrance": 20
+      },
+      {
+        "material": [
+          { "type": "nylon", "covered_by_mat": 100, "thickness": 5.0 }
+        ],
+        "covers": [ "arm_l", "arm_r" ],
+        "coverage": 100,
+        "encumbrance": 20
+      }
+    ]
+  },
+  {
+    "id": "n_gambeson_vest",
+    "type": "ARMOR",
+    "name": { "str": "Nylon gambeson vest" },
+    "description": "A thick vest of quilted Nylon with its sleeves removed, designed to be worn underneath mail or other armor.  It is similar to a flak jacket from WW1 or WW2.  Use it to loosen it if you want to wear it over your clothes.",
+    "weight": "1400 g",
+    "volume": "2000 ml",
+    "price": 20000,
+    "price_postapoc": 600,
+    "to_hit": -5,
+    "material": [ "nylon" ],
+    "symbol": "[",
+    "looks_like": "gambeson_vest",
+    "color": "light_gray",
+    "warmth": 50,
+    "material_thickness": 5.0,
+    "environmental_protection": 3,
+    "flags": [ "VARSIZE", "STURDY", "NONCONDUCTIVE", "WATERPROOF" ],
+    "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "n_gambeson_vest_loose", "menu_text": "Loosen" },
+    "armor": [
+      {
+        "material": [
+          { "type": "nylon", "covered_by_mat": 100, "thickness": 5.0 }
+        ],
+        "covers": [ "torso" ],
+        "coverage": 100,
+        "encumbrance": 20
+      }
+    ]
+  },
+  {
+    "id": "n_gambeson_loose",
+    "repairs_like": "n_gambeson",
+    "type": "ARMOR",
+    "name": { "str": "Nylon gambeson (loose)", "str_pl": "Nylon gambesons (loose)" },
+    "description": "A thick jacket of quilted Nylon, designed to be worn underneath mail or other armor.  It is similar to a flak jacket from WW1 or WW2.  Use it to wear it tighter and be able to put proper armor over it.",
+    "copy-from": "n_gambeson",
+    "extend": { "flags": [ "OUTER" ] },
+    "use_action": {
+      "type": "transform",
+      "msg": "You adjust your %s a bit tighter.",
+      "target": "n_gambeson",
+      "menu_text": "Adjust tighter"
+    }
+  },
+  {
+    "id": "n_gambeson_vest_loose",
+    "repairs_like": "n_gambeson",
+    "type": "ARMOR",
+    "name": { "str": "Nylon gambeson vest (loose)", "str_pl": "Nylon gambeson vests (loose)" },
+    "description": "A thick vest of quilted Nylon with its sleeved removed, designed to be worn underneath mail or other armor.  It is similar to a flak jacket from WW1 or WW2.  Use it to wear it tighter and be able to put proper armor over it.",
+    "copy-from": "n_gambeson_vest",
+    "extend": { "flags": [ "OUTER" ] },
+    "use_action": {
+      "type": "transform",
+      "msg": "You adjust your %s a bit tighter.",
+      "target": "n_gambeson_vest",
+      "menu_text": "Adjust tighter"
+    }
+  },
+  {
+    "id": "n_gambeson_pants",
+    "type": "ARMOR",
+    "name": { "str": "Nylon arming pants", "str_pl": "pairs of Nylon arming pants" },
+    "description": "Thick pants made of quilted Nylon, meant to be worn alongside a gambeson under or without armor.",
+    "weight": "2100 g",
+    "volume": "2000 ml",
+    "price": 14000,
+    "price_postapoc": 600,
+    "to_hit": -5,
+    "material": [ "nylon" ],
+    "symbol": "[",
+    "looks_like": "gambeson_pants",
+    "color": "light_gray",
+    "warmth": 50,
+    "material_thickness": 5.0,
+    "environmental_protection": 3,
+    "flags": [ "VARSIZE", "STURDY", "NONCONDUCTIVE", "WATERPROOF" ],
+    "armor": [
+      {
+        "material": [
+          { "type": "nylon", "covered_by_mat": 100, "thickness": 5.0 }
+        ],
+        "covers": [ "leg_l", "leg_r" ],
+        "coverage": 100,
+        "encumbrance": 20
+      }
+    ]
+  },
+  {
+    "id": "xl_n_gambeson",
+    "type": "ARMOR",
+    "name": { "str": "XL Nylon gambeson" },
+    "copy-from": "n_gambeson",
+    "proportional": { "weight": 1.125, "volume": 1.13, "price": 1.25 },
+    "extend": { "flags": [ "OVERSIZE" ] },
+    "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "xl_n_gambeson_loose", "menu_text": "Loosen" }
+  },
+  {
+    "id": "xl_n_gambeson_vest",
+    "type": "ARMOR",
+    "name": { "str": "XL Nylon gambeson vest" },
+    "copy-from": "n_gambeson_vest",
+    "proportional": { "weight": 1.125, "volume": 1.13, "price": 1.25 },
+    "extend": { "flags": [ "OVERSIZE" ] },
+    "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "xl_n_gambeson_vest_loose", "menu_text": "Loosen" }
+  },
+  {
+    "id": "n_gambeson_xs",
+    "type": "ARMOR",
+    "copy-from": "n_gambeson",
+    "looks_like": "n_gambeson",
+    "name": { "str": "XS Nylon gambeson" },
+    "proportional": { "weight": 0.75, "volume": 0.75, "price": 0.5 },
+    "extend": { "flags": [ "UNDERSIZE" ] }
+  },
+  {
+    "id": "n_gambeson_vest_xs",
+    "type": "ARMOR",
+    "copy-from": "n_gambeson_vest",
+    "looks_like": "n_gambeson",
+    "name": { "str": "XS Nylon gambeson vest" },
+    "proportional": { "weight": 0.75, "volume": 0.75, "price": 0.5 },
+    "extend": { "flags": [ "UNDERSIZE" ] },
+    "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "q_gambeson_vest_xs_loose", "menu_text": "Loosen" }
+  },
+  {
+    "id": "xl_n_gambeson_pants",
+    "type": "ARMOR",
+    "name": { "str": "XL Nylon arming pants", "str_pl": "pairs of XL Nylon arming pants" },
+    "copy-from": "n_gambeson_pants",
+    "proportional": { "weight": 1.125, "volume": 1.13, "price": 1.25 },
+    "extend": { "flags": [ "OVERSIZE" ] }
+  },
+  {
+    "id": "xl_n_gambeson_loose",
+    "repairs_like": "xl_n_gambeson",
+    "type": "ARMOR",
+    "name": { "str": "XL Nylon gambeson (loose)", "str_pl": "XL Nylon gambesons (loose)" },
+    "copy-from": "xl_n_gambeson",
+    "extend": { "flags": [ "OUTER" ] },
+    "use_action": {
+      "type": "transform",
+      "msg": "You adjust your %s a bit tighter.",
+      "target": "xl_n_gambeson",
+      "menu_text": "Adjust tighter"
+    }
+  },
+  {
+    "id": "n_gambeson_sleeve",
+    "type": "ARMOR",
+    "category": "armor",
+    "name": { "str": "pair of Nylon gambeson sleeves", "str_pl": "pairs of Nylon gambeson sleeves" },
+    "description": "A pair of thick sleeves made of Nylon.",
+    "weight": "1400 g",
+    "volume": "500 ml",
+    "price": 1200,
+    "price_postapoc": 400,
+    "to_hit": 1,
+    "material": [ "nylon" ],
+    "symbol": "[",
+    "looks_like": "gambeson_sleeve",
+    "color": "light_gray",
+    "warmth": 50,
+    "material_thickness": 5.0,
+    "environmental_protection": 3,
+    "flags": [ "VARSIZE", "STURDY", "WATERPROOF" ],
+    "armor": [
+      {
+        "material": [
+          { "type": "nylon", "covered_by_mat": 100, "thickness": 5.0 }
+        ],
+        "covers": [ "arm_l", "arm_r" ],
+        "coverage": 100,
+        "encumbrance": 20
+      }
+    ]
+  },
+  {
+    "id": "xl_n_gambeson_sleeve",
+    "type": "ARMOR",
+    "name": { "str": "pair of XL Nylon gambeson sleeves", "str_pl": "pairs of XL Nylon gambeson sleeves" },
+    "description": "A pair of extra large thick sleeves made of Nylon.",
+    "copy-from": "n_gambeson_sleeve",
+    "proportional": { "weight": 1.125, "volume": 1.13, "price": 1.25 },
+    "extend": { "flags": [ "OVERSIZE" ] }
+  },
+  {
+    "id": "xs_n_gambeson_sleeve",
+    "type": "ARMOR",
+    "name": { "str": "pair of XS Nylon gambeson sleeves", "str_pl": "pairs of XS wool gambeson sleeves" },
+    "description": "A pair of extra small thick sleeves made of Nylon.",
+    "copy-from": "n_gambeson_sleeve",
+    "proportional": { "weight": 0.75, "volume": 0.75, "price": 0.5 },
+    "extend": { "flags": [ "UNDERSIZE" ] }
   }
 ]
