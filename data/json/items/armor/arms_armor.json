@@ -610,6 +610,106 @@
     "extend": { "flags": [ "UNDERSIZE" ] }
   },
   {
+    "id": "gambeson_sleeve",
+    "type": "ARMOR",
+    "category": "armor",
+    "name": { "str": "pair of gambeson sleeves", "str_pl": "pairs of gambeson sleeves" },
+    "description": "A pair of arm sleeves made from heavy quilted fabric.",
+    "weight": "1380 g",
+    "volume": "500 ml",
+    "price": 1200,
+    "price_postapoc": 400,
+    "to_hit": 1,
+    "material": [ "cotton" ],
+    "symbol": "[",
+    "looks_like": "arm_warmers",
+    "color": "light_gray",
+    "warmth": 50,
+    "material_thickness": 5,
+    "valid_mods": [ "steel_padded" ],
+    "flags": [ "VARSIZE", "STURDY" ],
+    "armor": [ { "encumbrance": 20, "coverage": 100, "covers": [ "arm_l", "arm_r" ] } ]
+  },
+  {
+    "id": "xl_gambeson_sleeve",
+    "type": "ARMOR",
+    "name": { "str": "pair of XL gambeson sleeves", "str_pl": "pairs of XL gambeson sleeves" },
+    "description": "A pair of extra large arm sleeves made from heavy quilted fabric.",
+    "copy-from": "gambeson_sleeve",
+    "proportional": { "weight": 1.125, "volume": 1.13, "price": 1.25 },
+    "extend": { "flags": [ "OVERSIZE" ] }
+  },
+  {
+    "id": "xs_gambeson_sleeve",
+    "type": "ARMOR",
+    "name": { "str": "pair of XS gambeson sleeves", "str_pl": "pairs of XS gambeson sleeves" },
+    "description": "A pair of extra small arm sleeves made from heavy quilted fabric.",
+    "copy-from": "gambeson_sleeve",
+    "proportional": { "weight": 0.75, "volume": 0.75, "price": 0.5 },
+    "extend": { "flags": [ "UNDERSIZE" ] }
+  },
+  {
+    "id": "k_gambeson_sleeve",
+    "type": "ARMOR",
+    "category": "armor",
+    "name": { "str": "pair of Kevlar gambeson sleeves", "str_pl": "pairs of Kevlar gambeson sleeves" },
+    "description": "A pair arm sleeves made from aramid, with strips of soft body armor sewn on top to simulate quilting.",
+    "weight": "986 g",
+    "volume": "840 ml",
+    "price": 1200,
+    "price_postapoc": 400,
+    "to_hit": 1,
+    "material": [ { "type": "kevlar_layered", "portion": 6 }, { "type": "kevlar", "portion": 4 } ],
+    "symbol": "[",
+    "looks_like": "arm_warmers",
+    "color": "light_gray",
+    "warmth": 50,
+    "material_thickness": 3.2,
+    "valid_mods": [ "steel_padded" ],
+    "flags": [ "VARSIZE", "STURDY" ],
+    "armor": [
+      {
+        "material": [
+          { "type": "kevlar_layered", "covered_by_mat": 95, "thickness": 3.4, "ignore_sheet_thickness": true },
+          { "type": "kevlar", "covered_by_mat": 100, "thickness": 1.0 }
+        ],
+        "covers": [ "arm_l", "arm_r" ],
+        "specifically_covers": [ "arm_upper_l", "arm_lower_l", "arm_upper_r", "arm_lower_r" ],
+        "coverage": 100,
+        "encumbrance": 20
+      },
+      {
+        "material": [
+          { "type": "kevlar_layered", "covered_by_mat": 70, "thickness": 3.4, "ignore_sheet_thickness": true },
+          { "type": "kevlar", "covered_by_mat": 100, "thickness": 1.0 }
+        ],
+        "covers": [ "arm_l", "arm_r" ],
+        "specifically_covers": [ "arm_elbow_l", "arm_shoulder_l", "arm_elbow_r", "arm_shoulder_r" ],
+        "coverage": 100,
+        "encumbrance": 0,
+        "//": "skip second entry for arm encumbrance"
+      }
+    ]
+  },
+  {
+    "id": "xl_k_gambeson_sleeve",
+    "type": "ARMOR",
+    "name": { "str": "pair of XL Kevlar gambeson sleeves", "str_pl": "pairs of XL Kevlar gambeson sleeves" },
+    "description": "A pair of extra large arm sleeves made from layers of Kevlar.",
+    "copy-from": "k_gambeson_sleeve",
+    "proportional": { "weight": 1.125, "volume": 1.13, "price": 1.25 },
+    "extend": { "flags": [ "OVERSIZE" ] }
+  },
+  {
+    "id": "xs_k_gambeson_sleeve",
+    "type": "ARMOR",
+    "name": { "str": "pair of XS Kevlar gambeson sleeves", "str_pl": "pairs of XS Kevlar gambeson sleeves" },
+    "description": "A pair of extra small arm sleeves made from heavy quilted fabric and Kevlar.",
+    "copy-from": "k_gambeson_sleeve",
+    "proportional": { "weight": 0.75, "volume": 0.75, "price": 0.5 },
+    "extend": { "flags": [ "UNDERSIZE" ] }
+  },
+  {
     "id": "chainmail_junk_arms",
     "type": "ARMOR",
     "category": "armor",
