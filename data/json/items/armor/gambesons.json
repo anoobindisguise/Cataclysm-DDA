@@ -560,9 +560,7 @@
         "encumbrance": 20
       },
       {
-        "material": [
-          { "type": "cotton", "covered_by_mat": 100, "thickness": 5.0 }
-        ],
+        "material": [ { "type": "cotton", "covered_by_mat": 100, "thickness": 5.0 } ],
         "covers": [ "arm_l", "arm_r" ],
         "coverage": 100,
         "encumbrance": 20
