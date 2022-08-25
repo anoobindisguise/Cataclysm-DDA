@@ -588,9 +588,7 @@
     "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "q_gambeson_vest_loose", "menu_text": "Loosen" },
     "armor": [
       {
-        "material": [
-          { "type": "cotton", "covered_by_mat": 100, "thickness": 5.0 }
-        ],
+        "material": [ { "type": "cotton", "covered_by_mat": 100, "thickness": 5.0 } ],
         "covers": [ "torso" ],
         "coverage": 100,
         "encumbrance": 20
@@ -647,9 +645,7 @@
     "flags": [ "VARSIZE", "STURDY", "NONCONDUCTIVE" ],
     "armor": [
       {
-        "material": [
-          { "type": "cotton", "covered_by_mat": 100, "thickness": 5.0 }
-        ],
+        "material": [ { "type": "cotton", "covered_by_mat": 100, "thickness": 5.0 } ],
         "covers": [ "leg_l", "leg_r" ],
         "coverage": 100,
         "encumbrance": 20
@@ -736,9 +732,7 @@
     "flags": [ "VARSIZE", "STURDY" ],
     "armor": [
       {
-        "material": [
-          { "type": "cotton", "covered_by_mat": 100, "thickness": 5.0 }
-        ],
+        "material": [ { "type": "cotton", "covered_by_mat": 100, "thickness": 5.0 } ],
         "covers": [ "arm_l", "arm_r" ],
         "coverage": 100,
         "encumbrance": 20
@@ -784,17 +778,13 @@
     "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "w_gambeson_loose", "menu_text": "Loosen" },
     "armor": [
       {
-        "material": [
-          { "type": "wool", "covered_by_mat": 100, "thickness": 5.0 }
-        ],
+        "material": [ { "type": "wool", "covered_by_mat": 100, "thickness": 5.0 } ],
         "covers": [ "torso" ],
         "coverage": 100,
         "encumbrance": 20
       },
       {
-        "material": [
-          { "type": "wool", "covered_by_mat": 100, "thickness": 5.0 }
-        ],
+        "material": [ { "type": "wool", "covered_by_mat": 100, "thickness": 5.0 } ],
         "covers": [ "arm_l", "arm_r" ],
         "coverage": 100,
         "encumbrance": 20
@@ -822,9 +812,7 @@
     "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "w_gambeson_vest_loose", "menu_text": "Loosen" },
     "armor": [
       {
-        "material": [
-          { "type": "wool", "covered_by_mat": 100, "thickness": 5.0 }
-        ],
+        "material": [ { "type": "wool", "covered_by_mat": 100, "thickness": 5.0 } ],
         "covers": [ "torso" ],
         "coverage": 100,
         "encumbrance": 20
@@ -881,9 +869,7 @@
     "flags": [ "VARSIZE", "STURDY", "NONCONDUCTIVE" ],
     "armor": [
       {
-        "material": [
-          { "type": "wool", "covered_by_mat": 100, "thickness": 5.0 }
-        ],
+        "material": [ { "type": "wool", "covered_by_mat": 100, "thickness": 5.0 } ],
         "covers": [ "leg_l", "leg_r" ],
         "coverage": 100,
         "encumbrance": 20
@@ -970,9 +956,7 @@
     "flags": [ "VARSIZE", "STURDY" ],
     "armor": [
       {
-        "material": [
-          { "type": "wool", "covered_by_mat": 100, "thickness": 5.0 }
-        ],
+        "material": [ { "type": "wool", "covered_by_mat": 100, "thickness": 5.0 } ],
         "covers": [ "arm_l", "arm_r" ],
         "coverage": 100,
         "encumbrance": 20
@@ -1018,17 +1002,13 @@
     "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "n_gambeson_loose", "menu_text": "Loosen" },
     "armor": [
       {
-        "material": [
-          { "type": "nylon", "covered_by_mat": 100, "thickness": 5.0 }
-        ],
+        "material": [ { "type": "nylon", "covered_by_mat": 100, "thickness": 5.0 } ],
         "covers": [ "torso" ],
         "coverage": 100,
         "encumbrance": 20
       },
       {
-        "material": [
-          { "type": "nylon", "covered_by_mat": 100, "thickness": 5.0 }
-        ],
+        "material": [ { "type": "nylon", "covered_by_mat": 100, "thickness": 5.0 } ],
         "covers": [ "arm_l", "arm_r" ],
         "coverage": 100,
         "encumbrance": 20
@@ -1056,9 +1036,7 @@
     "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "n_gambeson_vest_loose", "menu_text": "Loosen" },
     "armor": [
       {
-        "material": [
-          { "type": "nylon", "covered_by_mat": 100, "thickness": 5.0 }
-        ],
+        "material": [ { "type": "nylon", "covered_by_mat": 100, "thickness": 5.0 } ],
         "covers": [ "torso" ],
         "coverage": 100,
         "encumbrance": 20
@@ -1115,9 +1093,7 @@
     "flags": [ "VARSIZE", "STURDY", "NONCONDUCTIVE", "WATERPROOF" ],
     "armor": [
       {
-        "material": [
-          { "type": "nylon", "covered_by_mat": 100, "thickness": 5.0 }
-        ],
+        "material": [ { "type": "nylon", "covered_by_mat": 100, "thickness": 5.0 } ],
         "covers": [ "leg_l", "leg_r" ],
         "coverage": 100,
         "encumbrance": 20
@@ -1204,9 +1180,7 @@
     "flags": [ "VARSIZE", "STURDY", "WATERPROOF" ],
     "armor": [
       {
-        "material": [
-          { "type": "nylon", "covered_by_mat": 100, "thickness": 5.0 }
-        ],
+        "material": [ { "type": "nylon", "covered_by_mat": 100, "thickness": 5.0 } ],
         "covers": [ "arm_l", "arm_r" ],
         "coverage": 100,
         "encumbrance": 20
