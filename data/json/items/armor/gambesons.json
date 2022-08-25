@@ -554,9 +554,7 @@
     "use_action": { "type": "transform", "msg": "You loosen your %s.", "target": "q_gambeson_loose", "menu_text": "Loosen" },
     "armor": [
       {
-        "material": [
-          { "type": "cotton", "covered_by_mat": 100, "thickness": 5.0 }
-        ],
+        "material": [ { "type": "cotton", "covered_by_mat": 100, "thickness": 5.0 } ],
         "covers": [ "torso" ],
         "coverage": 100,
         "encumbrance": 20
