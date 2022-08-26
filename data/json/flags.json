@@ -149,6 +149,11 @@
     "conflicts": [ "FRAGILE_MELEE" ]
   },
   {
+    "id": "POMMEL",
+    "type": "json_flag",
+    "info": "This weapon is <info>counterbalanced by a pommel</info> and will require less effort to swing than other weapons of its particular size and weight."
+  },
+  {
     "id": "FIELD_DRESS",
     "type": "json_flag"
   },
