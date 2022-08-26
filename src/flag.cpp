@@ -234,6 +234,7 @@ const flag_id flag_PERSONAL( "PERSONAL" );
 const flag_id flag_PLACE_RANDOMLY( "PLACE_RANDOMLY" );
 const flag_id flag_POCKETS( "POCKETS" );
 const flag_id flag_POLEARM( "POLEARM" );
+const flag_id flag_POMMEL( "POMMEL" );
 const flag_id flag_POWERARMOR_COMPATIBLE( "POWERARMOR_COMPATIBLE" );
 const flag_id flag_POWERED( "POWERED" );
 const flag_id flag_PREDATOR_FUN( "PREDATOR_FUN" );
