@@ -2652,14 +2652,13 @@ int Character::get_standard_stamina_cost( const item *thrown_item ) const
     // for by the additional move cost as weapon weight increases
     //If the item is thrown, override with the thrown item instead.
     // if the weapon has a pommel, its weight is counterbalanced around the grip and should be less strenuous.
-    const int weight_cost = ( thrown_item == nullptr ) ? weapon.weight() /
-                            16_gram : thrown_item->weight() / 16_gram;
+    const int weight_cost = 0;
     if( weapon.has_flag( flag_POMMEL ) ) {
-        const int weight_cost = ( thrown_item == nullptr ) ? weapon.weight() /
-                                16_gram : thrown_item->weight() / 16_gram;
+        weight_cost = ( thrown_item == nullptr ) ? weapon.weight() /
+                                32_gram : thrown_item->weight() / 16_gram;
     } else {
-        const int weight_cost = ( thrown_item == nullptr ) ? weapon.weight() /
-                                8_gram : thrown_item->weight() / 16_gram;
+        weight_cost = ( thrown_item == nullptr ) ? weapon.weight() /
+                                16_gram : thrown_item->weight() / 16_gram;
     }
     return ( weight_cost + 50 ) * -1 * get_modifier( character_modifier_melee_stamina_cost_mod );
 }
