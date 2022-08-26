@@ -337,20 +337,49 @@
     "looks_like": "duster_leather",
     "color": "brown",
     "armor": [
-      { "covers": [ "torso" ], "coverage": 100, "encumbrance": 11 },
       {
+        "material": [
+          { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 }
+        ],
+        "encumbrance": 11,
+        "coverage": 100,
+        "covers": [ "torso" ]
+      },
+      {
+        "material": [
+          { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 }
+        ],
+        "encumbrance": 11
+        "coverage": 100,
+        "covers": [ "arm_l", "arm_r" ]
+      },
+      {
+        "material": [
+          { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 }
+        ],
         "covers": [ "leg_l", "leg_r" ],
         "coverage": 100,
         "encumbrance": 11,
         "specifically_covers": [ "leg_hip_l", "leg_hip_r", "leg_upper_l", "leg_upper_r", "leg_knee_l", "leg_knee_r" ]
       },
-      { "covers": [ "leg_l", "leg_r" ], "coverage": 60, "specifically_covers": [ "leg_lower_l", "leg_lower_r" ] },
-      { "covers": [ "arm_l", "arm_r" ], "coverage": 100, "encumbrance": 11 }
+      {
+        "material": [
+          { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 }
+        ],
+        "covers": [ "leg_l", "leg_r" ],
+        "coverage": 60,
+        "encumbrance": 0,
+        "specifically_covers": [ "leg_lower_l", "leg_lower_r" ]
+      }
     ],
     "warmth": 37,
     "material_thickness": 3,
     "environmental_protection": 4,
-    "flags": [ "VARSIZE", "POCKETS", "OUTER", "WATERPROOF", "RAINPROOF", "STURDY", "SOFT" ]
+    "flags": [ "VARSIZE", "OUTER", "WATERPROOF", "RAINPROOF", "STURDY", "SOFT" ]
   },
   {
     "id": "trenchcoat_leather_rubberized",
@@ -366,12 +395,130 @@
     "looks_like": "trenchcoat_leather",
     "color": "brown",
     "armor": [
-      { "covers": [ "torso" ], "coverage": 100, "encumbrance": 11 },
-      { "covers": [ "arm_l", "arm_r" ], "coverage": 100, "encumbrance": 11 }
+      {
+        "material": [
+          { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 }
+        ],
+        "encumbrance": 11,
+        "coverage": 100,
+        "covers": [ "torso" ]
+      },
+      {
+        "material": [
+          { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 }
+        ],
+        "encumbrance": 11
+        "coverage": 100,
+        "covers": [ "arm_l", "arm_r" ]
+      }
     ],
     "warmth": 37,
     "material_thickness": 3,
     "environmental_protection": 4,
-    "flags": [ "VARSIZE", "POCKETS", "OUTER", "STURDY", "SOFT" ]
+    "flags": [ "VARSIZE", "OUTER", "STURDY", "SOFT" ]
+  },
+  {
+    "id": "trenchcoat_leather_rubberized_thermoplastic",
+    "type": "ARMOR",
+    "name": { "str": "thermoplastic plated rubberized leather trenchcoat" },
+    "description": "A thick leather trenchcoat with a coating of soft rubber.  Sturdy thermoplastic plates have been molded, shaped and affixed to its surface, offering superior protection at minimal weight.",
+    "weight": "6500 g",
+    "volume": "9825 ml",
+    "price_postapoc": 4000,
+    "to_hit": -1,
+    "material": [ "leather", "rubber", "thermo_resin" ],
+    "symbol": "[",
+    "looks_like": "trenchcoat_leather",
+    "color": "brown",
+    "armor": [
+      {
+        "material": [
+          { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "thermo_resin", "covered_by_mat": 95, "thickness": 1.5 }
+        ],
+        "encumbrance": 13,
+        "coverage": 100,
+        "covers": [ "torso" ]
+      },
+      {
+        "material": [
+          { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "thermo_resin", "covered_by_mat": 95, "thickness": 1.5 }
+        ],
+        "encumbrance": 13
+        "coverage": 100,
+        "covers": [ "arm_l", "arm_r" ]
+      }
+    ],
+    "warmth": 40,
+    "material_thickness": 4.5,
+    "environmental_protection": 4,
+    "flags": [ "VARSIZE", "OUTER", "STURDY", "ARM_BLOCK" ]
+  },
+  {
+    "id": "duster_leather_rubberized_thermoplastic",
+    "type": "ARMOR",
+    "name": { "str": "thermoplastic plated rubberized leather duster" },
+    "description": "A thick leather full-length duster with a coating of soft rubber.  Sturdy thermoplastic plates have been molded, shaped and affixed to its surface, offering superior protection at minimal weight.",
+    "weight": "8620 g",
+    "volume": "14500 ml",
+    "price_postapoc": 1500,
+    "to_hit": -1,
+    "material": [ "leather", "rubber", "thermo_resin" ],
+    "symbol": "[",
+    "looks_like": "duster_leather",
+    "color": "brown",
+    "armor": [
+        "material": [
+          { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "thermo_resin", "covered_by_mat": 95, "thickness": 1.5 }
+        ],
+        "encumbrance": 13,
+        "coverage": 100,
+        "covers": [ "torso" ]
+      },
+      {
+        "material": [
+          { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "thermo_resin", "covered_by_mat": 95, "thickness": 1.5 }
+        ],
+        "encumbrance": 13
+        "coverage": 100,
+        "covers": [ "arm_l", "arm_r" ]
+      },
+      {
+        "material": [
+          { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "thermo_resin", "covered_by_mat": 85, "thickness": 1.5 }
+        ],
+        "//": "due to inflexibility the lower part of the duster is made of looser plates so that it can bend.
+        "covers": [ "leg_l", "leg_r" ],
+        "coverage": 100,
+        "encumbrance": 13,
+        "specifically_covers": [ "leg_hip_l", "leg_hip_r", "leg_upper_l", "leg_upper_r", "leg_knee_l", "leg_knee_r" ]
+      },
+      {
+        "material": [
+          { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "thermo_resin", "covered_by_mat": 80, "thickness": 1.5 }
+        ],
+        "covers": [ "leg_l", "leg_r" ],
+        "coverage": 60,
+        "encumbrance": 0,
+        "specifically_covers": [ "leg_lower_l", "leg_lower_r" ]
+      }
+    ],
+    "warmth": 40,
+    "material_thickness": 4.5,
+    "environmental_protection": 4,
+    "flags": [ "VARSIZE", "OUTER", "WATERPROOF", "RAINPROOF", "STURDY", "ARM_BLOCK" ]
   }
 ]
