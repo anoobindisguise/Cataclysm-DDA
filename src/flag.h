@@ -240,6 +240,7 @@ extern const flag_id flag_PERSONAL;
 extern const flag_id flag_PLACE_RANDOMLY;
 extern const flag_id flag_POCKETS;
 extern const flag_id flag_POLEARM;
+extern const flag_id flag_POMMEL;
 extern const flag_id flag_POWERARMOR_COMPATIBLE;
 extern const flag_id flag_POWERED;
 extern const flag_id flag_PREDATOR_FUN;
