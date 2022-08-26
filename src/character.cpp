@@ -2655,7 +2655,11 @@ int Character::get_standard_stamina_cost( const item *thrown_item ) const
     const int weight_cost = ( thrown_item == nullptr ) ? weapon.weight() /
                             16_gram : thrown_item->weight() / 16_gram;
     if( weapon.has_flag( flag_POMMEL ) ) {
-        weight_cost = std::floor( weight_cost / 2 )
+        const int weight_cost = ( thrown_item == nullptr ) ? weapon.weight() /
+                                16_gram : thrown_item->weight() / 16_gram;
+    } else {
+        const int weight_cost = ( thrown_item == nullptr ) ? weapon.weight() /
+                                8_gram : thrown_item->weight() / 16_gram;
     }
     return ( weight_cost + 50 ) * -1 * get_modifier( character_modifier_melee_stamina_cost_mod );
 }
