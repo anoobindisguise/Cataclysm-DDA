@@ -7090,7 +7090,7 @@ int item::attack_time() const
 {
     int ret = 65 + ( volume() / 62.5_ml + weight() / 60_gram ) / count();
     if( has_flag( flag_POMMEL ) ) {
-        int ret = 65 + ( volume() / 62.5_ml + weight() / 60_gram ) / ( 2 * count() );
+        ret = 65 + ( volume() / 62.5_ml + weight() / 60_gram ) / ( 2 * count() );
     }
     ret = calculate_by_enchantment_wield( ret, enchant_vals::mod::ITEM_ATTACK_SPEED,
                                           true );
