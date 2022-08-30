@@ -351,7 +351,7 @@
           { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
           { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 }
         ],
-        "encumbrance": 11
+        "encumbrance": 11,
         "coverage": 100,
         "covers": [ "arm_l", "arm_r" ]
       },
@@ -409,7 +409,7 @@
           { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
           { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 }
         ],
-        "encumbrance": 11
+        "encumbrance": 11,
         "coverage": 100,
         "covers": [ "arm_l", "arm_r" ]
       }
@@ -449,7 +449,7 @@
           { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 },
           { "type": "thermo_resin", "covered_by_mat": 95, "thickness": 1.5 }
         ],
-        "encumbrance": 13
+        "encumbrance": 13,
         "coverage": 100,
         "covers": [ "arm_l", "arm_r" ]
       }
@@ -488,7 +488,7 @@
           { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 },
           { "type": "thermo_resin", "covered_by_mat": 95, "thickness": 1.5 }
         ],
-        "encumbrance": 13
+        "encumbrance": 13,
         "coverage": 100,
         "covers": [ "arm_l", "arm_r" ]
       },
