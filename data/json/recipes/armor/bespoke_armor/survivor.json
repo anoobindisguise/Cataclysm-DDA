@@ -313,10 +313,7 @@
     "using": [ [ "sewing_standard", 15 ], [ "strap_small", 8 ], [ "plastic_molding", 20 ] ],
     "qualities": [ { "id": "PUNCH", "level": 2 } ],
     "components": [ [ [ "duster_leather_rubberized", 1 ] ], [ [ "thermo_resin_chunk", 20 ] ], [ [ "superglue", 8 ] ] ],
-    "proficiencies": [
-      { "proficiency": "prof_plasticworking" },
-      { "proficiency": "prof_closures" }
-    ]
+    "proficiencies": [ { "proficiency": "prof_plasticworking" }, { "proficiency": "prof_closures" } ]
   },
   {
     "result": "duster_leather_rubberized_thermoplastic",
@@ -333,9 +330,6 @@
     "using": [ [ "sewing_standard", 10 ], [ "strap_small", 8 ], [ "plastic_molding", 20 ] ],
     "qualities": [ { "id": "PUNCH", "level": 2 } ],
     "components": [ [ [ "trenchcoat_leather_rubberized", 1 ] ], [ [ "thermo_resin_chunk", 15 ] ], [ [ "superglue", 8 ] ] ],
-    "proficiencies": [
-      { "proficiency": "prof_plasticworking" },
-      { "proficiency": "prof_closures" }
-    ]
+    "proficiencies": [ { "proficiency": "prof_plasticworking" }, { "proficiency": "prof_closures" } ]
   }
 ]
