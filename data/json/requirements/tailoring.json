@@ -543,7 +543,7 @@
   {
     "id": "thermoplastic_forming",
     "type": "requirement",
-    "//": "Melting thermoplastic with boiling water and reshaping it once it's cool enough to not burn your hands. 50g at a time, needs to be cut into beads first. Assume about an hour per chunk.",
+    "//": "Melting thermoplastic with boiling water and reshaping it once it's cool enough to not burn your hands. 50g at a time, needs to be cut into beads first. Assume about a 30 min per chunk, 10g of beads takes about 3min to set + water boiling.",
     "qualities": [ { "id": "CUT", "level": 2 }, { "id": "BOIL", "level": 2 } ],
     "tools": [
       [ [ "flask_glass", -1 ] ],
