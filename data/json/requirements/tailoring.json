@@ -539,5 +539,13 @@
     "type": "requirement",
     "//": "Enough to make one tanned hide/pelt",
     "components": [ [ [ "tanbark", 1 ], [ "acorns", 2 ], [ "hops", 2 ], [ "pine_bough", 6 ], [ "meat_brain", 3, "LIST" ] ] ]
+  },
+  {
+    "id": "thermoplastic_forming",
+    "type": "requirement",
+    "//": "Melting thermoplastic with boiling water and reshaping it once it's cool enough to not burn your hands. 50g at a time, needs to be cut into beads first. Assume about an hour per chunk.",
+    "qualities": [ { "id": "CUT", "level": 2 }, { "id": "BOIL", "level": 2 } ],
+    "tools": [ [ [ "flask_glass", -1 ] ], [ [ "chopsticks", -1 ], [ "spoon", -1 ], [ "spork", -1 ] ], [ [ "surface_heat", 10, "LIST" ] ], [ [ "water", -5 ] ] ],
+    "components": [ [ [ "thermo_resin_chunk", 1 ] ] ]
   }
 ]
