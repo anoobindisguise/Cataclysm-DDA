@@ -498,7 +498,7 @@
           { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 },
           { "type": "thermo_resin", "covered_by_mat": 85, "thickness": 1.5 }
         ],
-        "//": "due to inflexibility the lower part of the duster is made of looser plates so that it can bend.
+        "//": "due to inflexibility the lower part of the duster is made of looser plates so that it can bend."
         "covers": [ "leg_l", "leg_r" ],
         "coverage": 100,
         "encumbrance": 13,
