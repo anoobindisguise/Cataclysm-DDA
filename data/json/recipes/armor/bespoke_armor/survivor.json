@@ -251,5 +251,91 @@
     "time": "14 h 18 m",
     "using": [ [ "sewing_kevlar", 300 ], [ "fabric_nomex", 30 ], [ "fastener_large", 1 ], [ "clasps", 8 ] ],
     "components": [ [ [ "sheet_kevlar", 200 ] ] ]
+  },
+  {
+    "result": "duster_leather_rubberized",
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "category": "CC_ARMOR",
+    "subcategory": "CSC_ARMOR_TORSO",
+    "skill_used": "fabrication",
+    "difficulty": 6,
+    "skills_required": [ "tailor", 4 ],
+    "time": "10h h 30 m",
+    "autolearn": no,
+    "book_learn": [ [ "plastics_book", 5 ], [ "dieselpunk_tailor", 6 ], [ "theater_props", 7 ] ],
+    "using": [ [ "sewing_standard", 15 ] ],
+    "tools": [ [ [ "makeshift_vacuum_mold", 100 ], [ "vac_mold", 50 ] ], [ [ "surface_heat", 100, "LIST" ] ] ],
+    "qualities": [ { "id": "LEATHER_AWL", "level": 1 } ],
+    "components": [ [ [ "duster_leather", 1 ] ], [ [ "chunk_rubber", 20 ] ], [ [ "cement_rubber", 8 ] ] ],
+    "proficiencies": [
+      { "proficiency": "prof_plasticworking" },
+      { "proficiency": "prof_leatherworking_basic" },
+      { "proficiency": "prof_elastics" },
+      { "proficiency": "prof_closures_waterproofing" }
+    ]
+  },
+  {
+    "result": "trenchcoat_leather_rubberized",
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "category": "CC_ARMOR",
+    "subcategory": "CSC_ARMOR_TORSO",
+    "skill_used": "fabrication",
+    "difficulty": 6,
+    "skills_required": [ "tailor", 4 ],
+    "time": "7h h 45 m",
+    "autolearn": no,
+    "book_learn": [ [ "plastics_book", 5 ], [ "dieselpunk_tailor", 6 ], [ "theater_props", 7 ] ],
+    "using": [ [ "sewing_standard", 10 ] ],
+    "tools": [ [ [ "makeshift_vacuum_mold", 80 ], [ "vac_mold", 40 ] ], [ [ "surface_heat", 80, "LIST" ] ] ],
+    "qualities": [ { "id": "LEATHER_AWL", "level": 1 } ],
+    "components": [ [ [ "trenchcoat_leather", 1 ] ], [ [ "chunk_rubber", 16 ] ], [ [ "cement_rubber", 6 ] ] ],
+    "proficiencies": [
+      { "proficiency": "prof_plasticworking" },
+      { "proficiency": "prof_leatherworking_basic" },
+      { "proficiency": "prof_elastics" },
+      { "proficiency": "prof_closures_waterproofing" }
+    ]
+  },
+  {
+    "result": "duster_leather_rubberized_thermoplastic",
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "category": "CC_ARMOR",
+    "subcategory": "CSC_ARMOR_TORSO",
+    "skill_used": "fabrication",
+    "difficulty": 8,
+    "skills_required": [ "tailor", 5 ],
+    "time": "8 h 15 m",
+    "autolearn": no,
+    "book_learn": [ [ "plastics_book", 6 ], [ "dieselpunk_tailor", 8 ], [ "theater_props", 9 ] ],
+    "using": [ [ "sewing_standard", 15 ], [ "strap_small", 8 ], [ "plastic_molding", 20 ] ],
+    "qualities": [ { "id": "PUNCH", "level": 2 } ],
+    "components": [ [ [ "duster_leather_rubberized", 1 ] ], [ [ "thermo_resin_chunk", 20 ] ], [ [ "superglue", 8 ] ] ],
+    "proficiencies": [
+      { "proficiency": "prof_plasticworking" },
+      { "proficiency": "prof_closures" }
+    ]
+  },
+  {
+    "result": "duster_leather_rubberized_thermoplastic",
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "category": "CC_ARMOR",
+    "subcategory": "CSC_ARMOR_TORSO",
+    "skill_used": "fabrication",
+    "difficulty": 8,
+    "skills_required": [ "tailor", 5 ],
+    "time": "6 h 46 m",
+    "autolearn": no,
+    "book_learn": [ [ "plastics_book", 6 ], [ "dieselpunk_tailor", 8 ], [ "theater_props", 9 ] ],
+    "using": [ [ "sewing_standard", 10 ], [ "strap_small", 8 ], [ "plastic_molding", 20 ] ],
+    "qualities": [ { "id": "PUNCH", "level": 2 } ],
+    "components": [ [ [ "trenchcoat_leather_rubberized", 1 ] ], [ [ "thermo_resin_chunk", 15 ] ], [ [ "superglue", 8 ] ] ],
+    "proficiencies": [
+      { "proficiency": "prof_plasticworking" },
+      { "proficiency": "prof_closures" }
+    ]
   }
 ]
