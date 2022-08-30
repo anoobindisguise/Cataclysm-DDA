@@ -553,7 +553,7 @@
     "type": "TOOL_ARMOR",
     "category": "armor",
     "name": { "str": "heavy combat exoskeleton" },
-    "description": "Colloquially known as a 'tank suit' in the media, these bulky exoskeletons, covered in thick segmented armor plates, were tested in military service a few years back and determined to be too heavy and expensive for regular use.  Now that it's in your hands, though, you have a massive suit of power armor capable of resisting almost any small arms fire and most other forms of attack.  On the other hand, it doubles your effective weight, and it's almost impossible not to bump into things.  There is an integrated chemical-resistant bodyglove made of aluminized Nomex that precludes wearing other clothing.  The armor is outfitted with a variety of clips & clamps, allowing it to hold a few mags & grenades, as well as a large rifle.",
+    "description": "Colloquially known as a 'tank suit' in the media, these bulky exoskeletons, covered in thick segmented armor plates, were tested in military service a few years back and determined to be too heavy and expensive for regular use.  Now that it's in your hands, though, you have a massive suit of power armor capable of resisting almost any small arms fire and most other forms of attack.  On the other hand, it doubles your effective weight, and it's almost impossible not to bump into things.  Its interior is made primarily of aluminized Nomex similar to that of a fire proximity suit making its wearer able to better survive extreme temperatures, but it's a tight fit - even undergarments are a little uncomfortable to fit under the thick lining.  The armor is outfitted with a variety of clips & clamps, allowing it to hold a few mags & grenades, as well as a large rifle.",
     "//": "This should probably changed to a pseudo-vehicle like the civilian exoskeleton",
     "weight": "75 kg",
     "volume": "130 L",
@@ -561,7 +561,7 @@
     "price_postapoc": 40000,
     "to_hit": 1,
     "bashing": 1,
-    "material": [ "qt_steel", "nomex", "kevlar_rigid" ],
+    "material": [ "qt_steel", "nomex_aluminized", "kevlar_rigid" ],
     "symbol": "[",
     "looks_like": "power_armor_basic",
     "color": "dark_gray",
@@ -674,8 +674,7 @@
     "armor": [
       {
         "material": [
-          { "type": "nomex", "covered_by_mat": 100, "thickness": 3.0 },
-          { "type": "aluminum", "covered_by_mat": 100, "thickness": 2.0 },
+          { "type": "nomex_aluminized", "covered_by_mat": 100, "thickness": 3.0 },
           { "type": "kevlar_rigid", "covered_by_mat": 94, "thickness": 3.0 },
           { "type": "kevlar_rigid", "covered_by_mat": 92, "thickness": 3.0 },
           { "type": "kevlar_rigid", "covered_by_mat": 92, "thickness": 3.0 },
@@ -693,8 +692,7 @@
       },
       {
         "material": [
-          { "type": "nomex", "covered_by_mat": 100, "thickness": 3.0 },
-          { "type": "aluminum", "covered_by_mat": 100, "thickness": 2.0 },
+          { "type": "nomex_aluminized", "covered_by_mat": 100, "thickness": 3.0 },
           { "type": "kevlar_rigid", "covered_by_mat": 70, "thickness": 2.5 },
           { "type": "kevlar_rigid", "covered_by_mat": 85, "thickness": 1.5 },
           { "type": "kevlar_rigid", "covered_by_mat": 80, "thickness": 1.5 },
@@ -709,8 +707,7 @@
       },
       {
         "material": [
-          { "type": "nomex", "covered_by_mat": 100, "thickness": 3.0 },
-          { "type": "aluminum", "covered_by_mat": 100, "thickness": 2.0 },
+          { "type": "nomex_aluminized", "covered_by_mat": 100, "thickness": 3.0 },
           { "type": "kevlar_rigid", "covered_by_mat": 71, "thickness": 3.0 },
           { "type": "kevlar_rigid", "covered_by_mat": 80, "thickness": 1.5 },
           { "type": "kevlar_rigid", "covered_by_mat": 77, "thickness": 2.0 },
@@ -727,8 +724,7 @@
       },
       {
         "material": [
-          { "type": "nomex", "covered_by_mat": 100, "thickness": 3.0 },
-          { "type": "aluminum", "covered_by_mat": 100, "thickness": 2.0 },
+          { "type": "nomex_aluminized", "covered_by_mat": 100, "thickness": 3.0 },
           { "type": "kevlar_rigid", "covered_by_mat": 89, "thickness": 2.5 },
           { "type": "kevlar_rigid", "covered_by_mat": 85, "thickness": 2.5 },
           { "type": "kevlar_rigid", "covered_by_mat": 85, "thickness": 2.0 },
@@ -751,7 +747,7 @@
     "looks_like": "power_armor_heavy",
     "type": "TOOL_ARMOR",
     "name": { "str": "heavy combat exoskeleton (on)", "str_pl": "heavy combat exoskeletons (on)" },
-    "description": "Colloquially known as a 'tank suit' in the media, these bulky exoskeletons, covered in thick segmented armor plates, were tested in military service a few years back and determined to be too heavy and expensive for regular use.  Now that it's in your hands, though, you have a massive suit of power armor capable of resisting almost any small arms fire and most other forms of attack.  On the other hand, it doubles your effective weight, and it's almost impossible not to bump into things.  There is an integrated chemical-resistant bodyglove made of aluminized Nomex that precludes wearing other clothing.  Now that it's in your hands, though, you have a massive suit of power armor capable of resisting almost any small arms fire and most other forms of attack.  On the other hand, it doubles your effective weight, and it's almost impossible not to bump into things.  There is an integrated chemical-resistant bodyglove that precludes wearing other clothing.  It is turned on and continually drawing power.  Use it to turn it off.",
+    "description": "Colloquially known as a 'tank suit' in the media, these bulky exoskeletons, covered in thick segmented armor plates, were tested in military service a few years back and determined to be too heavy and expensive for regular use.  Now that it's in your hands, though, you have a massive suit of power armor capable of resisting almost any small arms fire and most other forms of attack.  On the other hand, it doubles your effective weight, and it's almost impossible not to bump into things.  Its interior is made primarily of aluminized Nomex similar to that of a fire proximity suit making its wearer able to better survive extreme temperatures, but it's a tight fit - even undergarments are a little uncomfortable to fit under the thick lining.  It is turned on and continually drawing power.  Use it to turn it off.",
     "flags": [
       "IS_UPS",
       "WATERPROOF",
@@ -885,8 +881,7 @@
     "armor": [
       {
         "material": [
-          { "type": "nomex", "covered_by_mat": 100, "thickness": 3.0 },
-          { "type": "aluminum", "covered_by_mat": 100, "thickness": 2.0 },
+          { "type": "nomex_aluminized", "covered_by_mat": 100, "thickness": 3.0 },
           { "type": "kevlar_rigid", "covered_by_mat": 94, "thickness": 3.0 },
           { "type": "kevlar_rigid", "covered_by_mat": 92, "thickness": 3.0 },
           { "type": "kevlar_rigid", "covered_by_mat": 92, "thickness": 3.0 },
@@ -904,8 +899,7 @@
       },
       {
         "material": [
-          { "type": "nomex", "covered_by_mat": 100, "thickness": 3.0 },
-          { "type": "aluminum", "covered_by_mat": 100, "thickness": 2.0 },
+          { "type": "nomex_aluminized", "covered_by_mat": 100, "thickness": 3.0 },
           { "type": "kevlar_rigid", "covered_by_mat": 70, "thickness": 2.5 },
           { "type": "kevlar_rigid", "covered_by_mat": 85, "thickness": 1.5 },
           { "type": "kevlar_rigid", "covered_by_mat": 80, "thickness": 1.5 },
@@ -920,8 +914,7 @@
       },
       {
         "material": [
-          { "type": "nomex", "covered_by_mat": 100, "thickness": 3.0 },
-          { "type": "aluminum", "covered_by_mat": 100, "thickness": 2.0 },
+          { "type": "nomex_aluminized", "covered_by_mat": 100, "thickness": 3.0 },
           { "type": "kevlar_rigid", "covered_by_mat": 71, "thickness": 3.0 },
           { "type": "kevlar_rigid", "covered_by_mat": 80, "thickness": 1.5 },
           { "type": "kevlar_rigid", "covered_by_mat": 77, "thickness": 2.0 },
@@ -938,8 +931,7 @@
       },
       {
         "material": [
-          { "type": "nomex", "covered_by_mat": 100, "thickness": 3.0 },
-          { "type": "aluminum", "covered_by_mat": 100, "thickness": 2.0 },
+          { "type": "nomex_aluminized", "covered_by_mat": 100, "thickness": 3.0 },
           { "type": "kevlar_rigid", "covered_by_mat": 89, "thickness": 2.5 },
           { "type": "kevlar_rigid", "covered_by_mat": 85, "thickness": 2.5 },
           { "type": "kevlar_rigid", "covered_by_mat": 85, "thickness": 2.0 },
@@ -1071,8 +1063,7 @@
       },
       {
         "material": [
-          { "type": "nomex", "covered_by_mat": 100, "thickness": 3.0 },
-          { "type": "aluminum", "covered_by_mat": 100, "thickness": 2.0 },
+          { "type": "nomex_aluminized", "covered_by_mat": 100, "thickness": 3.0 },
           { "type": "kevlar_rigid", "covered_by_mat": 100, "thickness": 4.5 },
           { "type": "qt_steel", "covered_by_mat": 100, "thickness": 3.0 },
           { "type": "qt_steel", "covered_by_mat": 88, "thickness": 2.5 }
@@ -1103,16 +1094,15 @@
           { "type": "lvl4ballisticglass", "covered_by_mat": 100, "thickness": 4.0 },
           { "type": "qt_steel", "covered_by_mat": 90, "thickness": 3.5 }
         ],
-        "//": "aux cameras give you something resembling a field of vision and the helmet circulates air.",
-        "encumbrance": 25,
+        "//": "powered motion assistance gives you resembling a field of vision and the helmet circulates air.",
+        "encumbrance": 35,
         "coverage": 100,
         "covers_vitals": 100,
         "covers": [ "eyes", "mouth" ]
       },
       {
         "material": [
-          { "type": "nomex", "covered_by_mat": 100, "thickness": 3.0 },
-          { "type": "aluminum", "covered_by_mat": 100, "thickness": 2.0 },
+          { "type": "nomex_aluminized", "covered_by_mat": 100, "thickness": 3.0 },
           { "type": "kevlar_rigid", "covered_by_mat": 100, "thickness": 4.5 },
           { "type": "qt_steel", "covered_by_mat": 100, "thickness": 3.0 },
           { "type": "qt_steel", "covered_by_mat": 88, "thickness": 2.5 }
