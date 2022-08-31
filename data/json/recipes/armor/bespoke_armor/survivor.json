@@ -267,7 +267,7 @@
     "using": [ [ "sewing_standard", 15 ] ],
     "tools": [ [ [ "makeshift_vacuum_mold", 100 ], [ "vac_mold", 50 ] ], [ [ "surface_heat", 200, "LIST" ] ] ],
     "qualities": [ { "id": "LEATHER_AWL", "level": 1 }, { "id": "COOK", "level": 2 } ],
-    "components": [ [ [ "duster_leather", 1 ] ], [ [ "chunk_rubber", 20 ] ], [ [ "cement_rubber", 8 ] ] ],
+    "components": [ [ [ "duster_leather", 1 ] ], [ [ "chunk_rubber", 20 ] ], [ [ "rubber_cement", 8 ] ] ],
     "proficiencies": [
       { "proficiency": "prof_plasticworking" },
       { "proficiency": "prof_leatherworking_basic" },
@@ -290,7 +290,7 @@
     "using": [ [ "sewing_standard", 10 ] ],
     "tools": [ [ [ "makeshift_vacuum_mold", 80 ], [ "vac_mold", 40 ] ], [ [ "surface_heat", 160, "LIST" ] ] ],
     "qualities": [ { "id": "LEATHER_AWL", "level": 1 }, { "id": "COOK", "level": 2 } ],
-    "components": [ [ [ "trenchcoat_leather", 1 ] ], [ [ "chunk_rubber", 16 ] ], [ [ "cement_rubber", 6 ] ] ],
+    "components": [ [ [ "trenchcoat_leather", 1 ] ], [ [ "chunk_rubber", 16 ] ], [ [ "rubber_cement", 6 ] ] ],
     "proficiencies": [
       { "proficiency": "prof_plasticworking" },
       { "proficiency": "prof_leatherworking_basic" },
