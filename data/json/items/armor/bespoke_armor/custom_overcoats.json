@@ -327,12 +327,12 @@
     "id": "duster_leather_rubberized",
     "type": "ARMOR",
     "name": { "str": "rubberized leather duster" },
-    "description": "A thick leather full-length duster.  The pockets have been shaved off and in their place a coating of molded soft rubber has been applied.",
+    "description": "A thick leather full-length duster.  The pockets have been shaved off and in their place a molded coating of layered neoprene and hard rubber has been applied.",
     "weight": "5575 g",
     "volume": "9100 ml",
     "price_postapoc": 2500,
     "to_hit": -1,
-    "material": [ "leather", "rubber" ],
+    "material": [ "leather", "neoprene", "rubber" ],
     "symbol": "[",
     "looks_like": "duster_leather",
     "color": "brown",
@@ -340,25 +340,28 @@
       {
         "material": [
           { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 }
+          { "type": "neoprene", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 95, "thickness": 1.5 }
         ],
-        "encumbrance": 11,
+        "encumbrance": 12,
         "coverage": 100,
         "covers": [ "torso" ]
       },
       {
         "material": [
           { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 }
+          { "type": "neoprene", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 95, "thickness": 1.5 }
         ],
-        "encumbrance": 11,
+        "encumbrance": 12,
         "coverage": 100,
         "covers": [ "arm_l", "arm_r" ]
       },
       {
         "material": [
           { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 }
+          { "type": "neoprene", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 85, "thickness": 1.5 }
         ],
         "covers": [ "leg_l", "leg_r" ],
         "coverage": 100,
@@ -368,7 +371,8 @@
       {
         "material": [
           { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 }
+          { "type": "neoprene", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 85, "thickness": 1.5 }
         ],
         "covers": [ "leg_l", "leg_r" ],
         "coverage": 60,
@@ -377,7 +381,7 @@
       }
     ],
     "warmth": 37,
-    "material_thickness": 3,
+    "material_thickness": 4.5,
     "environmental_protection": 4,
     "flags": [ "VARSIZE", "OUTER", "WATERPROOF", "RAINPROOF", "STURDY", "SOFT" ]
   },
@@ -385,12 +389,12 @@
     "id": "trenchcoat_leather_rubberized",
     "type": "ARMOR",
     "name": { "str": "rubberized leather trenchcoat" },
-    "description": "A thick leather trenchcoat.  The pockets have been shaved off and in their place a coating of molded soft rubber has been applied.",
+    "description": "A thick leather trenchcoat.  The pockets have been shaved off and in their place a molded coating of layered neoprene and hard rubber has been applied.",
     "weight": "4130 g",
     "volume": "6825 ml",
     "price_postapoc": 1500,
     "to_hit": -1,
-    "material": [ "leather", "rubber" ],
+    "material": [ "leather", "neoprene", "rubber" ],
     "symbol": "[",
     "looks_like": "trenchcoat_leather",
     "color": "brown",
@@ -398,24 +402,26 @@
       {
         "material": [
           { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 }
+          { "type": "neoprene", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 95, "thickness": 1.5 }
         ],
-        "encumbrance": 11,
+        "encumbrance": 12,
         "coverage": 100,
         "covers": [ "torso" ]
       },
       {
         "material": [
           { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 }
+          { "type": "neoprene", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 95, "thickness": 1.5 }
         ],
-        "encumbrance": 11,
+        "encumbrance": 12,
         "coverage": 100,
         "covers": [ "arm_l", "arm_r" ]
       }
     ],
     "warmth": 37,
-    "material_thickness": 3,
+    "material_thickness": 4.5,
     "environmental_protection": 4,
     "flags": [ "VARSIZE", "OUTER", "STURDY", "SOFT" ]
   },
@@ -428,7 +434,7 @@
     "volume": "9825 ml",
     "price_postapoc": 4000,
     "to_hit": -1,
-    "material": [ "leather", "rubber", "thermo_resin" ],
+    "material": [ "leather", "neoprene", "rubber", "thermo_resin" ],
     "symbol": "[",
     "looks_like": "trenchcoat_leather",
     "color": "brown",
@@ -436,26 +442,28 @@
       {
         "material": [
           { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "neoprene", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 95, "thickness": 1.5 },
           { "type": "thermo_resin", "covered_by_mat": 95, "thickness": 1.5 }
         ],
-        "encumbrance": 13,
+        "encumbrance": 15,
         "coverage": 100,
         "covers": [ "torso" ]
       },
       {
         "material": [
           { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "neoprene", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 95, "thickness": 1.5 },
           { "type": "thermo_resin", "covered_by_mat": 95, "thickness": 1.5 }
         ],
-        "encumbrance": 13,
+        "encumbrance": 15,
         "coverage": 100,
         "covers": [ "arm_l", "arm_r" ]
       }
     ],
     "warmth": 40,
-    "material_thickness": 4.5,
+    "material_thickness": 6.0,
     "environmental_protection": 4,
     "flags": [ "VARSIZE", "OUTER", "STURDY", "BLOCK_WHILE_WORN" ]
   },
@@ -463,12 +471,12 @@
     "id": "duster_leather_rubberized_thermoplastic",
     "type": "ARMOR",
     "name": { "str": "thermoplastic plated rubberized leather duster" },
-    "description": "A thick leather full-length duster with a coating of soft rubber.  Sturdy thermoplastic plates have been molded, shaped and affixed to its surface, offering superior protection at minimal weight.",
+    "description": "A thick leather full-length duster with a coating of neoprene and rubber.  Sturdy thermoplastic plates have been molded, shaped and affixed to its surface, offering superior protection at minimal weight.",
     "weight": "7075 g",
     "volume": "14500 ml",
     "price_postapoc": 1500,
     "to_hit": -1,
-    "material": [ "leather", "rubber", "thermo_resin" ],
+    "material": [ "leather", "neoprene", "rubber", "thermo_resin" ],
     "symbol": "[",
     "looks_like": "duster_leather",
     "color": "brown",
@@ -476,7 +484,8 @@
       {
         "material": [
           { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "neoprene", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 95, "thickness": 1.5 },
           { "type": "thermo_resin", "covered_by_mat": 95, "thickness": 1.5 }
         ],
         "encumbrance": 15,
@@ -486,7 +495,8 @@
       {
         "material": [
           { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "neoprene", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 95, "thickness": 1.5 },
           { "type": "thermo_resin", "covered_by_mat": 95, "thickness": 1.5 }
         ],
         "encumbrance": 15,
@@ -496,10 +506,10 @@
       {
         "material": [
           { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "thermo_resin", "covered_by_mat": 85, "thickness": 1.5 }
+          { "type": "neoprene", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 85, "thickness": 1.5 },
+          { "type": "thermo_resin", "covered_by_mat": 95, "thickness": 1.5 }
         ],
-        "//": "due to inflexibility the lower part of the duster is made of looser plates so that it can bend.",
         "covers": [ "leg_l", "leg_r" ],
         "coverage": 100,
         "encumbrance": 15,
@@ -508,8 +518,9 @@
       {
         "material": [
           { "type": "leather", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "thermo_resin", "covered_by_mat": 80, "thickness": 1.5 }
+          { "type": "neoprene", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "rubber", "covered_by_mat": 85, "thickness": 1.5 },
+          { "type": "thermo_resin", "covered_by_mat": 95, "thickness": 1.5 }
         ],
         "covers": [ "leg_l", "leg_r" ],
         "coverage": 60,
@@ -518,7 +529,7 @@
       }
     ],
     "warmth": 40,
-    "material_thickness": 4.5,
+    "material_thickness": 6.0,
     "environmental_protection": 4,
     "flags": [ "VARSIZE", "OUTER", "WATERPROOF", "RAINPROOF", "STURDY", "BLOCK_WHILE_WORN" ]
   }
