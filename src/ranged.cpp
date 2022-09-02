@@ -110,6 +110,8 @@ static const fault_id fault_gun_blackpowder( "fault_gun_blackpowder" );
 static const fault_id fault_gun_chamber_spent( "fault_gun_chamber_spent" );
 static const fault_id fault_gun_dirt( "fault_gun_dirt" );
 
+static const json_flag flag_WEAPONS_PLATFORM( "WEAPONS_PLATFORM" );
+
 static const material_id material_budget_steel( "budget_steel" );
 static const material_id material_case_hardened_steel( "case_hardened_steel" );
 static const material_id material_glass( "glass" );
@@ -3980,7 +3982,7 @@ bool gunmode_checks_weapon( avatar &you, const map &m, std::vector<std::string> 
         }
     }
 
-    if( gmode->has_flag( flag_MOUNTED_GUN ) ) {
+    if( gmode->has_flag( flag_MOUNTED_GUN ) && !you.worn_with_flag( flag_WEAPONS_PLATFORM ) ) {
         const bool v_mountable = static_cast<bool>( m.veh_at( you.pos() ).part_with_feature( "MOUNTABLE",
                                  true ) );
         bool t_mountable = m.has_flag_ter_or_furn( ter_furn_flag::TFLAG_MOUNTABLE, you.pos() );
