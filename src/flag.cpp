@@ -351,6 +351,7 @@ const flag_id flag_WIND_EXTINGUISH( "WIND_EXTINGUISH" );
 const flag_id flag_WRITE_MESSAGE( "WRITE_MESSAGE" );
 const flag_id flag_ZERO_WEIGHT( "ZERO_WEIGHT" );
 const flag_id flag_ZOOM( "ZOOM" );
+const flag_id flag_WEAPONS_PLATFORM( "WEAPONS_PLATFORM" );
 const flag_id flag_wooled( "wooled" );
 const flag_id json_flag_HIDDEN_ITEM( "HIDDEN_ITEM" );
 static const flag_id json_flag_null( "null" );
