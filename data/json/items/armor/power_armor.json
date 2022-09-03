@@ -111,7 +111,7 @@
         "//": "lower coverage on on the plates, less encumbrance due to most of the machinery being stripped out and some plates being missing.",
         "encumbrance": 40,
         "coverage": 100,
-        "covers_vitals": 100,
+        "cover_vitals": 100,
         "covers": [ "torso" ],
         "volume_encumber_modifier": 0
       },
@@ -326,7 +326,7 @@
         "//": "armor on torso is the heaviest with triple qt_steel checks, better coverage but thinner plates compared to old model",
         "encumbrance": 55,
         "coverage": 100,
-        "covers_vitals": 100,
+        "cover_vitals": 100,
         "covers": [ "torso" ],
         "volume_encumber_modifier": 0
       },
@@ -419,7 +419,7 @@
         "//": "armor on torso is the heaviest with triple qt_steel checks, better coverage but thinner plates compared to old model",
         "encumbrance": 25,
         "coverage": 100,
-        "covers_vitals": 100,
+        "cover_vitals": 100,
         "covers": [ "torso" ],
         "volume_encumber_modifier": 0
       },
@@ -686,7 +686,7 @@
         "//": "armor on torso is the heaviest with quadruple qt_steel checks, should be extremely restrictive without power as it's much heavier than EOD gear",
         "encumbrance": 90,
         "coverage": 100,
-        "covers_vitals": 100,
+        "cover_vitals": 100,
         "covers": [ "torso" ],
         "volume_encumber_modifier": 0
       },
@@ -893,7 +893,7 @@
         "//": "armor on torso is the heaviest with quadruple qt_steel checks, should be extremely restrictive without power as it's much heavier than EOD gear",
         "encumbrance": 40,
         "coverage": 100,
-        "covers_vitals": 100,
+        "cover_vitals": 100,
         "covers": [ "torso" ],
         "volume_encumber_modifier": 0
       },
@@ -1004,7 +1004,7 @@
         "//": "4mm faceplate, less blinding than the heavy version",
         "encumbrance": 40,
         "coverage": 100,
-        "covers_vitals": 100,
+        "cover_vitals": 100,
         "covers": [ "eyes", "mouth" ]
       },
       {
@@ -1017,7 +1017,7 @@
         "//": "helmet should stop a 7.62x51 in most cases",
         "encumbrance": 50,
         "coverage": 100,
-        "covers_vitals": 100,
+        "cover_vitals": 100,
         "covers": [ "head" ]
       }
     ]
@@ -1075,7 +1075,7 @@
         "//": "extremely thick ballistic glass + almost all of it blocked with thick steel = nearly impossible to see out of.  Or breathe out of.",
         "encumbrance": 50,
         "coverage": 100,
-        "covers_vitals": 100,
+        "cover_vitals": 100,
         "covers": [ "eyes", "mouth" ]
       },
       {
@@ -1088,7 +1088,7 @@
         "//": "helmet should stop a .30-06 in most cases",
         "encumbrance": 90,
         "coverage": 100,
-        "covers_vitals": 100,
+        "cover_vitals": 100,
         "covers": [ "head" ]
       }
     ]
@@ -1114,7 +1114,7 @@
         "//": "powered motion assistance gives you resembling a field of vision and the helmet circulates air.",
         "encumbrance": 35,
         "coverage": 100,
-        "covers_vitals": 100,
+        "cover_vitals": 100,
         "covers": [ "eyes", "mouth" ]
       },
       {
@@ -1127,7 +1127,7 @@
         "//": "helmet should stop a .30-06 in most cases",
         "encumbrance": 40,
         "coverage": 100,
-        "covers_vitals": 100,
+        "cover_vitals": 100,
         "covers": [ "head" ]
       }
     ]
@@ -1188,7 +1188,7 @@
         "//": "3mm faceplate proofed against 9x19 in worst case scenario",
         "encumbrance": 30,
         "coverage": 100,
-        "covers_vitals": 100,
+        "cover_vitals": 100,
         "covers": [ "eyes", "mouth" ]
       },
       {
@@ -1201,7 +1201,7 @@
         "//": "helmet should stop a 5.56x45 in most cases",
         "encumbrance": 40,
         "coverage": 100,
-        "covers_vitals": 100,
+        "cover_vitals": 100,
         "covers": [ "head" ]
       }
     ]
