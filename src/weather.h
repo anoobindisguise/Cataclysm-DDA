@@ -45,6 +45,28 @@ static constexpr int BODYTEMP_SCORCHING = 9500;
 static constexpr int BODYTEMP_THRESHOLD = 500;
 ///@}
 
+// Rough tresholds for sunlight intensity in W/m2.
+namespace irradiance
+{
+// Sun at 5° on a clear day. Minimal for what is considered direct sunlight
+constexpr float minimal = 87;
+
+// Sun at 25° on a clear day.
+constexpr float low = 422;
+
+// Sun at 35° on a clear day.
+constexpr float moderate = 573;
+
+// Sun at 45° on a clear day.
+constexpr float high = 707;
+
+// Sun at 60° on a clear day.
+constexpr float very_high = 866;
+
+// Sun at 65° on a clear day.
+constexpr float extreme = 906;
+} // namespace irradiance
+
 #include <cstdint>
 #include <iosfwd>
 #include <map>
@@ -84,6 +106,7 @@ struct weather_sum {
     int rain_amount = 0;
     int acid_amount = 0;
     float sunlight = 0.0f;
+    float radiant_exposure = 0.0f; // J/m2
     int wind_amount = 0;
 };
 bool is_creature_outside( const Creature &target );
@@ -159,6 +182,10 @@ void glare( const weather_type_id &w );
  */
 float incident_sunlight( const weather_type_id &wtype,
                          const time_point &t = calendar::turn );
+
+/* Amount of irradiance (W/m2) at ground after weather modifications */
+float incident_sun_irradiance( const weather_type_id &wtype,
+                               const time_point &t = calendar::turn );
 
 void weather_sound( const translation &sound_message, const std::string &sound_effect );
 

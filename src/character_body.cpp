@@ -50,6 +50,10 @@ static const efftype_id effect_wet( "wet" );
 
 static const itype_id itype_rm13_armor_on( "rm13_armor_on" );
 
+static const json_character_flag json_flag_COLDBLOOD( "COLDBLOOD" );
+static const json_character_flag json_flag_COLDBLOOD2( "COLDBLOOD2" );
+static const json_character_flag json_flag_COLDBLOOD3( "COLDBLOOD3" );
+static const json_character_flag json_flag_ECTOTHERM( "ECTOTHERM" );
 static const json_character_flag json_flag_HEATSINK( "HEATSINK" );
 static const json_character_flag json_flag_HEAT_IMMUNE( "HEAT_IMMUNE" );
 static const json_character_flag json_flag_IGNORE_TEMP( "IGNORE_TEMP" );
@@ -61,10 +65,6 @@ static const trait_id trait_BARK( "BARK" );
 static const trait_id trait_CHITIN_FUR( "CHITIN_FUR" );
 static const trait_id trait_CHITIN_FUR2( "CHITIN_FUR2" );
 static const trait_id trait_CHITIN_FUR3( "CHITIN_FUR3" );
-static const trait_id trait_COLDBLOOD( "COLDBLOOD" );
-static const trait_id trait_COLDBLOOD2( "COLDBLOOD2" );
-static const trait_id trait_COLDBLOOD3( "COLDBLOOD3" );
-static const trait_id trait_COLDBLOOD4( "COLDBLOOD4" );
 static const trait_id trait_DEBUG_LS( "DEBUG_LS" );
 static const trait_id trait_DEBUG_NOTEMP( "DEBUG_NOTEMP" );
 static const trait_id trait_FELINE_FUR( "FELINE_FUR" );
@@ -448,11 +448,8 @@ void Character::update_bodytemp()
                                0.0f ) );
 
     // Sunlight
-    const int sunlight_warmth = g->is_in_sunlight( pos() ) ?
-                                ( get_weather().weather_id->sun_intensity ==
-                                  sun_intensity_type::high ?
-                                  1000 :
-                                  500 ) : 0;
+    const int sunlight_warmth = !g->is_sheltered( pos() ) ? incident_sun_irradiance(
+                                    get_weather().weather_id, calendar::turn ) * 1.5 : 0;
     const int best_fire = get_best_fire( pos() );
 
     const int lying_warmth = use_floor_warmth ? floor_warmth( pos() ) : 0;
@@ -1145,11 +1142,14 @@ bodypart_id Character::body_window( const std::string &menu_header,
             desc += colorize( _( "It is broken.  It needs a splint or surgical attention." ), c_red ) + "\n";
             hp_str = "==%==";
         } else if( no_feeling ) {
-            if( current_hp < maximal_hp * 0.25 ) {
+            const float cur_hp_pcnt = current_hp / static_cast<float>( maximal_hp );
+            if( cur_hp_pcnt < 0.125f ) {
                 hp_str = colorize( _( "Very Bad" ), c_red );
-            } else if( current_hp < maximal_hp * 0.5 ) {
+            } else if( cur_hp_pcnt < 0.375f ) {
                 hp_str = colorize( _( "Bad" ), c_light_red );
-            } else if( current_hp < maximal_hp * 0.75 ) {
+            } else if( cur_hp_pcnt < 0.625f ) {
+                hp_str = colorize( _( "So-so" ), c_yellow );
+            } else if( cur_hp_pcnt < 0.875f ) {
                 hp_str = colorize( _( "Okay" ), c_light_green );
             } else {
                 hp_str = colorize( _( "Good" ), c_green );
@@ -1269,13 +1269,13 @@ void Character::update_heartrate_index()
     //COLDBLOOD dependencies, works almost same way as temperature effect for speed.
     const float player_local_temp = units::to_fahrenheit( get_weather().get_temperature( pos() ) );
     float temperature_modifier = 0.0f;
-    if( has_trait( trait_COLDBLOOD ) ) {
+    if( has_flag( json_flag_COLDBLOOD ) ) {
         temperature_modifier = 0.002f;
     }
-    if( has_trait( trait_COLDBLOOD2 ) ) {
+    if( has_flag( json_flag_COLDBLOOD2 ) ) {
         temperature_modifier = 0.00333f;
     }
-    if( has_trait( trait_COLDBLOOD3 ) || has_trait( trait_COLDBLOOD4 ) ) {
+    if( has_flag( json_flag_COLDBLOOD3 ) || has_flag( json_flag_ECTOTHERM ) ) {
         temperature_modifier = 0.005f;
     }
     const float hr_temp_mod = ( player_local_temp - 65 ) * temperature_modifier;
