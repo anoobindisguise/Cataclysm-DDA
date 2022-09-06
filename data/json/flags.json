@@ -891,7 +891,7 @@
   {
     "id": "WEAPONS_PLATFORM",
     "type": "json_flag",
-    "info": "This armor allows you to use emplacement guns without mounting them first."
+    "info": "This armor allows you to use  <info>emplacement guns</info> without using a gun mount."
   },
   {
     "id": "POWERARMOR_COMPATIBLE",
