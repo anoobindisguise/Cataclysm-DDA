@@ -13,6 +13,7 @@ adze
 aerarium
 aerially
 aeterna
+aetheric
 afterbirth
 afterimage
 afterlife
@@ -269,6 +270,7 @@ caltrops
 camarasaurus
 camarasaurus
 camphine
+campin'
 camspy
 cannelured
 caparison
@@ -586,6 +588,8 @@ eyespots
 eyestalks
 f
 faceplates
+fader
+faders
 faewild
 fakkin
 falcata
@@ -639,6 +643,7 @@ flarewhip
 flatjaw
 flavorings
 fle
+flechette
 flechettes
 fletched
 fletching
@@ -769,6 +774,7 @@ gymnocladus
 h
 hadrosaurus
 haematopoiesis
+haft
 hahahahahaha
 hahd
 halazone
@@ -880,6 +886,7 @@ interestin
 interjected
 interjects
 interlayer
+intermixed
 intolerances
 intoxications
 intradimensional
@@ -893,6 +900,7 @@ isable
 isassembled
 issi
 issions
+issuer
 itemname
 iterating
 j
@@ -935,6 +943,7 @@ keypress
 kg
 khopesh
 khru
+kickboard
 killbasa
 kilroy
 kinbot
@@ -1252,6 +1261,7 @@ olieribos
 olors
 ompare
 omplete
+oneiric
 onyxes
 openable
 openair
@@ -1298,6 +1308,8 @@ parthenogenetic
 partyin
 pasteurize
 pathfinding
+pauldron
+pauldrons
 peanutbutter
 peccari
 pecial
@@ -1387,6 +1399,7 @@ premeasured
 preminiscent
 premix
 preoptic
+presaging
 prescriptures
 prev
 primeside
@@ -1539,6 +1552,8 @@ rugerlcp
 ruleset
 rummagin
 s
+sabaton
+sabatons
 saboted
 sadisticly
 safemode
@@ -1777,6 +1792,7 @@ tass
 tassed
 tassin
 taxa
+tazer
 tazers
 tcha
 techn
@@ -1894,7 +1910,6 @@ uneasing
 unfavorite
 unfermented
 unflavored
-unfletched
 unfoldable
 ungraspable
 unhardened
@@ -1907,6 +1922,7 @@ universalism
 unjacketed
 unlively
 unlives
+unlooted
 unmalted
 unmark
 unmarred

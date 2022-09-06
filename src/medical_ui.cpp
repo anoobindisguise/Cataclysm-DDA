@@ -544,16 +544,18 @@ static medical_column draw_effects_summary( const int column_count, avatar *play
         effects_column.add_column_line( selection_line( starvation_name, starvation_text, max_width ) );
     }
 
-    if( player->has_trait( trait_TROGLO ) && g->is_in_sunlight( player->pos() ) &&
-        get_weather().weather_id->sun_intensity >= sun_intensity_type::high ) {
-        effects_column.add_column_line( selection_line( "In Sunlight", "The sunlight irritates you.\n",
-                                        max_width ) );
-    } else if( player->has_trait( trait_TROGLO2 ) && g->is_in_sunlight( player->pos() ) ) {
-        effects_column.add_column_line( selection_line( "In Sunlight",
-                                        "The sunlight irritates you badly.\n", max_width ) );
-    } else if( player->has_trait( trait_TROGLO3 ) && g->is_in_sunlight( player->pos() ) ) {
+    if( player->has_trait( trait_TROGLO3 ) && g->is_in_sunlight( player->pos() ) ) {
         effects_column.add_column_line( selection_line( "In Sunlight",
                                         "The sunlight irritates you terribly.\n", max_width ) );
+    } else if( player->has_trait( trait_TROGLO2 ) && g->is_in_sunlight( player->pos() ) &&
+               incident_sun_irradiance( get_weather().weather_id, calendar::turn ) > irradiance::low ) {
+        effects_column.add_column_line( selection_line( "In Sunlight",
+                                        "The sunlight irritates you badly.\n", max_width ) );
+    } else if( ( player->has_trait( trait_TROGLO ) || player->has_trait( trait_TROGLO2 ) ) &&
+               g->is_in_sunlight( player->pos() ) &&
+               incident_sun_irradiance( get_weather().weather_id, calendar::turn ) > irradiance::moderate ) {
+        effects_column.add_column_line( selection_line( "In Sunlight", "The sunlight irritates you.\n",
+                                        max_width ) );
     }
 
     for( addiction &elem : player->addictions ) {
@@ -741,7 +743,7 @@ void avatar::disp_medical()
     int info_lines = 0;
 
     // Cursor
-    int cursor_bounds[3]; // Number of selectable rows in each column
+    std::array<int, 3> cursor_bounds; // Number of selectable rows in each column
     point cursor;
 
     ui_adaptor ui;
