@@ -6,6 +6,7 @@
 #include "damage.h"
 #include "enums.h"
 #include "item.h"
+#include "itype.h"
 #include "map.h"
 #include "map_helpers.h"
 #include "optional.h"
@@ -14,6 +15,7 @@
 #include "point.h"
 #include "type_id.h"
 #include "units.h"
+#include "veh_appliance.h"
 #include "vehicle.h"
 #include "veh_type.h"
 
@@ -21,6 +23,11 @@ static const itype_id itype_folded_bicycle( "folded_bicycle" );
 static const itype_id itype_folded_inflatable_boat( "folded_inflatable_boat" );
 static const itype_id itype_folded_wheelchair_generic( "folded_wheelchair_generic" );
 static const itype_id itype_hand_pump( "hand_pump" );
+
+static const itype_id itype_test_extension_cable( "test_extension_cable" );
+static const itype_id itype_test_power_cord( "test_power_cord" );
+
+static const vpart_id vpart_ap_test_standing_lamp( "ap_test_standing_lamp" );
 
 static const vproto_id vehicle_prototype_bicycle( "bicycle" );
 
@@ -265,4 +272,275 @@ TEST_CASE( "Unfolding vehicle parts and testing degradation", "[item][degradatio
     }
 
     clear_vehicles( &get_map() );
+}
+
+struct folded_item_damage_preset {
+    itype_id folded_vehicle_item;
+    int item_damage_first_fold;
+    int item_damage_second_fold;
+    int part_damage_second_unfold; // sum of damage over all parts
+    int part_damage_third_unfold;  // sum of damage over all parts
+};
+
+static void check_folded_item_to_parts_damage_transfer( const folded_item_damage_preset &preset )
+{
+    CAPTURE( preset.folded_vehicle_item.str(),
+             preset.item_damage_first_fold, preset.item_damage_second_fold,
+             preset.part_damage_second_unfold, preset.part_damage_third_unfold );
+
+    // exact damage numbers are checked against, there should be almost no rng,
+    // only the part damage is pseudo-random spread, while total damage should
+    // round trip well in integers
+    clear_avatar();
+    clear_map();
+
+    map &m = get_map();
+    Character &u = get_player_character();
+
+    u.worn.wear_item( u, item( "debug_backpack" ), false, false );
+
+    item veh_item( preset.folded_vehicle_item );
+
+    // unfold fresh item factory item
+    complete_activity( u, vehicle_unfolding_activity_actor( veh_item ) );
+
+    optional_vpart_position ovp = m.veh_at( u.get_location() );
+    REQUIRE( ovp.has_value() );
+
+    // don't actually need point_north but damage_all filters out direct damage
+    // do some damage so it is transferred when folding
+    ovp->vehicle().damage_all( 100, 100, damage_type::PURE, ovp->mount() + point_north );
+
+    // fold vehicle into an item
+    complete_activity( u, vehicle_folding_activity_actor( ovp->vehicle() ) );
+
+    ovp = m.veh_at( u.get_location() );
+    REQUIRE( !ovp.has_value() );
+
+    // copy the player-folded vehicle item and delete it from the map
+    map_stack map_items = m.i_at( u.pos_bub() );
+    REQUIRE( map_items.size() == 1 );
+    item player_folded_veh = map_items.only_item();
+    map_items.clear();
+
+    // check the damage was transferred from parts to folded item
+    CHECK( player_folded_veh.damage() == preset.item_damage_first_fold );
+    CHECK( player_folded_veh.get_var( "avg_part_damage", 0.0 ) == preset.item_damage_first_fold );
+
+    complete_activity( u, vehicle_unfolding_activity_actor( player_folded_veh ) );
+
+    ovp = m.veh_at( u.get_location() );
+    REQUIRE( ovp.has_value() );
+
+    int part_damage_before = 0;
+    for( const vpart_reference &vpr : ovp->vehicle().get_all_parts() ) {
+        part_damage_before += vpr.part().damage();
+    }
+
+    // check damage correctly transferred from item to vehicle parts
+    CHECK( part_damage_before == preset.part_damage_second_unfold );
+
+    complete_activity( u, vehicle_folding_activity_actor( ovp->vehicle() ) );
+
+    ovp = m.veh_at( u.get_location() );
+    REQUIRE( !ovp.has_value() );
+    map_items = m.i_at( u.pos_bub() );
+    REQUIRE( map_items.size() == 1 );
+    player_folded_veh = map_items.only_item();
+    map_items.clear();
+
+    // check that we don't add extra item damage after folding
+    CHECK( player_folded_veh.damage() == preset.item_damage_first_fold );
+    CHECK( player_folded_veh.get_var( "avg_part_damage", 0.0 ) == preset.item_damage_first_fold );
+
+    // add some more damage to the item
+    player_folded_veh.mod_damage( 300 );
+
+    // unfold and check extra damage gets distributed into vehicleparts
+    complete_activity( u, vehicle_unfolding_activity_actor( player_folded_veh ) );
+    ovp = m.veh_at( u.get_location() );
+    REQUIRE( ovp.has_value() );
+
+    // add up damage on all parts
+    int part_damage_after = 0;
+    for( const vpart_reference &vpr : ovp->vehicle().get_all_parts() ) {
+        part_damage_after += vpr.part().damage();
+    }
+
+    {
+        INFO( "Checking extra item damage gets distributed to vehicle parts." );
+        CHECK( part_damage_after > part_damage_before );
+        CHECK( part_damage_after == preset.part_damage_third_unfold );
+    }
+
+    complete_activity( u, vehicle_folding_activity_actor( ovp->vehicle() ) );
+
+    REQUIRE( !m.veh_at( u.get_location() ) );
+    map_items = m.i_at( u.pos_bub() );
+    REQUIRE( map_items.size() == 1 );
+    player_folded_veh = map_items.only_item();
+    map_items.clear();
+
+    CHECK( player_folded_veh.damage() == preset.item_damage_second_fold );
+    CHECK( player_folded_veh.get_var( "avg_part_damage", 0.0 ) == preset.item_damage_second_fold );
+}
+
+TEST_CASE( "Check folded item damage transfers to parts and vice versa", "[item][vehicle]" )
+{
+    std::vector<folded_item_damage_preset> presets {
+        { itype_folded_wheelchair_generic, 2111, 2277, 12666, 13666 },
+        { itype_folded_bicycle,            1689, 1961, 18582, 21582 },
+    };
+
+    for( const folded_item_damage_preset &preset : presets ) {
+        check_folded_item_to_parts_damage_transfer( preset );
+    }
+}
+
+// Basically a copy of vehicle::connect() that uses an arbitrary cord type
+static void connect_power_line( const tripoint &src_pos, const tripoint &dst_pos,
+                                const itype_id &itm )
+{
+    map &here = get_map();
+    item cord( itm );
+    cord.set_var( "source_x", src_pos.x );
+    cord.set_var( "source_y", src_pos.y );
+    cord.set_var( "source_z", src_pos.z );
+    cord.set_var( "state", "pay_out_cable" );
+    cord.active = true;
+
+    const optional_vpart_position target_vp = here.veh_at( dst_pos );
+    const optional_vpart_position source_vp = here.veh_at( src_pos );
+
+    if( !target_vp ) {
+        return;
+    }
+    vehicle *const target_veh = &target_vp->vehicle();
+    vehicle *const source_veh = &source_vp->vehicle();
+    if( source_veh == target_veh ) {
+        return ;
+    }
+
+    tripoint target_global = here.getabs( dst_pos );
+    const vpart_id vpid( cord.typeId().str() );
+
+    point vcoords = source_vp->mount();
+    vehicle_part source_part( vpid, "", vcoords, item( cord ) );
+    source_part.target.first = target_global;
+    source_part.target.second = target_veh->global_square_location().raw();
+    source_veh->install_part( vcoords, source_part );
+
+    vcoords = target_vp->mount();
+    vehicle_part target_part( vpid, "", vcoords, item( cord ) );
+    tripoint source_global( cord.get_var( "source_x", 0 ),
+                            cord.get_var( "source_y", 0 ),
+                            cord.get_var( "source_z", 0 ) );
+    target_part.target.first = here.getabs( source_global );
+    target_part.target.second = source_veh->global_square_location().raw();
+    target_veh->install_part( vcoords, target_part );
+}
+
+TEST_CASE( "power_cable_stretch_disconnect" )
+{
+    clear_map();
+    clear_avatar();
+    map &m = get_map();
+    const int max_displacement = 50;
+    const cata::optional<item> stand_lamp1( "test_standing_lamp" );
+    const cata::optional<item> stand_lamp2( "test_standing_lamp" );
+
+    const tripoint app1_pos( HALF_MAPSIZE_X + 2, HALF_MAPSIZE_Y + 2, 0 );
+    const tripoint app2_pos( app1_pos + tripoint( 2, 2, 0 ) );
+
+    place_appliance( app1_pos, vpart_ap_test_standing_lamp, stand_lamp1 );
+    place_appliance( app2_pos, vpart_ap_test_standing_lamp, stand_lamp2 );
+
+    optional_vpart_position app1_part = m.veh_at( app1_pos );
+    optional_vpart_position app2_part = m.veh_at( app2_pos );
+    REQUIRE( app1_part.has_value() );
+    REQUIRE( app2_part.has_value() );
+    vehicle &app1 = app1_part.part_displayed()->vehicle();
+    vehicle &app2 = app2_part.part_displayed()->vehicle();
+    REQUIRE( app1.part_count() == 1 );
+    REQUIRE( app2.part_count() == 1 );
+
+    GIVEN( "connected via regular power cord" ) {
+        connect_power_line( app1_pos, app2_pos, itype_test_power_cord );
+        REQUIRE( app1.part_count() == 2 );
+        REQUIRE( app2.part_count() == 2 );
+
+        REQUIRE( app1.part( 1 ).get_base().type->maximum_charges() == 3 );
+
+        const int max_dist = app1.part( 1 ).get_base().type->maximum_charges();
+
+        WHEN( "displacing first appliance to the left" ) {
+            for( int i = 0; rl_dist( m.getabs( app1.pos_bub() ), m.getabs( app2.pos_bub() ) ) <= max_dist &&
+                 i < max_displacement; i++ ) {
+                CHECK( app1.part_count() == 2 );
+                CHECK( app2.part_count() == 2 );
+                m.displace_vehicle( app1, tripoint_west );
+                app1.part_removal_cleanup();
+                app2.part_removal_cleanup();
+            }
+            CAPTURE( m.getabs( app1.pos_bub() ) );
+            CAPTURE( m.getabs( app2.pos_bub() ) );
+            CHECK( app1.part_count() == 1 );
+            CHECK( app2.part_count() == 1 );
+        }
+
+        WHEN( "displacing second appliance to the right" ) {
+            for( int i = 0; rl_dist( m.getabs( app1.pos_bub() ), m.getabs( app2.pos_bub() ) ) <= max_dist &&
+                 i < max_displacement; i++ ) {
+                CHECK( app1.part_count() == 2 );
+                CHECK( app2.part_count() == 2 );
+                m.displace_vehicle( app2, tripoint_east );
+                app1.part_removal_cleanup();
+                app2.part_removal_cleanup();
+            }
+            CAPTURE( m.getabs( app1.pos_bub() ) );
+            CAPTURE( m.getabs( app2.pos_bub() ) );
+            CHECK( app1.part_count() == 1 );
+            CHECK( app2.part_count() == 1 );
+        }
+    }
+
+    GIVEN( "connected via extension cable" ) {
+        connect_power_line( app1_pos, app2_pos, itype_test_extension_cable );
+        REQUIRE( app1.part_count() == 2 );
+        REQUIRE( app2.part_count() == 2 );
+
+        REQUIRE( app1.part( 1 ).get_base().type->maximum_charges() == 10 );
+
+        const int max_dist = app1.part( 1 ).get_base().type->maximum_charges();
+
+        WHEN( "displacing first appliance to the left" ) {
+            for( int i = 0; rl_dist( m.getabs( app1.pos_bub() ), m.getabs( app2.pos_bub() ) ) <= max_dist &&
+                 i < max_displacement; i++ ) {
+                CHECK( app1.part_count() == 2 );
+                CHECK( app2.part_count() == 2 );
+                m.displace_vehicle( app1, tripoint_west );
+                app1.part_removal_cleanup();
+                app2.part_removal_cleanup();
+            }
+            CAPTURE( m.getabs( app1.pos_bub() ) );
+            CAPTURE( m.getabs( app2.pos_bub() ) );
+            CHECK( app1.part_count() == 1 );
+            CHECK( app2.part_count() == 1 );
+        }
+
+        WHEN( "displacing second appliance to the right" ) {
+            for( int i = 0; rl_dist( m.getabs( app1.pos_bub() ), m.getabs( app2.pos_bub() ) ) <= max_dist &&
+                 i < max_displacement; i++ ) {
+                CHECK( app1.part_count() == 2 );
+                CHECK( app2.part_count() == 2 );
+                m.displace_vehicle( app2, tripoint_east );
+                app1.part_removal_cleanup();
+                app2.part_removal_cleanup();
+            }
+            CAPTURE( m.getabs( app1.pos_bub() ) );
+            CAPTURE( m.getabs( app2.pos_bub() ) );
+            CHECK( app1.part_count() == 1 );
+            CHECK( app2.part_count() == 1 );
+        }
+    }
 }
