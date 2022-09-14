@@ -970,6 +970,69 @@
     ]
   },
   {
+    "id": "football_armor_pauldrons",
+    "repairs_like": "armor_larmor",
+    "type": "ARMOR",
+    "category": "armor",
+    "name": { "str": "football shoulder pads" },
+    "description": "Heavy polycarbonate pauldrons worn on your shoulders.  Normally worn by football players as part of a full ensemble.",
+    "weight": "802 g",
+    "volume": "2 L",
+    "price": 3000,
+    "price_postapoc": 150,
+    "material": [ "thermo_resin", "cotton" ],
+    "symbol": "[",
+    "looks_like": "football_armor",
+    "color": "light_gray",
+    "warmth": 5,
+    "material_thickness": 6,
+    "flags": [ "OUTER" ],
+    "armor": [
+      {
+        "encumbrance": 4,
+        "coverage": 100,
+        "covers": [ "arm_l", "arm_r" ],
+        "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ],
+        "material": [
+          { "type": "thermo_resin", "covered_by_mat": 80, "thickness": 1.0 },
+          { "type": "thermo_resin", "covered_by_mat": 80, "thickness": 1.0 },
+          { "type": "cotton", "covered_by_mat": 100, "thickness": 6.0 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "football_armor_torso",
+    "repairs_like": "armor_larmor",
+    "type": "ARMOR",
+    "category": "armor",
+    "name": { "str": "football armor chestguard" },
+    "description": "Heavy polycarbonate armor for your upper torso.  Normally worn by football players alongside shoulder pads.",
+    "weight": "2008 g",
+    "volume": "5 L",
+    "price": 8000,
+    "price_postapoc": 100,
+    "material": [ "thermo_resin", "cotton" ],
+    "symbol": "[",
+    "looks_like": "football_armor",
+    "color": "light_gray",
+    "warmth": 5,
+    "material_thickness": 6,
+    "flags": [ "OUTER" ],
+    "armor": [
+      {
+        "encumbrance": 4,
+        "coverage": 90,
+        "covers": [ "torso" ],
+        "specifically_covers": [ "torso_upper" ],
+        "material": [
+          { "type": "thermo_resin", "covered_by_mat": 90, "thickness": 1.0 },
+          { "type": "cotton", "covered_by_mat": 100, "thickness": 6.0 }
+        ]
+      }
+    ]
+  },
+  {
     "id": "kevlar",
     "repairs_like": "survivor_suit",
     "type": "ARMOR",
