@@ -606,6 +606,7 @@
     "symbol": "%",
     "quench": 1,
     "calories": 62,
+    "healthy": -1,
     "description": "Nutritionally bare HF syrup derived from corn.  This might give you diabetes, but you probably won't live that long.",
     "price": 98,
     "price_postapoc": 500,
