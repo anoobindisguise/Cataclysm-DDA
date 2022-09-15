@@ -215,6 +215,7 @@
       [
         [ "sugar", 10 ],
         [ "syrup", 4 ],
+        [ "corn_syrup", 4 ],
         [ "beet_syrup", 5 ],
         [ "molasses", 1 ],
         [ "honey_bottled", 3 ],
@@ -233,6 +234,7 @@
       [
         [ "sugar", 6 ],
         [ "syrup", 2 ],
+        [ "corn_syrup", 2 ],
         [ "beet_syrup", 3 ],
         [ "honey_bottled", 2 ],
         [ "honeydew", 2 ],
