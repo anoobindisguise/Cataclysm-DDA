@@ -600,7 +600,7 @@
     "id": "corn_syrup",
     "name": { "str_sp": "corn syrup" },
     "//": "density should be 22g per 1/64th liter (1.4 g/ml) but junkfood wants 1.1 g/ml so current density is abnormally low",
-    "weight": "18 g",
+    "weight": "17 g",
     "color": "brown",
     "container": "bottle_twoliter",
     "comestible_type": "FOOD",
