@@ -616,7 +616,8 @@
     "phase": "liquid",
     "charges": 16,
     "fun": 3,
-    "freezing_point": -57
+    "freezing_point": -57,
+    "flags": [ "NUTRIENT_OVERRIDE" ]
   },
   {
     "type": "COMESTIBLE",
