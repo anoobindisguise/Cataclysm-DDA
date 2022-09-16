@@ -4353,7 +4353,7 @@
     "difficulty": 3,
     "time": "45 m",
     "batch_time_factors": [ 75, 2 ],
-    "charges": 6,
+    "charges": 8,
     "autolearn": true,
     "tools": [ [ [ "surface_heat", 20, "LIST" ] ] ],
     "components": [
