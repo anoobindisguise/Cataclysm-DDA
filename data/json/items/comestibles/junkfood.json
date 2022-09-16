@@ -599,7 +599,7 @@
     "type": "COMESTIBLE",
     "id": "corn_syrup",
     "name": { "str_sp": "corn syrup" },
-    "weight": "22 g",
+    "weight": "21 g",
     "color": "brown",
     "container": "bottle_twoliter",
     "comestible_type": "FOOD",
