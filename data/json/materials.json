@@ -2898,6 +2898,6 @@
     "type": "material",
     "id": "fiberglass",
     "name": "Fiberglass",
-    "copy_from": "asbestos"
+    "copy-from": "asbestos"
   }
 ]
