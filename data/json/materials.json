@@ -2877,7 +2877,7 @@
   {
     "type": "material",
     "id": "asbestos",
-    "name": "asbestos",
+    "name": "Asbestos",
     "density": 2.4,
     "specific_heat_liquid": 0.837,
     "specific_heat_solid": 0.837,
@@ -2898,6 +2898,6 @@
     "type": "material",
     "id": "fiberglass",
     "name": "Fiberglass",
-    "copy_from": "asbestos
+    "copy_from": "asbestos"
   }
 ]
