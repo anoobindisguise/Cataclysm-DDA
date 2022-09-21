@@ -1559,6 +1559,22 @@ double item::get_var( const std::string &name, const double default_value ) cons
         return default_value;
     }
     if( end != &val[0] + val.size() ) {
+        if( *end == ',' ) {
+            // likely legacy format with localized ',' for fraction separator instead of '.'
+            std::string converted_val = val;
+            converted_val[end - &val[0]] = '.';
+            errno = 0;
+            double result = strtod( &converted_val[0], &end );
+            if( errno != 0 ) {
+                debugmsg( "Error parsing floating point value from %s in item::get_var: %s",
+                          val, strerror( errno ) );
+                return default_value;
+            }
+            if( end != &converted_val[0] + converted_val.size() ) {
+                debugmsg( "Stray characters at end of floating point value %s in item::get_var", val );
+            }
+            return result;
+        }
         debugmsg( "Stray characters at end of floating point value %s in item::get_var", val );
     }
     return result;
@@ -1894,7 +1910,7 @@ static void insert_separation_line( std::vector<iteminfo> &info )
  * attacks
  * data painstakingly looked up at http://onlinestatbook.com/2/calculators/normal_dist.html
  */
-static const double hits_by_accuracy[41] = {
+static constexpr std::array<double, 41> hits_by_accuracy = {
     0,    1,   2,   3,   7, // -20 to -16
     13,   26,  47,   82,  139, // -15 to -11
     228,   359,  548,  808, 1151, // -10 to -6
@@ -7026,7 +7042,8 @@ units::volume item::volume( bool integral, bool ignore_contents, int charges_in_
             for( const item &it : components ) {
                 ret += it.volume();
             }
-            craft_data_->cached_volume = ret;
+            // 1 mL minimum craft volume to avoid 0 volume errors from practices or hammerspace
+            craft_data_->cached_volume = std::max( ret, 1_ml );
         }
         return *craft_data_->cached_volume;
     }
@@ -7252,7 +7269,7 @@ bool item::has_flag( const flag_id &f, bool ignore_inherit ) const
         // if the pocket inherits flags
         if( pocket->inherits_flags() ) {
             for( const item *e : pocket->all_items_top() ) {
-                if( e->has_flag( f ) ) {
+                if( e->has_flag( f ) && f->inherit() ) {
                     return true;
                 }
             }
@@ -9731,9 +9748,9 @@ float item::get_latent_heat() const
 units::temperature item::get_freeze_point() const
 {
     if( is_comestible() ) {
-        return units::from_celcius( get_comestible()->freeze_point );
+        return units::from_celsius( get_comestible()->freeze_point );
     }
-    return units::from_celcius( made_of_types()[0]->freeze_point() );
+    return units::from_celsius( made_of_types()[0]->freeze_point() );
 }
 
 void item::set_mtype( const mtype *const m )
@@ -9927,7 +9944,7 @@ bool item::is_fuel() const
         return false;
     }
     // and this material has to produce energy
-    if( get_base_material().get_fuel_data().energy <= 0.0 ) {
+    if( get_base_material().get_fuel_data().energy <= 0_J ) {
         return false;
     }
     // and it needs to be have consumable charges
@@ -9995,9 +10012,10 @@ int item::wheel_area() const
     return is_wheel() ? type->wheel->diameter * type->wheel->width : 0;
 }
 
-float item::fuel_energy() const
+units::energy item::fuel_energy() const
 {
-    return get_base_material().get_fuel_data().energy;
+    // The odd units and division are to avoid integer rounding errors.
+    return get_base_material().get_fuel_data().energy * units::to_milliliter( volume() ) / 1000;
 }
 
 std::string item::fuel_pump_terrain() const
@@ -10497,12 +10515,12 @@ gun_type_type item::gun_type() const
 
 skill_id item::melee_skill() const
 {
-    if( !is_melee() ) {
-        return skill_id::NULL_ID();
+    if( is_unarmed_weapon() ) {
+        return skill_unarmed;
     }
 
-    if( has_flag( flag_UNARMED_WEAPON ) ) {
-        return skill_unarmed;
+    if( !is_melee() ) {
+        return skill_id::NULL_ID();
     }
 
     int hi = 0;
@@ -12276,20 +12294,23 @@ bool item::will_explode_in_fire() const
 
 bool item::detonate( const tripoint &p, std::vector<item> &drops )
 {
+    const Creature *source = get_player_character().get_faction()->id == owner
+                             ? &get_player_character()
+                             : nullptr;
     if( type->explosion.power >= 0 ) {
-        explosion_handler::explosion( p, type->explosion );
+        explosion_handler::explosion( source, p, type->explosion );
         return true;
     } else if( type->ammo && ( type->ammo->special_cookoff || type->ammo->cookoff ) ) {
         int charges_remaining = charges;
         const int rounds_exploded = rng( 1, charges_remaining / 2 );
         if( type->ammo->special_cookoff ) {
             // If it has a special effect just trigger it.
-            apply_ammo_effects( p, type->ammo->ammo_effects );
+            apply_ammo_effects( nullptr, p, type->ammo->ammo_effects );
         }
         if( type->ammo->cookoff ) {
             // If ammo type can burn, then create an explosion proportional to quantity.
             float power = 3.0f * std::pow( rounds_exploded / 25.0f, 0.25f );
-            explosion_handler::explosion( p, power, 0.0f, false, 0 );
+            explosion_handler::explosion( nullptr, p, power, 0.0f, false, 0 );
         }
         charges_remaining -= rounds_exploded;
         if( charges_remaining > 0 ) {
@@ -12763,6 +12784,10 @@ void item::set_temp_flags( units::temperature new_temperature, float freeze_perc
             // Item melts and becomes mushy
             current_phase = type->phase;
             apply_freezerburn();
+            unset_flag( flag_SHREDDED );
+            if( made_of( phase_id::LIQUID ) ) {
+                set_flag( flag_FROM_FROZEN_LIQUID );
+            }
         }
     } else if( has_own_flag( flag_COLD ) ) {
         unset_flag( flag_COLD );
@@ -12798,12 +12823,13 @@ void item::heat_up()
 {
     unset_flag( flag_COLD );
     unset_flag( flag_FROZEN );
+    unset_flag( flag_SHREDDED );
     set_flag( flag_HOT );
     current_phase = type->phase;
     // Set item temperature to 60 C (333.15 K, 122 F)
     // Also set the energy to match
-    temperature = units::from_celcius( 60 );
-    specific_energy = get_specific_energy_from_temperature( units::from_celcius( 60 ) );
+    temperature = units::from_celsius( 60 );
+    specific_energy = get_specific_energy_from_temperature( units::from_celsius( 60 ) );
 
     reset_temp_check();
 }
@@ -12812,12 +12838,13 @@ void item::cold_up()
 {
     unset_flag( flag_HOT );
     unset_flag( flag_FROZEN );
+    unset_flag( flag_SHREDDED );
     set_flag( flag_COLD );
     current_phase = type->phase;
     // Set item temperature to 3 C (276.15 K, 37.4 F)
     // Also set the energy to match
-    temperature = units::from_celcius( 3 );
-    specific_energy = get_specific_energy_from_temperature( units::from_celcius( 3 ) );
+    temperature = units::from_celsius( 3 );
+    specific_energy = get_specific_energy_from_temperature( units::from_celsius( 3 ) );
 
     reset_temp_check();
 }
@@ -13302,6 +13329,24 @@ bool item::process( map &here, Character *carrier, const tripoint &pos, float in
     return process_internal( here, carrier, pos, insulation, flag, spoil_multiplier_parent );
 }
 
+bool item::leak( map &here, Character *carrier, const tripoint &pos, item_pocket *pocke )
+{
+    if( is_container() ) {
+        contents.leak( here, carrier, pos, pocke );
+        return false;
+    } else if( this->made_of( phase_id::LIQUID ) && !this->is_frozen_liquid() ) {
+        if( pocke ) {
+            if( pocke->watertight() ) {
+                unset_flag( flag_FROM_FROZEN_LIQUID );
+                return false;
+            }
+            return true;
+        }
+        return true;
+    }
+    return false;
+}
+
 void item::set_last_temp_check( const time_point &pt )
 {
     last_temp_check = pt;
@@ -13688,7 +13733,17 @@ std::string item::type_name( unsigned int quantity ) const
 
     // Apply conditional names, in order.
     for( const conditional_name &cname : type->conditional_names ) {
-        // Lambda for recursively searching for a item ID among all components.
+        // Lambda for searching for a item ID among all components.
+        std::function<bool( std::list<item> )> component_id_equals =
+        [&]( const std::list<item> &components ) {
+            for( const item &component : components ) {
+                if( component.typeId().str() == cname.condition ) {
+                    return true;
+                }
+            }
+            return false;
+        };
+        // Lambda for recursively searching for a item ID substring among all components.
         std::function<bool ( std::list<item> )> component_id_contains =
         [&]( const std::list<item> &components ) {
             for( const item &component : components ) {
@@ -13706,6 +13761,11 @@ std::string item::type_name( unsigned int quantity ) const
                 }
                 break;
             case condition_type::COMPONENT_ID:
+                if( component_id_equals( components ) ) {
+                    ret_name = string_format( cname.name.translated( quantity ), ret_name );
+                }
+                break;
+            case condition_type::COMPONENT_ID_SUBSTRING:
                 if( component_id_contains( components ) ) {
                     ret_name = string_format( cname.name.translated( quantity ), ret_name );
                 }

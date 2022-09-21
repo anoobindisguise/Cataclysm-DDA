@@ -59,7 +59,6 @@
 #include "weighted_list.h"
 
 class Character;
-class JsonIn;
 class JsonObject;
 class JsonOut;
 class SkillLevel;
@@ -278,6 +277,13 @@ enum edible_rating {
     NO_TOOL
 };
 
+enum crush_tool_type {
+    CRUSH_EMPTY_HANDS,
+    CRUSH_HAMMER,
+    CRUSH_DRILL_OR_HAMMER_AND_SCREW,
+    CRUSH_NO_TOOL
+};
+
 struct queued_eoc {
     public:
         effect_on_condition_id eoc;
@@ -365,6 +371,16 @@ struct ret_val<edible_rating>::default_success : public
 template<>
 struct ret_val<edible_rating>::default_failure : public
     std::integral_constant<edible_rating, INEDIBLE> {};
+
+/** @relates ret_val */
+template<>
+struct ret_val<crush_tool_type>::default_success : public
+    std::integral_constant<crush_tool_type, CRUSH_EMPTY_HANDS> {};
+
+/** @relates ret_val */
+template<>
+struct ret_val<crush_tool_type>::default_failure : public
+    std::integral_constant<crush_tool_type, CRUSH_NO_TOOL> {};
 
 struct needs_rates {
     float thirst = 0.0f;
@@ -1610,6 +1626,7 @@ class Character : public Creature, public visitable
                                          std::string name_override = std::string() ) const;
 
         void process_items();
+        void leak_items();
         /** Search surrounding squares for traps (and maybe other things in the future). */
         void search_surroundings();
         /**Passively produce power from PERPETUAL fuel*/
@@ -1620,7 +1637,7 @@ class Character : public Creature, public visitable
         int consume_remote_fuel( int amount );
         void reset_remote_fuel();
         /**Handle heat from exothermic power generation*/
-        void heat_emission( const bionic &bio, int fuel_energy );
+        void heat_emission( const bionic &bio, units::energy fuel_energy );
         /**Applies modifier to fuel_efficiency and returns the resulting efficiency*/
         float get_effective_efficiency( const bionic &bio, float fuel_efficiency ) const;
 
@@ -1799,6 +1816,11 @@ class Character : public Creature, public visitable
         item_location try_add( item it, const item *avoid = nullptr,
                                const item *original_inventory_item = nullptr, bool allow_wield = true,
                                bool ignore_pkt_settings = false );
+
+        ret_val<item_location> i_add_or_fill( item &it, bool should_stack = true,
+                                              const item *avoid = nullptr,
+                                              const item *original_inventory_item = nullptr, bool allow_drop = true,
+                                              bool allow_wield = true, bool ignore_pkt_settings = false );
 
         /**
          * Try to pour the given liquid into the given container/vehicle. The transferred charges are
@@ -2769,6 +2791,7 @@ class Character : public Creature, public visitable
         /** Checks to see if the player is using floor items to keep warm, and return the name of one such item if so */
         std::string is_snuggling() const;
 
+        ret_val<crush_tool_type> can_crush_frozen_liquid( item_location loc ) const;
         /** Prompts user about crushing item at item_location loc, for harvesting of frozen liquids
         * @param loc Location for item to crush */
         bool crush_frozen_liquid( item_location loc );
@@ -2898,7 +2921,9 @@ class Character : public Creature, public visitable
          * Asks about them if @param interactive is true, refuses otherwise.
          */
         ret_val<edible_rating> will_eat( const item &food, bool interactive = false ) const;
-        /** Determine character's capability of recharging their CBMs. */
+        /** Determine character's capability of recharging their CBMs.
+        * Returns energy in kJ
+        */
         int get_acquirable_energy( const item &it ) const;
 
         /**
@@ -3025,7 +3050,6 @@ class Character : public Creature, public visitable
 
         recipe_id lastrecipe;
         int last_batch;
-        itype_id lastconsumed;        //used in crafting.cpp and construction.cpp
 
         // Returns true if the character knows the recipe, is near a book or device
         // providing the recipe or a nearby NPC knows it.

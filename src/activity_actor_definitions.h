@@ -31,7 +31,6 @@
 
 class Character;
 class Creature;
-class JsonIn;
 class JsonOut;
 class avatar;
 class npc;
@@ -57,6 +56,8 @@ class aim_activity_actor : public activity_actor
         tripoint initial_view_offset;
         /** Target UI requested to abort aiming */
         bool aborted = false;
+        /** if true abort if no targets are available when re-entering aiming ui after shooting */
+        bool abort_if_no_targets = false;
         /**
          * Target UI requested to abort aiming and reload weapon
          * Implies aborted = true
@@ -303,12 +304,13 @@ class bikerack_racking_activity_actor : public activity_actor
     private:
         int moves_total = to_moves<int>( 5_minutes );
         tripoint_bub_ms parent_vehicle_pos;
-        std::vector<std::vector<int>> parts;
+        tripoint_bub_ms racked_vehicle_pos;
+        std::vector<int> racks;
 
         explicit bikerack_racking_activity_actor() = default;
     public:
-        explicit bikerack_racking_activity_actor( vehicle &parent_vehicle,
-                std::vector<std::vector<int>> parts );
+        explicit bikerack_racking_activity_actor( const vehicle &parent_vehicle,
+                const vehicle &racked_vehicle, const std::vector<int> &racks );
 
         activity_id get_type() const override {
             return activity_id( "ACT_BIKERACK_RACKING" );
@@ -336,8 +338,8 @@ class bikerack_unracking_activity_actor : public activity_actor
 
         explicit bikerack_unracking_activity_actor() = default;
     public:
-        explicit bikerack_unracking_activity_actor( vehicle &parent_vehicle, std::vector<int> parts,
-                std::vector<int> racks );
+        explicit bikerack_unracking_activity_actor( const vehicle &parent_vehicle,
+                const std::vector<int> &parts, const std::vector<int> &racks );
 
         activity_id get_type() const override {
             return activity_id( "ACT_BIKERACK_UNRACKING" );

@@ -315,9 +315,9 @@ void aim_activity_actor::do_turn( player_activity &act, Character &who )
 void aim_activity_actor::finish( player_activity &act, Character &who )
 {
     act.set_to_null();
-    restore_view();
     item_location weapon = get_weapon();
     if( !weapon ) {
+        restore_view();
         return;
     }
     if( aborted ) {
@@ -327,6 +327,7 @@ void aim_activity_actor::finish( player_activity &act, Character &who )
             // May assign ACT_RELOAD
             g->reload_wielded( true );
         }
+        restore_view();
         return;
     }
 
@@ -338,6 +339,32 @@ void aim_activity_actor::finish( player_activity &act, Character &who )
     if( shots_fired && ( bp_cost_per_shot > 0_J ) ) {
         who.mod_power_level( -bp_cost_per_shot * shots_fired );
     }
+
+    if( weapon && weapon->gun_current_mode()->has_flag( flag_RELOAD_AND_SHOOT ) ) {
+        // RAS weapons are currently bugged, this is a workaround so bug impact
+        // isn't amplified, once #54997 and #50571 are fixed this can be removed.
+        restore_view();
+        return;
+    }
+
+    if( !get_option<bool>( "AIM_AFTER_FIRING" ) ) {
+        restore_view();
+        return;
+    }
+
+    // re-enter aiming UI with same parameters
+    aim_activity_actor aim_actor;
+    aim_actor.abort_if_no_targets = true;
+    aim_actor.fake_weapon = this->fake_weapon;
+    aim_actor.bp_cost_per_shot = this->bp_cost_per_shot;
+    aim_actor.initial_view_offset = this->initial_view_offset;
+
+    // if invalid target or it's dead - reset it so a new one is acquired
+    shared_ptr_fast<Creature> last_target = who.last_target.lock();
+    if( !last_target || last_target->is_dead_state() ) {
+        who.last_target.reset();
+    }
+    who.assign_activity( player_activity( aim_actor ), false );
 }
 
 void aim_activity_actor::canceled( player_activity &/*act*/, Character &/*who*/ )
@@ -362,6 +389,7 @@ void aim_activity_actor::serialize( JsonOut &jsout ) const
     jsout.member( "initial_view_offset", initial_view_offset );
     jsout.member( "aborted", aborted );
     jsout.member( "reload_requested", reload_requested );
+    jsout.member( "abort_if_no_targets", abort_if_no_targets );
 
     jsout.end_object();
 }
@@ -384,6 +412,7 @@ std::unique_ptr<activity_actor> aim_activity_actor::deserialize( JsonValue &jsin
     data.read( "initial_view_offset", actor.initial_view_offset );
     data.read( "aborted", actor.aborted );
     data.read( "reload_requested", actor.reload_requested );
+    data.read( "abort_if_no_targets", actor.abort_if_no_targets );
 
     return actor.clone();
 }
@@ -1134,10 +1163,19 @@ std::unique_ptr<activity_actor> hacksaw_activity_actor::deserialize( JsonValue &
     return actor.clone();
 }
 
-bikerack_racking_activity_actor::bikerack_racking_activity_actor( vehicle &parent_vehicle,
-        std::vector<std::vector<int>> parts ) : parts( std::move( parts ) )
+static std::string enumerate_ints_to_string( const std::vector<int> &vec )
+{
+    return enumerate_as_string( vec, []( const int &it ) {
+        return std::to_string( it );
+    } );
+}
+
+bikerack_racking_activity_actor::bikerack_racking_activity_actor( const vehicle &parent_vehicle,
+        const vehicle &racked_vehicle, const std::vector<int> &racks )
+    : racks( racks )
 {
     parent_vehicle_pos = parent_vehicle.bub_part_pos( 0 );
+    racked_vehicle_pos = racked_vehicle.bub_part_pos( 0 );
 }
 
 void bikerack_racking_activity_actor::start( player_activity &act, Character & )
@@ -1149,21 +1187,27 @@ void bikerack_racking_activity_actor::start( player_activity &act, Character & )
 void bikerack_racking_activity_actor::finish( player_activity &act, Character & )
 {
     map &here = get_map();
-    const optional_vpart_position ovp = here.veh_at( parent_vehicle_pos );
-    if( !ovp ) {
-        debugmsg( "racking activity lost vehicle" );
+
+    const optional_vpart_position ovp_parent = here.veh_at( parent_vehicle_pos );
+    if( !ovp_parent ) {
+        debugmsg( "racking actor lost parent vehicle at %s", parent_vehicle_pos.to_string() );
         act.set_to_null();
         return;
     }
 
-    vehicle &parent_vehicle = ovp->vehicle();
+    const optional_vpart_position ovp_racked = here.veh_at( racked_vehicle_pos );
+    if( !ovp_racked ) {
+        debugmsg( "racking actor lost racked vehicle at %s", racked_vehicle_pos.to_string() );
+        act.set_to_null();
+        return;
+    }
 
-    if( parent_vehicle.try_to_rack_nearby_vehicle( parts ) ) {
-        here.invalidate_map_cache( here.get_abs_sub().z() );
-        here.rebuild_vehicle_level_caches();
-    } else {
-        debugmsg( "Racking task failed.  Parent-Vehicle:" + parent_vehicle.name +
-                  "; Found parts size:" + std::to_string( parts[0].size() ) );
+    vehicle &parent_veh = ovp_parent->vehicle();
+    vehicle &racked_veh = ovp_racked->vehicle();
+
+    if( !parent_veh.merge_rackable_vehicle( &racked_veh, racks ) ) {
+        debugmsg( "racking actor failed: failed racking %s on %s, racks: [%s].",
+                  racked_veh.name, parent_veh.name, enumerate_ints_to_string( racks ) );
     }
     act.set_to_null();
 }
@@ -1173,7 +1217,8 @@ void bikerack_racking_activity_actor::serialize( JsonOut &jsout ) const
     jsout.start_object();
     jsout.member( "moves_total", moves_total );
     jsout.member( "parent_vehicle_pos", parent_vehicle_pos );
-    jsout.member( "parts", parts );
+    jsout.member( "racked_vehicle_pos", racked_vehicle_pos );
+    jsout.member( "racks", racks );
     jsout.end_object();
 }
 
@@ -1183,14 +1228,15 @@ std::unique_ptr<activity_actor> bikerack_racking_activity_actor::deserialize( Js
     JsonObject data = jsin.get_object();
     data.read( "moves_total", actor.moves_total );
     data.read( "parent_vehicle_pos", actor.parent_vehicle_pos );
-    data.read( "parts", actor.parts );
+    data.read( "racked_vehicle_pos", actor.racked_vehicle_pos );
+    data.read( "racks", actor.racks );
 
     return actor.clone();
 }
 
-bikerack_unracking_activity_actor::bikerack_unracking_activity_actor( vehicle &parent_vehicle,
-        std::vector<int> parts, std::vector<int> racks )
-    : parts( std::move( parts ) ), racks( std::move( racks ) )
+bikerack_unracking_activity_actor::bikerack_unracking_activity_actor( const vehicle &parent_vehicle,
+        const std::vector<int> &parts, const std::vector<int> &racks )
+    : parts( parts ), racks( racks )
 {
     parent_vehicle_pos = parent_vehicle.bub_part_pos( 0 );
 }
@@ -1203,23 +1249,18 @@ void bikerack_unracking_activity_actor::start( player_activity &act, Character &
 
 void bikerack_unracking_activity_actor::finish( player_activity &act, Character & )
 {
-    map &here = get_map();
     const optional_vpart_position ovp = get_map().veh_at( parent_vehicle_pos );
     if( !ovp ) {
-        debugmsg( "unracking activity lost vehicle" );
+        debugmsg( "unracking actor lost vehicle." );
         act.set_to_null();
         return;
     }
 
     vehicle &parent_vehicle = ovp->vehicle();
 
-    if( parent_vehicle.remove_carried_vehicle( parts ) ) {
-        parent_vehicle.clear_bike_racks( racks );
-        here.invalidate_map_cache( here.get_abs_sub().z() );
-        here.rebuild_vehicle_level_caches();
-    } else {
-        debugmsg( "Unracking task failed.  Parent-Vehicle:" + parent_vehicle.name +
-                  "; Found parts size:" + std::to_string( parts.size() ) );
+    if( !parent_vehicle.remove_carried_vehicle( parts, racks ) ) {
+        debugmsg( "unracking actor failed on %s, parts: [%s], racks: [%s]", parent_vehicle.name,
+                  enumerate_ints_to_string( parts ), enumerate_ints_to_string( racks ) );
     }
     act.set_to_null();
 }
@@ -4155,7 +4196,7 @@ void milk_activity_actor::finish( player_activity &act, Character &who )
         return;
     }
     item milk( milked_item->first, calendar::turn, milked_item->second );
-    milk.set_item_temperature( units::from_celcius( 38.6 ) );
+    milk.set_item_temperature( units::from_celsius( 38.6 ) );
     if( liquid_handler::handle_liquid( milk, nullptr, 1, nullptr, nullptr, -1, source_mon ) ) {
         milked_item->second = 0;
         if( milk.charges > 0 ) {
@@ -5523,7 +5564,10 @@ void chop_tree_activity_actor::finish( player_activity &act, Character &who )
         creature_tracker &creatures = get_creature_tracker();
         const point main_dir = pos.xy() - who.pos().xy();
         const int circle_size = 8;
-        const point circle[circle_size] = { point_east, point_south_east, point_south, point_south_west, point_west, point_north_west, point_north, point_north_east };
+        static constexpr std::array<point, circle_size> circle = {
+            point_east, point_south_east, point_south, point_south_west, point_west,
+            point_north_west, point_north, point_north_east
+        };
         int circle_center = 0;  //  Initialized as the compiler complained
         for( int i = 0; i < circle_size; i++ ) {
             if( main_dir == circle[i] ) {
@@ -6767,7 +6811,7 @@ void serialize( const cata::clone_ptr<activity_actor> &actor, JsonOut &jsout )
     }
 }
 
-void deserialize( cata::clone_ptr<activity_actor> &actor, JsonIn &jsin )
+void deserialize( cata::clone_ptr<activity_actor> &actor, const JsonValue &jsin )
 {
     if( jsin.test_null() ) {
         actor = nullptr;

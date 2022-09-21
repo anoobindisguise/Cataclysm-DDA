@@ -15,7 +15,7 @@
 #include "recipe.h"
 #include "type_id.h"
 
-class JsonIn;
+class JsonArray;
 class JsonObject;
 class JsonOut;
 
@@ -157,8 +157,8 @@ class recipe_subset
         /** Find hidden recipes */
         std::vector<const recipe *> hidden() const;
 
-        /** Find current nested recipes by the index */
-        std::vector<const recipe *> nested( int index ) const;
+        /** Find expanded recipes */
+        std::vector<const recipe *> expanded() const;
 
         /** Find recipes matching query (left anchored partial matches are supported) */
         std::vector<const recipe *> search(
@@ -201,6 +201,6 @@ class recipe_subset
 };
 
 void serialize( const recipe_subset &value, JsonOut &jsout );
-void deserialize( recipe_subset &value, JsonIn &jsin );
+void deserialize( recipe_subset &value, const JsonArray &ja );
 
 #endif // CATA_SRC_RECIPE_DICTIONARY_H
