@@ -39,6 +39,8 @@ enum class mod : int {
     ATTACK_SPEED, // affects attack speed of item even if it's not the one you're wielding
     MOVE_COST,
     METABOLISM,
+    DIGESTION_SPEED,
+    STOMACH_SIZE,
     MAX_MANA,
     REGEN_MANA,
     BIONIC_POWER,
