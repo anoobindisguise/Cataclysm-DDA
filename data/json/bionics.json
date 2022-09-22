@@ -706,6 +706,15 @@
       "EATPOISON",
       "EATDEAD",
       "ALCMET"
+    ],
+    "stomach_size_multiplier": 3.0,
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "values": [
+          { "value": "DIGEST_RATE", "multiply": 2.0 }
+        ]
+      }
     ]
   },
   {
