@@ -154,7 +154,7 @@ void stomach_contents::deserialize( const JsonObject &jo )
 
 units::volume stomach_contents::capacity( const Character &owner ) const
 {
-    return max_volume * owner.mutation_value( "stomach_size_multiplier" );
+    return owner.enchantment_cache->modify_value( enchant_vals::mod::STOMACH_SIZE, max_volume * owner.mutation_value( "stomach_size_multiplier" ) );
 }
 
 units::volume stomach_contents::stomach_remaining( const Character &owner ) const
@@ -182,7 +182,7 @@ food_summary stomach_contents::digest( const Character &owner, const needs_rates
     stomach_digest_rates rates = get_digest_rates( metabolic_rates, owner );
 
     // Digest water, but no more than in stomach.
-    digested.water = std::min( water, rates.water * five_mins );
+    digested.water = std::min( water, owner.enchantment_cache->modify_value( enchant_vals::mod::DIGESTION_SPEED, rates.water * five_mins ) );
     water -= digested.water;
 
     // If no half-hour intervals have passed, we only process water, so bail out early.
@@ -191,7 +191,7 @@ food_summary stomach_contents::digest( const Character &owner, const needs_rates
     }
 
     // Digest solids, but no more than in stomach.
-    digested.solids = std::min( contents, rates.solids * half_hours );
+    digested.solids = std::min( contents, owner.enchantment_cache->modify_value( enchant_vals::mod::DIGESTION_SPEED, rates.solids * half_hours ) );
     contents -= digested.solids;
 
     // Digest kCal -- use min_kcal by default, but no more than what's in stomach,
@@ -202,7 +202,7 @@ food_summary stomach_contents::digest( const Character &owner, const needs_rates
 
     // Digest vitamins just like we did kCal, but we need to do one at a time.
     for( const std::pair<const vitamin_id, int> &vit : nutr.vitamins ) {
-        int vit_fraction = std::lround( vit.second * rates.percent_vitamin );
+        int vit_fraction = std::lround( owner.enchantment_cache->modify_value( enchant_vals::mod::DIGESTION_SPEED, vit.second * rates.percent_vitamin ) );
         digested.nutr.vitamins[vit.first] =
             half_hours * clamp( rates.min_vitamin, vit_fraction, vit.second );
     }
