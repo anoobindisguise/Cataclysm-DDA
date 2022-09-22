@@ -92,6 +92,7 @@ struct bionic_data {
     std::map<bodypart_str_id, size_t> bullet_protec;
 
     float vitamin_absorb_mod = 1.0f;
+    float stomach_size_multiplier = 1.0f;
 
     // Bonus or penalty to social checks (additive).  50 adds 50% to success, -25 subtracts 25%
     social_modifiers social_mods;
