@@ -293,7 +293,7 @@
     "name": "potato chips",
     "description": "Recipes related to making potato chips.",
     "skill_used": "cooking",
-    "nested_category_data": [ "chips2", "chips1_dill", "chips1_vinegar", "chips1_spicy", "chips1_cheese", "chips1_bbq" ],
+    "nested_category_data": [ "chips2", "chips1_from_dill", "chips1_from_vinegar", "chips1_from_spicy", "chips1_from_cheese", "chips1_from_bbq" ],
     "difficulty": 3
   },
   {
