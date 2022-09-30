@@ -2009,7 +2009,12 @@
       { "proficiency": "prof_knife_skills", "time_multiplier": 2 },
       { "proficiency": "prof_frying" }
     ],
-    "components": [ [ [ "veggy_potatolike", 1, "LIST" ] ], [ [ "salt", 2 ], [ "seasoning_salt", 2 ] ], [ [ "fry_oil", 2, "LIST" ] ], [ [ "vinegar", 3 ] ] ]
+    "components": [
+      [ [ "veggy_potatolike", 1, "LIST" ] ],
+      [ [ "salt", 2 ], [ "seasoning_salt", 2 ] ],
+      [ [ "fry_oil", 2, "LIST" ] ],
+      [ [ "vinegar", 3 ] ]
+    ]
   },
   {
     "type": "recipe",
@@ -2030,7 +2035,12 @@
       { "proficiency": "prof_knife_skills", "time_multiplier": 2 },
       { "proficiency": "prof_frying" }
     ],
-    "components": [ [ [ "veggy_potatolike", 1, "LIST" ] ], [ [ "salt", 2 ], [ "seasoning_salt", 2 ] ], [ [ "fry_oil", 2, "LIST" ] ], [ [ "barbecue_sauce", 3 ] ] ]
+    "components": [
+      [ [ "veggy_potatolike", 1, "LIST" ] ],
+      [ [ "salt", 2 ], [ "seasoning_salt", 2 ] ],
+      [ [ "fry_oil", 2, "LIST" ] ],
+      [ [ "barbecue_sauce", 3 ] ]
+    ]
   },
   {
     "type": "recipe",
@@ -2051,7 +2061,12 @@
       { "proficiency": "prof_knife_skills", "time_multiplier": 2 },
       { "proficiency": "prof_frying" }
     ],
-    "components": [ [ [ "veggy_potatolike", 1, "LIST" ] ], [ [ "salt", 2 ], [ "seasoning_salt", 2 ] ], [ [ "fry_oil", 2, "LIST" ] ], [ [ "cheese_powder", 1 ] ] ]
+    "components": [
+      [ [ "veggy_potatolike", 1, "LIST" ] ],
+      [ [ "salt", 2 ], [ "seasoning_salt", 2 ] ],
+      [ [ "fry_oil", 2, "LIST" ] ],
+      [ [ "cheese_powder", 1 ] ]
+    ]
   },
   {
     "type": "recipe",
@@ -2072,7 +2087,12 @@
       { "proficiency": "prof_knife_skills", "time_multiplier": 2 },
       { "proficiency": "prof_frying" }
     ],
-    "components": [ [ [ "veggy_potatolike", 1, "LIST" ] ], [ [ "salt", 2 ], [ "seasoning_salt", 2 ] ], [ [ "fry_oil", 2, "LIST" ] ], [ [ "chilly-p", 5 ], [ "curry_powder", 5 ], [ "pepper", 5 ] ] ]
+    "components": [
+      [ [ "veggy_potatolike", 1, "LIST" ] ],
+      [ [ "salt", 2 ], [ "seasoning_salt", 2 ] ],
+      [ [ "fry_oil", 2, "LIST" ] ],
+      [ [ "chilly-p", 5 ], [ "curry_powder", 5 ], [ "pepper", 5 ] ]
+    ]
   },
   {
     "type": "recipe",
@@ -2093,7 +2113,12 @@
       { "proficiency": "prof_knife_skills", "time_multiplier": 2 },
       { "proficiency": "prof_frying" }
     ],
-    "components": [ [ [ "veggy_potatolike", 1, "LIST" ] ], [ [ "salt", 2 ], [ "seasoning_salt", 2 ] ], [ [ "fry_oil", 2, "LIST" ] ], [ [ "pickle", 1 ] ] ]
+    "components": [
+      [ [ "veggy_potatolike", 1, "LIST" ] ],
+      [ [ "salt", 2 ], [ "seasoning_salt", 2 ] ],
+      [ [ "fry_oil", 2, "LIST" ] ],
+      [ [ "pickle", 1 ] ]
+    ]
   },
   {
     "type": "recipe",
