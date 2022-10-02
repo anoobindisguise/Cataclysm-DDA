@@ -373,7 +373,7 @@
     "points": -6,
     "description": "You were confined in this facility and used to test mutagenic drugs until all hell broke loose.  You're lucky you still have your sanity, unlike many of the other subjects, because it's going to take all your cunning to get out of here alive.",
     "start_name": "Locked Lab",
-    "professions": [ "mutant_patient", "mutant_volunteer", "convict_political" ],
+    "professions": [ "mutant_patient", "mutant_volunteer", "convict_political", "mutant_scientist" ],
     "allowed_locs": [ "sloc_lab_concourse_area" ],
     "map_extra": "mx_lab_concourse_area",
     "traits": [
