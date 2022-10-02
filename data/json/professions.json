@@ -2821,7 +2821,7 @@
     "id": "mutant_scientist",
     "name": "Transfigured Scientist",
     "description": "You spent years studying mutations and volunteered to become one. You grabbed whatever you could find while running away and you plan to finish what you started not matter the cost.",
-    "points": 5,
+    "points": 3,
     "skills": [ { "level": 2, "name": "computer" }, { "level": 2, "name": "chemistry" } ],
     "proficiencies": [ "prof_intro_chemistry", "prof_intro_biology" ],
     "items": {
