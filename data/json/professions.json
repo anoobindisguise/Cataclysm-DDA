@@ -2818,6 +2818,37 @@
   },
   {
     "type": "profession",
+    "id": "mutant_scientist",
+    "name": "Transfigured Scientist",
+    "description": "You spent years studying mutations and volunteered to become one. You grabbed whatever you could find while running away and you plan to finish what you started not matter the cost.",
+    "points": 5,
+    "skills": [ { "level": 2, "name": "computer" }, { "level": 2, "name": "chemistry" } ],
+    "proficiencies": [ "prof_intro_chemistry", "prof_intro_biology" ],
+    "items": {
+      "both": {
+        "items": [ "dress_shirt", "pants", "socks", "boots", "coat_lab", "gloves_rubber", "glasses_safety", "wristwatch" ],
+        "entries": [
+          { "group": "charged_smart_phone" },
+          { "item": "medium_battery_cell", "ammo-item": "battery", "charges": 500, "container-item": "chemistry_set" },
+          { "item": "box_large", "custom-flags": [ "auto_wield" ] },
+          { "item": "recipe_animal", "container-item": "box_small" },
+          { "item": "ursine_sample", "count": 10 },
+          { "item": "rabbit_sample", "count": 10 },
+          { "item": "mouse_sample", "count": 10 },
+          { "item": "lizard_sample", "count": 10 },
+          { "item": "fish_sample", "count": 10 },
+          { "item": "feline_sample", "count": 10 },
+          { "item": "cattle_sample", "count": 10 },
+          { "item": "batrachian_sample", "count": 10 },
+          { "item": "bird_sample", "count": 10 }
+        ]
+      },
+      "male": [ "briefs" ],
+      "female": [ "bra", "panties" ]
+    }
+  },
+  {
+    "type": "profession",
     "id": "hitchhiker",
     "name": "Hitchhiker",
     "description": "Your house has been demolished and your planet destroyed, but at least you still have your towel.",
