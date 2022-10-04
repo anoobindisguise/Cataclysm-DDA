@@ -476,9 +476,9 @@
         ],
         "covers": [ "head" ],
         "specifically_covers": [ "head_forehead", "head_ear_r", "head_ear_l" ],
-        "coverage": 85,
+        "coverage": 75,
         "covers_vitals": 70,
-        "encumbrance_modifiers": [ "NONE" ]
+        "encumbrance_modifiers": 0
       }
     ],
     "pocket_data": [
