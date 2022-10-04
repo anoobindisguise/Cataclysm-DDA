@@ -152,27 +152,27 @@
     "type": "ARMOR",
     "category": "armor",
     "name": { "str": "pair of hard arm guards", "str_pl": "pairs of hard arm guards" },
-    "description": "A pair of neoprene arm sleeves covered with molded plastic sheaths.",
+    "description": "A pair of arm guards made of neoprene-backed thermoplastic.",
     "weight": "350 g",
     "volume": "3 L",
     "price": 3500,
     "price_postapoc": 1000,
     "to_hit": 1,
-    "material": [ "plastic", "neoprene" ],
+    "material": [ "thermo_resin", "neoprene" ],
     "symbol": "[",
     "color": "dark_gray",
     "warmth": 20,
     "material_thickness": 3,
     "environmental_protection": 1,
-    "flags": [ "OUTER", "WATER_FRIENDLY", "BLOCK_WHILE_WORN" ],
+    "flags": [ "OUTER", "WATER_FRIENDLY", "BLOCK_WHILE_WORN", "STURDY" ],
     "armor": [
       {
         "covers": [ "arm_l", "arm_r" ],
-        "encumbrance": 5,
+        "encumbrance": 4,
         "specifically_covers": [ "arm_lower_r", "arm_lower_l" ],
         "material": [
           { "type": "neoprene", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "plastic", "covered_by_mat": 90, "thickness": 1.5 }
+          { "type": "thermo_resin", "covered_by_mat": 95, "thickness": 1.5 }
         ],
         "coverage": 100,
         "cover_vitals": 90
@@ -182,7 +182,7 @@
         "specifically_covers": [ "arm_elbow_r", "arm_elbow_l" ],
         "material": [
           { "type": "neoprene", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "plastic", "covered_by_mat": 50, "thickness": 1.5 }
+          { "type": "thermo_resin", "covered_by_mat": 90, "thickness": 1.5 }
         ],
         "coverage": 100,
         "cover_vitals": 90
@@ -192,9 +192,9 @@
         "specifically_covers": [ "arm_upper_l", "arm_upper_r" ],
         "material": [
           { "type": "neoprene", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "plastic", "covered_by_mat": 90, "thickness": 1.5 }
+          { "type": "thermo_resin", "covered_by_mat": 95, "thickness": 1.5 }
         ],
-        "coverage": 80,
+        "coverage": 95,
         "cover_vitals": 90
       }
     ]
@@ -203,7 +203,7 @@
     "id": "xl_armguard_hard",
     "type": "ARMOR",
     "name": { "str": "pair of XL hard arm guards", "str_pl": "pairs of XL hard arm guards" },
-    "description": "A pair of neoprene arm sleeves covered with molded plastic sheaths.  Epic sized.",
+    "description": "A pair of arm guards made of neoprene-backed thermoplastic sized for a giant.",
     "weight": "550 g",
     "volume": "4 L",
     "copy-from": "armguard_hard",
@@ -215,7 +215,7 @@
     "copy-from": "armguard_hard",
     "looks_like": "armguard_hard",
     "name": { "str": "pair of XS hard arm guards", "str_pl": "pairs of XS hard arm guards" },
-    "description": "A pair of neoprene arm sleeves covered with molded plastic sheaths.  Tiny sized.",
+    "description": "A pair of arm guards made of neoprene-backed thermoplastic, sized for someone tiny.",
     "proportional": { "weight": 0.75, "volume": 0.75, "price": 0.5 },
     "extend": { "flags": [ "UNDERSIZE" ] }
   },
