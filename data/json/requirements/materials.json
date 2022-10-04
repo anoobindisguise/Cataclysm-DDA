@@ -467,10 +467,11 @@
     "id": "thermoplastic_forming",
     "type": "requirement",
     "//": "Melting thermoplastic with boiling water and reshaping it while it's malleable. 50g at a time, needs to be cut into beads first. Assume about a 30 min per chunk, 10g of beads takes about 3min to set + water boiling.",
-    "qualities": [ { "id": "CUT", "level": 2 }, { "id": "BOIL", "level": 2 }, { "id": "CONTAIN", "level": 1 }, { "id": "SMOOTH", "level": 1 } ],
-    "tools": [
-      [ [ "water_boiling_heat", 5, "LIST" ] ],
-      [ [ "water", -5 ] ]
+    "qualities": [
+      { "id": "CUT", "level": 2 },
+      { "id": "BOIL", "level": 2 },
+      { "id": "CONTAIN", "level": 1 },
+      { "id": "SMOOTH", "level": 1 }
     ],
     "components": [ [ [ "thermo_resin_chunk", 1 ] ] ]
   }
