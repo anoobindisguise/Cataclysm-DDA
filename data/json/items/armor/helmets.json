@@ -31,7 +31,7 @@
     "price": 4000,
     "price_postapoc": 250,
     "to_hit": 1,
-    "material": [ "plastic", "leather" ],
+    "material": [ "plastic_pad", "leather" ],
     "symbol": "[",
     "looks_like": "balclava",
     "color": "red",
@@ -39,7 +39,30 @@
     "material_thickness": 3,
     "environmental_protection": 1,
     "flags": [ "VARSIZE", "OVERSIZE", "STURDY" ],
-    "armor": [ { "encumbrance_modifiers": [ "NONE" ], "coverage": 75, "covers": [ "head" ] } ]
+    "armor": [
+      {
+        "material": [
+          { "type": "plastic_pad", "covered_by_mat": 100, "thickness": 6.0 },
+          { "type": "leather", "covered_by_mat": 100, "thickness": 1.2 }
+        ],
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_forehead", "head_crown", "head_ear_r", "head_ear_l" ],
+        "coverage": 85,
+        "covers_vitals": 85,
+        "encumbrance_modifiers": [ "NONE" ]
+      },
+      {
+        "material": [
+          { "type": "plastic_pad", "covered_by_mat": 100, "thickness": 6.0 },
+          { "type": "leather", "covered_by_mat": 100, "thickness": 1.2 }
+        ],
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_nape", "head_throat" ],
+        "coverage": 50,
+        "covers_vitals": 70,
+        "encumbrance": 0
+      }
+    ]
   },
   {
     "id": "helmet_army",
@@ -54,15 +77,37 @@
     "price_postapoc": 1500,
     "to_hit": -1,
     "bashing": 10,
-    "material": [ "kevlar_rigid", "plastic" ],
+    "material": [ "kevlar_rigid", "thermo_resin" ],
     "symbol": "[",
     "looks_like": "hat_hard",
     "color": "green",
     "warmth": 20,
-    "material_thickness": 9,
+    "material_thickness": 8.0,
     "techniques": [ "WBLOCK_1" ],
     "flags": [ "VARSIZE", "WATERPROOF", "STURDY", "PADDED" ],
-    "armor": [ { "encumbrance_modifiers": [ "NONE" ], "coverage": 85, "covers": [ "head" ] } ],
+    "armor": [
+      {
+        "material": [
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 5.0 },
+          { "type": "kevlar_rigid", "covered_by_mat": 100, "thickness": 3.0 }
+        ],
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_forehead", "head_crown", "head_ear_r", "head_ear_l" ],
+        "coverage": 100,
+        "covers_vitals": 99,
+        "encumbrance_modifiers": [ "NONE" ]
+      },
+      {
+        "material": [
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 5.0 },
+          { "type": "kevlar_rigid", "covered_by_mat": 100, "thickness": 3.0 }
+        ],
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_nape" ],
+        "coverage": 50,
+        "encumbrance": "none"
+      }
+    ],
     "pocket_data": [
       {
         "pocket_type": "CONTAINER",
@@ -129,18 +174,41 @@
     "price_postapoc": 2500,
     "to_hit": -1,
     "bashing": 10,
-    "material": [ "kevlar_rigid", "plastic" ],
+    "material": [ "kevlar_rigid", "thermo_resin" ],
     "symbol": "[",
     "looks_like": "helmet_motor",
     "color": "dark_gray",
     "armor": [
-      { "covers": [ "head" ], "coverage": 100, "encumbrance_modifiers": [ "RESTRICTS_NECK", "WELL_SUPPORTED" ] },
-      { "covers": [ "eyes" ], "rigid_layer_only": true, "coverage": 100, "encumbrance": 20 },
-      { "covers": [ "mouth" ], "rigid_layer_only": true, "coverage": 100, "encumbrance": 15 }
+      {
+        "material": [
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 5.0 },
+          { "type": "kevlar_rigid", "covered_by_mat": 100, "thickness": 3.0 }
+        ],
+        "covers": [ "head" ],
+        "coverage": 100,
+        "covers_vitals": 100,
+        "encumbrance_modifiers": [ "RESTRICTS_NECK", "WELL_SUPPORTED" ]
+      },
+      {
+        "material": [ { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 5.0 } ],
+        "covers": [ "eyes" ],
+        "encumbrance": 20,
+        "covers_vitals": 100
+      },
+      {
+        "material": [
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 5.0 },
+          { "type": "kevlar_rigid", "covered_by_mat": 100, "thickness": 3.0 }
+        ],
+        "covers": [ "mouth" ],
+        "coverage": 100,
+        "encumbrance": 15,
+        "covers_vitals": 100
+      }
     ],
     "warmth": 25,
     "material_thickness": 8,
-    "environmental_protection": 2,
+    "environmental_protection": 5,
     "techniques": [ "WBLOCK_1" ],
     "flags": [ "VARSIZE", "WATERPROOF", "STURDY", "SUN_GLASSES", "PADDED" ]
   },
@@ -165,7 +233,19 @@
     "material_thickness": 8,
     "techniques": [ "WBLOCK_1" ],
     "flags": [ "VARSIZE", "WATERPROOF", "STURDY", "PADDED" ],
-    "armor": [ { "encumbrance_modifiers": [ "NONE" ], "coverage": 95, "covers": [ "head" ] } ],
+    "armor": [
+      {
+        "material": [
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 3.0 },
+          { "type": "kevlar_rigid", "covered_by_mat": 100, "thickness": 3.0 }
+        ],
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_forehead", "head_crown", "head_ear_r", "head_ear_l" ],
+        "coverage": 100,
+        "covers_vitals": 98,
+        "encumbrance_modifiers": [ "NONE" ]
+      }
+    ],
     "pocket_data": [
       {
         "pocket_type": "CONTAINER",
@@ -232,15 +312,40 @@
     "price_postapoc": 500,
     "to_hit": 1,
     "bashing": 4,
-    "material": [ "plastic", "nomex" ],
+    "material": [ "thermo_resin", "nomex" ],
     "symbol": "[",
     "looks_like": "cowboy_hat",
     "color": "yellow",
     "warmth": 15,
-    "material_thickness": 6,
+    "material_thickness": 7,
     "environmental_protection": 6,
     "flags": [ "VARSIZE", "WATERPROOF", "STURDY", "PADDED" ],
-    "armor": [ { "encumbrance_modifiers": [ "NONE" ], "coverage": 75, "covers": [ "head" ] } ]
+    "armor": [
+      {
+        "material": [
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 2.0 },
+          { "type": "plastic_pad", "covered_by_mat": 100, "thickness": 5.0 },
+          { "type": "nomex", "covered_by_mat": 100, "thickness": 4.0 }
+        ],
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_crown" ],
+        "coverage": 100,
+        "covers_vitals": 90,
+        "encumbrance_modifiers": [ "NONE" ]
+      },
+      {
+        "material": [
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 2.0 },
+          { "type": "plastic_pad", "covered_by_mat": 100, "thickness": 5.0 },
+          { "type": "nomex", "covered_by_mat": 100, "thickness": 4.0 }
+        ],
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_forehead", "head_ear_r", "head_ear_l" ],
+        "coverage": 90,
+        "covers_vitals": 90,
+        "encumbrance": 0
+      }
+    ]
   },
   {
     "id": "helmet_ball",
@@ -255,7 +360,7 @@
     "price_postapoc": 250,
     "to_hit": -1,
     "bashing": 7,
-    "material": [ "plastic", "iron" ],
+    "material": [ "thermo_resin", "plastic_pad" ],
     "symbol": "[",
     "looks_like": "hat_hard",
     "color": "blue",
@@ -263,8 +368,31 @@
     "material_thickness": 3,
     "environmental_protection": 1,
     "techniques": [ "WBLOCK_1" ],
-    "flags": [ "PADDED" ],
-    "armor": [ { "encumbrance_modifiers": [ "NONE" ], "coverage": 95, "covers": [ "head" ] } ]
+    "flags": [ "PADDED", "STURDY" ]
+    "armor": [
+      {
+        "material": [
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 2.0 },
+          { "type": "plastic_pad", "covered_by_mat": 100, "thickness": 10.0 }
+        ],
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_crown", "head_forehead", "head_nape", "head_ear_r", "head_ear_l" ],
+        "coverage": 100,
+        "covers_vitals": 95,
+        "encumbrance_modifiers": [ "NONE" ]
+      },
+      {
+        "material": [
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 2.0 },
+          { "type": "plastic_pad", "covered_by_mat": 100, "thickness": 10.0 }
+        ],
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_forehead", "head_nape", "head_ear_r", "head_ear_l" ],
+        "coverage": 25,
+        "covers_vitals": 90,
+        "encumbrance: 0
+      }
+    ]
   },
   {
     "id": "helmet_barbute",
@@ -321,15 +449,38 @@
     "price": 17000,
     "price_postapoc": 250,
     "bashing": 4,
-    "material": [ "plastic" ],
+    "material": [ "thermo_resin", "plastic_pad" ],
     "symbol": "[",
     "looks_like": "hat_hard",
     "color": "dark_gray",
     "warmth": 15,
-    "material_thickness": 4,
+    "material_thickness": 5,
     "techniques": [ "WBLOCK_1" ],
     "flags": [ "PADDED" ],
-    "armor": [ { "encumbrance_modifiers": [ "NONE" ], "coverage": 75, "covers": [ "head" ] } ],
+    "armor": [
+      {
+        "material": [
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 0.5 },
+          { "type": "plastic_pad", "covered_by_mat": 100, "thickness": 10.0 }
+        ],
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_crown" ],
+        "coverage": 100,
+        "covers_vitals": 90,
+        "encumbrance_modifiers": [ "NONE" ]
+      },
+      {
+        "material": [
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 0.5 },
+          { "type": "plastic_pad", "covered_by_mat": 100, "thickness": 10.0 }
+        ],
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_forehead", "head_ear_r", "head_ear_l" ],
+        "coverage": 85,
+        "covers_vitals": 70,
+        "encumbrance_modifiers": [ "NONE" ]
+      }
+    ],
     "pocket_data": [
       {
         "pocket_type": "CONTAINER",
@@ -481,18 +632,49 @@
     "volume": "2250 ml",
     "price": 19800,
     "price_postapoc": 250,
-    "material": [ "thermo_resin" ],
+    "material": [ "thermo_resin", "plastic_pad" ],
     "symbol": "[",
     "looks_like": "helmet_motor",
     "color": "yellow",
     "armor": [
-      { "covers": [ "head" ], "coverage": 95, "encumbrance_modifiers": [ "NONE" ] },
-      { "covers": [ "eyes" ], "rigid_layer_only": true, "coverage": 75, "encumbrance": 5 },
-      { "covers": [ "mouth" ], "rigid_layer_only": true, "coverage": 85, "encumbrance": 0 }
+      {
+        "material": [
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 3.0 },
+          { "type": "plastic_pad", "covered_by_mat": 100, "thickness": 10.0 }
+        ],
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_crown", "head_forehead", "head_ear_r", "head_ear_l", "head_nape" ],
+        "coverage": 100,
+        "covers_vitals": 95,
+        "encumbrance_modifiers": [ "NONE" ]
+      },
+      {
+        "material": [
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 3.0 },
+          { "type": "plastic_pad", "covered_by_mat": 100, "thickness": 10.0 }
+        ],
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_throat" ],
+        "coverage": 50,
+        "covers_vitals": 80,
+        "encumbrance": "none"
+      },
+      {
+        "material": [ { "type": "thermo_resin", "covered_by_mat": 75, "thickness": 3.0 } ],
+        "covers": [ "eyes" ],
+        "encumbrance": 5,
+        "layers": "OUTER"
+      },
+      {
+        "material": [ { "type": "thermo_resin", "covered_by_mat": 85, "thickness": 3.0 } ],
+        "covers": [ "mouth" ],
+        "encumbrance": 0,
+        "layers": "OUTER"
+      }
     ],
-    "warmth": 10,
+    "warmth": 15,
     "material_thickness": 4,
-    "flags": [ "WATER_FRIENDLY", "PADDED" ]
+    "flags": [ "WATER_FRIENDLY", "PADDED", "STURDY" ]
   },
   {
     "id": "helmet_galea",
@@ -669,45 +851,36 @@
     "price_postapoc": 750,
     "to_hit": -1,
     "bashing": 7,
-    "material": [ "plastic", "epoxy" ],
+    "material": [ "plastic_pad", "thermo_resin" ],
     "symbol": "[",
     "color": "dark_gray",
     "armor": [
       {
         "material": [
-          { "type": "plastic", "covered_by_mat": 100, "thickness": 3.0 },
-          { "type": "epoxy", "covered_by_mat": 100, "thickness": 1.0 }
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 3.0 },
+          { "type": "plastic_pad", "covered_by_mat": 100, "thickness": 10.0 }
         ],
         "covers": [ "head" ],
         "coverage": 100,
+        "covers_vitals": 97,
         "encumbrance_modifiers": [ "RESTRICTS_NECK", "WELL_SUPPORTED" ]
       },
       {
-        "material": [
-          { "type": "plastic", "covered_by_mat": 100, "thickness": 2.0 },
-          { "type": "epoxy", "covered_by_mat": 100, "thickness": 0.5 }
-        ],
+        "material": [ { "type": "thermo_resin", "covered_by_mat": 75, "thickness": 2.5 } ],
         "covers": [ "eyes" ],
-        "coverage": 100,
         "encumbrance": 5,
-        "layers": [ "OUTER" ],
-        "rigid_layer_only": true
+        "layers": "OUTER"
       },
       {
-        "material": [
-          { "type": "plastic", "covered_by_mat": 100, "thickness": 2.0 },
-          { "type": "epoxy", "covered_by_mat": 100, "thickness": 0.5 }
-        ],
+        "material": [ { "type": "thermo_resin", "covered_by_mat": 75, "thickness": 2.5 } ],
         "covers": [ "mouth" ],
-        "coverage": 100,
-        "encumbrance": 15,
-        "layers": [ "OUTER" ],
-        "rigid_layer_only": true
+        "encumbrance": 8,
+        "layers": "OUTER"
       }
     ],
     "use_action": { "type": "transform", "menu_text": "Raise visor", "target": "helmet_motor_raised", "msg": "You raise your visor." },
     "warmth": 30,
-    "environmental_protection": 1,
+    "environmental_protection": 3,
     "techniques": [ "WBLOCK_1" ],
     "flags": [ "WATERPROOF", "STURDY", "PADDED" ]
   },
@@ -726,23 +899,24 @@
     "price_postapoc": 750,
     "to_hit": -1,
     "bashing": 7,
-    "material": [ "plastic", "epoxy" ],
+    "material": [ "plastic_pad", "thermo_resin" ],
     "symbol": "[",
     "color": "dark_gray",
     "armor": [
       {
         "material": [
-          { "type": "plastic", "covered_by_mat": 100, "thickness": 3.0 },
-          { "type": "epoxy", "covered_by_mat": 100, "thickness": 1.0 }
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 3.0 },
+          { "type": "plastic_pad", "covered_by_mat": 100, "thickness": 10.0 }
         ],
-        "encumbrance_modifiers": [ "RESTRICTS_NECK", "WELL_SUPPORTED" ],
+        "covers": [ "head" ],
         "coverage": 100,
-        "covers": [ "head" ]
+        "covers_vitals": 97,
+        "encumbrance_modifiers": [ "RESTRICTS_NECK", "WELL_SUPPORTED" ]
       }
     ],
     "use_action": { "type": "transform", "menu_text": "Lower visor", "target": "helmet_motor", "msg": "You put down your visor." },
-    "warmth": 30,
-    "environmental_protection": 1,
+    "warmth": 20,
+    "environmental_protection": 3,
     "techniques": [ "WBLOCK_1" ],
     "flags": [ "WATERPROOF", "STURDY", "PADDED" ]
   },
@@ -1050,20 +1224,41 @@
     "type": "ARMOR",
     "category": "armor",
     "name": { "str": "skid lid" },
-    "description": "A small metal helmet that covers the head and protects against cuts and percussion.",
-    "weight": "1315 g",
+    "description": "A plastic half helmet that covers the head and protects against cuts and percussion.  Heavier than a bike helmet but more protective.",
+    "weight": "881 g",
     "volume": "1250 ml",
     "price": 4500,
     "price_postapoc": 750,
     "bashing": 8,
-    "material": [ "plastic", "iron" ],
+    "material": [ "thermo_resin", "plastic_pad" ],
     "symbol": "[",
     "looks_like": "helmet_bike",
     "color": "dark_gray",
     "warmth": 10,
     "material_thickness": 4,
     "techniques": [ "WBLOCK_1" ],
-    "armor": [ { "encumbrance_modifiers": [ "NONE" ], "coverage": 65, "covers": [ "head" ] } ]
+    "armor": [
+      {
+        "material": [
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "plastic_pad", "covered_by_mat": 100, "thickness": 10.0 }
+        ],
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_crown" ],
+        "coverage": 100,
+        "encumbrance_modifiers": [ "NONE" ]
+      },
+      {
+        "material": [
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "plastic_pad", "covered_by_mat": 100, "thickness": 10.0 }
+        ],
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_forehead", "head_ear_r", "head_ear_l" ],
+        "coverage": 90,
+        "encumbrance": 0
+      }
+    ]
   },
   {
     "id": "pickelhaube",
