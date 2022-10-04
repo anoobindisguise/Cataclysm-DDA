@@ -1141,4 +1141,16 @@ class effect_on_conditons_actor : public iuse_actor
         std::unique_ptr<iuse_actor> clone() const override;
         void info( const item &, std::vector<iteminfo> & ) const override;
 };
+
+/**
+ * Tells you how much ARTIFACT_RESONANCE something has
+ */
+class analyze_resonance_actor : public iuse_actor
+{
+    public:
+
+        void load( const JsonObject &obj ) override;
+        cata::optional<int> use( Character &, item &, bool, const tripoint & ) const override;
+        std::unique_ptr<iuse_actor> clone() const override;
+};
 #endif // CATA_SRC_IUSE_ACTOR_H
