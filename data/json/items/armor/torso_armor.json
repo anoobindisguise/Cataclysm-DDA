@@ -647,13 +647,13 @@
     "type": "ARMOR",
     "category": "armor",
     "name": { "str": "hard chest guard" },
-    "description": "A solid vest of plastic padding protecting your torso.",
+    "description": "A solid vest of neoprene-backed thermoplastic protecting your torso.",
     "weight": "1000 g",
     "volume": "7 L",
     "price": 60000,
     "price_postapoc": 500,
     "to_hit": -2,
-    "material": [ "plastic", "neoprene" ],
+    "material": [ "thermo_resin", "neoprene" ],
     "symbol": "H",
     "looks_like": "cuirass_lightplate",
     "color": "dark_gray",
@@ -662,7 +662,17 @@
     "material_thickness": 4,
     "environmental_protection": 1,
     "flags": [ "WATER_FRIENDLY", "STURDY", "OUTER" ],
-    "armor": [ { "encumbrance": 4, "coverage": 90, "covers": [ "torso" ] } ]
+    "armor": [
+      {
+        "material": [
+          { "type": "neoprene", "covered_by_mat": 100, "thickness": 2.0 },
+          { "type": "thermo_resin", "covered_by_mat": 95, "thickness": 2.0 }
+        ],
+        "covers": [ "torso" ],
+        "coverage": 95,
+        "encumbrance": 4
+      }
+    ],
   },
   {
     "id": "cuirass_lightplate",
