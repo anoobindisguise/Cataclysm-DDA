@@ -161,35 +161,15 @@
     "material": [ "thermo_resin", "neoprene" ],
     "symbol": "[",
     "color": "dark_gray",
-    "warmth": 20,
+    "warmth": 10,
     "material_thickness": 3,
     "environmental_protection": 1,
     "flags": [ "OUTER", "WATER_FRIENDLY", "BLOCK_WHILE_WORN", "STURDY" ],
     "armor": [
       {
         "covers": [ "arm_l", "arm_r" ],
-        "encumbrance": 4,
-        "specifically_covers": [ "arm_lower_r", "arm_lower_l" ],
-        "material": [
-          { "type": "neoprene", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "thermo_resin", "covered_by_mat": 95, "thickness": 1.5 }
-        ],
-        "coverage": 100,
-        "cover_vitals": 90
-      },
-      {
-        "covers": [ "arm_l", "arm_r" ],
-        "specifically_covers": [ "arm_elbow_r", "arm_elbow_l" ],
-        "material": [
-          { "type": "neoprene", "covered_by_mat": 100, "thickness": 1.5 },
-          { "type": "thermo_resin", "covered_by_mat": 90, "thickness": 1.5 }
-        ],
-        "coverage": 100,
-        "cover_vitals": 90
-      },
-      {
-        "covers": [ "arm_l", "arm_r" ],
-        "specifically_covers": [ "arm_upper_l", "arm_upper_r" ],
+        "encumbrance": 3,
+        "specifically_covers": [ "arm_lower_r", "arm_lower_l", "arm_elbow_r", "arm_elbow_l" ],
         "material": [
           { "type": "neoprene", "covered_by_mat": 100, "thickness": 1.5 },
           { "type": "thermo_resin", "covered_by_mat": 95, "thickness": 1.5 }
@@ -204,8 +184,7 @@
     "type": "ARMOR",
     "name": { "str": "pair of XL hard arm guards", "str_pl": "pairs of XL hard arm guards" },
     "description": "A pair of arm guards made of neoprene-backed thermoplastic sized for a giant.",
-    "weight": "550 g",
-    "volume": "4 L",
+    "proportional": { "weight": 1.5, "volume": 1.5, "price": 1.25 },
     "copy-from": "armguard_hard",
     "extend": { "flags": [ "OVERSIZE" ] }
   },
