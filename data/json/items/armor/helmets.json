@@ -105,7 +105,7 @@
         "covers": [ "head" ],
         "specifically_covers": [ "head_nape" ],
         "coverage": 50,
-        "encumbrance": "none"
+        "encumbrance": 0
       }
     ],
     "pocket_data": [
@@ -390,7 +390,7 @@
         "specifically_covers": [ "head_forehead", "head_nape", "head_ear_r", "head_ear_l" ],
         "coverage": 25,
         "covers_vitals": 90,
-        "encumbrance: 0
+        "encumbrance": 0
       }
     ]
   },
@@ -657,7 +657,7 @@
         "specifically_covers": [ "head_throat" ],
         "coverage": 50,
         "covers_vitals": 80,
-        "encumbrance": "none"
+        "encumbrance": 0
       },
       {
         "material": [ { "type": "thermo_resin", "covered_by_mat": 75, "thickness": 3.0 } ],
