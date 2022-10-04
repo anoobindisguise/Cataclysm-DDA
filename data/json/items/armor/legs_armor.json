@@ -544,17 +544,18 @@
     "name": { "str": "pair of XL hard leg guards", "str_pl": "pairs of XL hard leg guards" },
     "description": "A pair of leg guards made of neoprene backed thermoplastic sized for a giant.",
     "proportional": { "weight": 1.5, "volume": 1.5, "price": 1.25 },
-    "copy-from": "armguard_hard",
+    "copy-from": "legguard_hard",
+    "looks_like": "legguard_hard",
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
     "id": "xs_legguard_hard",
     "type": "ARMOR",
-    "copy-from": "legguard_hard",
-    "looks_like": "legguard_hard",
     "name": { "str": "pair of XS hard leg guards", "str_pl": "pairs of XS hard leg guards" },
     "description": "A pair of leg guards made of neoprene backed thermoplastic, sized for someone tiny.",
     "proportional": { "weight": 0.75, "volume": 0.75, "price": 0.5 },
+    "copy-from": "legguard_hard",
+    "looks_like": "legguard_hard",
     "extend": { "flags": [ "UNDERSIZE" ] }
   },
   {
