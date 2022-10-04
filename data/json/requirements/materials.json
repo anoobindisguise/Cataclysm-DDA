@@ -473,6 +473,7 @@
       { "id": "CONTAIN", "level": 1 },
       { "id": "SMOOTH", "level": 1 }
     ],
+    "tools": [ [ [ "water_boiling_heat", 5, "LIST" ] ], [ [ "water", -5 ] ] ],
     "components": [ [ [ "thermo_resin_chunk", 1 ] ] ]
   }
 ]
