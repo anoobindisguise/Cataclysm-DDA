@@ -387,7 +387,7 @@
     "price_postapoc": 6000,
     "material": [ "mc_steel", "wood" ],
     "cutting": 31,
-    "price": 16000,
+    "price": 16000
   },
   {
     "type": "GENERIC",
@@ -400,7 +400,7 @@
     "price_postapoc": 6500,
     "material": [ "hc_steel", "wood" ],
     "cutting": 32,
-    "price": 16000,
+    "price": 16000
   },
   {
     "type": "GENERIC",
@@ -414,7 +414,7 @@
     "material": [ "ch_steel", "wood" ],
     "techniques": [ "WBLOCK_1" ],
     "cutting": 33,
-    "price": 16000,
+    "price": 16000
   },
   {
     "type": "GENERIC",
@@ -428,7 +428,7 @@
     "material": [ "qt_steel", "wood" ],
     "techniques": [ "WBLOCK_1" ],
     "cutting": 34,
-    "price": 16000,
+    "price": 16000
   },
   {
     "type": "GENERIC",
@@ -612,7 +612,7 @@
     "price_postapoc": 6000,
     "material": [ "mc_steel", "wood" ],
     "cutting": 44,
-    "price": 80000,
+    "price": 80000
   },
   {
     "type": "GENERIC",
@@ -625,7 +625,7 @@
     "price_postapoc": 7000,
     "material": [ "hc_steel", "wood" ],
     "cutting": 46,
-    "price": 80000,
+    "price": 80000
   },
   {
     "type": "GENERIC",
@@ -638,7 +638,7 @@
     "price_postapoc": 8000,
     "material": [ "ch_steel", "wood" ],
     "cutting": 48,
-    "price": 80000,
+    "price": 80000
   },
   {
     "type": "GENERIC",
@@ -651,7 +651,7 @@
     "price_postapoc": 9000,
     "material": [ "qt_steel", "wood" ],
     "cutting": 50,
-    "price": 80000,
+    "price": 80000
   },
   {
     "id": "halberd",
