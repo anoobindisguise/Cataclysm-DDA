@@ -360,7 +360,7 @@
     "name": { "str": "mild steel spear" },
     "looks_like": "spear_steel",
     "description": "A stout wooden pole with a hand-forged mild steel spearhead.  The quality of the steel isn't the best but it will still hurt a lot.",
-    "weight": "1505 g",
+    "weight": "1510 g",
     "price_postapoc": 5000,
     "color": "light_gray",
     "symbol": "/",
