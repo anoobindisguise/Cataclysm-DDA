@@ -2988,18 +2988,14 @@
         "encumbrance_modifiers": [ "NONE" ]
       },
       {
-        "material": [
-          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 3.0 }
-        ],
+        "material": [ { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 3.0 } ],
         "covers": [ "head" ],
         "specifically_covers": [ "head_crown", "head_forehead", "head_nape", "head_ear_r", "head_ear_l" ],
         "coverage": 100,
         "encumbrance": 0
       },
       {
-        "material": [
-          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 3.0 }
-        ],
+        "material": [ { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 3.0 } ],
         "covers": [ "eyes" ],
         "rigid_layer_only": true,
         "coverage": 100,
@@ -3007,9 +3003,7 @@
         "layers": [ "OUTER" ]
       },
       {
-        "material": [
-          { "type": "thermo_resin", "covered_by_mat": 70, "thickness": 3.0 }
-        ],
+        "material": [ { "type": "thermo_resin", "covered_by_mat": 70, "thickness": 3.0 } ],
         "covers": [ "head" ],
         "specifically_covers": [ "head_throat" ],
         "coverage": 100,
