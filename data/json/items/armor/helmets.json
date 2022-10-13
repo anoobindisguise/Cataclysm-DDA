@@ -666,13 +666,13 @@
         "material": [ { "type": "thermo_resin", "covered_by_mat": 75, "thickness": 3.0 } ],
         "covers": [ "eyes" ],
         "encumbrance": 5,
-        "layers": "OUTER"
+        "layers": [ "OUTER" ]
       },
       {
         "material": [ { "type": "thermo_resin", "covered_by_mat": 85, "thickness": 3.0 } ],
         "covers": [ "mouth" ],
         "encumbrance": 0,
-        "layers": "OUTER"
+        "layers": [ "OUTER" ]
       }
     ],
     "warmth": 15,
