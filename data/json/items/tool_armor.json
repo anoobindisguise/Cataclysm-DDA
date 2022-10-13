@@ -2142,7 +2142,7 @@
     "flags": [ "FRAGILE", "OUTER" ],
     "price": 92000,
     "price_postapoc": 3500,
-    "material": [ "plastic", "steel" ],
+    "material": [ "thermo_resin", "steel" ],
     "repairs_like": "UPS_off",
     "weight": "1020 g",
     "volume": "1 L",
@@ -2177,7 +2177,7 @@
     "type": "TOOL_ARMOR",
     "name": { "str_pl": "pairs of light amp goggles (on)", "str": "pair of light amp goggles (on)" },
     "description": "A pair of battery-powered light amplifying goggles with an infrared illuminator, allowing you to see in the dark.  It is turned on, and continually draining batteries.  Use it to turn them off.",
-    "material": [ "plastic", "steel" ],
+    "material": [ "thermo_resin", "steel" ],
     "flags": [ "GNV_EFFECT", "FRAGILE", "TRADER_AVOID", "OUTER" ],
     "//": "2019 commercial models can operate at under 0.375W with the IR illuminator on",
     "power_draw": "375 mJ",
@@ -2197,7 +2197,7 @@
     "flags": [ "FRAGILE", "OUTER" ],
     "price": 92000,
     "price_postapoc": 2500,
-    "material": [ "plastic", "steel" ],
+    "material": [ "thermo_resin", "steel" ],
     "repairs_like": "UPS_off",
     "weight": "1240 g",
     "volume": "1 L",
@@ -2232,7 +2232,7 @@
     "type": "TOOL_ARMOR",
     "name": { "str": "pair of infrared goggles (on)", "str_pl": "pairs of infrared goggles (on)" },
     "description": "A pair of battery-powered goggles that grant infrared vision, allowing you to see warm-blooded creatures in the dark.  Use it to turn them off.",
-    "material": [ "plastic", "steel" ],
+    "material": [ "thermo_resin", "steel" ],
     "flags": [ "IR_EFFECT", "FRAGILE", "TRADER_AVOID", "OUTER" ],
     "power_draw": "1 J",
     "revert_to": "goggles_ir",
@@ -2776,7 +2776,7 @@
     "flags": [ "DEAF", "OVERSIZE", "BELTED", "ALLOWS_NATURAL_ATTACKS" ],
     "price": 12500,
     "price_postapoc": 750,
-    "material": [ "plastic" ],
+    "material": [ "thermo_resin" ],
     "weight": "179 g",
     "volume": "1 L",
     "charges_per_use": 1,
@@ -2813,7 +2813,7 @@
     "flags": [ "OVERSIZE", "BELTED", "ALLOWS_NATURAL_ATTACKS", "PARTIAL_DEAF" ],
     "price": 12500,
     "price_postapoc": 750,
-    "material": [ "plastic" ],
+    "material": [ "thermo_resin" ],
     "weight": "179 g",
     "volume": "1 L",
     "//": "3M Peltors claim to go 100 hours on 2 AAs",
@@ -2964,7 +2964,7 @@
     "type": "TOOL_ARMOR",
     "category": "armor",
     "name": { "str": "riot helmet" },
-    "description": "A helmet with a plastic shield that covers your entire face.  Activate to raise the face shield.",
+    "description": "A helmet with a thermoplastic shield that covers your entire face.  Activate to raise the face shield.",
     "use_action": { "type": "transform", "target": "helmet_riot_raised", "menu_text": "Raise visor", "msg": "You raise your visor." },
     "weight": "1450 g",
     "volume": "2250 ml",
@@ -2972,15 +2972,15 @@
     "price_postapoc": 1000,
     "to_hit": -1,
     "bashing": 8,
-    "material": [ "plastic", "thermo_resin" ],
+    "material": [ "thermo_resin", "plastic_pad" ],
     "symbol": "[",
     "color": "dark_gray",
     "warmth": 15,
     "armor": [
       {
         "material": [
-          { "type": "plastic", "covered_by_mat": 100, "thickness": 2.0 },
-          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 1.0 }
+          { "type": "plastic_pad", "covered_by_mat": 100, "thickness": 5.0 },
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 3.5 }
         ],
         "covers": [ "head" ],
         "specifically_covers": [ "head_crown", "head_forehead", "head_nape", "head_ear_r", "head_ear_l" ],
@@ -2989,8 +2989,16 @@
       },
       {
         "material": [
-          { "type": "plastic", "covered_by_mat": 100, "thickness": 2.0 },
-          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 1.0 }
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 3.0 }
+        ],
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_crown", "head_forehead", "head_nape", "head_ear_r", "head_ear_l" ],
+        "coverage": 100,
+        "encumbrance": 0
+      },
+      {
+        "material": [
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 3.0
         ],
         "covers": [ "eyes" ],
         "rigid_layer_only": true,
@@ -3000,14 +3008,12 @@
       },
       {
         "material": [
-          { "type": "plastic", "covered_by_mat": 100, "thickness": 2.0 },
-          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 1.0 }
+          { "type": "thermo_resin", "covered_by_mat": 70 "thickness": 3.0
         ],
-        "covers": [ "mouth" ],
-        "rigid_layer_only": true,
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_throat" ],
         "coverage": 100,
-        "encumbrance": 2,
-        "layers": [ "OUTER" ]
+        "encumbrance": 2
       }
     ],
     "environmental_protection": 2,
@@ -3020,7 +3026,7 @@
     "repairs_like": "helmet_riot",
     "category": "armor",
     "name": { "str": "riot helmet (raised visor)", "str_pl": "riot helmets (raised visor)" },
-    "description": "A riot helmet with a plastic face shield which is raised up.  Activate to lower the shield.",
+    "description": "A riot helmet with a thermoplastic face shield which is raised up.  Activate to lower the shield.",
     "use_action": { "type": "transform", "target": "helmet_riot", "menu_text": "Lower visor", "msg": "You put down your visor." },
     "weight": "1450 g",
     "volume": "2250 ml",
@@ -3028,15 +3034,15 @@
     "price_postapoc": 1000,
     "to_hit": -1,
     "bashing": 8,
-    "material": [ "plastic", "thermo_resin" ],
+    "material": [ "plastic_pad", "thermo_resin" ],
     "symbol": "[",
     "color": "dark_gray",
     "warmth": 15,
     "armor": [
       {
         "material": [
-          { "type": "plastic", "covered_by_mat": 100, "thickness": 2.0 },
-          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 1.0 }
+          { "type": "plastic_pad", "covered_by_mat": 100, "thickness": 5.0 },
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 3.5 }
         ],
         "covers": [ "head" ],
         "specifically_covers": [ "head_crown", "head_forehead", "head_nape", "head_ear_r", "head_ear_l" ],
@@ -3455,13 +3461,32 @@
     "price_postapoc": 1000,
     "to_hit": -1,
     "bashing": 10,
-    "material": [ "kevlar_rigid", "plastic" ],
+    "material": [ "kevlar_rigid", "thermo_resin" ],
     "symbol": "[",
     "looks_like": "helmet_motor",
     "color": "dark_gray",
     "armor": [
-      { "covers": [ "head" ], "coverage": 100, "encumbrance": 30 },
-      { "covers": [ "eyes" ], "rigid_layer_only": true, "coverage": 100, "encumbrance": 5, "layers": [ "OUTER" ] }
+      {
+        "material": [
+          { "type": "plastic_pad", "covered_by_mat": 100, "thickness": 4.0 },
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 4.0 },
+          { "type": "kevlar_rigid", "covered_by_mat": 100, "thickness": 3.0 }
+        ],
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_crown", "head_forehead", "head_nape", "head_ear_r", "head_ear_l" ],
+        "coverage": 100,
+        "encumbrance_modifiers": [ "NONE" ]
+      },
+      {
+        "material": [
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 3.0 }
+        ],
+        "covers": [ "eyes" ],
+        "rigid_layer_only": true,
+        "coverage": 100,
+        "encumbrance": 5,
+        "layers": [ "OUTER" ]
+      }
     ],
     "warmth": 15,
     "material_thickness": 5,
@@ -3500,13 +3525,32 @@
     "price_postapoc": 1000,
     "to_hit": -1,
     "bashing": 10,
-    "material": [ "kevlar_rigid", "plastic" ],
+    "material": [ "kevlar_rigid", "thermo_resin" ],
     "symbol": "[",
     "looks_like": "helmet_motor",
     "color": "dark_gray",
     "armor": [
-      { "covers": [ "head" ], "coverage": 100, "encumbrance": 30 },
-      { "covers": [ "eyes" ], "rigid_layer_only": true, "coverage": 100, "encumbrance": 5, "layers": [ "OUTER" ] }
+      {
+        "material": [
+          { "type": "plastic_pad", "covered_by_mat": 100, "thickness": 4.0 },
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 4.0 },
+          { "type": "kevlar_rigid", "covered_by_mat": 100, "thickness": 3.0 }
+        ],
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_crown", "head_forehead", "head_nape", "head_ear_r", "head_ear_l" ],
+        "coverage": 100,
+        "encumbrance_modifiers": [ "NONE" ]
+      },
+      {
+        "material": [
+          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 3.0 }
+        ],
+        "covers": [ "eyes" ],
+        "rigid_layer_only": true,
+        "coverage": 100,
+        "encumbrance": 5,
+        "layers": [ "OUTER" ]
+      }
     ],
     "warmth": 15,
     "material_thickness": 5,
