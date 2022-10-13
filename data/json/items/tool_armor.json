@@ -3008,7 +3008,7 @@
       },
       {
         "material": [
-          { "type": "thermo_resin", "covered_by_mat": 70 "thickness": 3.0 }
+          { "type": "thermo_resin", "covered_by_mat": 70, "thickness": 3.0 }
         ],
         "covers": [ "head" ],
         "specifically_covers": [ "head_throat" ],
