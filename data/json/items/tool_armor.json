@@ -2972,7 +2972,7 @@
     "price_postapoc": 1000,
     "to_hit": -1,
     "bashing": 8,
-    "material": [ "thermo_resin", "plastic_pad" ],
+    "material": [ "thermo_resin" ],
     "symbol": "[",
     "color": "dark_gray",
     "warmth": 15,
@@ -3028,7 +3028,7 @@
     "price_postapoc": 1000,
     "to_hit": -1,
     "bashing": 8,
-    "material": [ "plastic_pad", "thermo_resin" ],
+    "material": [ "thermo_resin" ],
     "symbol": "[",
     "color": "dark_gray",
     "warmth": 15,
@@ -3472,9 +3472,7 @@
         "encumbrance_modifiers": [ "NONE" ]
       },
       {
-        "material": [
-          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 3.0 }
-        ],
+        "material": [ { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 3.0 } ],
         "covers": [ "eyes" ],
         "rigid_layer_only": true,
         "coverage": 100,
@@ -3536,9 +3534,7 @@
         "encumbrance_modifiers": [ "NONE" ]
       },
       {
-        "material": [
-          { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 3.0 }
-        ],
+        "material": [ { "type": "thermo_resin", "covered_by_mat": 100, "thickness": 3.0 } ],
         "covers": [ "eyes" ],
         "rigid_layer_only": true,
         "coverage": 100,
