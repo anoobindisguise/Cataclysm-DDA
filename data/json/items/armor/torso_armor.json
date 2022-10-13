@@ -680,15 +680,14 @@
     "name": { "str": "XL hard chest guard" },
     "description": "A solid cuirass of neoprene backed thermoplastic protecting your torso, sized for a giant.",
     "proportional": { "weight": 1.5, "volume": 1.5, "price": 1.25 },
-    "copy-from": "armguard_hard",
+    "copy-from": "chestguard_hard",
     "looks_like": "chestguard_hard",
     "extend": { "flags": [ "OVERSIZE" ] }
   },
   {
     "id": "xs_chestguard_hard",
     "type": "ARMOR",
-    "copy-from": "armguard_hard",
-    "looks_like": "armguard_hard",
+    "copy-from": "chestguard_hard",
     "name": { "str": "XS hard chest guard" },
     "description": "A solid cuirass of neoprene backed thermoplastic protecting your torso, sized for someone tiny.",
     "proportional": { "weight": 0.75, "volume": 0.75, "price": 0.5 },
