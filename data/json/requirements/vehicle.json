@@ -41,5 +41,18 @@
     "type": "requirement",
     "//": "Counterpart to welding_* installation requirements",
     "qualities": [ { "id": "SAW_M", "level": 2 } ]
+  },
+  {
+    "id": "vehicle_wire_install",
+    "type": "requirement",
+    "//": "Tying objects to the vehicle using wires",
+    "tools": [ [ [ "pliers", -1 ], [ "multitool", -1 ], [ "bio_toolset", -1 ], [ "big_pliers", -1 ], [ "pliers_locking", -1 ] ] ]
+    "components": [ [ [ "wire", 2 ] ] ]
+  },
+  {
+    "id": "vehicle_wire_removal",
+    "type": "requirement",
+    "//": "Removing objects that were tied to the vehicle using wires",
+    "tools": [ [ [ "pliers", -1 ], [ "multitool", -1 ], [ "bio_toolset", -1 ], [ "big_pliers", -1 ], [ "pliers_locking", -1 ] ] ]
   }
 ]
