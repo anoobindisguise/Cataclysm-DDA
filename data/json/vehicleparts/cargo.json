@@ -15,39 +15,36 @@
     "item": "bag_canvas",
     "location": "center",
     "requirements": {
-      "install": { "skills": [ [ "fabrication", 1 ] ], "time": "30 m", "using": [ [ "vehicle_nail_install", 1 ] ] },
-      "removal": { "skills": [ [ "fabrication", 2 ] ], "time": "15 m", "using": [ [ "vehicle_nail_removal", 1 ] ] },
-      "repair": { "skills": [ [ "fabrication", 2 ] ], "time": "30 m", "using": [ [ "adhesive", 2 ] ] }
+      "install": { "skills": [ [ "fabrication", 0 ] ], "time": "1 m", "using": [ [ "vehicle_wire_install", 1 ] ] },
+      "removal": { "skills": [ [ "fabrication", 0 ] ], "time": "1 m", "using": [ [ "vehicle_wire_removal", 1 ] ] },
+      "repair": { "skills": [ [ "tailoring", 1 ] ], "time": "10 m", "using": [ [ "sewing_standard", 2 ] ] }
     },
     "flags": [ "CARGO", "BOARDABLE", "COVERED" ],
     "breaks_into": "ig_vp_cloth"
   },
   {
     "type": "vehicle_part",
-    "abstract": "basketlg_abstract",
-    "name": { "str": "shopping cart basket" },
-    "categories": [ "cargo" ],
+    "id": "cargo_bag_external",
+    "name": { "str": "external storage bag" },
     "symbol": "o",
-    "looks_like": "basketsm",
-    "color": "brown",
+    "categories": [ "cargo" ],
+    "color": "light_gray",
     "broken_symbol": "#",
-    "broken_color": "brown",
+    "broken_color": "dark_gray",
     "damage_modifier": 60,
-    "durability": 75,
-    "size": 600,
-    "item": "basket",
-    "location": "center",
+    "durability": 10,
+    "description": "A bag tied to the exterior of your vehicle with metal wire.",
+    "folded_volume": "1 L",
+    "size": 60,
+    "item": "bag_canvas",
+    "location": "structure",
     "requirements": {
-      "install": { "skills": [ [ "mechanics", 1 ] ], "time": "450 s", "using": [ [ "welding_standard", 2 ] ] },
-      "removal": { "skills": [ [ "mechanics", 1 ] ], "time": "450 s", "using": [ [ "vehicle_weld_removal", 1 ] ] },
-      "repair": {
-        "skills": [ [ "mechanics", 1 ], [ "fabrication", 2 ] ],
-        "time": "350 s",
-        "using": [ [ "repair_welding_standard", 1 ] ]
-      }
+      "install": { "skills": [ [ "fabrication", 0 ] ], "time": "1 m", "using": [ [ "vehicle_wire_install", 1 ] ] },
+      "removal": { "skills": [ [ "fabrication", 0 ] ], "time": "1 m", "using": [ [ "vehicle_wire_removal", 1 ] ] },
+      "repair": { "skills": [ [ "tailoring", 1 ] ], "time": "10 m", "using": [ [ "sewing_standard", 2 ] ] }
     },
-    "flags": [ "CARGO", "OBSTACLE" ],
-    "damage_reduction": { "all": 6 }
+    "flags": [ "UNMOUNT_ON_DAMAGE", "CARGO", "PROTRUSION" ],
+    "breaks_into": "ig_vp_cloth"
   },
   {
     "copy-from": "basketlg_abstract",
