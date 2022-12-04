@@ -2803,37 +2803,36 @@ bool mattack::ranged_pull( monster *z )
         return true;
     }
 
+    Character *pl = dynamic_cast<Character *>( target );
+    ///\EFFECT_STR increases chance to avoid being grabbed
+    ///\EFFECT_DEX increases chance to avoid being grabbed
+    int defender_check = rng( 0, std::max( pl->get_dex(), pl->get_str() ) );
+    int attacker_check = rng( 0, z->type->melee_sides + z->type->melee_dice );
+    ///\EFFECT_MELEE increases chance to avoid being grabbed
+    // your melee skill yields improvements to grab avoid at 1, 3, 4, 7, 9, giving a boost of 0-2, 0-3, 0-4, 0-5, 0-6 respectively
+    int skill_factor = rng( 0, std::floor( 2.0 * std::sqrt( pl->get_skill_level( melee_skill ) ) ) );
+    defender_check += skill_factor;
 
-    if( target->has_grab_break_tec() ) {
-        Character *pl = dynamic_cast<Character *>( target );
-        ///\EFFECT_STR increases chance to avoid being grabbed
-        ///\EFFECT_DEX increases chance to avoid being grabbed
-        int defender_check = rng( 0, std::max( pl->get_dex(), pl->get_str() ) );
-        int attacker_check = rng( 0, z->type->melee_sides + z->type->melee_dice );
-        const ma_technique grab_break = pl->martial_arts_data->get_grab_break( *pl );
+    if( pl->is_throw_immune() ) {
+        defender_check = defender_check + 2;
+    }
 
-        if( pl->is_throw_immune() ) {
-            defender_check = defender_check + 2;
-        }
+    if( pl->get_effect_int( effect_stunned ) ) {
+        defender_check = defender_check - 2;
+    }
 
-        if( pl->get_effect_int( effect_stunned ) ) {
-            defender_check = defender_check - 2;
-        }
+    if( pl->get_effect_int( effect_downed ) ) {
+        defender_check = defender_check - 2;
+    }
 
-        if( pl->get_effect_int( effect_downed ) ) {
-            defender_check = defender_check - 2;
-        }
-
-        if( defender_check > attacker_check ) {
-            game_message_type msg_type = foe && foe->is_avatar() ? m_warning : m_info;
-            target->add_msg_player_or_npc( msg_type, _( "The %s's arms fly out at you…" ),
-                                           _( "The %s's arms fly out at <npcname>…" ),
-                                           z->name() );
-            target->add_msg_player_or_npc( m_info, grab_break.avatar_message.translated(),
-                                           grab_break.npc_message.translated(), z->name() );
-            return true;
-        }
-
+    if( defender_check > attacker_check ) {
+        game_message_type msg_type = foe && foe->is_avatar() ? m_warning : m_info;
+        target->add_msg_player_or_npc( msg_type, _( "The %s's arms fly out at you…" ),
+                                       _( "The %s's arms fly out at <npcname>…" ),
+                                       z->name() );
+        target->add_msg_player_or_npc( m_info, grab_break.avatar_message.translated(),
+                                       grab_break.npc_message.translated(), z->name() );
+        return true;
     }
 
     // Limit the range in case some weird math thing would cause the target to fly past us
@@ -2929,15 +2928,14 @@ bool mattack::grab( monster *z )
     if( pl == nullptr ) {
         return true;
     }
-
+    ///\EFFECT_STR increases chance to avoid being grabbed
     ///\EFFECT_DEX increases chance to avoid being grabbed
     int defender_check = rng( 0, std::max( pl->get_dex(), pl->get_str() ) );
     int attacker_check = rng( 0, z->type->melee_sides + z->type->melee_dice );
-    const ma_technique grab_break = pl->martial_arts_data->get_grab_break( *pl );
-
-    if( pl->has_grab_break_tec() ) {
-        defender_check = defender_check + 2;
-    }
+    ///\EFFECT_MELEE increases chance to avoid being grabbed
+    // your melee skill yields improvements to grab avoid at 1, 3, 4, 7, 9, giving a boost of 0-2, 0-3, 0-4, 0-5, 0-6 respectively
+    int skill_factor = rng( 0, std::floor( 2.0 * std::sqrt( pl->get_skill_level( melee_skill ) ) ) );
+    defender_check += skill_factor;
 
     if( pl->is_throw_immune() ) {
         defender_check = defender_check + 2;
@@ -5501,31 +5499,32 @@ bool mattack::bio_op_takedown( monster *z )
                                z->name(),
                                body_part_name_accusative( hit ), dam );
     foe->deal_damage( z,  hit, damage_instance( damage_type::BASH, dam ) );
-    // At this point, Martial Arts or Tentacle Bracing can make this much less painful
-    if( target->has_grab_break_tec() ) {
-        Character *pl = dynamic_cast<Character *>( target );
-        ///\EFFECT_STR increases chance to avoid being grabbed
-        ///\EFFECT_DEX increases chance to avoid being grabbed
-        int defender_check = rng( 0, std::max( pl->get_dex(), pl->get_str() ) );
-        int attacker_check = rng( 0, z->type->melee_sides + z->type->melee_dice );
-        const ma_technique grab_break = pl->martial_arts_data->get_grab_break( *pl );
 
-        if( pl->is_throw_immune() ) {
-            defender_check = defender_check + 2;
-        }
+    Character *pl = dynamic_cast<Character *>( target );
+    ///\EFFECT_STR increases chance to avoid being grabbed
+    ///\EFFECT_DEX increases chance to avoid being grabbed
+    int defender_check = rng( 0, std::max( pl->get_dex(), pl->get_str() ) );
+    int attacker_check = rng( 0, z->type->melee_sides + z->type->melee_dice );
+    ///\EFFECT_MELEE increases chance to avoid being grabbed
+    // your melee skill yields improvements to grab avoid at 1, 3, 4, 7, 9, giving a boost of 0-2, 0-3, 0-4, 0-5, 0-6 respectively
+    int skill_factor = rng( 0, std::floor( 2.0 * std::sqrt( pl->get_skill_level( melee_skill ) ) ) );
+    defender_check += skill_factor;
 
-        if( pl->get_effect_int( effect_stunned ) ) {
-            defender_check = defender_check - 2;
-        }
+    if( pl->is_throw_immune() ) {
+        defender_check = defender_check + 2;
+    }
 
-        if( pl->get_effect_int( effect_downed ) ) {
-            defender_check = defender_check - 2;
-        }
+    if( pl->get_effect_int( effect_stunned ) ) {
+        defender_check = defender_check - 2;
+    }
 
-        if( defender_check > attacker_check ) {
-            target->add_msg_if_player( m_info, grab_break.avatar_message.translated() );
-            return true;
-        }
+    if( pl->get_effect_int( effect_downed ) ) {
+        defender_check = defender_check - 2;
+    }
+
+    if( defender_check > attacker_check ) {
+        target->add_msg_if_player( m_info, grab_break.avatar_message.translated() );
+        return true;
     }
     if( !foe->is_throw_immune() ) {
         if( !target->is_immune_effect( effect_downed ) ) {
