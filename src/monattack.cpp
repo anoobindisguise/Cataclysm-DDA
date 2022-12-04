@@ -2810,7 +2810,7 @@ bool mattack::ranged_pull( monster *z )
     int attacker_check = rng( 0, z->type->melee_sides + z->type->melee_dice );
     ///\EFFECT_MELEE increases chance to avoid being grabbed
     // your melee skill yields improvements to grab avoid at 1, 3, 4, 7, 9, giving a boost of 0-2, 0-3, 0-4, 0-5, 0-6 respectively
-    int skill_factor = rng( 0, std::floor( 2.0 * std::sqrt( pl->get_skill_level( melee_skill ) ) ) );
+    int skill_factor = rng( 0, std::floor( 2.0 * std::sqrt( pl->get_skill_level( skill_melee ) ) ) );
     defender_check += skill_factor;
 
     if( pl->is_throw_immune() ) {
@@ -2934,7 +2934,7 @@ bool mattack::grab( monster *z )
     int attacker_check = rng( 0, z->type->melee_sides + z->type->melee_dice );
     ///\EFFECT_MELEE increases chance to avoid being grabbed
     // your melee skill yields improvements to grab avoid at 1, 3, 4, 7, 9, giving a boost of 0-2, 0-3, 0-4, 0-5, 0-6 respectively
-    int skill_factor = rng( 0, std::floor( 2.0 * std::sqrt( pl->get_skill_level( melee_skill ) ) ) );
+    int skill_factor = rng( 0, std::floor( 2.0 * std::sqrt( pl->get_skill_level( skill_melee ) ) ) );
     defender_check += skill_factor;
 
     if( pl->is_throw_immune() ) {
