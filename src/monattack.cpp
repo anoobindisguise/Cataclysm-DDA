@@ -2830,8 +2830,8 @@ bool mattack::ranged_pull( monster *z )
         target->add_msg_player_or_npc( msg_type, _( "The %s's arms fly out at you…" ),
                                        _( "The %s's arms fly out at <npcname>…" ),
                                        z->name() );
-        target->add_msg_player_or_npc( m_info, grab_break.avatar_message.translated(),
-                                       grab_break.npc_message.translated(), z->name() );
+        //target->add_msg_player_or_npc( m_info, grab_break.avatar_message.translated(),
+        //                               grab_break.npc_message.translated(), z->name() );
         return true;
     }
 
@@ -2949,13 +2949,13 @@ bool mattack::grab( monster *z )
         defender_check = defender_check - 2;
     }
 
-    if( grab_break.id != tec_none && defender_check > attacker_check ) {
+    if( defender_check > attacker_check ) {
         if( target->has_effect( effect_grabbed ) ) {
             target->add_msg_if_player( m_info, _( "The %s tries to grab you as well, but you bat it away!" ),
                                        z->name() );
         } else {
-            target->add_msg_player_or_npc( m_info, grab_break.avatar_message.translated(),
-                                           grab_break.npc_message.translated(), z->name() );
+            //target->add_msg_player_or_npc( m_info, grab_break.avatar_message.translated(),
+            //                               grab_break.npc_message.translated(), z->name() );
         }
         return true;
     }
@@ -5523,7 +5523,7 @@ bool mattack::bio_op_takedown( monster *z )
     }
 
     if( defender_check > attacker_check ) {
-        target->add_msg_if_player( m_info, grab_break.avatar_message.translated() );
+        //target->add_msg_if_player( m_info, grab_break.avatar_message.translated() );
         return true;
     }
     if( !foe->is_throw_immune() ) {
