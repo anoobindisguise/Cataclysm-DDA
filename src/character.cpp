@@ -3712,11 +3712,11 @@ void Character::mut_cbm_encumb( std::map<bodypart_id, encumbrance_data> &vals ) 
 
 void Character::calc_bmi_encumb( std::map<bodypart_id, encumbrance_data> &vals ) const
 {
-    for( const std::pair<const bodypart_str_id, bodypart> &elem : get_body() ) {
-        int penalty = std::floor( elem.second.get_bmi_encumbrance_scalar() * std::max( 0.0f,
-                                  get_bmi_fat() - static_cast<float>( elem.second.get_bmi_encumbrance_threshold() ) ) );
-        vals[elem.first.id()].encumbrance += penalty;
-    }
+//    for( const std::pair<const bodypart_str_id, bodypart> &elem : get_body() ) {
+//        int penalty = std::floor( elem.second.get_bmi_encumbrance_scalar() * std::max( 0.0f,
+//                                  get_bmi_fat() - static_cast<float>( elem.second.get_bmi_encumbrance_threshold() ) ) );
+//        vals[elem.first.id()].encumbrance += penalty;
+//    }
 }
 
 body_part_set Character::exclusive_flag_coverage( const flag_id &flag ) const
