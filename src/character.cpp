@@ -768,7 +768,7 @@ int Character::get_fat_to_hp() const
         mut_fat_hp += mut.obj().fat_to_max_hp;
     }
 
-    return mut_fat_hp * ( get_bmi() - character_weight_category::normal );
+    return mut_fat_hp * ( get_bmi_fat() - character_weight_category::normal );
 }
 
 creature_size Character::get_size() const
@@ -3481,6 +3481,7 @@ void Character::calc_encumbrance( const item &new_item )
     std::map<bodypart_id, encumbrance_data> enc;
     worn.item_encumb( enc, new_item, *this );
     mut_cbm_encumb( enc );
+    calc_bmi_encumb( enc );
 
     for( const std::pair<const bodypart_id, encumbrance_data> &elem : enc ) {
         set_part_encumbrance_data( elem.first, elem.second );
@@ -3709,6 +3710,15 @@ void Character::mut_cbm_encumb( std::map<bodypart_id, encumbrance_data> &vals ) 
     apply_mut_encumbrance( vals );
 }
 
+void Character::calc_bmi_encumb( std::map<bodypart_id, encumbrance_data> &vals ) const
+{
+    for( const std::pair<const bodypart_str_id, bodypart> &elem : get_body() ) {
+        int penalty = std::floor( elem.second.get_bmi_encumbrance_scalar() * std::max( 0.0f,
+                                  get_bmi_fat() - static_cast<float>( elem.second.get_bmi_encumbrance_threshold() ) ) );
+        vals[elem.first.id()].encumbrance += penalty;
+    }
+}
+
 body_part_set Character::exclusive_flag_coverage( const flag_id &flag ) const
 {
     body_part_set ret;
@@ -3741,6 +3751,10 @@ int Character::get_int() const
 
 int Character::get_str_base() const
 {
+    if( get_bmi_fat() < character_weight_category::underweight ) {
+        const int str_penalty = std::floor( ( 1.0f - ( get_bmi_fat() / character_weight_category::underweight ) ) * ( 1.0f - ( 2.0f / str_max ) ) * str_max );
+        return str_max - str_penalty;
+    }
     return str_max;
 }
 int Character::get_dex_base() const
@@ -4006,7 +4020,7 @@ int Character::kcal_speed_penalty() const
     if( get_kcal_percent() > 0.95f ) {
         return 0;
     } else {
-        return std::round( multi_lerp( starv_thresholds, get_bmi() ) );
+        return std::round( multi_lerp( starv_thresholds, get_bmi_fat() ) );
     }
 }
 
@@ -4049,7 +4063,10 @@ void Character::mod_stored_kcal( int nkcal, const bool ignore_weariness )
 
 void Character::mod_stored_calories( int ncal, const bool ignore_weariness )
 {
-    int nkcal = ncal / 1000;
+    //if we are malnourished, we are now burning muscle to stay alive
+    const int adjust_factor = ( get_bmi_fat() < character_weight_category::underweight ) ? std::min( 1.0f, 4.0f /
+                              str_max ) : 1.0f;
+    int nkcal = ( ncal * adjust_factor ) / 1000;
     if( nkcal > 0 ) {
         add_gained_calories( nkcal );
     } else {
@@ -4070,16 +4087,22 @@ void Character::set_stored_kcal( int kcal )
 void Character::set_stored_calories( int cal )
 {
     if( stored_calories != cal ) {
+        int cached_bmi = std::floor( get_bmi_fat() );
         stored_calories = cal;
 
         //some mutant change their max_hp according to their bmi
         recalc_hp();
+        //need to check obesity penalties when this happens if BMI changed
+        if( std::floor( get_bmi_fat() ) != cached_bmi ) {
+            calc_encumbrance();
+        }
     }
 }
 
 int Character::get_healthy_kcal() const
 {
-    return healthy_calories / 1000;
+    float healthy_weight = 5.0f * std::pow( height() / 100.0f, 2 );
+    return std::floor( 7716.17 * healthy_weight );
 }
 
 float Character::get_kcal_percent() const
@@ -4278,9 +4301,10 @@ void Character::reset_bonuses()
 
 int Character::get_max_healthy() const
 {
-    const float bmi = get_bmi();
-    return clamp( static_cast<int>( std::round( -3 * ( bmi - character_weight_category::normal ) *
-                                    ( bmi - character_weight_category::overweight ) + 200 ) ), -200, 200 );
+    const float bmi = get_bmi_fat();
+    int over_factor = std::round( std::max( 0.0f, 25 * ( bmi - character_weight_category::overweight ) ) );
+    int under_factor = std::round( std::max( 0.0f, 100 * ( character_weight_category::normal - bmi ) ) );
+    return std::max( 200 - over_factor - under_factor, -200);
 }
 
 void Character::regen( int rate_multiplier )
@@ -5903,14 +5927,37 @@ float Character::healing_rate_medicine( float at_rest_quality, const bodypart_id
 
 float Character::get_bmi() const
 {
-    return 12 * get_kcal_percent() + 13;
+    return get_bmi_lean() + get_bmi_fat();
+}
+
+
+float Character::get_bmi_lean() const
+{
+    return 10.0f + get_str_base();
+}
+
+
+float Character::get_bmi_fat() const
+{
+    return ( get_stored_kcal() / 7716.17f ) / std::pow( height() / 100.0f, 2 );
 }
 
 units::mass Character::bodyweight() const
 {
-    return units::from_kilogram( get_bmi() * std::pow( height() / 100.0f, 2 ) );
+    float kg_from_kcal = get_stored_kcal() / 7716.17f;
+    float lean_mass = ( 10.0f + get_str_base() ) * std::pow( height() / 100.0f, 2 );
+    return units::from_kilogram( kg_from_kcal + lean_mass );
 }
 
+units::mass Character::bodyweight_lean() const
+{
+    return units::from_kilogram( ( 10.0f + get_str_base() ) * std::pow( height() / 100.0f, 2 ) );
+}
+
+units::mass Character::bodyweight_fat() const
+{
+    return units::from_kilogram( get_stored_kcal() / 7716.17 );
+}
 units::mass Character::bionics_weight() const
 {
     units::mass bio_weight = 0_gram;
@@ -6347,7 +6394,9 @@ void Character::mod_stamina( int mod )
 void Character::burn_move_stamina( int moves )
 {
     int overburden_percentage = 0;
-    units::mass current_weight = weight_carried();
+    //add half the difference between current stored kcal weight and healthy stored kcal weight to weight of carried gear
+    units::mass fat_penalty = units::from_kilogram( 0.5f * std::max( 0.0f, ( get_healthy_kcal() - get_stored_kcal() ) / 7716.17f ) );
+    units::mass current_weight = weight_carried() + fat_penalty;
     // Make it at least 1 gram to avoid divide-by-zero warning
     units::mass max_weight = std::max( weight_capacity(), 1_gram );
     if( current_weight > max_weight ) {
