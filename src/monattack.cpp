@@ -167,7 +167,7 @@ static const itype_id itype_mininuke_act( "mininuke_act" );
 static const limb_score_id limb_score_grip( "grip" );
 static const limb_score_id limb_score_reaction( "reaction" );
 
-static const matec_id tec_none( "tec_none" );
+//static const matec_id tec_none( "tec_none" );
 
 static const material_id material_budget_steel( "budget_steel" );
 static const material_id material_ch_steel( "ch_steel" );
@@ -5507,7 +5507,7 @@ bool mattack::bio_op_takedown( monster *z )
     int attacker_check = rng( 0, z->type->melee_sides + z->type->melee_dice );
     ///\EFFECT_MELEE increases chance to avoid being grabbed
     // your melee skill yields improvements to grab avoid at 1, 3, 4, 7, 9, giving a boost of 0-2, 0-3, 0-4, 0-5, 0-6 respectively
-    int skill_factor = rng( 0, std::floor( 2.0 * std::sqrt( pl->get_skill_level( melee_skill ) ) ) );
+    int skill_factor = rng( 0, std::floor( 2.0 * std::sqrt( pl->get_skill_level( skill_melee ) ) ) );
     defender_check += skill_factor;
 
     if( pl->is_throw_immune() ) {
