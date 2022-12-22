@@ -363,6 +363,7 @@ void bionic_data::load( const JsonObject &jsobj, const std::string & )
     optional( jsobj, was_loaded, "learned_proficiencies", proficiencies );
     optional( jsobj, was_loaded, "canceled_mutations", canceled_mutations );
     optional( jsobj, was_loaded, "mutation_conflicts", mutation_conflicts );
+    optional( jsobj, was_loaded, "possible_failures", possible_failures );
     optional( jsobj, was_loaded, "included_bionics", included_bionics );
     optional( jsobj, was_loaded, "included", included );
     optional( jsobj, was_loaded, "upgraded_bionic", upgraded_bionic );
