@@ -142,6 +142,10 @@ struct bionic_data {
      * Mutations/traits that prevent installing this CBM
      */
     std::set<trait_id> mutation_conflicts;
+    /**
+     * Choose from this list of bionics when the installation is faulty
+     */
+    std::set<bionic_id> possible_failures;
 
     /**
      * The spells you learn when you install this bionic, and what level you learn them at.
