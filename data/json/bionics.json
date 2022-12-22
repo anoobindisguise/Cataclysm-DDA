@@ -1787,5 +1787,115 @@
     "occupied_bodyparts": [ [ "eyes", 1 ], [ "arm_l", 2 ], [ "arm_r", 2 ], [ "hand_l", 2 ], [ "hand_r", 2 ] ],
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ],
     "enchantments": [ { "condition": "ALWAYS", "skills": [ { "value": "throw", "add": 5 } ] } ]
+  },
+  {
+    "id": "bio_faulty_detritus",
+    "type": "bionic",
+    "name": { "str": "Bionic Detritus" },
+    "occupied_bodyparts": [ [ "torso", 2 ], [ "arm_l", 1 ], [ "arm_r", 1 ], [ "leg_l", 1 ], [ "leg_r", 1 ] ],
+    "dupes_allowed": true,
+    "description": "Random bits of ruined bionic haphazardly \"installed\" throughout your body. They seem to be harmless, at least.",
+    "flags": [ "BIONIC_FAULTY" ]
+  },
+  {
+    "id": "bio_faulty_detritus",
+    "type": "bionic",
+    "name": { "str": "Bionic Detritus" },
+    "occupied_bodyparts": [ [ "torso", 2 ], [ "arm_l", 1 ], [ "arm_r", 1 ], [ "leg_l", 1 ], [ "leg_r", 1 ] ],
+    "dupes_allowed": true,
+    "description": "Random bits of ruined bionic haphazardly \"installed\" throughout your body. They seem to be harmless, at least.",
+    "flags": [ "BIONIC_FAULTY" ]
+  },
+  {
+    "id": "bio_faulty_storage",
+    "type": "bionic",
+    "name": { "str": "Faulty Power Storage" },
+    "capacity": "90 kJ",
+    "power_trickle": "-1 J",
+    "dupes_allowed": true,
+    "description": "This power storage CBM was damaged during installation and seems to be gradually bleeding charge.",
+    "flags": [ "BIONIC_FAULTY" ]
+  },
+  {
+    "id": "bio_faulty_claws",
+    "type": "bionic",
+    "name": { "str": "Faulty Bionic Claws" },
+    "description": "Vicious claws have been surgically installed inside your fingers, but something seems to have gone wrong with the installation process and you can't deactivate them.  This makes fine manipulation very difficult.",
+    "occupied_bodyparts": [ [ "hand_l", 4 ], [ "hand_r", 4 ] ],
+    "encumbrance": [ [ "hand_l", 40 ], [ "hand_r", 40 ] ],
+    "act_cost": "25 J",
+    "fake_weapon": "bio_claws_weapon",
+    "flags": [ "BIONIC_FAULTY", "BIONIC_WEAPON" ],
+    "power_deactivate": "5000 kJ",
+    "activated_on_install": "true"
+  },
+  {
+    "id": "bio_int_dehancer",
+    "type": "bionic",
+    "name": { "str": "Cerebral Interference" },
+    "description": "Bionic processors improperly wired to your brain make it very hard to think clearly. -2 Intelligence.",
+    "occupied_bodyparts": [ [ "head", 6 ] ],
+    "stat_bonus": [ [ "INT", -2 ] ],
+    "flags": [ "BIONIC_FAULTY" ]
+  },
+  {
+    "id": "bio_faulty_climate",
+    "type": "bionic",
+    "name": { "str": "Internal Climate Chaos" },
+    "description": "This bionic appears to have been meant to keep your temperature stable but all it does is make you hotter when you're warm and colder when you're cool, and you can't seem to turn it off.",
+    "occupied_bodyparts": [
+      [ "torso", 8 ],
+      [ "head", 2 ],
+      [ "arm_l", 2 ],
+      [ "arm_r", 2 ],
+      [ "hand_l", 1 ],
+      [ "hand_r", 1 ],
+      [ "leg_l", 3 ],
+      [ "leg_r", 3 ],
+      [ "foot_l", 1 ],
+      [ "foot_r", 1 ]
+    ],
+    "flags": [ "BIONIC_FAULTY" ],
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "values": [ { "value": "CLIMATE_CONTROL_HEAT", "add": -25 }, { "value": "CLIMATE_CONTROL_CHILL", "add": -25 } ]
+      }
+    ]
+  },
+  {
+    "id": "bio_faulty_armor",
+    "type": "bionic",
+    "name": { "str": "Faulty Bionic Plating" },
+    "description": "Though it might have been some kind of bionic armor, this is mostly just a collection of sharp metal protruding from your skin at random.  It's very uncomfortable and liable to get infected.",
+    "occupied_bodyparts": [
+      [ "torso", 6 ],
+      [ "head", 2 ],
+      [ "arm_l", 2 ],
+      [ "arm_r", 2 ],
+      [ "leg_l", 3 ],
+      [ "leg_r", 3 ],
+      [ "foot_l", 1 ],
+      [ "foot_r", 1 ],
+      [ "hand_l", 1 ],
+      [ "hand_r", 1 ],
+      [ "mouth", 1 ]
+    ],
+    "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ],
+    "passive_pseudo_items": [ "armor_bionic_faulty" ]
+  },
+  {
+    "id": "bio_faulty_fuelcell",
+    "type": "bionic",
+    "name": { "str": "Faulty Fuel Cell" },
+    "description": "Some sort of exothermic fuel cell that seems to be broken.  Good for making a ton of waste heat and not much else.",
+    "occupied_bodyparts": [ [ "torso", 17 ] ],
+    "fuel_options": [ "alcohol", "gasoline", "lamp_oil", "motor_oil", "diesel", "jp8" ],
+    "fuel_efficiency": 0.0,
+    "exothermic_power_gen": true,
+    "time": "1 s",
+    "flags": [ "BIONIC_POWER_SOURCE", "BIONIC_SHOCKPROOF", "BIONIC_TOGGLED" ],
+    "passive_pseudo_items": [ "internal_faulty_tank" ],
+    "encumbrance": [ [ "torso", 3 ] ]
   }
 ]
