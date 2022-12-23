@@ -1276,5 +1276,59 @@
     "weight": "1000 g",
     "difficulty": 3,
     "installation_data": "AID_bio_pitch_perfect"
+  },
+  {
+    "id": "bio_faulty_storage",
+    "copy-from": "bionic_general_faulty",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Faulty Power Storage CBM" },
+    "description": "A defective power storage CBM that slowly bleeds charge.",
+    "weight": "70 g",
+    "difficulty": 1
+  },
+  {
+    "id": "bio_faulty_detritus",
+    "copy-from": "bionic_general_faulty",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Bionic Detritus" },
+    "description": "Random bits of useless bionic that were removed from the body.",
+    "weight": "300 g",
+    "difficulty": 8
+  },
+  {
+    "id": "bio_faulty_claws",
+    "copy-from": "bionic_general_faulty",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Faulty Bionic Claws CBM" },
+    "description": "Bionic claws which could normally be extended and retracted from the body at will; these seem unable to be retracted, and you have no clue how to go about fixing that.",
+    "weight": "2041 g",
+    "difficulty": 5
+  },
+  {
+    "id": "bio_int_dehancer",
+    "copy-from": "bionic_general_faulty",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Cerebral Interference CBM" },
+    "description": "A poorly installed bionic that would cause its user to suffer reduced cognitive ability.",
+    "weight": "100 g",
+    "difficulty": 14
+  },
+  {
+    "id": "bio_faulty_armor",
+    "copy-from": "bionic_general_faulty",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Faulty Bionic Plating" },
+    "description": "Formerly some kind of bionic armor, this wasn't installed correctly at all and would just from its user's skin haphazardly.",
+    "weight": "5000 g",
+    "difficulty": 10
+  },
+  {
+    "id": "bio_faulty_fuelcell",
+    "copy-from": "bionic_general_faulty",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Faulty Fuel Cell CBM" },
+    "description": "This was some sort of fuel-based power source for CBMs but it doesn't work correctly and just makes lots of heat.",
+    "weight": "1000 g",
+    "difficulty": 4
   }
 ]
