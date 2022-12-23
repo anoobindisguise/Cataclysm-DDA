@@ -1121,7 +1121,7 @@
     "category": "CC_ARMOR",
     "subcategory": "CSC_ARMOR_LEGS",
     "skill_used": "tailor",
-    "time": "20 m",
+    "time": "20 s",
     "autolearn": true,
     "using": [ [ "sewing_standard", 10 ] ],
     "flags": [ "NO_RESIZE" ],
