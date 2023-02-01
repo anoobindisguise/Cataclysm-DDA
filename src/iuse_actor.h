@@ -1094,7 +1094,8 @@ class analyze_resonance_actor : public iuse_actor
 {
     public:
 
-        explicit analyze_resonance_actor( const std::string &type = "analyze_resonance" ) : iuse_actor( type ) {}
+        explicit analyze_resonance_actor( const std::string &type = "analyze_resonance" ) : iuse_actor(
+                type ) {}
 
         ~analyze_resonance_actor() override = default;
         void load( const JsonObject &jo ) override;
