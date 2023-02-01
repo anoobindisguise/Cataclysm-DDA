@@ -1086,6 +1086,23 @@ class weigh_self_actor : public iuse_actor
         void info( const item &, std::vector<iteminfo> & ) const override;
 };
 
+
+/**
+* Analyze your "ARTIFACT_RESONANCE: enchantment value.
+*/
+class analyze_resonance_actor : public iuse_actor
+{
+    public:
+
+        explicit analyze_resonance_actor( const std::string &type = "analyze_resonance" ) : iuse_actor( type ) {}
+
+        ~analyze_resonance_actor() override = default;
+        void load( const JsonObject &jo ) override;
+        cata::optional<int> use( Character &p, item &, bool, const tripoint & ) const override;
+        std::unique_ptr<iuse_actor> clone() const override;
+        void info( const item &, std::vector<iteminfo> & ) const override;
+};
+
 /**
  * Modify clothing
  */
