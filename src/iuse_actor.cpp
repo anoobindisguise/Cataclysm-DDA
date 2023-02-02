@@ -4438,22 +4438,22 @@ cata::optional<int> analyze_resonance_actor::use( Character &p, item &, bool,
 {
     int resonance = p.calculate_by_enchantment( 0.0, enchant_vals::mod::ARTIFACT_RESONANCE );
     if( resonance >= 12500 ) {
-        popup( _( "Anomalous resonant energy of strength %s detected.  Analysis: MORTAL PERIL: RESONANT BACKLASH THREATENS LOCAL SPACETIME INTEGRITY" ),
-              resonance );
+        popup( _( "Anomalous resonant energy of strength %s detected.  Analysis: MORTAL PERIL: Resonant backlash threatens local spacetime integrity!" ),
+               resonance );
     } else if( resonance >= 7500 ) {
-        popup( _( "Anomalous resonant energy of strength %s detected.  Analysis: SEVERE DANGER OF RESONANT BACKLASH" ),
-              resonance );
+        popup( _( "Anomalous resonant energy of strength %s detected.  Analysis: Severe danger of resonant backlash!" ),
+               resonance );
     } else if( resonance >= 4500 ) {
-        popup( _( "Anomalous resonant energy of strength %s detected.  Analysis: SIGNIFICANT THREAT OF RESONANT BACKLASH" ),
-              resonance );
+        popup( _( "Anomalous resonant energy of strength %s detected.  Analysis: Significant threat of resonant backlash!" ),
+               resonance );
     } else if( resonance >= 2000 ) {
-        popup( _( "Anomalous resonant energy of strength %s detected.  Analysis: MODERATE RISK OF RESONANT BACKLASH" ),
-              resonance );
+        popup( _( "Anomalous resonant energy of strength %s detected.  Analysis: Mild risk of resonant backlash." ),
+               resonance );
     } else if( resonance > 0 ) {
-        popup( _( "Anomalous resonant energy of strength %s detected.  Analysis: NO RISK OF RESONANT BACKLASH" ),
-              resonance );
+        popup( _( "Anomalous resonant energy of strength %s detected.  Analysis: No risk of resonant backlash." ),
+               resonance );
     } else {
-        popup( "Anomalous resonant energy not detected." );
+        popup( _( "Anomalous resonant energy not detected." ) );
     }
     return 0;
 }
