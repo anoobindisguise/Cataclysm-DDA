@@ -4458,6 +4458,11 @@ cata::optional<int> analyze_resonance_actor::use( Character &p, item &, bool,
     return 0;
 }
 
+std::unique_ptr<iuse_actor> analyze_resonance_actor::clone() const
+{
+    return std::make_unique<analyze_resonance_actor>( *this );
+}
+
 void weigh_self_actor::info( const item &, std::vector<iteminfo> &dump ) const
 {
     dump.emplace_back( "DESCRIPTION",
