@@ -1038,7 +1038,10 @@
     "id": "sheet_nylon_patchwork_100",
     "type": "GENERIC",
     "category": "spare_parts",
-    "name": { "str": "bundle of 100 patchwork synthetic fabric sheets", "str_pl": "bundles of 100 patchwork synthetic fabric sheets" },
+    "name": {
+      "str": "bundle of 100 patchwork synthetic fabric sheets",
+      "str_pl": "bundles of 100 patchwork synthetic fabric sheets"
+    },
     "description": "One hundred patchwork synthetic fabric sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_nylon_patchwork",
     "proportional": { "weight": 100, "volume": 100, "price": 100 }
@@ -1047,7 +1050,10 @@
     "id": "sheet_nylon_patchwork_1000",
     "type": "GENERIC",
     "category": "spare_parts",
-    "name": { "str": "bundle of 1000 patchwork synthetic fabric sheets", "str_pl": "bundles of 1000 patchwork synthetic fabric sheets" },
+    "name": {
+      "str": "bundle of 1000 patchwork synthetic fabric sheets",
+      "str_pl": "bundles of 1000 patchwork synthetic fabric sheets"
+    },
     "description": "One thousand patchwork synthetic fabric sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_nylon_patchwork",
     "proportional": { "weight": 1000, "volume": 1000, "price": 1000 }
