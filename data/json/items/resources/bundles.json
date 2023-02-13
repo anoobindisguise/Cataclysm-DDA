@@ -1,6 +1,7 @@
 [
   {
     "id": "cotton_patchwork_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 cotton patches", "str_pl": "bundles of 10 cotton patches" },
     "description": "Ten cotton patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "cotton_patchwork",
@@ -8,6 +9,7 @@
   },
   {
     "id": "cotton_patchwork_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 cotton patches", "str_pl": "bundles of 100 cotton patches" },
     "description": "One hundred cotton patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "cotton_patchwork",
@@ -15,6 +17,7 @@
   },
   {
     "id": "cotton_patchwork_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 cotton patches", "str_pl": "bundles of 1000 cotton patches" },
     "description": "One thousand cotton patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "cotton_patchwork",
@@ -22,6 +25,7 @@
   },
   {
     "id": "leather_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 leather patches", "str_pl": "bundles of 10 leather patches" },
     "description": "Ten leather patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "leather",
@@ -29,6 +33,7 @@
   },
   {
     "id": "leather_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 leather patches", "str_pl": "bundles of 100 leather patches" },
     "description": "One hundred leather patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "leather",
@@ -36,6 +41,7 @@
   },
   {
     "id": "leather_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 leather patches", "str_pl": "bundles of 1000 leather patches" },
     "description": "One thousand leather patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "leather",
@@ -43,6 +49,7 @@
   },
   {
     "id": "fur_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 fur patches", "str_pl": "bundles of 10 fur patches" },
     "description": "Ten fur patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "fur",
@@ -50,6 +57,7 @@
   },
   {
     "id": "fur_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 fur patches", "str_pl": "bundles of 100 fur patches" },
     "description": "One hundred fur patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "fur",
@@ -57,6 +65,7 @@
   },
   {
     "id": "fur_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 fur patches", "str_pl": "bundles of 1000 fur patches" },
     "description": "One thousand fur patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "fur",
@@ -64,6 +73,7 @@
   },
   {
     "id": "faux_fur_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 faux fur patches", "str_pl": "bundles of 10 faux fur patches" },
     "description": "Ten fur patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "faux_fur",
@@ -71,6 +81,7 @@
   },
   {
     "id": "faux_fur_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 faux fur patches", "str_pl": "bundles of 100 faux fur patches" },
     "description": "One hundred fur patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "faux_fur",
@@ -78,6 +89,7 @@
   },
   {
     "id": "faux_fur_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 faux fur patches", "str_pl": "bundles of 1000 faux fur patches" },
     "description": "One thousand fur patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "faux_fur",
@@ -85,6 +97,7 @@
   },
   {
     "id": "nylon_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 synthetic fabric patches", "str_pl": "bundles of 10 synthetic fabric patches" },
     "description": "Ten synthetic fabric patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "nylon",
@@ -92,6 +105,7 @@
   },
   {
     "id": "nylon_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 synthetic fabric patches", "str_pl": "bundles of 100 synthetic fabric patches" },
     "description": "One hundred synthetic fabric patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "nylon",
@@ -99,6 +113,7 @@
   },
   {
     "id": "nylon_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 synthetic fabric patches", "str_pl": "bundles of 1000 synthetic fabric patches" },
     "description": "One thousand synthetic fabric patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "nylon",
@@ -106,6 +121,7 @@
   },
   {
     "id": "lycra_patch_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 Lycra patches", "str_pl": "bundles of 10 Lycra patches" },
     "description": "Ten Lycra patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "lycra_patch",
@@ -113,6 +129,7 @@
   },
   {
     "id": "lycra_patch_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 Lycra patches", "str_pl": "bundles of 100 Lycra patches" },
     "description": "One hundred Lycra patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "lycra_patch",
@@ -120,6 +137,7 @@
   },
   {
     "id": "lycra_patch_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 Lycra patches", "str_pl": "bundles of 1000 Lycra patches" },
     "description": "One thousand Lycra patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "lycra_patch",
@@ -127,6 +145,7 @@
   },
   {
     "id": "canvas_patch_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 canvas patches", "str_pl": "bundles of 10 canvas patches" },
     "description": "Ten canvas patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "canvas_patch",
@@ -134,6 +153,7 @@
   },
   {
     "id": "canvas_patch_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 canvas patches", "str_pl": "bundles of 100 canvas patches" },
     "description": "One hundred canvas patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "canvas_patch",
@@ -141,6 +161,7 @@
   },
   {
     "id": "canvas_patch_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 canvas patches", "str_pl": "bundles of 1000 canvas patches" },
     "description": "One thousand canvas patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "canvas_patch",
@@ -148,6 +169,7 @@
   },
   {
     "id": "nomex_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 nomex patches", "str_pl": "bundles of 10 nomex patches" },
     "description": "Ten nomex patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "nomex",
@@ -155,6 +177,7 @@
   },
   {
     "id": "nomex_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 nomex patches", "str_pl": "bundles of 100 nomex patches" },
     "description": "One hundred nomex patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "nomex",
@@ -162,6 +185,7 @@
   },
   {
     "id": "nomex_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 nomex patches", "str_pl": "bundles of 1000 nomex patches" },
     "description": "One thousand nomex patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "nomex",
@@ -169,6 +193,7 @@
   },
   {
     "id": "felt_patch_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 felt patches", "str_pl": "bundles of 10 felt patches" },
     "description": "Ten felt patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "felt_patch",
@@ -176,6 +201,8 @@
   },
   {
     "id": "felt_patch_100",
+    "type": "GENERIC",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 felt patches", "str_pl": "bundles of 100 felt patches" },
     "description": "One hundred felt patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "felt_patch",
@@ -183,6 +210,7 @@
   },
   {
     "id": "felt_patch_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 felt patches", "str_pl": "bundles of 1000 felt patches" },
     "description": "One thousand felt patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "felt_patch",
@@ -190,6 +218,7 @@
   },
   {
     "id": "neoprene_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 neoprene patches", "str_pl": "bundles of 10 neoprene patches" },
     "description": "Ten neoprene patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "neoprene",
@@ -197,6 +226,7 @@
   },
   {
     "id": "neoprene_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 neoprene patches", "str_pl": "bundles of 100 neoprene patches" },
     "description": "One hundred neoprene patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "neoprene",
@@ -204,6 +234,7 @@
   },
   {
     "id": "neoprene_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 neoprene patches", "str_pl": "bundles of 1000 neoprene patches" },
     "description": "One thousand neoprene patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "neoprene",
@@ -211,6 +242,7 @@
   },
   {
     "id": "string_6_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 short strings", "str_pl": "bundles of 10 short strings" },
     "description": "Ten short strings bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "string_6",
@@ -218,6 +250,7 @@
   },
   {
     "id": "string_6_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 short strings", "str_pl": "bundles of 100 short strings" },
     "description": "One hundred short strings bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "string_6",
@@ -225,6 +258,7 @@
   },
   {
     "id": "string_6_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 short strings", "str_pl": "bundles of 1000 short strings" },
     "description": "One thousand short strings bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "string_6",
@@ -232,6 +266,7 @@
   },
   {
     "id": "string_36_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 long strings", "str_pl": "bundles of 10 long strings" },
     "description": "Ten long strings bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "string_36",
@@ -239,6 +274,7 @@
   },
   {
     "id": "string_36_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 long strings", "str_pl": "bundles of 100 long strings" },
     "description": "One hundred long strings bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "string_36",
@@ -246,6 +282,7 @@
   },
   {
     "id": "string_36_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 long strings", "str_pl": "bundles of 1000 long strings" },
     "description": "One thousand long strings bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "string_36",
@@ -253,6 +290,7 @@
   },
   {
     "id": "scrap_copper_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 copper scraps", "str_pl": "bundles of 10 copper scraps" },
     "description": "Ten copper scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_copper",
@@ -260,6 +298,7 @@
   },
   {
     "id": "scrap_copper_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 copper scraps", "str_pl": "bundles of 100 copper scraps" },
     "description": "One hundred copper scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_copper",
@@ -267,6 +306,7 @@
   },
   {
     "id": "scrap_copper_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 copper scraps", "str_pl": "bundles of 1000 copper scraps" },
     "description": "One thousand copper scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_copper",
@@ -274,6 +314,7 @@
   },
   {
     "id": "cu_pipe_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 copper tubing", "str_pl": "bundles of 10 copper tubing" },
     "description": "Ten copper tubings bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "cu_pipe",
@@ -288,6 +329,7 @@
   },
   {
     "id": "cu_pipe_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 copper tubing", "str_pl": "bundles of 1000 copper tubing" },
     "description": "One thousand copper tubings bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "cu_pipe",
@@ -295,6 +337,7 @@
   },
   {
     "id": "scrap_aluminum_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 aluminum scraps", "str_pl": "bundles of 10 aluminum scraps" },
     "description": "Ten aluminum scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_aluminum",
@@ -302,6 +345,7 @@
   },
   {
     "id": "scrap_aluminum_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 aluminum scraps", "str_pl": "bundles of 100 aluminum scraps" },
     "description": "One hundred aluminum scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_aluminum",
@@ -309,6 +353,7 @@
   },
   {
     "id": "scrap_aluminum_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 aluminum scraps", "str_pl": "bundles of 1000 aluminum scraps" },
     "description": "One thousand aluminum scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_aluminum",
@@ -316,6 +361,7 @@
   },
   {
     "id": "material_aluminium_ingot_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 aluminum ingots", "str_pl": "bundles of 10 aluminum ingots" },
     "description": "Ten aluminum ingots bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "material_aluminium_ingot",
@@ -323,6 +369,7 @@
   },
   {
     "id": "material_aluminium_ingot_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 aluminum ingots", "str_pl": "bundles of 100 aluminum ingots" },
     "description": "One hundred aluminum ingots bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "material_aluminium_ingot",
@@ -330,6 +377,7 @@
   },
   {
     "id": "material_aluminium_ingot_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 aluminum ingots", "str_pl": "bundles of 1000 aluminum ingots" },
     "description": "One thousand aluminum ingots bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "material_aluminium_ingot",
@@ -337,6 +385,7 @@
   },
   {
     "id": "wire_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 wires", "str_pl": "bundles of 10 wires" },
     "description": "Ten wires bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "wire",
@@ -344,6 +393,7 @@
   },
   {
     "id": "wire_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 wires", "str_pl": "bundles of 100 wires" },
     "description": "One hundred wires bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "wire",
@@ -351,6 +401,7 @@
   },
   {
     "id": "wire_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 wires", "str_pl": "bundles of 1000 wires" },
     "description": "One thousand wires bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "wire",
@@ -358,6 +409,7 @@
   },
   {
     "id": "pipe_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 pipes", "str_pl": "bundles of 10 pipes" },
     "description": "Ten pipes bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "pipe",
@@ -365,6 +417,7 @@
   },
   {
     "id": "pipe_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 pipes", "str_pl": "bundles of 100 pipes" },
     "description": "One hundred pipes bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "pipe",
@@ -372,6 +425,7 @@
   },
   {
     "id": "pipe_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 pipes", "str_pl": "bundles of 1000 pipes" },
     "description": "One thousand pipes bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "pipe",
@@ -379,6 +433,7 @@
   },
   {
     "id": "pipe_fittings_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 sets of pipe fittings", "str_pl": "bundles of 10 sets of pipe fittings" },
     "description": "Ten sets of pipe fittings bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "pipe_fittings",
@@ -386,6 +441,7 @@
   },
   {
     "id": "pipe_fittings_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 sets of pipe fittings", "str_pl": "bundles of 100 sets of pipe fittings" },
     "description": "One hundred sets of pipe fittings bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "pipe_fittings",
@@ -393,6 +449,7 @@
   },
   {
     "id": "pipe_fittings_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 sets of pipe fittings", "str_pl": "bundles of 1000 sets of pipe fittings" },
     "description": "One thousand sets of pipe fittings bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "pipe_fittings",
@@ -400,6 +457,7 @@
   },
   {
     "id": "plastic_chunk_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 plastic chunks", "str_pl": "bundles of 10 plastic chunks" },
     "description": "Ten plastic chunks bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "plastic_chunk",
@@ -407,6 +465,7 @@
   },
   {
     "id": "plastic_chunk_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 plastic chunks", "str_pl": "bundles of 100 plastic chunks" },
     "description": "One hundred plastic chunks bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "plastic_chunk",
@@ -414,6 +473,7 @@
   },
   {
     "id": "plastic_chunk_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 plastic chunks", "str_pl": "bundles of 1000 plastic chunks" },
     "description": "One thousand plastic chunks bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "plastic_chunk",
@@ -421,6 +481,7 @@
   },
   {
     "id": "chitin_piece_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 chitin chunks", "str_pl": "bundles of 10 chitin chunks" },
     "description": "Ten chitin chunks bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "chitin_piece",
@@ -428,6 +489,7 @@
   },
   {
     "id": "chitin_piece_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 chitin chunks", "str_pl": "bundles of 100 chitin chunks" },
     "description": "One hundred chitin chunks bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "chitin_piece",
@@ -435,6 +497,7 @@
   },
   {
     "id": "chitin_piece_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 chitin chunks", "str_pl": "bundles of 1000 chitin chunks" },
     "description": "One thousand chitin chunks bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "chitin_piece",
@@ -442,6 +505,7 @@
   },
   {
     "id": "acidchitin_piece_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 biosilicified chitin chunks", "str_pl": "bundles of 10 biosilicified chitin chunks" },
     "description": "Ten biosilicified chitin chunks bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "acidchitin_piece",
@@ -449,6 +513,7 @@
   },
   {
     "id": "acidchitin_piece_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 biosilicified chitin chunks", "str_pl": "bundles of 100 biosilicified chitin chunks" },
     "description": "One hundred biosilicified chitin chunks bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "acidchitin_piece",
@@ -456,6 +521,7 @@
   },
   {
     "id": "acidchitin_piece_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 biosilicified chitin chunks", "str_pl": "bundles of 1000 biosilicified chitin chunks" },
     "description": "One thousand biosilicified chitin chunks bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "acidchitin_piece",
@@ -471,6 +537,7 @@
   },
   {
     "id": "sheet_lycra_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 Lycra sheets", "str_pl": "bundles of 100 Lycra sheets" },
     "description": "One hundred Lycra sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_lycra",
@@ -478,6 +545,7 @@
   },
   {
     "id": "sheet_lycra_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 patchwork Lycra sheets", "str_pl": "bundles of patchwork 1000 Lycra sheets" },
     "description": "One thousand patchwork Lycra sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_lycra_patchwork",
@@ -485,6 +553,7 @@
   },
   {
     "id": "sheet_lycra_patchwork_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of patchwork 10 Lycra sheets", "str_pl": "bundles of patchwork 10 Lycra sheets" },
     "description": "Ten patchwork Lycra sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_lycra_patchwork",
@@ -492,6 +561,7 @@
   },
   {
     "id": "sheet_lycra_patchwork_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 patchwork Lycra sheets", "str_pl": "bundles of 100 patchwork Lycra sheets" },
     "description": "One hundred patchwork Lycra sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_lycra_patchwork",
@@ -499,6 +569,7 @@
   },
   {
     "id": "sheet_lycra_patchwork_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 patchwork Lycra sheets", "str_pl": "bundles of 1000 patchwork Lycra sheets" },
     "description": "One thousand patchwork Lycra sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_lycra_patchwork",
@@ -506,6 +577,7 @@
   },
   {
     "id": "sheet_canvas_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 canvas sheets", "str_pl": "bundles of 10 canvas sheets" },
     "description": "Ten canvas sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_canvas",
@@ -513,6 +585,7 @@
   },
   {
     "id": "sheet_canvas_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 canvas sheets", "str_pl": "bundles of 100 canvas sheets" },
     "description": "One hundred canvas sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_canvas",
@@ -520,6 +593,7 @@
   },
   {
     "id": "sheet_canvas_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 canvas sheets", "str_pl": "bundles of 1000 canvas sheets" },
     "description": "One thousand canvas sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_canvas",
@@ -527,6 +601,7 @@
   },
   {
     "id": "sheet_canvas_patchwork_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 patchwork canvas sheets", "str_pl": "bundles of 10 patchwork canvas sheets" },
     "description": "Ten patchwork canvas sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_canvas_patchwork",
@@ -534,6 +609,7 @@
   },
   {
     "id": "sheet_canvas_patchwork_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 patchwork canvas sheets", "str_pl": "bundles of 100 patchwork canvas sheets" },
     "description": "One hundred patchwork canvas sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_canvas_patchwork",
@@ -541,6 +617,7 @@
   },
   {
     "id": "sheet_canvas_patchwork_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 patchwork canvas sheets", "str_pl": "bundles of 1000 patchwork canvas sheets" },
     "description": "One thousand patchwork canvas sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_canvas_patchwork",
@@ -548,6 +625,7 @@
   },
   {
     "id": "sheet_cotton_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 cotton sheets", "str_pl": "bundles of 10 cotton sheets" },
     "description": "Ten cotton sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_cotton",
@@ -555,6 +633,7 @@
   },
   {
     "id": "sheet_cotton_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 cotton sheets", "str_pl": "bundles of 100 cotton sheets" },
     "description": "One hundred cotton sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_cotton",
@@ -562,6 +641,7 @@
   },
   {
     "id": "sheet_cotton_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 cotton sheets", "str_pl": "bundles of 1000 cotton sheets" },
     "description": "One thousand cotton sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_cotton",
@@ -569,6 +649,7 @@
   },
   {
     "id": "sheet_cotton_patchwork_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 patchwork cotton sheets", "str_pl": "bundles of 10 patchwork cotton sheets" },
     "description": "Ten patchwork cotton sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_cotton_patchwork",
@@ -576,6 +657,7 @@
   },
   {
     "id": "sheet_cotton_patchwork_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 patchwork cotton sheets", "str_pl": "bundles of 100 patchwork cotton sheets" },
     "description": "One hundred patchwork cotton sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_cotton_patchwork",
@@ -583,6 +665,7 @@
   },
   {
     "id": "sheet_cotton_patchwork_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 patchwork cotton sheets", "str_pl": "bundles of 1000 patchwork cotton sheets" },
     "description": "One thousand patchwork cotton sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_cotton_patchwork",
@@ -590,6 +673,7 @@
   },
   {
     "id": "sheet_felt_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 felt sheets", "str_pl": "bundles of 10 felt sheets" },
     "description": "Ten felt sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_felt",
@@ -597,6 +681,7 @@
   },
   {
     "id": "sheet_felt_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 felt sheets", "str_pl": "bundles of 100 felt sheets" },
     "description": "One hundred felt sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_felt",
@@ -604,6 +689,7 @@
   },
   {
     "id": "sheet_felt_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 felt sheets", "str_pl": "bundles of 1000 felt sheets" },
     "description": "One thousand felt sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_felt",
@@ -611,6 +697,7 @@
   },
   {
     "id": "sheet_felt_patchwork_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 patchwork felt sheets", "str_pl": "bundles of 10 patchwork felt sheets" },
     "description": "Ten patchwork felt sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_felt_patchwork",
@@ -618,6 +705,7 @@
   },
   {
     "id": "sheet_felt_patchwork_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 patchwork felt sheets", "str_pl": "bundles of 100 patchwork felt sheets" },
     "description": "One hundred patchwork felt sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_felt_patchwork",
@@ -625,6 +713,7 @@
   },
   {
     "id": "sheet_felt_patchwork_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 patchwork felt sheets", "str_pl": "bundles of 1000 patchwork felt sheets" },
     "description": "One thousand patchwork felt sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_felt_patchwork",
@@ -632,6 +721,7 @@
   },
   {
     "id": "sheet_nomex_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 Nomex sheets", "str_pl": "bundles of 10 Nomex sheets" },
     "description": "Ten Nomex sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_nomex",
@@ -639,6 +729,7 @@
   },
   {
     "id": "sheet_nomex_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 Nomex sheets", "str_pl": "bundles of 100 Nomex sheets" },
     "description": "One hundred Nomex sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_nomex",
@@ -646,6 +737,7 @@
   },
   {
     "id": "sheet_nomex_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 Nomex sheets", "str_pl": "bundles of 1000 Nomex sheets" },
     "description": "One thousand Nomex sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_nomex",
@@ -653,6 +745,7 @@
   },
   {
     "id": "sheet_nomex_patchwork_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 patchwork Nomex sheets", "str_pl": "bundles of 10 patchwork Nomex sheets" },
     "description": "Ten patchwork Nomex sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_nomex_patchwork",
@@ -660,6 +753,7 @@
   },
   {
     "id": "sheet_nomex_patchwork_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 patchwork Nomex sheets", "str_pl": "bundles of 100 patchwork Nomex sheets" },
     "description": "One hundred patchwork Nomex sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_nomex_patchwork",
@@ -667,6 +761,7 @@
   },
   {
     "id": "sheet_nomex_patchwork_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 patchwork Nomex sheets", "str_pl": "bundles of 1000 patchwork Nomex sheets" },
     "description": "One thousand patchwork Nomex sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_nomex_patchwork",
@@ -674,6 +769,7 @@
   },
   {
     "id": "sheet_kevlar_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 Kevlar sheets", "str_pl": "bundles of 10 Kevlar sheets" },
     "description": "Ten Kevlar sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_kevlar",
@@ -681,6 +777,7 @@
   },
   {
     "id": "sheet_kevlar_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 Kevlar sheets", "str_pl": "bundles of 100 Kevlar sheets" },
     "description": "One hundred Kevlar sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_kevlar",
@@ -688,6 +785,7 @@
   },
   {
     "id": "sheet_kevlar_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 Kevlar sheets", "str_pl": "bundles of 1000 Kevlar sheets" },
     "description": "One thousand Kevlar sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_kevlar",
@@ -695,6 +793,7 @@
   },
   {
     "id": "sheet_neoprene_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 neoprene sheets", "str_pl": "bundles of 10 neoprene sheets" },
     "description": "Ten neoprene sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_neoprene",
@@ -702,6 +801,7 @@
   },
   {
     "id": "sheet_neoprene_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 neoprene sheets", "str_pl": "bundles of 100 neoprene sheets" },
     "description": "One hundred neoprene sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_neoprene",
@@ -709,6 +809,7 @@
   },
   {
     "id": "sheet_neoprene_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 neoprene sheets", "str_pl": "bundles of 1000 neoprene sheets" },
     "description": "One thousand neoprene sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_neoprene",
@@ -716,6 +817,7 @@
   },
   {
     "id": "sheet_neoprene_patchwork_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 patchwork neoprene sheets", "str_pl": "bundles of 10 patchwork neoprene sheets" },
     "description": "Ten patchwork neoprene sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_neoprene_patchwork",
@@ -723,6 +825,7 @@
   },
   {
     "id": "sheet_neoprene_patchwork_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 patchwork neoprene sheets", "str_pl": "bundles of 100 patchwork neoprene sheets" },
     "description": "One hundred patchwork neoprene sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_neoprene_patchwork",
@@ -730,6 +833,7 @@
   },
   {
     "id": "sheet_neoprene_patchwork_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 patchwork neoprene sheets", "str_pl": "bundles of 1000 patchwork neoprene sheets" },
     "description": "One thousand patchwork neoprene sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_neoprene_patchwork",
@@ -737,6 +841,7 @@
   },
   {
     "id": "sheet_faux_fur_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 faux fur sheets", "str_pl": "bundles of 10 faux fur sheets" },
     "description": "Ten faux fur sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_faux_fur",
@@ -744,6 +849,7 @@
   },
   {
     "id": "sheet_faux_fur_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 faux fur sheets", "str_pl": "bundles of 100 faux fur sheets" },
     "description": "One hundred faux fur sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_faux_fur",
@@ -751,6 +857,7 @@
   },
   {
     "id": "sheet_faux_fur_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 faux fur sheets", "str_pl": "bundles of 1000 faux fur sheets" },
     "description": "One thousand faux fur sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_faux_fur",
@@ -758,6 +865,7 @@
   },
   {
     "id": "sheet_faux_fur_patchwork_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 patchwork faux fur sheets", "str_pl": "bundles of 10 patchwork faux fur sheets" },
     "description": "Ten patchwork faux fur sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_faux_fur_patchwork",
@@ -765,6 +873,7 @@
   },
   {
     "id": "sheet_faux_fur_patchwork_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 patchwork faux fur sheets", "str_pl": "bundles of 100 patchwork faux fur sheets" },
     "description": "One hundred patchwork faux fur sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_faux_fur_patchwork",
@@ -772,6 +881,7 @@
   },
   {
     "id": "sheet_faux_fur_patchwork_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 patchwork faux fur sheets", "str_pl": "bundles of 1000 patchwork faux fur sheets" },
     "description": "One thousand patchwork faux fur sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_faux_fur_patchwork",
@@ -779,6 +889,7 @@
   },
   {
     "id": "sheet_nylon_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 synthetic fabric sheets", "str_pl": "bundles of 10 synthetic fabric sheets" },
     "description": "Ten synthetic fabric sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_nylon",
@@ -786,6 +897,7 @@
   },
   {
     "id": "sheet_nylon_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 synthetic fabric sheets", "str_pl": "bundles of 100 synthetic fabric sheets" },
     "description": "One hundred synthetic fabric sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_nylon",
@@ -793,6 +905,7 @@
   },
   {
     "id": "sheet_nylon_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 synthetic fabric sheets", "str_pl": "bundles of 1000 synthetic fabric sheets" },
     "description": "One thousand synthetic fabric sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_nylon",
@@ -800,6 +913,7 @@
   },
   {
     "id": "sheet_nylon_patchwork_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 patchwork synthetic fabric sheets", "str_pl": "bundles of 10 patchwork synthetic fabric sheets" },
     "description": "Ten patchwork synthetic fabric sheets bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "sheet_nylon_patchwork",
@@ -807,6 +921,7 @@
   },
   {
     "id": "sheet_nylon_patchwork_100",
+    "type": "GENERIC",
     "name": {
       "str": "bundle of 100 patchwork synthetic fabric sheets",
       "str_pl": "bundles of 100 patchwork synthetic fabric sheets"
@@ -817,6 +932,7 @@
   },
   {
     "id": "sheet_nylon_patchwork_1000",
+    "type": "GENERIC",
     "name": {
       "str": "bundle of 1000 patchwork synthetic fabric sheets",
       "str_pl": "bundles of 1000 patchwork synthetic fabric sheets"
@@ -827,6 +943,7 @@
   },
   {
     "id": "scrap_cotton_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 cotton scraps", "str_pl": "bundles of 10 cotton scraps" },
     "description": "Ten cotton scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_cotton",
@@ -834,6 +951,7 @@
   },
   {
     "id": "scrap_cotton_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 cotton scraps", "str_pl": "bundles of 100 cotton scraps" },
     "description": "One hundred cotton scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_cotton",
@@ -841,6 +959,7 @@
   },
   {
     "id": "scrap_cotton_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 cotton scraps", "str_pl": "bundles of 1000 cotton scraps" },
     "description": "One thousand cotton scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_cotton",
@@ -848,6 +967,7 @@
   },
   {
     "id": "scrap_felt_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 felt scraps", "str_pl": "bundles of 10 felt scraps" },
     "description": "Ten felt scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_felt",
@@ -855,6 +975,7 @@
   },
   {
     "id": "scrap_felt_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 felt scraps", "str_pl": "bundles of 100 felt scraps" },
     "description": "One hundred felt scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_felt",
@@ -862,6 +983,7 @@
   },
   {
     "id": "scrap_felt_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 felt scraps", "str_pl": "bundles of 1000 felt scraps" },
     "description": "One thousand felt scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_felt",
@@ -869,6 +991,7 @@
   },
   {
     "id": "scrap_nylon_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 synthetic fabric scraps", "str_pl": "bundles of 10 synthetic fabric scraps" },
     "description": "Ten synthetic fabric scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_nylon",
@@ -876,6 +999,7 @@
   },
   {
     "id": "scrap_nylon_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 synthetic fabric scraps", "str_pl": "bundles of 100 synthetic fabric scraps" },
     "description": "One hundred synthetic fabric scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_nylon",
@@ -883,6 +1007,7 @@
   },
   {
     "id": "scrap_nylon_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 synthetic fabric scraps", "str_pl": "bundles of 1000 synthetic fabric scraps" },
     "description": "One thousand synthetic fabric scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_nylon",
@@ -890,6 +1015,7 @@
   },
   {
     "id": "scrap_fur_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 fur scraps", "str_pl": "bundles of 10 fur scraps" },
     "description": "Ten fur scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_fur",
@@ -897,6 +1023,7 @@
   },
   {
     "id": "scrap_fur_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 fur scraps", "str_pl": "bundles of 100 fur scraps" },
     "description": "One hundred fur scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_fur",
@@ -904,6 +1031,7 @@
   },
   {
     "id": "scrap_fur_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 fur scraps", "str_pl": "bundles of 1000 fur scraps" },
     "description": "One thousand fur scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_fur",
@@ -911,6 +1039,7 @@
   },
   {
     "id": "scrap_lycra_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 Lycra scraps", "str_pl": "bundles of 10 Lycra scraps" },
     "description": "Ten Lycra scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_lycra",
@@ -918,6 +1047,7 @@
   },
   {
     "id": "scrap_lycra_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 Lycra scraps", "str_pl": "bundles of 100 Lycra scraps" },
     "description": "One hundred Lycra scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_lycra",
@@ -925,6 +1055,7 @@
   },
   {
     "id": "scrap_lycra_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 Lycra scraps", "str_pl": "bundles of 1000 Lycra scraps" },
     "description": "One thousand Lycra scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_lycra",
@@ -932,6 +1063,7 @@
   },
   {
     "id": "scrap_nomex_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 Nomex scraps", "str_pl": "bundles of 10 Nomex scraps" },
     "description": "Ten Nomex scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_nomex",
@@ -939,6 +1071,7 @@
   },
   {
     "id": "scrap_nomex_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 Nomex scraps", "str_pl": "bundles of 100 Nomex scraps" },
     "description": "One hundred Nomex scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_nomex",
@@ -946,6 +1079,7 @@
   },
   {
     "id": "scrap_nomex_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 Nomex scraps", "str_pl": "bundles of 1000 Nomex scraps" },
     "description": "One thousand Nomex scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_nomex",
@@ -953,6 +1087,7 @@
   },
   {
     "id": "scrap_kevlar_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 Kevlar scraps", "str_pl": "bundles of 10 Kevlar scraps" },
     "description": "Ten Kevlar scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_kevlar",
@@ -960,6 +1095,7 @@
   },
   {
     "id": "scrap_kevlar_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 Kevlar scraps", "str_pl": "bundles of 100 Kevlar scraps" },
     "description": "One hundred Kevlar scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_kevlar",
@@ -967,6 +1103,7 @@
   },
   {
     "id": "scrap_kevlar_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 Kevlar scraps", "str_pl": "bundles of 1000 Kevlar scraps" },
     "description": "One thousand Kevlar scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_kevlar",
@@ -974,6 +1111,7 @@
   },
   {
     "id": "scrap_leather_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 leather scraps", "str_pl": "bundles of 10 leather scraps" },
     "description": "Ten leather scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_leather",
@@ -981,6 +1119,7 @@
   },
   {
     "id": "scrap_leather_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 leather scraps", "str_pl": "bundles of 100 leather scraps" },
     "description": "One hundred leather scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_leather",
@@ -988,6 +1127,7 @@
   },
   {
     "id": "scrap_leather_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 leather scraps", "str_pl": "bundles of 1000 leather scraps" },
     "description": "One thousand leather scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_leather",
@@ -995,6 +1135,7 @@
   },
   {
     "id": "scrap_neoprene_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 neoprene scraps", "str_pl": "bundles of 10 neoprene scraps" },
     "description": "Ten neoprene scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_neoprene",
@@ -1002,6 +1143,7 @@
   },
   {
     "id": "scrap_neoprene_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 neoprene scraps", "str_pl": "bundles of 100 neoprene scraps" },
     "description": "One hundred neoprene scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_neoprene",
@@ -1009,6 +1151,7 @@
   },
   {
     "id": "scrap_neoprene_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 neoprene scraps", "str_pl": "bundles of 1000 neoprene scraps" },
     "description": "One thousand neoprene scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_neoprene",
@@ -1016,6 +1159,7 @@
   },
   {
     "id": "scrap_faux_fur_10",
+    "type": "GENERIC",
     "name": { "str": "bundle of 10 faux fur scraps", "str_pl": "bundles of 10 faux fur scraps" },
     "description": "Ten faux fur scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_faux_fur",
@@ -1023,6 +1167,7 @@
   },
   {
     "id": "scrap_faux_fur_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 faux fur scraps", "str_pl": "bundles of 100 faux fur scraps" },
     "description": "One hundred faux fur scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_faux_fur",
@@ -1030,6 +1175,7 @@
   },
   {
     "id": "scrap_faux_fur_1000",
+    "type": "GENERIC",
     "name": { "str": "bundle of 1000 faux fur scraps", "str_pl": "bundles of 1000 faux fur scraps" },
     "description": "One thousand faux fur scraps bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "scrap_faux_fur",
