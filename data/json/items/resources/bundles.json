@@ -315,14 +315,15 @@
     "id": "cu_pipe_10",
     "type": "GENERIC",
     "name": { "str": "bundle of 10 copper tubing", "str_pl": "bundles of 10 copper tubing" },
-    "description": "Ten copper tubings bundled together with whatever was on hand.  Disassemble to retrieve the components.",
+    "description": "Ten copper tubing bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "cu_pipe",
     "proportional": { "weight": 10, "volume": 10, "price": 10 }
   },
   {
     "id": "cu_pipe_100",
+    "type": "GENERIC",
     "name": { "str": "bundle of 100 copper tubing", "str_pl": "bundles of 100 copper tubing" },
-    "description": "One hundred copper tubings bundled together with whatever was on hand.  Disassemble to retrieve the components.",
+    "description": "One hundred copper tubing bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "cu_pipe",
     "proportional": { "weight": 100, "volume": 100, "price": 100 }
   },
@@ -330,7 +331,7 @@
     "id": "cu_pipe_1000",
     "type": "GENERIC",
     "name": { "str": "bundle of 1000 copper tubing", "str_pl": "bundles of 1000 copper tubing" },
-    "description": "One thousand copper tubings bundled together with whatever was on hand.  Disassemble to retrieve the components.",
+    "description": "One thousand copper tubing bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "cu_pipe",
     "proportional": { "weight": 1000, "volume": 1000, "price": 1000 }
   },
