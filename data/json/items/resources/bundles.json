@@ -202,7 +202,6 @@
   {
     "id": "felt_patch_100",
     "type": "GENERIC",
-    "type": "GENERIC",
     "name": { "str": "bundle of 100 felt patches", "str_pl": "bundles of 100 felt patches" },
     "description": "One hundred felt patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "felt_patch",
