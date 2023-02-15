@@ -330,7 +330,7 @@
     "name": "bundles of canvas patches",
     "description": "Bundles of 10, 100, or 1000 canvas patches.",
     "skill_used": "survival",
-    "nested_category_data": [ "canvas_10", "canvas_100", "canvas_1000" ]
+    "nested_category_data": [ "canvas_patch_10", "canvas_patch_100", "canvas_patch_1000" ]
   },
   {
     "result": "canvas_patch_10",
