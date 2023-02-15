@@ -19,8 +19,7 @@
       "nested_nomex",
       "nested_felt",
       "nested_neoprene"
-    ],
-    "difficulty": 0
+    ]
   },
   {
     "id": "nested_cotton_patchwork",
@@ -31,8 +30,7 @@
     "name": "bundles of cotton patches",
     "description": "Bundles of 10, 100, or 1000 cotton patches.",
     "skill_used": "survival",
-    "nested_category_data": [ "cotton_patchwork_10", "cotton_patchwork_100", "cotton_patchwork_1000" ],
-    "difficulty": 0
+    "nested_category_data": [ "cotton_patchwork_10", "cotton_patchwork_100", "cotton_patchwork_1000" ]
   },
   {
     "result": "cotton_patchwork_10",
@@ -82,8 +80,7 @@
     "name": "bundles of leather patches",
     "description": "Bundles of 10, 100, or 1000 leather patches.",
     "skill_used": "survival",
-    "nested_category_data": [ "leather_10", "leather_100", "leather_1000" ],
-    "difficulty": 0
+    "nested_category_data": [ "leather_10", "leather_100", "leather_1000" ]
   },
   {
     "result": "leather_10",
@@ -133,8 +130,7 @@
     "name": "bundles of fur patches",
     "description": "Bundles of 10, 100, or 1000 fur patches.",
     "skill_used": "survival",
-    "nested_category_data": [ "fur_10", "fur_100", "fur_1000" ],
-    "difficulty": 0
+    "nested_category_data": [ "fur_10", "fur_100", "fur_1000" ]
   },
   {
     "result": "fur_10",
@@ -184,8 +180,7 @@
     "name": "bundles of faux fur patches",
     "description": "Bundles of 10, 100, or 1000 faux fur patches.",
     "skill_used": "survival",
-    "nested_category_data": [ "faux_fur_10", "faux_fur_100", "faux_fur_1000" ],
-    "difficulty": 0
+    "nested_category_data": [ "faux_fur_10", "faux_fur_100", "faux_fur_1000" ]
   },
   {
     "result": "faux_fur_10",
@@ -235,8 +230,7 @@
     "name": "bundles of synthetic fabric patches",
     "description": "Bundles of 10, 100, or 1000 synthetic fabric patches.",
     "skill_used": "survival",
-    "nested_category_data": [ "nylon_10", "nylon_100", "nylon_1000" ],
-    "difficulty": 0
+    "nested_category_data": [ "nylon_10", "nylon_100", "nylon_1000" ]
   },
   {
     "result": "nylon_10",
@@ -286,8 +280,7 @@
     "name": "bundles of Lycra patches",
     "description": "Bundles of 10, 100, or 1000 Lycra patches.",
     "skill_used": "survival",
-    "nested_category_data": [ "lycra_patch_10", "lycra_patch_100", "lycra_patch_1000" ],
-    "difficulty": 0
+    "nested_category_data": [ "lycra_patch_10", "lycra_patch_100", "lycra_patch_1000" ]
   },
   {
     "result": "lycra_patch_10",
@@ -337,8 +330,7 @@
     "name": "bundles of canvas patches",
     "description": "Bundles of 10, 100, or 1000 canvas patches.",
     "skill_used": "survival",
-    "nested_category_data": [ "canvas_10", "canvas_100", "canvas_1000" ],
-    "difficulty": 0
+    "nested_category_data": [ "canvas_10", "canvas_100", "canvas_1000" ]
   },
   {
     "result": "canvas_patch_10",
@@ -388,8 +380,7 @@
     "name": "bundles of Nomex patches",
     "description": "Bundles of 10, 100, or 1000 Nomex patches.",
     "skill_used": "survival",
-    "nested_category_data": [ "nomex_10", "nomex_100", "nomex_1000" ],
-    "difficulty": 0
+    "nested_category_data": [ "nomex_10", "nomex_100", "nomex_1000" ]
   },
   {
     "result": "nomex_10",
@@ -439,8 +430,7 @@
     "name": "bundles of felt patches",
     "description": "Bundles of 10, 100, or 1000 felt patches.",
     "skill_used": "survival",
-    "nested_category_data": [ "felt_patch_10", "felt_patch_100", "felt_patch_1000" ],
-    "difficulty": 0
+    "nested_category_data": [ "felt_patch_10", "felt_patch_100", "felt_patch_1000" ]
   },
   {
     "result": "felt_patch_10",
@@ -490,8 +480,7 @@
     "name": "bundles of neoprene patches",
     "description": "Bundles of 10, 100, or 1000 neoprene patches.",
     "skill_used": "survival",
-    "nested_category_data": [ "neoprene_10", "neoprene_100", "neoprene_1000" ],
-    "difficulty": 0
+    "nested_category_data": [ "neoprene_10", "neoprene_100", "neoprene_1000" ]
   },
   {
     "result": "neoprene_10",
