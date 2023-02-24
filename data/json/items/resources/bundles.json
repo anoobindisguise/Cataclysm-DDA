@@ -5,7 +5,7 @@
     "name": { "str": "bundle of 10 cotton patches", "str_pl": "bundles of 10 cotton patches" },
     "description": "Ten cotton patches bundled together with whatever was on hand.  Disassemble to retrieve the components.",
     "copy-from": "cotton_patchwork",
-    "proportional": { "weight": 10, "volume": 10, "price": 10, "price_postapoc": 10  }
+    "proportional": { "weight": 10, "volume": 10, "price": 10, "price_postapoc": 10 }
   },
   {
     "id": "cotton_patchwork_100",
