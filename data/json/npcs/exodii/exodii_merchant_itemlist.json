@@ -54,9 +54,9 @@
     "items": [
       {
         "collection": [
-          { "item": "bp_nomad_cowl", "prob": 100 },
-          { "item": "bp_nomad_bodyglove", "prob": 100 },
-          { "item": "bp_nomad_jumpsuit", "prob": 100 },
+          { "item": "bp_nomad_cowl", "prob": 100, "count": [ 5, 15 ] },
+          { "item": "bp_nomad_bodyglove", "prob": 100, "count": [ 5, 15 ] },
+          { "item": "bp_nomad_jumpsuit", "prob": 100, "count": [ 5, 15 ] },
           { "item": "exodii_ac_kit", "prob": 100, "count": 1 },
           { "item": "exodii_wire_kit", "prob": 100, "count": 1 }
         ],
