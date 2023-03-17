@@ -40,7 +40,7 @@
       }
     ],
     "flags": [ "WATER_FRIENDLY", "BELTED", "OVERSIZE" ],
-    "armor": [ { "encumbrance": 1, "coverage": 10, "covers": [ "torso" ], "specifically_covers": [ "torso_upper" ] } ]
+    "armor": [ { "encumbrance": 1, "coverage": 10, "covers": [ "torso" ], "specifically_covers": [ "torso_upper" ], "volume_encumber_modifier": 0.15 } ]
   },
   {
     "id": "bandolier_rifle",
@@ -79,7 +79,7 @@
       }
     ],
     "flags": [ "WATER_FRIENDLY", "BELTED", "OVERSIZE" ],
-    "armor": [ { "encumbrance": 1, "coverage": 10, "covers": [ "torso" ], "specifically_covers": [ "torso_upper" ] } ]
+    "armor": [ { "encumbrance": 1, "coverage": 10, "covers": [ "torso" ], "specifically_covers": [ "torso_upper" ], "volume_encumber_modifier": 0.15 } ]
   },
   {
     "id": "bandolier_shotgun",
@@ -97,7 +97,7 @@
     "material_thickness": 1,
     "pocket_data": [ { "ammo_restriction": { "410shot": 25, "shot": 25, "20x66mm": 25, "signal_flare": 25 }, "moves": 25 } ],
     "flags": [ "WATER_FRIENDLY", "BELTED", "OVERSIZE" ],
-    "armor": [ { "encumbrance": 2, "coverage": 100, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ] } ]
+    "armor": [ { "encumbrance": 2, "coverage": 100, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ], "volume_encumber_modifier": 0.15 } ]
   },
   {
     "id": "torso_bandolier_grenade",
@@ -125,7 +125,7 @@
     "material_thickness": 1,
     "pocket_data": [ { "ammo_restriction": { "410shot": 50, "shot": 50, "20x66mm": 50, "signal_flare": 50 }, "moves": 35 } ],
     "flags": [ "WATER_FRIENDLY", "OVERSIZE", "BELTED" ],
-    "armor": [ { "encumbrance": 3, "coverage": 20, "covers": [ "torso" ], "specifically_covers": [ "torso_upper" ] } ]
+    "armor": [ { "encumbrance": 3, "coverage": 20, "covers": [ "torso" ], "specifically_covers": [ "torso_upper" ], "volume_encumber_modifier": 0.15 } ]
   },
   {
     "id": "flintlock_pouch",
@@ -148,7 +148,7 @@
       }
     ],
     "flags": [ "WATER_FRIENDLY", "BELTED", "PALS_LARGE", "OVERSIZE" ],
-    "armor": [ { "encumbrance": 2, "coverage": 100, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ] } ]
+    "armor": [ { "encumbrance": 2, "coverage": 100, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ], "volume_encumber_modifier": 0.15 } ]
   },
   {
     "id": "bandolier_wrist",
@@ -188,7 +188,7 @@
       }
     ],
     "flags": [ "WATER_FRIENDLY", "BELTED", "PALS_SMALL", "ALLOWS_NATURAL_ATTACKS" ],
-    "armor": [ { "encumbrance": 1, "coverage": 5, "covers": [ "hand_l", "hand_r" ] } ]
+    "armor": [ { "encumbrance": 1, "coverage": 5, "covers": [ "hand_l", "hand_r" ], "volume_encumber_modifier": 0.15 } ]
   },
   {
     "id": "grenade_pouch",
@@ -212,7 +212,8 @@
         "encumbrance": 4,
         "coverage": 25,
         "covers": [ "leg_l", "leg_r" ],
-        "specifically_covers": [ "leg_upper_r", "leg_upper_l" ]
+        "specifically_covers": [ "leg_upper_r", "leg_upper_l" ],
+        "volume_encumber_modifier": 0.15
       }
     ]
   },
@@ -238,7 +239,8 @@
         "encumbrance": 4,
         "coverage": 25,
         "covers": [ "leg_l", "leg_r" ],
-        "specifically_covers": [ "leg_upper_r", "leg_upper_l" ]
+        "specifically_covers": [ "leg_upper_r", "leg_upper_l" ],
+        "volume_encumber_modifier": 0.15
       }
     ]
   },
@@ -264,7 +266,8 @@
         "encumbrance": 4,
         "coverage": 25,
         "covers": [ "leg_l", "leg_r" ],
-        "specifically_covers": [ "leg_upper_r", "leg_upper_l" ]
+        "specifically_covers": [ "leg_upper_r", "leg_upper_l" ],
+        "volume_encumber_modifier": 0.15
       }
     ]
   },
@@ -314,7 +317,7 @@
     ],
     "use_action": { "type": "holster", "holster_prompt": "Stash grenades", "holster_msg": "You stash your %s." },
     "flags": [ "WATER_FRIENDLY", "BELTED" ],
-    "armor": [ { "coverage": 25, "covers": [ "torso" ], "specifically_covers": [ "torso_upper" ] } ]
+    "armor": [ { "coverage": 25, "covers": [ "torso" ], "specifically_covers": [ "torso_upper" ], "volume_encumber_modifier": 0.2 } ]
   },
   {
     "id": "cheap_ammo_pouch",
@@ -358,7 +361,7 @@
       }
     ],
     "flags": [ "BELTED", "OVERSIZE", "WATER_FRIENDLY" ],
-    "armor": [ { "encumbrance": 7, "coverage": 100, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ] } ]
+    "armor": [ { "encumbrance": 7, "coverage": 100, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ], "volume_encumber_modifier": 0.25 } ]
   },
   {
     "id": "cheap_ammo_pouch_belt223",
@@ -384,7 +387,7 @@
       }
     ],
     "flags": [ "BELTED", "OVERSIZE", "WATER_FRIENDLY" ],
-    "armor": [ { "encumbrance": 7, "coverage": 100, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ] } ]
+    "armor": [ { "encumbrance": 7, "coverage": 100, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ], "volume_encumber_modifier": 0.25 } ]
   },
   {
     "id": "cheap_ammo_pouch_belt308",
@@ -410,6 +413,6 @@
       }
     ],
     "flags": [ "BELTED", "OVERSIZE", "WATER_FRIENDLY" ],
-    "armor": [ { "encumbrance": 7, "coverage": 100, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ] } ]
+    "armor": [ { "encumbrance": 7, "coverage": 100, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ], "volume_encumber_modifier": 0.25 } ]
   }
 ]
