@@ -66,7 +66,7 @@
       }
     ],
     "flags": [ "BELTED", "OVERSIZE", "WATER_FRIENDLY", "PALS_LARGE" ],
-    "armor": [ { "encumbrance": 5, "coverage": 100, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ] } ]
+    "armor": [ { "encumbrance": 2, "coverage": 100, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ], "volume_encumber_modifier": 0.2 } ]
   },
   {
     "id": "ammo_satchel",
@@ -90,7 +90,7 @@
         "max_contains_weight": "2 kg",
         "moves": 40,
         "flag_restriction": [ "MAG_COMPACT", "MAG_BULKY" ],
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       }
     ],
     "use_action": { "type": "holster", "holster_prompt": "Stash ammo", "holster_msg": "You stash your %s." },
@@ -119,7 +119,7 @@
         "max_contains_weight": "2 kg",
         "moves": 40,
         "flag_restriction": [ "MAG_COMPACT" ],
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       }
     ],
     "use_action": { "type": "holster", "holster_prompt": "Stash ammo", "holster_msg": "You stash your %s." },
@@ -148,7 +148,7 @@
         "max_contains_weight": "2 kg",
         "moves": 40,
         "flag_restriction": [ "MAG_COMPACT" ],
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       },
       {
         "pocket_type": "CONTAINER",
@@ -157,7 +157,7 @@
         "max_contains_weight": "2 kg",
         "moves": 40,
         "flag_restriction": [ "MAG_COMPACT" ],
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       },
       {
         "pocket_type": "CONTAINER",
@@ -166,7 +166,7 @@
         "max_contains_weight": "2 kg",
         "moves": 40,
         "flag_restriction": [ "MAG_COMPACT" ],
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       },
       {
         "pocket_type": "CONTAINER",
@@ -175,7 +175,7 @@
         "max_contains_weight": "2 kg",
         "moves": 40,
         "flag_restriction": [ "MAG_COMPACT" ],
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       }
     ],
     "use_action": { "type": "holster", "holster_prompt": "Stash ammo", "holster_msg": "You stash your %s." },
@@ -264,7 +264,7 @@
     ],
     "use_action": { "type": "holster", "holster_prompt": "Stash javelins", "holster_msg": "You stash your %s." },
     "flags": [ "WATER_FRIENDLY", "OVERSIZE", "BELTED" ],
-    "armor": [ { "encumbrance": 10, "coverage": 60, "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ] } ]
+    "armor": [ { "encumbrance": 10, "coverage": 60, "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ], "volume_encumber_modifier": 0.2 } ]
   },
   {
     "id": "legpouch",
@@ -300,7 +300,8 @@
         "specifically_covers": [ "foot_ankle_l", "foot_ankle_r" ],
         "coverage": 25,
         "encumbrance": 1,
-        "layers": [ "OUTER" ]
+        "layers": [ "OUTER" ],
+        "volume_encumber_modifier": 0.2
       }
     ]
   },
@@ -327,7 +328,7 @@
         "max_contains_weight": "2 kg",
         "moves": 40,
         "flag_restriction": [ "MAG_COMPACT" ],
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       },
       {
         "pocket_type": "CONTAINER",
@@ -336,7 +337,7 @@
         "max_contains_weight": "2 kg",
         "moves": 40,
         "flag_restriction": [ "MAG_COMPACT" ],
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       }
     ],
     "use_action": { "type": "holster", "holster_prompt": "Stash ammo", "holster_msg": "You stash your %s." },
@@ -373,7 +374,8 @@
         "encumbrance": 3,
         "coverage": 25,
         "covers": [ "leg_l", "leg_r" ],
-        "specifically_covers": [ "leg_upper_l", "leg_upper_r" ]
+        "specifically_covers": [ "leg_upper_l", "leg_upper_r" ],
+        "volume_encumber_modifier": 0.2
       }
     ]
   },
@@ -400,7 +402,8 @@
         "encumbrance": 10,
         "coverage": 25,
         "covers": [ "leg_l", "leg_r" ],
-        "specifically_covers": [ "leg_upper_l", "leg_upper_r" ]
+        "specifically_covers": [ "leg_upper_l", "leg_upper_r" ],
+        "volume_encumber_modifier": 0.2
       }
     ]
   },
@@ -421,7 +424,7 @@
     "material_thickness": 1,
     "pocket_data": [ { "ammo_restriction": { "arrow": 60, "bolt": 60 }, "moves": 20 } ],
     "flags": [ "BELTED", "OVERSIZE", "WATER_FRIENDLY" ],
-    "armor": [ { "encumbrance": 3, "coverage": 30, "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ] } ]
+    "armor": [ { "encumbrance": 3, "coverage": 30, "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ], "volume_encumber_modifier": 0.2 } ]
   },
   {
     "id": "quiver_large_birchbark",
@@ -564,7 +567,7 @@
       { "ammo_restriction": { "410shot": 6, "shot": 6, "20x66mm": 6, "signal_flare": 6 }, "moves": 25 }
     ],
     "flags": [ "WATER_FRIENDLY", "BELTED" ],
-    "armor": [ { "encumbrance": [ 2, 14 ], "coverage": 85, "covers": [ "torso" ], "specifically_covers": [ "torso_upper" ] } ]
+    "armor": [ { "encumbrance": 1, "coverage": 85, "covers": [ "torso" ], "specifically_covers": [ "torso_upper" ], "volume_encumber_modifier": 0.15 } ]
   },
   {
     "id": "xl_tacvest",
@@ -608,7 +611,7 @@
         "coverage": 55,
         "covers": [ "torso" ],
         "specifically_covers": [ "torso_upper" ],
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.25
       }
     ]
   },
@@ -635,7 +638,7 @@
         "coverage": 85,
         "covers": [ "torso" ],
         "specifically_covers": [ "torso_upper" ],
-        "volume_encumber_modifier": 0.25
+        "volume_encumber_modifier": 0.2
       }
     ]
   },
@@ -654,7 +657,7 @@
         "coverage": 85,
         "covers": [ "torso" ],
         "specifically_covers": [ "torso_upper", "torso_hanging_front" ],
-        "volume_encumber_modifier": 0.25
+        "volume_encumber_modifier": 0.2
       }
     ],
     "pocket_data": [
@@ -667,7 +670,7 @@
         "max_contains_weight": "8200 g",
         "max_item_length": "120 cm",
         "//": "volume encumber set high since the whole vest is already scaled. This equals .4 overall",
-        "volume_encumber_modifier": 1.6,
+        "volume_encumber_modifier": 2,
         "moves": 30
       }
     ]
@@ -695,7 +698,7 @@
         "coverage": 85,
         "covers": [ "torso" ],
         "specifically_covers": [ "torso_upper", "torso_lower", "torso_waist" ],
-        "volume_encumber_modifier": 0.2
+        "volume_encumber_modifier": 0.15
       }
     ]
   },
@@ -714,7 +717,7 @@
         "coverage": 85,
         "covers": [ "torso" ],
         "specifically_covers": [ "torso_upper", "torso_lower", "torso_hanging_front", "torso_waist" ],
-        "volume_encumber_modifier": 0.2
+        "volume_encumber_modifier": 0.15
       }
     ],
     "pocket_data": [
@@ -727,7 +730,7 @@
         "max_contains_weight": "8200 g",
         "max_item_length": "120 cm",
         "//": "volume encumber set high since the whole vest is already scaled. This equals .4 overall",
-        "volume_encumber_modifier": 2,
+        "volume_encumber_modifier": 2.4,
         "moves": 30
       }
     ]
@@ -747,7 +750,7 @@
         "coverage": 85,
         "covers": [ "torso" ],
         "specifically_covers": [ "torso_upper", "torso_lower", "torso_hanging_front", "torso_waist" ],
-        "volume_encumber_modifier": 0.2
+        "volume_encumber_modifier": 0.15
       }
     ],
     "pocket_data": [
@@ -760,7 +763,7 @@
         "max_contains_weight": "8200 g",
         "max_item_length": "120 cm",
         "//": "volume encumber set high since the whole vest is already scaled. This equals .4 overall",
-        "volume_encumber_modifier": 2,
+        "volume_encumber_modifier": 2.4,
         "moves": 30
       },
       {
@@ -773,7 +776,7 @@
         "min_item_length": "45 cm",
         "max_item_length": "60 cm",
         "//": "volume encumber set high since the whole vest is already scaled. This equals .4 overall",
-        "volume_encumber_modifier": 2,
+        "volume_encumber_modifier": 2.4,
         "moves": 60
       }
     ]
@@ -800,7 +803,7 @@
         "max_contains_weight": "500 g",
         "max_item_length": "13 cm",
         "moves": 40,
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       }
     ],
     "material_thickness": 0.5,
@@ -829,7 +832,7 @@
         "max_contains_weight": "2 kg",
         "max_item_length": "15 cm",
         "moves": 80,
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       }
     ],
     "material_thickness": 0.5,
@@ -858,7 +861,7 @@
         "max_contains_weight": "5 kg",
         "max_item_length": "254 mm",
         "moves": 80,
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       },
       {
         "pocket_type": "CONTAINER",
@@ -866,7 +869,7 @@
         "max_contains_weight": "3 kg",
         "max_item_length": "165 mm",
         "moves": 80,
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       }
     ],
     "material_thickness": 0.5,
@@ -895,7 +898,7 @@
         "max_contains_weight": "1800 g",
         "max_item_length": "13 cm",
         "moves": 40,
-        "volume_encumber_modifier": 0.2
+        "volume_encumber_modifier": 0.15
       }
     ],
     "material_thickness": 0.5,
@@ -924,7 +927,7 @@
         "max_contains_weight": "8 kg",
         "max_item_length": "305 mm",
         "moves": 80,
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       }
     ],
     "material_thickness": 0.5,
@@ -954,7 +957,7 @@
         "max_contains_weight": "500 g",
         "max_item_length": "37 cm",
         "moves": 40,
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.15
       }
     ],
     "material_thickness": 0.5,
@@ -1025,7 +1028,7 @@
         "//": "gas masks don't seem to have lengths currently",
         "max_item_length": "30 cm",
         "moves": 80,
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       },
       {
         "pocket_type": "CONTAINER",
@@ -1034,7 +1037,7 @@
         "max_contains_weight": "500 g",
         "max_item_length": "8 cm",
         "moves": 80,
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       }
     ],
     "material_thickness": 0.5,
@@ -1063,7 +1066,7 @@
         "max_contains_weight": "2 kg",
         "moves": 30,
         "flag_restriction": [ "GRENADE" ],
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       }
     ],
     "material_thickness": 0.5,
@@ -1093,7 +1096,7 @@
         "max_contains_weight": "2 kg",
         "moves": 40,
         "flag_restriction": [ "MAG_COMPACT" ],
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       },
       {
         "pocket_type": "CONTAINER",
@@ -1102,7 +1105,7 @@
         "max_contains_weight": "2 kg",
         "moves": 40,
         "flag_restriction": [ "MAG_COMPACT" ],
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       },
       {
         "pocket_type": "CONTAINER",
@@ -1111,7 +1114,7 @@
         "max_contains_weight": "2 kg",
         "moves": 40,
         "flag_restriction": [ "MAG_COMPACT" ],
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       },
       {
         "pocket_type": "CONTAINER",
@@ -1120,7 +1123,7 @@
         "max_contains_weight": "2 kg",
         "moves": 40,
         "flag_restriction": [ "MAG_COMPACT" ],
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       },
       {
         "pocket_type": "CONTAINER",
@@ -1129,7 +1132,7 @@
         "max_contains_weight": "2 kg",
         "moves": 40,
         "flag_restriction": [ "MAG_COMPACT" ],
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       },
       {
         "pocket_type": "CONTAINER",
@@ -1138,7 +1141,7 @@
         "max_contains_weight": "2 kg",
         "moves": 40,
         "flag_restriction": [ "MAG_COMPACT" ],
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       }
     ],
     "material_thickness": 0.5,
@@ -1163,7 +1166,7 @@
     "pocket_data": [ { "ammo_restriction": { "410shot": 12, "shot": 12, "20x66mm": 12, "signal_flare": 12, "308": 20 }, "moves": 30 } ],
     "material_thickness": 0.5,
     "flags": [ "BELTED", "OVERSIZE", "WATER_FRIENDLY", "PALS_MEDIUM" ],
-    "armor": [ { "encumbrance": 2, "coverage": 100, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ] } ]
+    "armor": [ { "encumbrance": 2, "coverage": 100, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ], "volume_encumber_modifier": 0.15 } ]
   },
   {
     "id": "xlkevlar",
@@ -1232,7 +1235,7 @@
         "max_contains_weight": "2 kg",
         "moves": 40,
         "flag_restriction": [ "MAG_COMPACT", "MAG_BULKY" ],
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       }
     ],
     "use_action": { "type": "holster", "holster_prompt": "Stash ammo", "holster_msg": "You stash your %s." },
@@ -1261,7 +1264,7 @@
         "max_contains_weight": "2 kg",
         "moves": 40,
         "flag_restriction": [ "MAG_COMPACT" ],
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       }
     ],
     "use_action": { "type": "holster", "holster_prompt": "Stash ammo", "holster_msg": "You stash your %s." },
@@ -1293,7 +1296,7 @@
         "max_item_length": "30 cm",
         "moves": 50,
         "flag_restriction": [ "BELT_CLIP" ],
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       }
     ],
     "flags": [ "CANT_WEAR", "WATER_FRIENDLY", "PALS_SMALL" ],
@@ -1324,7 +1327,7 @@
         "max_item_length": "60 cm",
         "moves": 50,
         "flag_restriction": [ "BELT_CLIP" ],
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       }
     ],
     "flags": [ "CANT_WEAR", "WATER_FRIENDLY", "PALS_MEDIUM" ],
@@ -1355,7 +1358,7 @@
         "max_item_length": "100 cm",
         "moves": 50,
         "flag_restriction": [ "BELT_CLIP" ],
-        "volume_encumber_modifier": 0.3
+        "volume_encumber_modifier": 0.2
       }
     ],
     "flags": [ "CANT_WEAR", "WATER_FRIENDLY", "PALS_LARGE" ],
