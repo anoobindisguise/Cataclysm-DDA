@@ -4,12 +4,16 @@
 #include <string>
 #include <utility>
 
+#include "bionics.h"
 #include "cata_utility.h"
 #include "character.h"
 #include "json.h"
 #include "stomach.h"
 #include "units.h"
 #include "vitamin.h"
+
+static const bionic_id bio_digestion( "bio_digestion" );
+static const bionic_id bio_guts_replacer( "bio_guts_replacer" );
 
 void nutrients::min_in_place( const nutrients &r )
 {
@@ -168,7 +172,8 @@ void stomach_contents::deserialize( const JsonObject &jo )
 
 units::volume stomach_contents::capacity( const Character &owner ) const
 {
-    return max_volume * owner.mutation_value( "stomach_size_multiplier" );
+    //if the player has an artificial stomach their stomach size won't change with mutations
+    return owner.has_bionic( "bio_digestion" ) ? 6400_ml : owner.has_bionic( "bio_guts_replacer" ) ? 800_ml : max_volume * owner.mutation_value( "stomach_size_multiplier" );
 }
 
 units::volume stomach_contents::stomach_remaining( const Character &owner ) const
@@ -203,10 +208,23 @@ food_summary stomach_contents::digest( const Character &owner, const needs_rates
     if( half_hours == 0 ) {
         return digested;
     }
+    //check if we have a bionic that needs power to digest stuff
+    float cbm_factor = owner.has_bionic( "bio_digestion" ) || owner.has_bionic( "bio_guts_replacer" ) ? 200000.0f : 0.0f;
 
     // Digest solids, but no more than in stomach.
     digested.solids = std::min( contents, rates.solids * half_hours );
-    contents -= digested.solids;
+    // the human digestion system uses about 15% of our total calories to make those calories usable. that's about 300 kcal or 1250 kj per day, out of 2.5 liters of food or so and 2000 kcal.
+    // as a bionic is likely more efficient than that, assume a baseline human needs about 500 kj to upkeep 2000kcal intake per day. as that's ~2.5 liters, that's 200 joules per millileter.
+    // if we are powering our digestion with metabolic interchange, we get 1046 joules per kcal.  a 0.25 liter food needs 50 kJ to digest, so it needs to have at least 200 kcal to be worth it.
+    if( cbm_factor > 0.0f && units::from_millijoule( owner.get_power_level() ) > units::from_milliliter( digested.solids ) * cbm_factor ) {
+      owner.mod_power_level( -1 * units::to_millijoule( units::from_milliliter( digested.solids ) * cbm_factor)
+      contents -= digested.solids;
+    } else if( cbm_factor > 0.0f ) {
+      //we can't digest anything because our bionic stomach lacks the power
+      owner.add_msg_if_player( m_warning, _( "WARNING! User's digestive system lacks power to operate!" ) );
+      return digested;
+    }
+
 
     // Digest kCal -- use min_kcal by default, but no more than what's in stomach,
     // and no less than percentage_kcal of what's in stomach.
@@ -250,6 +268,7 @@ stomach_digest_rates stomach_contents::get_digest_rates( const needs_rates &meta
         // Solids rate doesn't do anything impactful here so just make it big enough to avoid overflow.
         rates.solids = 250_ml;
         rates.water = 250_ml;
+        
         // Explicitly floor it, because casting it to an int will do so anyways
         rates.min_calories = std::floor( metabolic_rates.kcal / 24.0 * metabolic_rates.hunger * 1000 );
         rates.percent_kcal = 0.05f * metabolic_rates.hunger;
