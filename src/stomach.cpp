@@ -173,7 +173,7 @@ void stomach_contents::deserialize( const JsonObject &jo )
 units::volume stomach_contents::capacity( const Character &owner ) const
 {
     //if the player has an artificial stomach their stomach size won't change with mutations
-    return owner.has_bionic( "bio_digestion" ) ? 6400_ml : owner.has_bionic( "bio_guts_replacer" ) ?
+    return owner.has_bionic( bio_digestion ) ? 6400_ml : owner.has_bionic( bio_guts_replacer ) ?
            800_ml : max_volume * owner.mutation_value( "stomach_size_multiplier" );
 }
 
@@ -210,8 +210,8 @@ food_summary stomach_contents::digest( const Character &owner, const needs_rates
         return digested;
     }
     //check if we have a bionic that needs power to digest stuff
-    float cbm_factor = owner.has_bionic( "bio_digestion" ) ||
-                       owner.has_bionic( "bio_guts_replacer" ) ? 200000.0f : 0.0f;
+    float cbm_factor = owner.has_bionic( bio_digestion ) ||
+                       owner.has_bionic( bio_guts_replacer ) ? 200000.0f : 0.0f;
 
     // Digest solids, but no more than in stomach.
     digested.solids = std::min( contents, rates.solids * half_hours );
