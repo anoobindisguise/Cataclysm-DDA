@@ -225,7 +225,7 @@ food_summary stomach_contents::digest( const Character &owner, const needs_rates
     if( cbm_factor > 0.0f ) {
         if( units::to_millijoule( owner.get_power_level() ) > units::to_milliliter(
                 digested.solids * cbm_factor ) ) {
-            owner.mod_power_level( units::from_millijoule( units::to_milliliter( -1 * digested.solids *
+            owner->mod_power_level( units::from_millijoule( units::to_milliliter( -1 * digested.solids *
                                    cbm_factor ) ) );
         } else {
             // we can't digest it because our stomach lacks the bionic power to do so
