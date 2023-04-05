@@ -59,6 +59,7 @@ static const std::string comesttype_FOOD( "FOOD" );
 
 static const bionic_id bio_digestion( "bio_digestion" );
 static const bionic_id bio_faulty_grossfood( "bio_faulty_grossfood" );
+static const bionic_id bio_guts_replacer( "bio_guts_replacer" );
 static const bionic_id bio_taste_blocker( "bio_taste_blocker" );
 
 static const efftype_id effect_bloodworms( "bloodworms" );
@@ -194,9 +195,14 @@ static int compute_default_effective_kcal( const item &comest, const Character &
         kcal *= ( 1.0f - rottedness );
     }
 
-    // Bionic digestion gives extra nutrition
+    // Simplified bionic digestion isn't as efficient
+    if( you.has_bionic( bio_guts_replacer ) ) {
+        kcal *= 0.75f;
+    }
+    // The expanded digestion model is much more efficient but takes up a lot of room
+    // it requires the simplified system so the net calorie intake is 1.5
     if( you.has_bionic( bio_digestion ) ) {
-        kcal *= 1.5f;
+        kcal *= 2.0f;
     }
 
     return static_cast<int>( kcal );
