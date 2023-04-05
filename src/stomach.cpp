@@ -218,8 +218,10 @@ food_summary stomach_contents::digest( const Character &owner, const needs_rates
     // as a bionic is likely more efficient than that, assume a baseline human needs about 500 kj to upkeep 2000kcal intake per day. as that's ~2.5 liters, that's 200 joules per millileter.
     // if we are powering our digestion with metabolic interchange, we get 1046 joules per kcal.  a 0.25 liter food needs 50 kJ to digest, so it needs to have at least 200 kcal to be worth it.
     if( cbm_factor > 0.0f ) {
-        if( units::from_joule( owner.get_power_level() ) > units::from_millileter( digested.solids * cbm_factor ) ) {
-            owner.mod_power_level( units::to_joule( units::from_millileter( -1 * digested.solids * cbm_factor ) ) );
+        if( units::from_joule( owner.get_power_level() ) > units::from_millileter(
+                digested.solids * cbm_factor ) ) {
+            owner.mod_power_level( units::to_joule( units::from_millileter( -1 * digested.solids *
+                                                    cbm_factor ) ) );
         } else {
             // we can't digest it because our stomach lacks the bionic power to do so
             owner.add_msg_if_player( m_warning,
