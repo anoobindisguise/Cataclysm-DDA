@@ -285,8 +285,8 @@ static const json_character_flag json_flag_ACID_IMMUNE( "ACID_IMMUNE" );
 static const json_character_flag json_flag_ALARMCLOCK( "ALARMCLOCK" );
 static const json_character_flag json_flag_ALWAYS_HEAL( "ALWAYS_HEAL" );
 static const json_character_flag json_flag_BASH_IMMUNE( "BASH_IMMUNE" );
-static const json_character_flag json_flag_BIO_IMMUNE( "BIO_IMMUNE" );
 static const json_character_flag json_flag_BIONIC_STOMACH( "BIONIC_STOMACH" );
+static const json_character_flag json_flag_BIO_IMMUNE( "BIO_IMMUNE" );
 static const json_character_flag json_flag_BLIND( "BLIND" );
 static const json_character_flag json_flag_BULLET_IMMUNE( "BULLET_IMMUNE" );
 static const json_character_flag json_flag_CLAIRVOYANCE( "CLAIRVOYANCE" );
@@ -6955,11 +6955,11 @@ void Character::vomit()
         stomach.empty();
         add_msg_player_or_npc( m_bad, _( "You throw up heavily!" ), _( "<npcname> throws up heavily!" ) );
         // if you have a bionic stomach, your digestive fluid is more acidic than usual
-        has_flag( json_flag_BIONIC_STOMACH ) {
+        if( has_flag( json_flag_BIONIC_STOMACH ) ) {
             // rather than bile, you vomit up an acid puddle.
             get_map().add_field( adjacent_tile(), fd_acid, 1 );
             // power cost represents energy to replenish lost fluid
-            mod_power_level( -5_kilojoule );
+            mod_power_level( -5_kJ );
             // your bionic stomach is an acidproof container but your human parts are not
             if( !has_flag( json_flag_ACID_IMMUNE ) ) {
                 mod_daily_health( -1, -5 );
