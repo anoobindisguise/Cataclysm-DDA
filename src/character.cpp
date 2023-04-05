@@ -286,6 +286,7 @@ static const json_character_flag json_flag_ALARMCLOCK( "ALARMCLOCK" );
 static const json_character_flag json_flag_ALWAYS_HEAL( "ALWAYS_HEAL" );
 static const json_character_flag json_flag_BASH_IMMUNE( "BASH_IMMUNE" );
 static const json_character_flag json_flag_BIO_IMMUNE( "BIO_IMMUNE" );
+static const json_character_flag json_flag_BIONIC_STOMACH( "BIONIC_STOMACH" );
 static const json_character_flag json_flag_BLIND( "BLIND" );
 static const json_character_flag json_flag_BULLET_IMMUNE( "BULLET_IMMUNE" );
 static const json_character_flag json_flag_CLAIRVOYANCE( "CLAIRVOYANCE" );
@@ -6952,8 +6953,24 @@ void Character::vomit()
 
     if( stomach.contains() != 0_ml ) {
         stomach.empty();
-        get_map().add_field( adjacent_tile(), fd_bile, 1 );
         add_msg_player_or_npc( m_bad, _( "You throw up heavily!" ), _( "<npcname> throws up heavily!" ) );
+        // if you have a bionic stomach, your digestive fluid is more acidic than usual
+        has_flag( json_flag_BIONIC_STOMACH ) {
+            // rather than bile, you vomit up an acid puddle.
+            get_map().add_field( adjacent_tile(), fd_acid, 1 );
+            // power cost represents energy to replenish lost fluid
+            mod_power_level( -5_kilojoule );
+            // your bionic stomach is an acidproof container but your human parts are not
+            if( !has_flag( json_flag_ACID_IMMUNE ) ) {
+                mod_daily_health( -1, -5 );
+                apply_damage( nullptr, bodypart_id( "head" ), rng( 2, 5 ) );
+                add_msg_player( m_bad, _( "The bionic digestive fluid burns your throat and mouth!" ) );
+            }
+        } else {
+            // regular old vomiting.
+            get_map().add_field( adjacent_tile(), fd_bile, 1 );
+        }
+
     }
 
     if( !has_effect( effect_nausea ) ) {  // Prevents never-ending nausea
