@@ -178,7 +178,7 @@ units::volume stomach_contents::capacity( const Character &owner ) const
     } else if( owner.has_bionic( bio_guts_replacer ) ) {
         return 1000_ml;
     } else {
-        max_volume * owner.mutation_value( "stomach_size_multiplier" );
+        return max_volume * owner.mutation_value( "stomach_size_multiplier" );
     }
 }
 
