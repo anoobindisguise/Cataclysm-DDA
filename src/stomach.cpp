@@ -222,7 +222,8 @@ food_summary stomach_contents::digest( const Character &owner, const needs_rates
             owner.mod_power_level( units::to_joule( units::from_millileter( -1 * digested.solids * cbm_factor ) ) );
         } else {
             // we can't digest it because our stomach lacks the bionic power to do so
-            owner.add_msg_if_player( m_warning, _( "WARNING!  User's digestive system lacks power to operate!" ) );
+            owner.add_msg_if_player( m_warning,
+                                     _( "WARNING!  User's digestive system lacks power to operate!" ) );
             return digested;
         }
     } else {
