@@ -733,7 +733,7 @@
     "description": "Your digestive organs have been dramatically simplified with synthetic counterparts into a compact system that saves room for more bionics.  You will need power to digest food and your organs aren't as efficient as your previous human versions, leading to reduced nutrition from solid foods.",
     "occupied_bodyparts": [ [ "torso", -20 ] ],
     "vitamin_absorb_mod": 0.75,
-    "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ],
+    "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF", "BIONIC_STOMACH" ],
     "cant_remove_reason": "The CBM has replaced the patient's digestive organs and cannot be removed.",
     "canceled_mutations": [
       "WEAKSTOMACH",
@@ -762,7 +762,7 @@
     "description": "Your bionic digestive system has been outfitted with three synthetic stomachs and industrial-grade intestines.  Not only can you extract much more nutrition from food, but you are highly resistant to foodborne illness, and can sometimes eat rotten food.  While your assembly of organs are more efficient than even your old human ones were you will still need power to digest food.",
     "occupied_bodyparts": [ [ "torso", 20 ] ],
     "vitamin_absorb_mod": 1.5,
-    "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF", "PARAIMMUNE", "IMMUNE_SPOIL" ],
+    "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF", "PARAIMMUNE", "IMMUNE_SPOIL", "BIONIC_STOMACH" ],
     "upgraded_bionic": "bio_guts_replacement",
     "canceled_mutations": [
       "WEAKSTOMACH",
