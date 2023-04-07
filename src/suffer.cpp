@@ -333,7 +333,7 @@ void suffer::while_grabbed( Character &you )
         return;
     }
     // the bionics which replace your heart and lungs are motor driven, and thus are resistant against compression
-    if ( you.has_bionic( bio_heart_replacement ) ) {
+    if( you.has_bionic( bio_heart_replacement ) ) {
         grab_intensity /= 2;
     }
 
