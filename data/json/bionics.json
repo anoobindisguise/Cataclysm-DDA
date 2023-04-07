@@ -593,6 +593,19 @@
     "flags": [ "BIONIC_GUN", "BIONIC_NPC_USABLE", "USES_BIONIC_POWER" ]
   },
   {
+    "id": "bio_circulatory_replacer",
+    "type": "bionic",
+    "name": { "str": "Bionic Circulation System" },
+    "description": "Your heart and lungs have been replaced with artificial equivalents which take up less space but need bionic energy for you to keep breathing.  Stimulant and depressant drugs will have little to no effect, and anticoagulant drugs are recommended to prevent congestion issues.",
+    "occupied_bodyparts": [ [ "torso", -10 ] ],
+    "flags": [ "BIONIC_TOGGLED", "BIONIC_SLEEP_FRIENDLY", "BIONIC_NPC_USABLE" ],
+    "act_cost": "5 J",
+    "react_cost": "5 J",
+    "time": "1 s",
+    "activated_on_install": true
+    ]
+  },
+  {
     "id": "bio_claws",
     "type": "bionic",
     "name": { "str": "Bionic Claws" },
