@@ -1676,5 +1676,9 @@
       "activation_message": "You take an anticoagulant.",
       "effects": [ { "id": "warfarin", "duration": 86400 } ]
     }
+      "type": "consume_drug",
+      "activation_message": "You take an anticoagulant.",
+      "effects": [ { "id": "warfarin", "duration": 86400 } ]
+    }
   }
 ]
