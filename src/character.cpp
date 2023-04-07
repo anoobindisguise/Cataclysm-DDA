@@ -8978,7 +8978,7 @@ void Character::use_fire( const int quantity )
 int Character::heartrate_bpm() const
 {
     //Dead have no heartbeat usually and no heartbeat in omnicell or bionic system
-    if( is_dead_state() || has_trait( trait_SLIMESPAWNER ) || has_bionic( bio_heart_replacement )  ) {
+    if( is_dead_state() || has_trait( trait_SLIMESPAWNER ) || has_bionic( bio_heart_replacement ) ) {
         return 0;
     }
 
