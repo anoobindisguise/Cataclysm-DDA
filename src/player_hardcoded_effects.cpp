@@ -792,7 +792,9 @@ static void eff_fun_hypovolemia( Character &u, effect &it )
             } else if( intense == 2 ) {
                 warning = u.has_bionic( bio_heart_replacer ) ? _( "Your pale skin is sweating, your heart is beeping faintly, and you feel restless.  Maybe you lost too much blood?" ) : _( "Your pale skin is sweating, your heart is beating fast, and you feel restless.  Maybe you lost too much blood?" );
             } else if( intense == 3 ) {
-                warning = u.has_bionic( bio_heart_replacer ) ? _( "You're unsettlingly white, but your fingertips are bluish.  You are agitated and your heart is making an ominous warning sound.  Your blood loss must be serious." ) : _( "You're unsettlingly white, but your fingertips are bluish.  You are agitated and your heart is racing.  Your blood loss must be serious." );
+                warning = u.has_bionic( bio_heart_replacer ) ?
+                          _( "You're unsettlingly white, but your fingertips are bluish.  You are agitated and your heart is making an ominous warning sound.  Your blood loss must be serious." )
+                          : _( "You're unsettlingly white, but your fingertips are bluish.  You are agitated and your heart is racing.  Your blood loss must be serious." );
             } else { //intense == 4
                 warning = u.has_bionic( bio_heart_replacer ) ?
                           _( "You are pale as a ghost, dripping wet from the sweat, and sluggish, and your heart continuously issues a dire emergency tone.  You are on the brink of collapse from the effects of blood loss." )
