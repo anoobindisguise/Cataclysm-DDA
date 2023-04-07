@@ -759,7 +759,7 @@ static void eff_fun_hypovolemia( Character &u, effect &it )
                                          _( "Your bionic heart sputters out and shuts down." ),
                                          _( "<npcname> seizes up as their bionic heart shuts down!" ) );
             } else {
-               u.add_msg_player_or_npc( m_bad,
+                u.add_msg_player_or_npc( m_bad,
                                          _( "Your heart can't keep up the pace and fails!" ),
                                          _( "<npcname> has a sudden heart attack!" ) );
             }
