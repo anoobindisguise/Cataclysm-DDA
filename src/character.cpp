@@ -160,6 +160,7 @@ static const ammotype ammo_battery( "battery" );
 static const anatomy_id anatomy_human_anatomy( "human_anatomy" );
 
 static const bionic_id afs_bio_linguistic_coprocessor( "afs_bio_linguistic_coprocessor" );
+static const bionic_id bio_heart_replacement( "bio_heart_replacement" );
 static const bionic_id bio_gills( "bio_gills" );
 static const bionic_id bio_ground_sonar( "bio_ground_sonar" );
 static const bionic_id bio_hydraulics( "bio_hydraulics" );
@@ -649,7 +650,7 @@ int Character::get_oxygen_max() const
 
 bool Character::can_recover_oxygen() const
 {
-    return !has_effect( effect_grabbed, body_part_torso ) && !is_underwater();
+    return !has_effect( effect_grabbed, body_part_torso ) && !is_underwater() && !( has_bionic( bio_heart_replacement ) && !has_active_bionic( bio_heart_replacement ) );
 }
 
 void Character::randomize_heartrate()
@@ -4785,19 +4786,19 @@ bool Character::has_mission_item( int mission_id ) const
 void Character::check_needs_extremes()
 {
     // Check if we've overdosed... in any deadly way.
-    if( get_stim() > 250 ) {
+    if( get_stim() > 250 && !has_bionic( bio_heart_replacement ) ) {
         add_msg_player_or_npc( m_bad,
                                _( "You have a sudden heart attack!" ),
                                _( "<npcname> has a sudden heart attack!" ) );
         get_event_bus().send<event_type::dies_from_drug_overdose>( getID(), efftype_id() );
         set_part_hp_cur( body_part_torso, 0 );
-    } else if( get_stim() < -200 || get_painkiller() > 240 ) {
+    } else if( ( get_stim() < -200 || get_painkiller() > 240 ) && !has_bionic( bio_heart_replacement ) ) {
         add_msg_player_or_npc( m_bad,
                                _( "Your breathing stops completely." ),
                                _( "<npcname>'s breathing stops completely." ) );
         get_event_bus().send<event_type::dies_from_drug_overdose>( getID(), efftype_id() );
         set_part_hp_cur( body_part_torso, 0 );
-    } else if( has_effect( effect_jetinjector ) && get_effect_dur( effect_jetinjector ) > 40_minutes ) {
+    } else if( has_effect( effect_jetinjector ) && get_effect_dur( effect_jetinjector ) > 40_minutes && !has_bionic( bio_heart_replacement ) ) {
         if( !has_trait( trait_NOPAIN ) ) {
             add_msg_player_or_npc( m_bad,
                                    _( "Your heart spasms painfully and stops." ),
@@ -4808,13 +4809,13 @@ void Character::check_needs_extremes()
         }
         get_event_bus().send<event_type::dies_from_drug_overdose>( getID(), effect_jetinjector );
         set_part_hp_cur( body_part_torso, 0 );
-    } else if( get_effect_dur( effect_adrenaline ) > 50_minutes ) {
+    } else if( get_effect_dur( effect_adrenaline ) > 50_minutes && !has_bionic( bio_heart_replacement ) ) {
         add_msg_player_or_npc( m_bad,
                                _( "Your heart spasms and stops." ),
                                _( "<npcname>'s heart spasms and stops." ) );
         get_event_bus().send<event_type::dies_from_drug_overdose>( getID(), effect_adrenaline );
         set_part_hp_cur( body_part_torso, 0 );
-    } else if( get_effect_int( effect_drunk ) > 4 ) {
+    } else if( get_effect_int( effect_drunk ) > 4 && !has_bionic( bio_heart_replacement ) ) {
         add_msg_player_or_npc( m_bad,
                                _( "Your breathing slows down to a stop." ),
                                _( "<npcname>'s breathing slows down to a stop." ) );
@@ -6297,7 +6298,10 @@ void Character::set_stim( int new_stim )
 
 void Character::mod_stim( int mod )
 {
-    stim += mod;
+    //can't stimulate or depress a bionic organ
+    if( !has_bionic( bio_heart_replacement ) ) {
+        stim += mod;
+    }
 }
 
 int Character::get_rad() const
@@ -6453,6 +6457,7 @@ void Character::burn_move_stamina( int moves )
 void Character::update_stamina( int turns )
 {
     static const std::string player_base_stamina_regen_rate( "PLAYER_BASE_STAMINA_REGEN_RATE" );
+
     const float base_regen_rate = get_option<float>( player_base_stamina_regen_rate );
     // Your stamina regen rate works as a function of how fit you are compared to your body size.
     // This allows it to scale more quickly than your stamina, so that at higher fitness levels you
@@ -6466,7 +6471,12 @@ void Character::update_stamina( int turns )
     const float base_multiplier = mod_regen + ( has_effect( effect_winded ) ? 0.1f : 1.0f );
     // Ensure multiplier is at least 0.1
     const float stamina_multiplier = std::max<float>( 0.1f, base_multiplier );
-
+    // If we have a bionic heart discard above values and use a fixed value
+    if( has_bionic( bio_heart_replacer ) ) {
+        effective_regen_rate = base_regen_rate * 5;
+        stamina_multiplier = 1.0;
+        current_stim = 0;
+    }
     // Recover some stamina every turn. Start with zero, then increase recovery factor based on
     // mutations, stimulants, and bionics before rolling random recovery based on this factor.
     float stamina_recovery = 0.0f;
@@ -6509,7 +6519,11 @@ void Character::update_stamina( int turns )
     int recover_amount = std::ceil( stamina_recovery * turns );
     mod_stamina( recover_amount );
     add_msg_debug( debugmode::DF_CHARACTER, "Stamina recovery: %d", recover_amount );
-
+    // spend 1 joule per point of stamina that is being recovered
+    if( has_bionic( bio_heart_replacer ) ) {
+        int powercost = std::min( recover_amount, max_stam - get_stamina() );
+        mod_power_level( units::from_joule( -powercost ) );
+    }
     // Cap at max
     set_stamina( std::min( std::max( get_stamina(), 0 ), max_stam ) );
 }
@@ -8957,8 +8971,8 @@ void Character::use_fire( const int quantity )
 
 int Character::heartrate_bpm() const
 {
-    //Dead have no heartbeat usually and no heartbeat in omnicell
-    if( is_dead_state() || has_trait( trait_SLIMESPAWNER ) ) {
+    //Dead have no heartbeat usually and no heartbeat in omnicell or bionic system
+    if( is_dead_state() || has_trait( trait_SLIMESPAWNER ) || has_bionic( bio_heart_replacement )  ) {
         return 0;
     }
 
