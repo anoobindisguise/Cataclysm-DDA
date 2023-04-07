@@ -71,6 +71,7 @@ static const bionic_id bio_dis_acid( "bio_dis_acid" );
 static const bionic_id bio_dis_shock( "bio_dis_shock" );
 static const bionic_id bio_geiger( "bio_geiger" );
 static const bionic_id bio_gills( "bio_gills" );
+static const bionic_id bio_heart_replacement( "bio_heart_replacement" );
 static const bionic_id bio_power_weakness( "bio_power_weakness" );
 static const bionic_id bio_radleak( "bio_radleak" );
 static const bionic_id bio_sleep_shutdown( "bio_sleep_shutdown" );
@@ -330,6 +331,10 @@ void suffer::while_grabbed( Character &you )
     // if we aren't near something with GROUP_BASH we won't suffocate
     if( !getting_shoved ) {
         return;
+    }
+    // the bionics which replace your heart and lungs are motor driven, and thus are resistant against compression
+    if ( you.has_bionic( bio_heart_replacement ) ) {
+        grab_intensity /= 2;
     }
 
     if( grab_intensity == 2 ) {
@@ -1413,11 +1418,20 @@ void suffer::from_bad_bionics( Character &you )
         you.mod_str_bonus( -3 );
     }
     if( you.has_bionic( bio_radleak ) && one_turn_in( 300_minutes ) ) {
-        you.add_msg_if_player( m_bad, _( "You CBM leaks radiation." ) );
+        you.add_msg_if_player( m_bad, _( "Your CBM leaks radiation." ) );
         if( you.has_effect( effect_iodine ) ) {
             you.mod_rad( 2 );
         } else {
             you.mod_rad( 5 );
+        }
+    }
+    if( you.has_bionic( bio_heart_replacement ) && !you.has_active_bionic( bio_heart_replacement ) ) {
+        you.add_msg_if_player( m_bad, _( "Your bionic heart and lungs aren't working!" ) );
+        you.oxygen -= 1;
+        if( you.oxygen <= 5 ) {
+            you.add_msg_if_player( m_bad, _( "You're suffocating!" ) );
+            // you can't draw breaths or pump blood
+            you.hurtall( rng( 1, 2 ), nullptr );
         }
     }
 }
