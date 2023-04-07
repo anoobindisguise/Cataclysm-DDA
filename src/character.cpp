@@ -4813,7 +4813,8 @@ void Character::check_needs_extremes()
         }
         get_event_bus().send<event_type::dies_from_drug_overdose>( getID(), effect_jetinjector );
         set_part_hp_cur( body_part_torso, 0 );
-    } else if( get_effect_dur( effect_adrenaline ) > 50_minutes && !has_bionic( bio_heart_replacement ) ) {
+    } else if( get_effect_dur( effect_adrenaline ) > 50_minutes &&
+               !has_bionic( bio_heart_replacement ) ) {
         add_msg_player_or_npc( m_bad,
                                _( "Your heart spasms and stops." ),
                                _( "<npcname>'s heart spasms and stops." ) );
