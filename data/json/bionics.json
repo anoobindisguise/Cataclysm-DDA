@@ -1051,7 +1051,14 @@
     "act_cost": "8 J",
     "react_cost": "8 J",
     "time": "1 s",
-    "activated_on_install": true
+    "activated_on_install": true,
+    "canceled_mutations": [
+      "BADCARDIO",
+      "GOODCARDIO",
+      "GOODCARDIO2",
+      "ASTHMA"
+    ]
+  },
   },
   {
     "id": "bio_heat_absorb",
