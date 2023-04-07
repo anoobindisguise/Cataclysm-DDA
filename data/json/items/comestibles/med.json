@@ -1652,5 +1652,25 @@
     "addiction_type": "cocaine",
     "flags": [ "NO_INGEST", "WATER_DISSOLVE" ],
     "use_action": { "type": "heal", "bleed": 20, "move_cost": 3000, "effects": [ { "id": "pkill1", "duration": 720 } ] }
+  },
+  {
+    "id": "warfarin",
+    "type": "COMESTIBLE",
+    "comestible_type": "MED",
+    "name": { "str_sp": "anticoagulants" },
+    "description": "These are tablets which inhibit blood clotting, commonly prescribed to prevent stroke and pulmonary embolisms.  Among other side effects these would make it more difficult to stop a bleeding wound, making them particularly risky in the post-apocalypse.  One dose will last 24 hours.",
+    "//": "10mg is a common daily dose.",
+    "weight": "10 mg",
+    "volume": "250 ml",
+    "price": 3000,
+    "price_postapoc": 100,
+    "charges": 30,
+    "stack_size": 200,
+    "symbol": "!",
+    "healthy": -1,
+    "color": "light_red",
+    "container": "bottle_plastic_pill_prescription",
+    "flags": [ "NPC_SAFE", "IRREPLACEABLE_CONSUMABLE", "WATER_DISSOLVE", "EDIBLE_FROZEN" ],
+    "use_action": { "type": "consume_drug", "activation_message": "You take an anticoagulant.", "effects": [ { "id": "warfarin", "duration": 86400 } ] }
   }
 ]
