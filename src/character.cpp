@@ -6964,7 +6964,7 @@ void Character::vomit()
             if( !has_flag( json_flag_ACID_IMMUNE ) ) {
                 mod_daily_health( -1, -5 );
                 apply_damage( nullptr, bodypart_id( "head" ), rng( 2, 5 ) );
-                add_msg_player( m_bad, _( "The bionic digestive fluid burns your throat and mouth!" ) );
+                add_msg_if_player( m_bad, _( "The bionic digestive fluid burns your throat and mouth!" ) );
             }
         } else {
             // regular old vomiting.
