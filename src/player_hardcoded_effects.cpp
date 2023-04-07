@@ -42,6 +42,7 @@
 
 static const activity_id ACT_FIRSTAID( "ACT_FIRSTAID" );
 
+static const bionic_id bio_heart_replacer( "bio_heart_replacer" );
 static const bionic_id bio_sleep_shutdown( "bio_sleep_shutdown" );
 
 static const efftype_id effect_adrenaline( "adrenaline" );
@@ -720,7 +721,7 @@ static void eff_fun_datura( Character &u, effect &it )
         }
     }
 
-    if( dur > 1800_minutes && one_in( 300 * 512 ) ) {
+    if( dur > 1800_minutes && one_in( 300 * 512 ) && !u.has_bionic( bio_heart_replacer ) ) {
         if( !u.has_trait( trait_NOPAIN ) ) {
             u.add_msg_if_player( m_bad,
                                  _( "Your heart spasms painfully and stops, dragging you back to reality as you die." ) );
@@ -753,9 +754,15 @@ static void eff_fun_hypovolemia( Character &u, effect &it )
             get_event_bus().send<event_type::dies_from_bleeding>( u.getID() );
         } else
         {
-            u.add_msg_player_or_npc( m_bad,
-                                     _( "Your heart can't keep up the pace and fails!" ),
-                                     _( "<npcname> has a sudden heart attack!" ) );
+            if( u.has_bionic( bio_heart_replacer ) ) {
+                u.add_msg_player_or_npc( m_bad,
+                                         _( "Your bionic heart sputters out and shuts down." ),
+                                         _( "<npcname> seizes up as their bionic heart shuts down!" ) );
+            } else {
+               u.add_msg_player_or_npc( m_bad,
+                                         _( "Your heart can't keep up the pace and fails!" ),
+                                         _( "<npcname> has a sudden heart attack!" ) );
+            }
             get_event_bus().send<event_type::dies_from_hypovolemia>( u.getID() );
         }
         u.set_part_hp_cur( bodypart_id( "torso" ), 0 );
@@ -783,11 +790,13 @@ static void eff_fun_hypovolemia( Character &u, effect &it )
             if( intense == 1 ) {
                 warning = _( "Your skin looks pale and you feel anxious and thirsty.  Blood loss?" );
             } else if( intense == 2 ) {
-                warning = _( "Your pale skin is sweating, your heart is beating fast, and you feel restless.  Maybe you lost too much blood?" );
+                warning = u.has_bionic( bio_heart_replacer ) ? _( "Your pale skin is sweating, your heart is beeping faintly, and you feel restless.  Maybe you lost too much blood?" ) : _( "Your pale skin is sweating, your heart is beating fast, and you feel restless.  Maybe you lost too much blood?" );
             } else if( intense == 3 ) {
-                warning = _( "You're unsettlingly white, but your fingertips are bluish.  You are agitated and your heart is racing.  Your blood loss must be serious." );
+                warning = u.has_bionic( bio_heart_replacer ) ? _( "You're unsettlingly white, but your fingertips are bluish.  You are agitated and your heart is making an ominous warning sound.  Your blood loss must be serious." ) : _( "You're unsettlingly white, but your fingertips are bluish.  You are agitated and your heart is racing.  Your blood loss must be serious." );
             } else { //intense == 4
-                warning = _( "You are pale as a ghost, dripping wet from the sweat, and sluggish - despite your heart racing like a train.  You are on the brink of collapse from the effects of blood loss." );
+                warning = u.has_bionic( bio_heart_replacer ) ? _( "You are pale as a ghost, dripping wet from the sweat, and sluggish, and your heart continuously issues a dire emergency tone.  You are on the brink of collapse from the effects of blood loss." ) : _( "You are pale as a ghost, dripping wet from the sweat, and sluggish - despite your heart racing like a train.  You are on the brink of collapse from the effects of blood loss." );
+
+                warning = _( "" );
             }
             u.add_msg_if_player( m_bad, warning );
         } else {
