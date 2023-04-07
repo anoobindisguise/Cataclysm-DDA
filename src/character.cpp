@@ -4802,7 +4802,8 @@ void Character::check_needs_extremes()
                                _( "<npcname>'s breathing stops completely." ) );
         get_event_bus().send<event_type::dies_from_drug_overdose>( getID(), efftype_id() );
         set_part_hp_cur( body_part_torso, 0 );
-    } else if( has_effect( effect_jetinjector ) && get_effect_dur( effect_jetinjector ) > 40_minutes && !has_bionic( bio_heart_replacement ) ) {
+    } else if( has_effect( effect_jetinjector ) && get_effect_dur( effect_jetinjector ) > 40_minutes &&
+               !has_bionic( bio_heart_replacement ) ) {
         if( !has_trait( trait_NOPAIN ) ) {
             add_msg_player_or_npc( m_bad,
                                    _( "Your heart spasms painfully and stops." ),
