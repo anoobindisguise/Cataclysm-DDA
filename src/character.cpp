@@ -650,7 +650,8 @@ int Character::get_oxygen_max() const
 
 bool Character::can_recover_oxygen() const
 {
-    return !has_effect( effect_grabbed, body_part_torso ) && !is_underwater() && !( has_bionic( bio_heart_replacement ) && !has_active_bionic( bio_heart_replacement ) );
+    return !has_effect( effect_grabbed, body_part_torso ) && !is_underwater() &&
+           !( has_bionic( bio_heart_replacement ) && !has_active_bionic( bio_heart_replacement ) );
 }
 
 void Character::randomize_heartrate()
