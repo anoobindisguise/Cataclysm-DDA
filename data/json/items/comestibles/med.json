@@ -1667,15 +1667,11 @@
     "charges": 30,
     "stack_size": 200,
     "symbol": "!",
-    "healthy": -1,
+    "healthy": -2,
     "color": "light_red",
     "container": "bottle_plastic_pill_prescription",
     "flags": [ "NPC_SAFE", "IRREPLACEABLE_CONSUMABLE", "WATER_DISSOLVE", "EDIBLE_FROZEN" ],
     "use_action": {
-      "type": "consume_drug",
-      "activation_message": "You take an anticoagulant.",
-      "effects": [ { "id": "warfarin", "duration": 86400 } ]
-    }
       "type": "consume_drug",
       "activation_message": "You take an anticoagulant.",
       "effects": [ { "id": "warfarin", "duration": 86400 } ]
