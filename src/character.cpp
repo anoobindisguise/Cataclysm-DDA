@@ -6478,7 +6478,7 @@ void Character::update_stamina( int turns )
     // Ensure multiplier is at least 0.1
     const float stamina_multiplier = std::max<float>( 0.1f, base_multiplier );
     // If we have a bionic heart discard above values and use a fixed value
-    if( has_bionic( bio_heart_replacer ) ) {
+    if( has_bionic( bio_heart_replacement ) ) {
         effective_regen_rate = base_regen_rate * 5;
         stamina_multiplier = 1.0;
         current_stim = 0;
@@ -6526,7 +6526,7 @@ void Character::update_stamina( int turns )
     mod_stamina( recover_amount );
     add_msg_debug( debugmode::DF_CHARACTER, "Stamina recovery: %d", recover_amount );
     // spend 1 joule per point of stamina that is being recovered
-    if( has_bionic( bio_heart_replacer ) ) {
+    if( has_bionic( bio_heart_replacement ) ) {
         int powercost = std::min( recover_amount, max_stam - get_stamina() );
         mod_power_level( units::from_joule( -powercost ) );
     }
