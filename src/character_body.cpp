@@ -933,7 +933,8 @@ void Character::update_stomach( const time_point &from, const time_point &to )
         if( cbm_factor > 0.0f ) {
             // Deduct necessary power to digest the food - the check for if we have enough power occurs in stomach.cpp
             // This is necessary because stomach.digest is what actually removes the food from the stomach, but stomach.digest cannot call mod_power_level
-            mod_power_level ( units::from_millijoule( cbm_factor * units::to_millileter( digested_to_guts.solids ) ) );
+            mod_power_level( units::from_millijoule( cbm_factor * units::to_millileter(
+                                 digested_to_guts.solids ) ) );
         }
     } else {
         //handle digestion as normal
