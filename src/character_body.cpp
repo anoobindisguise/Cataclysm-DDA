@@ -922,7 +922,7 @@ void Character::update_stomach( const time_point &from, const time_point &to )
     const units::volume stomach_capacity = stomach.capacity( *this );
 
     if( five_mins > 0 ) {
-       float cbm_factor = has_flag( json_flag_BIONIC_STOMACH ) ? 200000.0f : 0.0f;
+        float cbm_factor = has_flag( json_flag_BIONIC_STOMACH ) ? 200000.0f : 0.0f;
         // Digest nutrients in stomach, they are destined for the guts (except water)
         food_summary digested_to_guts = stomach.digest( *this, rates, five_mins, half_hours );
         // Digest nutrients in guts, they will be distributed to needs levels
