@@ -532,6 +532,14 @@ class Character : public Creature, public visitable
         int ranged_dex_mod() const;
         int ranged_per_mod() const;
 
+        // power cost equivalent to 1 point of stamina
+        units::energy bionic_legs_efficiency() const
+        units::energy bionic_arms_efficiency() const
+        // power cost to regenerate 1 point of stamina
+        units::energy bionic_lungs_efficiency() const
+        // power cost to digest 1 mL of food
+        units::energy bionic_guts_efficiency() const
+
         /** Setters for stats exclusive to characters */
         void set_str_bonus( int nstr );
         void set_dex_bonus( int ndex );
@@ -2735,6 +2743,9 @@ class Character : public Creature, public visitable
         int get_stamina_max() const;
         void set_stamina( int new_stamina );
         void mod_stamina( int mod );
+        /** Burns stamina like in mod_stamina() but can also burn bionic energy and tells us if we had enough bionic energy if so */
+        bool spend_stamina_or_energy( int mod, bool is_legs = false, bool is_arms = false );
+
         void burn_move_stamina( int moves );
         /** Regenerates stamina */
         void update_stamina( int turns );
