@@ -1822,5 +1822,23 @@
     "occupied_bodyparts": [ [ "eyes", 1 ], [ "arm_l", 2 ], [ "arm_r", 2 ], [ "hand_l", 2 ], [ "hand_r", 2 ] ],
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ],
     "enchantments": [ { "condition": "ALWAYS", "skills": [ { "value": "throw", "add": 5 } ] } ]
+  },
+  {
+    "id": "bio_test_arms",
+    "type": "bionic",
+    "name": { "str": "Test Bionic Arms" },
+    "description": "Test to see if using bionic power for arms works correctly.",
+    "occupied_bodyparts": [ [ "arm_l", -10 ], [ "arm_r", -10 ], [ "hand_l", -2 ], [ "hand_r", -2 ] ],
+    "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ],
+    "arms_efficiency": "10 J"
+  },
+  {
+    "id": "bio_test_legs",
+    "type": "bionic",
+    "name": { "str": "Test Bionic Legs" },
+    "description": "Test to see if using bionic power for arms works correctly.",
+    "occupied_bodyparts": [ [ "leg_l", -15 ], [ "leg_r", -15 ], [ "foot_l", -3 ], [ "foot_r", -3 ] ],
+    "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ],
+    "legs_efficiency": "10 J"
   }
 ]
