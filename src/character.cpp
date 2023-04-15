@@ -5991,6 +5991,50 @@ units::mass Character::bionics_weight() const
     return bio_weight;
 }
 
+void Character::bionic_legs_efficiency() const
+{
+    units::energy current_highest = 0_joules;
+    for( const bionic_id &bid : get_bionics() ) {
+        if( bid->legs_efficiency > current_highest ) {
+            current_highest = bid->legs_efficiency;
+        }
+    }
+    bionic_legs_efficiency = current_highest;
+}
+
+void Character::bionic_arms_efficiency() const
+{
+    units::energy current_highest = 0_joules;
+    for( const bionic_id &bid : get_bionics() ) {
+        if( bid->arms_efficiency > current_highest ) {
+            current_highest = bid->arms_efficiency;
+        }
+    }
+    bionic_arms_efficiency = current_highest;
+}
+
+void Character::bionic_lungs_efficiency() const
+{
+    units::energy current_highest = 0_joules;
+    for( const bionic_id &bid : get_bionics() ) {
+        if( bid->lungs_efficiency > current_highest ) {
+            current_highest = bid->lungs_efficiency;
+        }
+    }
+    bionic_lungs_efficiency = current_highest;
+}
+
+void Character::bionic_guts_efficiency() const
+{
+    units::energy current_highest = 0_joules;
+    for( const bionic_id &bid : get_bionics() ) {
+        if( bid->guts_efficiency > current_highest ) {
+            current_highest = bid->guts_efficiency;
+        }
+    }
+    bionic_guts_efficiency = current_highest;
+}
+
 void Character::reset_chargen_attributes()
 {
     init_age = 25;
