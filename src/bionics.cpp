@@ -334,6 +334,10 @@ void bionic_data::load( const JsonObject &jsobj, const std::string &src )
     assign( jsobj, "deact_cost", power_deactivate, false, 0_kJ );
     assign( jsobj, "trigger_cost", power_trigger, false, 0_kJ );
     assign( jsobj, "power_trickle", power_trickle, false, 0_kJ );
+    assign( jsobj, "legs_efficiency", legs_efficiency, false, 0_kJ );
+    assign( jsobj, "arms_efficiency", arms_efficiency, false, 0_kJ );
+    assign( jsobj, "lungs_efficiency", lungs_efficiency, false, 0_kJ );
+    assign( jsobj, "guts_efficiency", guts_efficiency, false, 0_kJ );
 
     optional( jsobj, was_loaded, "time", charge_time, 0_turns );
 
