@@ -206,7 +206,27 @@ food_summary stomach_contents::digest( const Character &owner, const needs_rates
 
     // Digest solids, but no more than in stomach.
     digested.solids = std::min( contents, rates.solids * half_hours );
-    contents -= digested.solids;
+    //check if we have a bionic that needs power to digest stuff. we'd need this many joules per milliliter.
+    float cbm_factor = owner.has_bionic( bio_digestion ) ||
+                       owner.has_bionic( bio_guts_replacer ) ? 200000.0f : 0.0f;
+    // the human digestion system uses about 15% of our total calories to make those calories usable. that's about 300 kcal or 1250 kj per day, out of 2.5 liters of food or so and 2000 kcal.
+    // as a bionic is likely more efficient than that, assume a baseline human needs about 500 kj to upkeep 2000kcal intake per day. as that's ~2.5 liters, that's 200 joules per millileter.
+    // if we are powering our digestion with metabolic interchange, we get 1046 joules per kcal.  a 0.25 liter food needs 50 kJ to digest, so it needs to have at least 200 kcal to be worth it.
+    if( cbm_factor > 0.0f ) {
+        if( units::to_millijoule( owner.get_power_level() ) < units::to_milliliter(
+                digested.solids * cbm_factor ) ) {
+            // we can't digest it because our stomach lacks the bionic power to do so, if so break out early.
+            owner.add_msg_if_player( m_warning,
+                                     _( "WARNING!  User's digestive system lacks power to operate!" ) );
+            return digested;
+        } else {
+            // We had enough power to satisfy the demands of the bionic so continue
+            contents -= digested.solids;
+        }
+    } else {
+        //handle digestion as normal
+        contents -= digested.solids;
+    }
 
     // Digest kCal -- use min_kcal by default, but no more than what's in stomach,
     // and no less than percentage_kcal of what's in stomach.
