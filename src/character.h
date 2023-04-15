@@ -1295,6 +1295,10 @@ class Character : public Creature, public visitable
         float manipulator_score( const std::map<bodypart_str_id, bodypart> &body,
                                  body_part_type::type type, int override_encumb, int override_wounds ) const;
 
+        // define what our feet sound like and how noisy they are
+        String footstep_sound() const;
+        int footstep_volume() const;
+
         bool has_min_manipulators() const;
         // technically this is "has more than one arm"
         bool has_two_arms_lifting() const;
