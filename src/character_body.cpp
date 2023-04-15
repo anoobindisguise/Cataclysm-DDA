@@ -921,6 +921,7 @@ void Character::update_stomach( const time_point &from, const time_point &to )
     const units::volume stomach_capacity = stomach.capacity( *this );
 
     if( five_mins > 0 ) {
+        float cbm_factor = has_flag( json_flag_BIONIC_STOMACH ) ? 200000.0f : 0.0f;
         // Digest nutrients in stomach, they are destined for the guts (except water)
         food_summary digested_to_guts = stomach.digest( *this, rates, five_mins, half_hours );
         // Digest nutrients in guts, they will be distributed to needs levels
@@ -928,7 +929,15 @@ void Character::update_stomach( const time_point &from, const time_point &to )
         // Water from stomach skips guts and gets absorbed by body
         mod_thirst( -units::to_milliliter<int>( digested_to_guts.water ) / 5 );
         guts.ingest( digested_to_guts );
-
+        if( cbm_factor > 0.0f ) {
+            // Deduct necessary power to digest the food - the check for if we have enough power occurs in stomach.cpp
+            // This is necessary because stomach.digest is what actually removes the food from the stomach, but stomach.digest cannot call mod_power_level
+            mod_power_level( units::from_millijoule( cbm_factor * units::to_millileter(
+                                 digested_to_guts.solids ) ) );
+        } else {
+            //handle digestion as normal
+            contents -= digested.solids;
+        }
         mod_stored_kcal( digested_to_body.nutr.kcal() );
         vitamins_mod( effect_vitamin_mod( digested_to_body.nutr.vitamins ) );
         log_activity_level( activity_history.average_activity() );
