@@ -19,6 +19,17 @@
   },
   {
     "type": "mutation",
+    "id": "CBM_Stomach",
+    "name": { "str": "Bionic Stomach Replacement" },
+    "points": 0,
+    "description": "You have a matrix in your central nervous system that acts as a universal control and installation bus for compact bionic modules.",
+    "valid": false,
+    "purifiable": false,
+    "types": [ "Cybernetic", "DIET" ],
+    "bionic_slot_bonuses": { "torso": 20 }
+  },
+  {
+    "type": "mutation",
     "id": "EXODII_BODY_1",
     "flags": [ "Exodii_Body" ],
     "name": { "str": "Exodii cyborg framework - style 1a" },
