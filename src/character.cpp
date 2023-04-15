@@ -6520,7 +6520,9 @@ void Character::burn_move_stamina( int moves )
     }
 
     burn_ratio *= move_mode->stamina_mult();
-    if( spend_legs_energy( -( ( moves * burn_ratio ) / 100.0 ) * get_modifier( character_modifier_stamina_move_cost_mod ) * get_modifier( character_modifier_move_mode_move_cost_mod ) ) ) {
+    float final_cost = -( ( moves * burn_ratio ) / 100.0 ) * get_modifier( character_modifier_stamina_move_cost_mod ) * get_modifier( character_modifier_move_mode_move_cost_mod ) );
+    // we can crawl if our bionic legs aren't working but we still have human arms
+    if( spend_legs_energy( final_cost ) || movement_mode_is( move_mode_prone ) && spend_arms_energy( final_cost ) ) {
         add_msg_debug( debugmode::DF_CHARACTER, "Stamina burn: %d", -( ( moves * burn_ratio ) / 100 ) );
         // Chance to suffer pain if overburden and stamina runs out or has trait BADBACK
         // Starts at 1 in 25, goes down by 5 for every 50% more carried
