@@ -6461,10 +6461,6 @@ void Character::mod_stamina( int mod )
 
 bool Character::spend_legs_energy( int mod )
 {
-    // TODO: Make NPCs smart enough to use stamina
-    if( is_npc() || has_trait( trait_DEBUG_STAMINA ) ) {
-        return;
-    }
     // if this isn't zero it means we have a bionic that replaced our legs somewhere.
     if( bionic_legs_efficiency() > 0 ) {
         if( get_power_level() > bionic_legs_efficiency * mod ) {
@@ -6481,10 +6477,6 @@ bool Character::spend_legs_energy( int mod )
 
 bool Character::spend_arms_energy( int mod )
 {
-    // TODO: Make NPCs smart enough to use stamina
-    if( is_npc() || has_trait( trait_DEBUG_STAMINA ) ) {
-        return;
-    }
     // if this isn't zero it means we have a bionic that replaced our arms somewhere.
     if( bionic_arms_efficiency() > 0 ) {
         if( get_power_level() > bionic_legs_efficiency * mod ) {
