@@ -1981,7 +1981,7 @@ void Character::make_footstep_noise() const
     if( volume <= 0 ) {
         return;
     }
-    if( is_mounted() || has_flag( json_flag_NO_FEET ) {
+    if( is_mounted() ) {
         sounds::sound( pos(), volume, sounds::sound_t::movement,
                        mounted_creature.get()->type->get_footsteps(),
                        false, "none", "none" );
