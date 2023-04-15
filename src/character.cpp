@@ -6467,12 +6467,12 @@ bool Character::spend_legs_energy( int mod )
     }
     // if this isn't zero it means we have a bionic that replaced our legs somewhere.
     if( bionic_legs_efficiency() > 0 ) {
-       if( get_power_level() > bionic_legs_efficiency * mod ) {
-           mod_power_level( mod * bionic_legs_efficiency );
-           return true;
-       } else {
-           return false;
-       }
+        if( get_power_level() > bionic_legs_efficiency * mod ) {
+            mod_power_level( mod * bionic_legs_efficiency );
+            return true;
+        } else {
+            return false;
+        }
     } else {
         mod_stamina( mod );
         return true;
@@ -6487,12 +6487,12 @@ bool Character::spend_arms_energy( int mod )
     }
     // if this isn't zero it means we have a bionic that replaced our arms somewhere.
     if( bionic_arms_efficiency() > 0 ) {
-       if( get_power_level() > bionic_legs_efficiency * mod ) {
-           mod_power_level( mod * bionic_legs_efficiency );
-           return true;
-       } else {
-           return false;
-       }
+        if( get_power_level() > bionic_legs_efficiency * mod ) {
+            mod_power_level( mod * bionic_legs_efficiency );
+            return true;
+        } else {
+            return false;
+        }
     } else {
         mod_stamina( mod );
         return true;
