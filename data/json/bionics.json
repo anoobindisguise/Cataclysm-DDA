@@ -726,14 +726,44 @@
     "flags": [ "BIONIC_NPC_USABLE" ]
   },
   {
+    "id": "bio_guts_replacement",
+    "type": "bionic",
+    "name": { "str": "Simplified Digestive System" },
+    "description": "Your digestive organs have been dramatically simplified with synthetic counterparts into a compact system that saves room for more bionics.  You will need power to digest food and your organs aren't as efficient as your previous human versions, leading to reduced nutrition from solid foods.",
+    "occupied_bodyparts": [ [ "torso", -20 ] ],
+    "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF", "BIONIC_STOMACH" ],
+    "bionic_stomach_size": "1000_ml"
+    "cant_remove_reason": "The CBM has replaced the patient's digestive organs and cannot be removed.",
+    "canceled_mutations": [
+      "WEAKSTOMACH",
+      "STRONGSTOMACH",
+      "CARNIVORE",
+      "HERBIVORE",
+      "ANTIJUNK",
+      "ANTIFRUIT",
+      "RUMINANT",
+      "ANTIWHEAT",
+      "NAUSEA",
+      "VOMITOUS",
+      "EATPOISON",
+      "EATDEAD",
+      "ALCMET",
+      "SAPROVORE",
+      "LACTOSE",
+      "GRAZER",
+      "VEGETARIAN"
+    ]
+  },
+  {
     "id": "bio_digestion",
     "type": "bionic",
     "name": { "str": "Expanded Digestive System" },
-    "description": "You have been outfitted with three synthetic stomachs and industrial-grade intestines.  Not only can you extract much more nutrition from food, but you are highly resistant to foodborne illness, and can sometimes eat rotten food.",
+    "description": "Your bionic digestive system has been outfitted with three synthetic stomachs and industrial-grade intestines.  Not only can you extract much more nutrition from food, but you are highly resistant to foodborne illness, and can sometimes eat rotten food.  While your assembly of organs are more efficient than even your old human ones were you will still need power to digest food.",
     "occupied_bodyparts": [ [ "torso", 20 ] ],
     "vitamin_absorb_mod": 1.5,
-    "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF", "PARAIMMUNE", "IMMUNE_SPOIL" ],
-    "cant_remove_reason": "The CBM has replaced the patient's digestive organs and cannot be removed.",
+    "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF", "PARAIMMUNE", "IMMUNE_SPOIL", "BIONIC_STOMACH" ],
+    "upgraded_bionic": "bio_guts_replacement",
+    "bionic_stomach_size": "8000_ml"
     "canceled_mutations": [
       "WEAKSTOMACH",
       "STRONGSTOMACH",
