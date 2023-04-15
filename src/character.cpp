@@ -74,7 +74,6 @@
 #include "map_iterator.h"
 #include "map_selector.h"
 #include "mapdata.h"
-#include "material.h"
 #include "math_defines.h"
 #include "memorial_logger.h"
 #include "messages.h"
@@ -6492,7 +6491,7 @@ bool Character::spend_arms_energy( int mod )
     }
 }
 
-bool Character::burn_move_stamina( int moves )
+void Character::burn_move_stamina( int moves )
 {
     int overburden_percentage = 0;
     //add half the difference between current stored kcal weight and healthy stored kcal weight to weight of carried gear
@@ -6534,10 +6533,9 @@ bool Character::burn_move_stamina( int moves )
             }
         }
     } else {
-        add_msg_if_player( m_bad, _( "Your don't have the power to move!" ) );
-        return false;
+        add_msg_if_player( m_bad, _( "Your bionics lack the power for you to move effectively!" ) );
+        mod_moves( -1000 );
     }
-    return true;
 }
 
 void Character::update_stamina( int turns )
