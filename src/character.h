@@ -541,12 +541,12 @@ class Character : public Creature, public visitable
         int ranged_per_mod() const;
 
         // power cost equivalent to 1 point of stamina
-        void calc_bionic_legs_efficiency() const
-        void calc_bionic_arms_efficiency() const
+        void calc_bionic_legs_efficiency() const;
+        void calc_bionic_arms_efficiency() const;
         // power cost to regenerate 1 point of stamina
-        void calc_bionic_lungs_efficiency() const
+        void calc_bionic_lungs_efficiency() const;
         // power cost to digest 1 mL of food
-        void calc_bionic_guts_efficiency() const
+        void calc_bionic_guts_efficiency() const;
 
         /** Setters for stats exclusive to characters */
         void set_str_bonus( int nstr );
