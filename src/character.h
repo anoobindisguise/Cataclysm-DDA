@@ -477,6 +477,11 @@ class Character : public Creature, public visitable
         int int_cur;
         int per_cur;
 
+        units::energy bionic_legs_efficiency;
+        units::energy bionic_arms_efficiency;
+        units::energy bionic_lungs_efficiency;
+        units::energy bionic_guts_efficiency;
+
         int kill_xp = 0;
         // Level-up points spent on Stats through Kills
         int spent_upgrade_points = 0;
@@ -2744,7 +2749,8 @@ class Character : public Creature, public visitable
         void set_stamina( int new_stamina );
         void mod_stamina( int mod );
         /** Burns stamina like in mod_stamina() but can also burn bionic energy and tells us if we had enough bionic energy if so */
-        bool spend_stamina_or_energy( int mod, bool is_legs = false, bool is_arms = false );
+        bool spend_legs_energy( int mod );
+        bool spend_arms_energy( int mod );
 
         void burn_move_stamina( int moves );
         /** Regenerates stamina */
