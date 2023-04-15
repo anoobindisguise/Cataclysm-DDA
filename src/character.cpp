@@ -6464,6 +6464,7 @@ bool Character::spend_legs_energy( int mod )
     if( bionic_legs_efficiency() > 0 ) {
         if( get_power_level() > bionic_legs_efficiency * mod ) {
             mod_power_level( mod * bionic_legs_efficiency );
+            add_msg_debug( debugmode::DF_CHARACTER, "Power cost: %s", mod * bionic_legs_efficiency );
             return true;
         } else {
             return false;
@@ -6478,8 +6479,9 @@ bool Character::spend_arms_energy( int mod )
 {
     // if this isn't zero it means we have a bionic that replaced our arms somewhere.
     if( bionic_arms_efficiency() > 0 ) {
-        if( get_power_level() > bionic_legs_efficiency * mod ) {
-            mod_power_level( mod * bionic_legs_efficiency );
+        if( get_power_level() > bionic_arms_efficiency * mod ) {
+            mod_power_level( mod * bionic_arms_efficiency );
+            add_msg_debug( debugmode::DF_CHARACTER, "Power cost: %s", mod * bionic_arms_efficiency );
             return true;
         } else {
             return false;
@@ -6490,7 +6492,7 @@ bool Character::spend_arms_energy( int mod )
     }
 }
 
-void Character::burn_move_stamina( int moves )
+bool Character::burn_move_stamina( int moves )
 {
     int overburden_percentage = 0;
     //add half the difference between current stored kcal weight and healthy stored kcal weight to weight of carried gear
@@ -6519,20 +6521,23 @@ void Character::burn_move_stamina( int moves )
     }
 
     burn_ratio *= move_mode->stamina_mult();
-    mod_stamina( -( ( moves * burn_ratio ) / 100.0 ) * get_modifier(
-                     character_modifier_stamina_move_cost_mod ) * get_modifier(
-                     character_modifier_move_mode_move_cost_mod ) );
-    add_msg_debug( debugmode::DF_CHARACTER, "Stamina burn: %d", -( ( moves * burn_ratio ) / 100 ) );
-    // Chance to suffer pain if overburden and stamina runs out or has trait BADBACK
-    // Starts at 1 in 25, goes down by 5 for every 50% more carried
-    if( ( current_weight > max_weight ) && ( has_trait( trait_BADBACK ) || get_stamina() == 0 ) &&
-        one_in( 35 - 5 * current_weight / ( max_weight / 2 ) ) ) {
-        add_msg_if_player( m_bad, _( "Your body strains under the weight!" ) );
-        // 1 more pain for every 800 grams more (5 per extra STR needed)
-        if( ( ( current_weight - max_weight ) / 800_gram > get_pain() && get_pain() < 100 ) ) {
-            mod_pain( 1 );
+    if( spend_legs_energy( -( ( moves * burn_ratio ) / 100.0 ) * get_modifier( character_modifier_stamina_move_cost_mod ) * get_modifier( character_modifier_move_mode_move_cost_mod ) ) ) {
+        add_msg_debug( debugmode::DF_CHARACTER, "Stamina burn: %d", -( ( moves * burn_ratio ) / 100 ) );
+        // Chance to suffer pain if overburden and stamina runs out or has trait BADBACK
+        // Starts at 1 in 25, goes down by 5 for every 50% more carried
+        if( ( current_weight > max_weight ) && ( has_trait( trait_BADBACK ) || get_stamina() == 0 ) &&
+            one_in( 35 - 5 * current_weight / ( max_weight / 2 ) ) ) {
+            add_msg_if_player( m_bad, _( "Your body strains under the weight!" ) );
+            // 1 more pain for every 800 grams more (5 per extra STR needed)
+            if( ( ( current_weight - max_weight ) / 800_gram > get_pain() && get_pain() < 100 ) ) {
+                mod_pain( 1 );
+            }
         }
+    } else {
+        add_msg_if_player( m_bad, _( "Your don't have the power to move!" ) );
+        return false;
     }
+    return true;
 }
 
 void Character::update_stamina( int turns )
