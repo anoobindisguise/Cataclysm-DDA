@@ -174,7 +174,7 @@ void stomach_contents::deserialize( const JsonObject &jo )
 units::volume stomach_contents::capacity( const Character &owner ) const
 {
     //if the player has an artificial stomach their stomach size won't change with mutations
-    if( owner.has_bionic( bio_guts_replacer ) ) {
+    if( owner.has_bionic( bio_digestion ) ) {
         return 10000_ml;
     } else if( owner.has_bionic( bio_guts_replacer ) ) {
         return 1000_ml;
