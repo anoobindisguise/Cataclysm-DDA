@@ -75,6 +75,13 @@ struct bionic_data {
     float fuel_efficiency = 0.0f;
     /**Fraction of fuel energy passively converted to bionic power*/
     float passive_fuel_efficiency = 0.0f;
+    /** Amount of energy to use in place of stamina **/
+    units::energy legs_efficiency = 0_kJ;
+    units::energy arms_efficiency = 0_kJ;
+    /** Amount of energy to use to regenerate stamina **/
+    units::energy lungs_efficiency = 0_kJ;
+    /** Amount of energy to use to digest 1 ml of food **/
+    units::energy guts_efficiency = 0_kJ;
     /**Fraction of coverage diminishing fuel_efficiency*/
     std::optional<float> coverage_power_gen_penalty;
     /**If true this bionic emits heat when producing power*/
