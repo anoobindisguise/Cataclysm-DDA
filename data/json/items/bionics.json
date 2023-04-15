@@ -1382,5 +1382,29 @@
     "weight": "1000 g",
     "difficulty": 3,
     "installation_data": "AID_bio_pitch_perfect"
+  },
+  {
+    "id": "bio_test_legs",
+    "copy-from": "bionic_general_npc_usable",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Test Bionic Legs" },
+    "looks_like": "bio_int_enhancer",
+    "description": "Test bionic legs.",
+    "price": 350000,
+    "price_postapoc": 5000,
+    "weight": "30000 g",
+    "difficulty": 6
+  },
+  {
+    "id": "bio_test_arms",
+    "copy-from": "bionic_general_npc_usable",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Test Bionic Arms" },
+    "looks_like": "bio_int_enhancer",
+    "description": "Test bionic arms.",
+    "price": 350000,
+    "price_postapoc": 5000,
+    "weight": "20000 g",
+    "difficulty": 6
   }
 ]
