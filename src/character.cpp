@@ -5991,7 +5991,7 @@ units::mass Character::bionics_weight() const
 
 void Character::bionic_legs_efficiency() const
 {
-    units::energy current_highest = 0_joules;
+    units::energy current_highest = 0_kj;
     for( const bionic_id &bid : get_bionics() ) {
         if( bid->legs_efficiency > current_highest ) {
             current_highest = bid->legs_efficiency;
@@ -6002,7 +6002,7 @@ void Character::bionic_legs_efficiency() const
 
 void Character::bionic_arms_efficiency() const
 {
-    units::energy current_highest = 0_joules;
+    units::energy current_highest = 0_kJ;
     for( const bionic_id &bid : get_bionics() ) {
         if( bid->arms_efficiency > current_highest ) {
             current_highest = bid->arms_efficiency;
@@ -6013,7 +6013,7 @@ void Character::bionic_arms_efficiency() const
 
 void Character::bionic_lungs_efficiency() const
 {
-    units::energy current_highest = 0_joules;
+    units::energy current_highest = 0_kJ;
     for( const bionic_id &bid : get_bionics() ) {
         if( bid->lungs_efficiency > current_highest ) {
             current_highest = bid->lungs_efficiency;
@@ -6024,7 +6024,7 @@ void Character::bionic_lungs_efficiency() const
 
 void Character::bionic_guts_efficiency() const
 {
-    units::energy current_highest = 0_joules;
+    units::energy current_highest = 0_kJ;
     for( const bionic_id &bid : get_bionics() ) {
         if( bid->guts_efficiency > current_highest ) {
             current_highest = bid->guts_efficiency;
