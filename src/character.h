@@ -2755,7 +2755,7 @@ class Character : public Creature, public visitable
         bool spend_legs_energy( int mod );
         bool spend_arms_energy( int mod );
 
-        bool burn_move_stamina( int moves );
+        void burn_move_stamina( int moves );
         /** Regenerates stamina */
         void update_stamina( int turns );
 
