@@ -313,6 +313,7 @@ static const json_character_flag json_flag_MYOPIC_IN_LIGHT( "MYOPIC_IN_LIGHT" );
 static const json_character_flag json_flag_NIGHT_VISION( "NIGHT_VISION" );
 static const json_character_flag json_flag_NON_THRESH( "NON_THRESH" );
 static const json_character_flag json_flag_NO_DISEASE( "NO_DISEASE" );
+static const json_character_flag json_flag_NO_FEET( "NO_FEET" );
 static const json_character_flag json_flag_NO_RADIATION( "NO_RADIATION" );
 static const json_character_flag json_flag_NO_THIRST( "NO_THIRST" );
 static const json_character_flag json_flag_PRED2( "PRED2" );
@@ -1980,7 +1981,7 @@ void Character::make_footstep_noise() const
     if( volume <= 0 ) {
         return;
     }
-    if( is_mounted() ) {
+    if( is_mounted() || has_flag( json_flag_NO_FEET ) {
         sounds::sound( pos(), volume, sounds::sound_t::movement,
                        mounted_creature.get()->type->get_footsteps(),
                        false, "none", "none" );
@@ -6412,6 +6413,46 @@ void Character::mod_stamina( int mod )
         add_effect( effect_winded, 10_turns );
     }
     stamina = clamp( stamina, 0, get_stamina_max() );
+}
+
+bool Character::spend_legs_energy( int mod )
+{
+    // TODO: Make NPCs smart enough to use stamina
+    if( is_npc() || has_trait( trait_DEBUG_STAMINA ) ) {
+        return;
+    }
+    // if this isn't zero it means we have a bionic that replaced our legs somewhere.
+    if( bionic_legs_efficiency() > 0 ) {
+       if( get_power_level() > bionic_legs_efficiency * mod ) {
+           mod_power_level( mod * bionic_legs_efficiency );
+           return true;
+       } else {
+           return false;
+       }
+    } else {
+        mod_stamina( mod );
+        return true;
+    }
+}
+
+bool Character::spend_arms_energy( int mod )
+{
+    // TODO: Make NPCs smart enough to use stamina
+    if( is_npc() || has_trait( trait_DEBUG_STAMINA ) ) {
+        return;
+    }
+    // if this isn't zero it means we have a bionic that replaced our arms somewhere.
+    if( bionic_arms_efficiency() > 0 ) {
+       if( get_power_level() > bionic_legs_efficiency * mod ) {
+           mod_power_level( mod * bionic_legs_efficiency );
+           return true;
+       } else {
+           return false;
+       }
+    } else {
+        mod_stamina( mod );
+        return true;
+    }
 }
 
 void Character::burn_move_stamina( int moves )
