@@ -478,12 +478,12 @@ class Character : public Creature, public visitable
         int per_cur;
 
         // power cost equivalent to 1 point of stamina
-        units::energy bionic_legs_efficiency = 0_J;
-        units::energy bionic_arms_efficiency = 0_J;
+        units::energy bionic_legs_efficiency = 0_kJ;
+        units::energy bionic_arms_efficiency = 0_kJ;
         // power cost to regenerate 1 point of stamina
-        units::energy bionic_lungs_efficiency = 0_J;
+        units::energy bionic_lungs_efficiency = 0_kJ;
         // power cost to digest 1 mL of food
-        units::energy bionic_guts_efficiency = 0_J;
+        units::energy bionic_guts_efficiency = 0_kJ;
 
         int kill_xp = 0;
         // Level-up points spent on Stats through Kills
