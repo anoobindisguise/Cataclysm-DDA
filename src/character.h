@@ -477,10 +477,13 @@ class Character : public Creature, public visitable
         int int_cur;
         int per_cur;
 
-        units::energy bionic_legs_efficiency;
-        units::energy bionic_arms_efficiency;
-        units::energy bionic_lungs_efficiency;
-        units::energy bionic_guts_efficiency;
+        // power cost equivalent to 1 point of stamina
+        units::energy bionic_legs_efficiency = 0_J;
+        units::energy bionic_arms_efficiency = 0_J;
+        // power cost to regenerate 1 point of stamina
+        units::energy bionic_lungs_efficiency = 0_J;
+        // power cost to digest 1 mL of food
+        units::energy bionic_guts_efficiency = 0_J;
 
         int kill_xp = 0;
         // Level-up points spent on Stats through Kills
@@ -538,12 +541,12 @@ class Character : public Creature, public visitable
         int ranged_per_mod() const;
 
         // power cost equivalent to 1 point of stamina
-        units::energy bionic_legs_efficiency() const
-        units::energy bionic_arms_efficiency() const
+        void calc_bionic_legs_efficiency() const
+        void calc_bionic_arms_efficiency() const
         // power cost to regenerate 1 point of stamina
-        units::energy bionic_lungs_efficiency() const
+        void calc_bionic_lungs_efficiency() const
         // power cost to digest 1 mL of food
-        units::energy bionic_guts_efficiency() const
+        void calc_bionic_guts_efficiency() const
 
         /** Setters for stats exclusive to characters */
         void set_str_bonus( int nstr );
