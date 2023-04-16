@@ -281,7 +281,7 @@
   {
     "id": "TALK_EXODII_MERCHANT_MoreRoom",
     "type": "talk_topic",
-    "dynamic_line": "Green off the ol' meat-an'-bone, eh? This'n be tassed to take your implements and make in with the new - good ol' chrome hasn't failed us yet.  Just make sure yer ken it's a road with no return - we can make the meat-an'-bone solid, but no way to make you warm an' bloody again.",
+    "dynamic_line": "Green off the ol' meat-an'-bone, eh?  This'n be tassed to take your implements and make in with the new - good ol' chrome hasn't failed us yet.  Just make sure yer ken it's a road with no return - we can make the meat-an'-bone solid, but no way to what's solid warm an' lively again.",
     "//~": "Sick of your old human parts, eh? I can replace parts of your body with bionics to make more space. Just remember, once you replace your organs, you won't be able to change your mind.",
     "responses": [
       { "text": "Alright.  What are my options?", "topic": "TALK_EXODII_MERCHANT_MoreRoomOptions" },
