@@ -284,10 +284,7 @@
     "dynamic_line": "Green off the ol' meat-an'-bone, eh? This'n be tassed to take your implements and make in with the new - good ol' chrome hasn't failed us yet.  Just make sure yer ken it's a road with no return - we can make the meat-an'-bone solid, but no way to make you warm an' bloody again.",
     "//~": "Sick of your old human parts, eh? I can replace parts of your body with bionics to make more space. Just remember, once you replace your organs, you won't be able to change your mind.",
     "responses": [
-      {
-        "text": "Alright.  What are my options?",
-        "topic": "TALK_EXODII_MERCHANT_MoreRoomOptions"
-      },
+      { "text": "Alright.  What are my options?", "topic": "TALK_EXODII_MERCHANT_MoreRoomOptions" },
       { "text": "Actually, never mind.", "topic": "TALK_EXODII_MERCHANT_Talk" }
     ]
   },
@@ -306,7 +303,10 @@
         ],
         "topic": "TALK_EXODII_MERCHANT_MoreRoomStomach"
       },
-      { "text": "Thanks for the explanations, but I need to give it some thought.", "topic": "TALK_EXODII_MERCHANT_Talk" }
+      {
+        "text": "Thanks for the explanations, but I need to give it some thought.",
+        "topic": "TALK_EXODII_MERCHANT_Talk"
+      }
     ]
   },
   {
@@ -332,8 +332,6 @@
     "type": "talk_topic",
     "dynamic_line": "Aye, we're tassed to do that.  This'n be not keen to kennit why, but if ye be fixing for a keepsake t'ain't skin off our backs to grant ye so.",
     "//~": "We can give you your stomach. I'm not sure if I want to know why you want it but it's not any trouble.",
-    "responses": [
-      { "text": "Thanks, I really do appreciate it.", "topic": "TALK_EXODII_MERCHANT_Talk" }
-    ]
+    "responses": [ { "text": "Thanks, I really do appreciate it.", "topic": "TALK_EXODII_MERCHANT_Talk" } ]
   }
 ]
