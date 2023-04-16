@@ -113,7 +113,7 @@
         "topic": "TALK_EXODII_MERCHANT_MoreRoom",
         "condition": {
           "and": [ { "u_has_trait": "CBM_Interface" }, { "u_has_faction_trust": 20 } ]
-        },
+        }
       }
     ]
   },
