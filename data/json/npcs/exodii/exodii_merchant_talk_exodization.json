@@ -277,5 +277,63 @@
       { "text": "Can we talk about something else?", "topic": "TALK_EXODII_MERCHANT_Talk" },
       { "text": "Well, I'd better be going.  Bye.", "topic": "TALK_DONE" }
     ]
+  },
+  {
+    "id": "TALK_EXODII_MERCHANT_MoreRoom",
+    "type": "talk_topic",
+    "dynamic_line": "Green off the ol' meat-an'-bone, eh? This'n be tassed to take your implements and make in with the new - good ol' chrome hasn't failed us yet.  Just make sure yer ken it's a road with no return - we can make the meat-an'-bone solid, but no way to make you warm an' bloody again.",
+    "//~": "Sick of your old human parts, eh? I can replace parts of your body with bionics to make more space. Just remember, once you replace your organs, you won't be able to change your mind.",
+    "responses": [
+      {
+        "text": "Alright.  What are my options?",
+        "topic": "TALK_EXODII_MERCHANT_MoreRoomOptions"
+      },
+      { "text": "Actually, never mind.", "topic": "TALK_EXODII_MERCHANT_Talk" }
+    ]
+  },
+  {
+    "id": "TALK_EXODII_MERCHANT_MoreRoomOptions",
+    "type": "talk_topic",
+    "dynamic_line": "Well, t'ain't many options yet since us'n still be working on the feature, but this'n can take out the eatin' parts of yer belly and make 'em chrome.  Ye'd need juice to break yer rations down to their mats, and wouldn't be tassed to eat too much at once, but you'd make a few empty beds for our CBMs.",
+    "//~": ".",
+    "responses": [
+      {
+        "text": "OK, so I'll need power to digest my food and the bionic stomach won't hold much volume.  That sounds like a good trade if I can install more bionics afterwards.  I'll replace my digestive system.",
+        "effect": [
+          { "u_add_bionic": "bio_guts_replacer" },
+          { "u_add_trait": "CBM_Stomach" },
+          { "u_assign_activity": "ACT_CBM_SURGERY", "duration": "2 hours" }
+        ],
+        "topic": "TALK_EXODII_MERCHANT_MoreRoomStomach"
+      },
+      { "text": "Thanks for the explanations, but I need to give it some thought.", "topic": "TALK_EXODII_MERCHANT_Talk" }
+    ]
+  },
+  {
+    "id": "TALK_EXODII_MERCHANT_MoreRoomStomach",
+    "type": "talk_topic",
+    "dynamic_line": "*Like before, Rubick leads you to the operating table.  Once again you are anesthetized and the world drifts away.\n\nYou awake to numerous incisions on your belly, and a strange sensation of being noticeably lighter than before.  Eventually, you get your bearings, collect your possessions and make your way back to Rubik, who offers you a friendly wave.\n\n\"Good on ye' for bearing it through.  Ye ought to be good to go but tell me if ye'd be finding it too hard to keep yerself fed and we can upgrade the model down the line.\"",
+    "//~": "Good job for your bravery. You should be good to go now but tell us if you want to upgrade your stomach back to something more like your old guts.",
+    "responses": [
+      {
+        "text": "Could I actually keep my old stomach?  Like, as a keepsake?",
+        "//": "slight blobpsychosis judgement here because it's a weird request",
+        "effect": [
+          { "u_spawn_item": "hstomach" },
+          { "u_adjust_var": "exodii_psychosis_judgment", "type": "counter", "context": "exodii", "adjustment": 1 }
+        ],
+        "topic": "TALK_EXODII_MERCHANT_MoreRoomStomachGimme"
+      },
+      { "text": "Thank you, Rubik.  I'll do that if I have any concerns.", "topic": "TALK_EXODII_MERCHANT_Talk" }
+    ]
+  },
+  {
+    "id": "TALK_EXODII_MERCHANT_MoreRoomStomachGimme",
+    "type": "talk_topic",
+    "dynamic_line": "Aye, we're tassed to do that.  This'n be not keen to kennit why, but if ye be fixing for a keepsake t'ain't skin off our backs to grant ye so.",
+    "//~": "We can give you your stomach. I'm not sure if I want to know why you want it but it's not any trouble.",
+    "responses": [
+      { "text": "Thanks, I really do appreciate it.", "topic": "TALK_EXODII_MERCHANT_Talk" }
+    ]
   }
 ]
