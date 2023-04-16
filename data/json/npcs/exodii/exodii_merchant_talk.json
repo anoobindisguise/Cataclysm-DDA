@@ -23,7 +23,8 @@
       "TALK_EXODII_MERCHANT_DoneTrade",
       "TALK_EXODII_MERCHANT_Exodus2",
       "TALK_EXODII_MERCHANT_ExodizeNope",
-      "TALK_EXODII_MERCHANT_Survival2"
+      "TALK_EXODII_MERCHANT_Survival2",
+      "TALK_EXODII_MERCHANT_MoreRoom"
     ],
     "type": "talk_topic",
     "responses": [
@@ -106,6 +107,14 @@
         "text": "Can you help me with CBM surgery?",
         "topic": "TALK_EXODII_MERCHANT_Bionic_Install",
         "condition": { "u_has_trait": "CBM_Interface" }
+      },
+      {
+        "text": "I'm running out of places to install my bionics.  Can you help me free up space without uninstalling anything I already have?",
+        "topic": "TALK_EXODII_MERCHANT_MoreRoom",
+        "condition": { "u_has_trait": "CBM_Interface" }
+        "condition": {
+          "and": [ { "u_has_trait": "CBM_Interface" }, { "u_has_faction_trust": 20 } ]
+        },
       }
     ]
   },
