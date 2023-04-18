@@ -22,7 +22,7 @@
     "id": "CBM_Stomach",
     "name": { "str": "Bionic Stomach Replacement" },
     "points": 0,
-    "description": "You have a matrix in your central nervous system that acts as a universal control and installation bus for compact bionic modules.",
+    "description": "Your stomach and intestines have been replaced with cybernetic equivalents.",
     "valid": false,
     "purifiable": false,
     "types": [ "Cybernetic", "DIET" ],
