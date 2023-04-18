@@ -6975,8 +6975,8 @@ void Character::vomit()
             // your bionic stomach is an acidproof container but your human parts are not
             if( !has_flag( json_flag_ACID_IMMUNE ) ) {
                 mod_daily_health( -2, -10 );
-                apply_damage( nullptr, bodypart_id( "head" ), rng( 5, 10 ) );
-                mod_pain( rng( 5, 15 ) );
+                apply_damage( nullptr, bodypart_id( "head" ), rng( 2, 5 ) );
+                mod_pain( rng( 2, 5 ) );
                 add_msg_if_player( m_bad, _( "The bionic digestive fluid burns your throat and mouth!" ) );
             }
         } else {
