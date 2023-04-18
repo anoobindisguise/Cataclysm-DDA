@@ -299,7 +299,7 @@
         "effect": [
           { "u_add_bionic": "bio_guts_replacement" },
           { "u_add_trait": "CBM_Stomach" },
-          { "u_assign_activity": "ACT_CBM_SURGERY", "duration": "2 hours" }
+          { "u_assign_activity": "ACT_CBM_SURGERY", "duration": "40 minutes" }
         ],
         "topic": "TALK_EXODII_MERCHANT_MoreRoomStomach"
       },
