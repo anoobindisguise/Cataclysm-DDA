@@ -12,7 +12,7 @@
 #include "vitamin.h"
 
 static const bionic_id bio_digestion( "bio_digestion" );
-static const bionic_id bio_guts_replacer( "bio_guts_replacer" );
+static const bionic_id bio_guts_replacement( "bio_guts_replacement" );
 
 static const json_character_flag json_flag_BIONIC_STOMACH( "BIONIC_STOMACH" );
 
@@ -176,7 +176,7 @@ units::volume stomach_contents::capacity( const Character &owner ) const
     //if the player has an artificial stomach their stomach size won't change with mutations
     if( owner.has_bionic( bio_digestion ) ) {
         return 10000_ml;
-    } else if( owner.has_bionic( bio_guts_replacer ) ) {
+    } else if( owner.has_bionic( bio_guts_replacement ) ) {
         return 1000_ml;
     } else {
         return max_volume * owner.mutation_value( "stomach_size_multiplier" );
