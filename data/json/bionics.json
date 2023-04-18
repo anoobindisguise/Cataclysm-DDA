@@ -731,7 +731,7 @@
     "name": { "str": "Simplified Digestive System" },
     "description": "Your digestive organs have been dramatically simplified with synthetic counterparts into a compact system that saves room for more bionics.  You will need power to digest food and your organs aren't as efficient as your previous human versions, leading to reduced nutrition from solid foods.",
     "occupied_bodyparts": [ [ "torso", -20 ] ],
-    "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF", "BIONIC_STOMACH" ],
+    "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF", "BIONIC_STOMACH", "PARAIMMUNE" ],
     "cant_remove_reason": "The CBM has replaced the patient's digestive organs and cannot be removed.",
     "canceled_mutations": [
       "WEAKSTOMACH",
