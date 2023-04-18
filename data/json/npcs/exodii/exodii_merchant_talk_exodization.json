@@ -297,7 +297,7 @@
       {
         "text": "OK, so I'll need power to digest my food and the bionic stomach won't hold much volume.  That sounds like a good trade if I can install more bionics afterwards.  I'll replace my digestive system.",
         "effect": [
-          { "u_add_bionic": "bio_guts_replacer" },
+          { "u_add_bionic": "bio_guts_replacement" },
           { "u_add_trait": "CBM_Stomach" },
           { "u_assign_activity": "ACT_CBM_SURGERY", "duration": "2 hours" }
         ],
