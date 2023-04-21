@@ -486,7 +486,7 @@
     "type": "MONSTER",
     "name": { "str": "gracken" },
     "description": "This is some form of eldritch monstrosity; an uncouth black being with smooth, oily skin and unpleasant horns that curve inward toward each other.  Tall and thin, the shadows cling unnaturally to its vaguely defined humanoid form as it shuffles along, its hands twitching and spasming so rapidly as to appear a little more than a black blur of claws.  Despite the night-terror esque appearance, it doesn't appear aggressive.",
-    "default_faction": "nether",
+    "default_faction": "gracken",
     "bodytype": "human",
     "species": [ "NETHER" ],
     "diff": 2,
@@ -501,7 +501,7 @@
     "melee_skill": 10,
     "melee_dice": 4,
     "melee_dice_sides": 4,
-    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
+    "melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
     "dodge": 4,
     "armor_elec": 1,
     "bleed_rate": 60,
@@ -509,7 +509,9 @@
     "harvest": "demihuman",
     "families": [ "prof_wp_demihuman" ],
     "weakpoint_sets": [ "wps_humanoid_body" ],
-    "flags": [ "SMELLS", "HEARS", "WARM", "NO_BREATHE", "GRABS", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_1" ]
+    "anger_triggers": [ "HURT", "FRIEND_DIED", "FRIEND_ATTACKED" ],
+    "flags": [ "SMELLS", "HEARS", "WARM", "NO_BREATHE", "GRABS", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_2" ],
+    "death_drops": "gracken_gear"
   },
   {
     "id": "mon_headless_dog_thing",
