@@ -511,7 +511,7 @@
     "weakpoint_sets": [ "wps_humanoid_body" ],
     "anger_triggers": [ "HURT", "FRIEND_DIED", "FRIEND_ATTACKED" ],
     "flags": [ "SMELLS", "HEARS", "WARM", "NO_BREATHE", "GRABS", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_2" ],
-    "death_drops": "gracken_gear"
+    "death_drops": "gracken_drops"
   },
   {
     "id": "mon_headless_dog_thing",
