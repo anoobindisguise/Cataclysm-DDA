@@ -497,7 +497,8 @@
     "material": [ "flesh" ],
     "symbol": "h",
     "color": "light_red",
-    "morale": 25,
+    "morale": 30,
+    "aggression": 0,
     "melee_skill": 10,
     "melee_dice": 4,
     "melee_dice_sides": 4,
@@ -505,13 +506,16 @@
     "dodge": 4,
     "armor_elec": 1,
     "bleed_rate": 60,
+    "vision_day": 30,
+    "vision_night": 15,
     "path_settings": { "avoid_traps": true, "avoid_sharp": true },
     "harvest": "demihuman",
     "families": [ "prof_wp_demihuman" ],
     "weakpoint_sets": [ "wps_humanoid_body" ],
     "anger_triggers": [ "HURT", "FRIEND_DIED", "FRIEND_ATTACKED" ],
-    "flags": [ "SMELLS", "HEARS", "WARM", "NO_BREATHE", "GRABS", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_2" ],
-    "death_drops": "gracken_drops"
+    "flags": [ "SEES", "SMELLS", "HEARS", "WARM", "NO_BREATHE", "GRABS", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_2" ],
+    "death_drops": "gracken_drops",
+    "aggro_character": false
   },
   {
     "id": "mon_headless_dog_thing",
