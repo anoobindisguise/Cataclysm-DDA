@@ -63,11 +63,7 @@
         "prob": 95
       },
       {
-        "distribution": [
-          { "item": "cordage_6", "prob": 40 },
-          { "item": "cordage_6_leather", "prob": 30 },
-          { "item": "string_6", "prob": 30 }
-        ],
+        "distribution": [ { "item": "cordage_6", "prob": 40 }, { "item": "cordage_6_leather", "prob": 30 }, { "item": "string_6", "prob": 30 } ],
         "prob": 95
       },
       { "item": "cracker", "count": 1, "prob": 80 },
