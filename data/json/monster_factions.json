@@ -168,8 +168,7 @@
   {
     "type": "MONSTER_FACTION",
     "name": "gracken",
-    "base_faction": "nether",
-    "friendly": [ "player", "human" ]
+    "base_faction": "nether"
   },
   {
     "type": "MONSTER_FACTION",
