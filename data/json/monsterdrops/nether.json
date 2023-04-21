@@ -14,5 +14,70 @@
     "subtype": "collection",
     "id": "shrapnel_swarm_drops",
     "entries": [ { "item": "shrapnel", "count": [ 3, 7 ] } ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "gracken_drops",
+    "//": "Kind of like churl loot, but weirder. At maximum 1477 mL of loot can generate so it all fits in the leather pouch.",
+    "entries": [
+      { "item": "leather_pouch", "prob": 100, "damage": [ 0, 1 ] },
+      {
+        "distribution": [
+          { "item": "tunic", "prob": 50, "damage": [ 0, 1 ] },
+          { "item": "sleeveless_tunic", "prob": 40, "damage": [ 0, 1 ] },
+          { "item": "tunic_rag", "prob": 10, "damage": [ 0, 1 ] }
+        ],
+        "prob": 100
+      },
+      {
+        "distribution": [
+          { "item": "small_relic", "prob": 30, "damage": [ 0, 0 ] },
+          { "item": "holy_symbol_wood", "prob": 30, "damage": [ 0, 0 ] },
+          { "item": "bone_flute", "prob": 20, "damage": [ 0, 0 ] },
+          { "item": "light_dry_cell", "container-item": "cell_phone", "charges": [ 50, 100 ], "prob": 20 }
+        ],
+        "prob": 80
+      },
+      {
+        "distribution": [
+          { "item": "bastsandals", "prob": 55, "damage": [ 0, 1 ] },
+          { "item": "footrags_leather", "prob": 25, "damage": [ 0, 1 ] },
+          { "item": "footrags_fur", "prob": 20, "damage": [ 0, 1 ] }
+        ],
+        "prob": 100
+      },
+      {
+        "distribution": [
+          { "item": "gloves_wraps", "prob": 70, "damage": [ 0, 1 ] },
+          { "item": "gloves_wraps_leather", "prob": 30, "damage": [ 0, 1 ] }
+        ],
+        "prob": 90
+      },
+      {
+        "distribution": [
+          { "item": "makeshift_knife", "prob": 40, "damage": [ 0, 1 ] },
+          { "item": "bronze_knife", "prob": 20, "damage": [ 0, 1 ] },
+          { "item": "knife_paring", "prob": 40, "damage": [ 0, 1 ] }
+        ],
+        "prob": 95
+      },
+      {
+        "distribution": [
+          { "item": "cordage_6", "prob": 40 },
+          { "item": "cordage_6_leather", "prob": 30 },
+          { "item": "string_6", "prob": 30 }
+        ],
+        "prob": 95
+      },
+      { "item": "cracker", "count": 1, "prob": 80 },
+      { "item": "meat_scrap_cooked", "count": [ 1, 3 ], "prob": 80 },
+      { "item": "dehydrated_fruit", "count": 1, "prob": 80 },
+      { "item": "press_cake", "count": 1, "prob": 60 },,
+      { "item": "fried_seeds", "count": 1, "prob": 60 },
+      { "item": "bandages_makeshift_boiled", "prob": 95 },
+      { "item": "light_dry_cell", "container-item": "crude_firestarter", "charges": [ 15, 100 ], "prob": 75 },
+      { "item": "light_dry_cell", "charges": 100, "prob": 70 }
+    ]
   }
 ]
