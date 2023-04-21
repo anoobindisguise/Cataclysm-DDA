@@ -513,7 +513,7 @@
     "families": [ "prof_wp_demihuman" ],
     "weakpoint_sets": [ "wps_humanoid_body" ],
     "anger_triggers": [ "HURT", "FRIEND_DIED", "FRIEND_ATTACKED" ],
-    "flags": [ "SEES", "SMELLS", "HEARS", "WARM", "NO_BREATHE", "GRABS", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_2" ],
+    "flags": [ "SEES", "SMELLS", "HEARS", "WARM", "GRABS", "PRIORITIZE_TARGETS", "PATH_AVOID_DANGER_2", "HIT_AND_RUN" ],
     "death_drops": "gracken_drops",
     "aggro_character": false
   },
