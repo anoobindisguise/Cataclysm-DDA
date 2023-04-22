@@ -477,6 +477,9 @@ class Character : public Creature, public visitable
         int int_cur;
         int per_cur;
 
+        // used to determine time to lower activity level
+        int weary_timer = 0;
+
         int kill_xp = 0;
         // Level-up points spent on Stats through Kills
         int spent_upgrade_points = 0;
