@@ -168,8 +168,7 @@
   {
     "type": "MONSTER_FACTION",
     "name": "gracken",
-    "base_faction": "nether",
-    "by_mood": [ "animal", "nether", "human", "yrax", "exodii" ]
+    "base_faction": "nether"
   },
   {
     "type": "MONSTER_FACTION",
