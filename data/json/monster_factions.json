@@ -21,7 +21,8 @@
     "type": "MONSTER_FACTION",
     "name": "player",
     "base_faction": "human",
-    "neutral": [ "robofac_spy", "passive_machine" ]
+    "neutral": [ "robofac_spy", "passive_machine" ],
+    "friendly": [ "gracken" ]
   },
   {
     "type": "MONSTER_FACTION",
@@ -168,7 +169,9 @@
   {
     "type": "MONSTER_FACTION",
     "name": "gracken",
-    "base_faction": "nether"
+    "base_faction": "nether",
+    "by_mood": [ "animal", "nether", "yrax", "exodii"],
+    "friendly": [ "human", "player" ]
   },
   {
     "type": "MONSTER_FACTION",
@@ -197,7 +200,7 @@
     "type": "MONSTER_FACTION",
     "name": "leech_plant",
     "base_faction": "nether",
-    "by_mood": [ "cult", "nether", "slime", "mi-go" ]
+    "by_mood": [ "cult", "nether", "slime", "mi-go", "gracken" ]
   },
   {
     "type": "MONSTER_FACTION",
