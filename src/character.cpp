@@ -6128,7 +6128,7 @@ void Character::set_activity_level( float new_level )
         weary_timer--;
         activity_history.log_activity( activity_history.instantaneous_activity_level() );
     } else {
-        weary_timer = new_level; 
+        weary_timer = new_level;
         if( new_level <= NO_EXERCISE && in_sleep_state() ) {
             new_level = std::min( new_level, SLEEP_EXERCISE );
         }
