@@ -198,7 +198,7 @@
     "type": "MONSTER_FACTION",
     "name": "leech_plant",
     "base_faction": "nether",
-    "by_mood": [ "cult", "nether", "slime", "mi-go", "gracken" ]
+    "by_mood": [ "cult", "nether", "slime", "mi-go" ]
   },
   {
     "type": "MONSTER_FACTION",
