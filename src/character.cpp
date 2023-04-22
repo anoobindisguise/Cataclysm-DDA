@@ -6122,11 +6122,18 @@ int Character::get_bmr() const
 
 void Character::set_activity_level( float new_level )
 {
-    if( new_level <= NO_EXERCISE && in_sleep_state() ) {
-        new_level = std::min( new_level, SLEEP_EXERCISE );
+    // it takes a certain number of seconds to "recover" from a wearying action and reduce our activity level.
+    // for a melee attack, that's an EXTRA_EXERCISE level action, so it takes 10 seconds for us to stop being EXTRA_EXERCISE.
+    if( new_level < activity_history.instantaneous_activity_level() && weary_timer > 0 ) {
+        weary_timer--;
+        activity_history.log_activity( activity_history.instantaneous_activity_level() );
+    } else {
+        weary_timer = new_level; 
+        if( new_level <= NO_EXERCISE && in_sleep_state() ) {
+            new_level = std::min( new_level, SLEEP_EXERCISE );
+        }
+        activity_history.log_activity( new_level );
     }
-
-    activity_history.log_activity( new_level );
 }
 
 void Character::reset_activity_level()
