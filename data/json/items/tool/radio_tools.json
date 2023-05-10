@@ -181,7 +181,7 @@
     "material": [ "aluminum", "plastic" ],
     "symbol": "@",
     "color": "light_gray",
-    "weight": "0 g",
+    "weight": "1 g",
     "volume": "1 ml",
     "description": "Fake item for radio bionic (you shouldn't see this).",
     "use_action": [ "RADIO_OFF" ],
