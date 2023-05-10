@@ -250,7 +250,7 @@
       [ "bio_syringe", 10 ],
       [ "bio_flashlight", 10 ],
       [ "bio_lighter", 10 ],
-      [ "bio_radio", 10 ]
+      [ "bio_radio", 10 ],
       [ "bio_magnet", 5 ],
       [ "bio_fingerhack", 2 ],
       [ "bio_geiger", 5 ]
