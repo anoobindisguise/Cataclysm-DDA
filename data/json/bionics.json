@@ -1350,7 +1350,7 @@
   {
     "id": "bio_radio",
     "type": "bionic",
-    "name": { "str": "Integrated Radio System" },
+    "name": { "str": "Integrated Radio" },
     "description": "A compact communications device has been built into your ears, enabling you to communicate over radio waves.",
     "occupied_bodyparts": [ [ "head", 2 ] ],
     "flags": [ "BIONIC_NPC_USABLE" ],
