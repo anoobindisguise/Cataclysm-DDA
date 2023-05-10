@@ -1196,6 +1196,15 @@
     "difficulty": 7
   },
   {
+    "id": "bio_radio",
+    "copy-from": "bionic_general",
+    "type": "BIONIC_ITEM",
+    "name": { "str": "Radio System CBM },
+    "description": "A bionic that integrates with the user's ears to provide radio functionality at all times.",
+    "weight": "60 g",
+    "difficulty": 4
+  },
+  {
     "id": "bio_shakes",
     "copy-from": "bionic_general_faulty",
     "type": "BIONIC_ITEM",
