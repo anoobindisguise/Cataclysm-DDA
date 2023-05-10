@@ -1353,10 +1353,8 @@
     "name": { "str": "Integrated Radio System" },
     "description": "A compact communications device has been built into your ears, enabling you to communicate over radio waves.",
     "occupied_bodyparts": [ [ "head", 2 ] ],
-    "flags": [ "BIONIC_TOGGLED" ],
-    "passive_pseudo_items": [ "fake_radio" ],
-    "act_cost": "500 mJ",
-    "react_cost": "500 mJ"
+    "flags": [ "BIONIC_NPC_USABLE" ],
+    "passive_pseudo_items": [ "integrated_radio" ]
   },
   {
     "id": "bio_radscrubber",
