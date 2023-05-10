@@ -182,8 +182,8 @@
     "material": [ "superalloy" ],
     "symbol": "@",
     "color": "light_gray",
-    "weight": "25 g",
-    "volume": "10 ml",
+    "weight": "100 g",
+    "volume": "50 ml",
     "charges_per_use": 1,
     "description": "A bionic radio system built into your ears.",
     "use_action": [ "RADIO_OFF" ],
@@ -202,10 +202,10 @@
     ],
     "armor": [
       {
-        "material": [ { "type": "superalloy", "covered_by_mat": 100, "thickness": 0.5 } ],
+        "material": [ { "type": "superalloy", "covered_by_mat": 100, "thickness": 0.6 } ],
         "covers": [ "head" ],
         "specifically_covers": [ "head_ear_l", "head_ear_r" ],
-        "coverage": 30,
+        "coverage": 80,
         "encumbrance": 0
       }
     ]
