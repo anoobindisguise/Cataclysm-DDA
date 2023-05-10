@@ -173,5 +173,18 @@
         "default_magazine": "light_battery_cell"
       }
     ]
+  },
+  {
+    "id": "fake_radio",
+    "type": "TOOL",
+    "name": { "str": "bionic radio" },
+    "material": [ "aluminum", "plastic" ],
+    "symbol": "@",
+    "color": "light_gray",
+    "weight": "0 g",
+    "volume": "1 ml",
+    "description": "Fake item for radio bionic (you shouldn't see this).",
+    "use_action": [ "RADIO_OFF" ],
+    "flags": [ "TRADER_AVOID", "TWO_WAY_RADIO", "ZERO_WEIGHT" ]
   }
 ]
