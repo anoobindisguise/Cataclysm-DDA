@@ -176,21 +176,21 @@
   },
   {
     "id": "integrated_radio",
-    "type": "TOOL",
+    "type": "TOOL_ARMOR",
+    "category": "armor",
     "name": { "str": "integrated radio" },
     "material": [ "superalloy" ],
     "symbol": "@",
     "color": "light_gray",
-    "weight": "1 g",
-    "volume": "1 ml",
+    "weight": "25 g",
+    "volume": "10 ml",
     "charges_per_use": 1,
     "description": "A bionic radio system built into your ears.",
     "use_action": [ "RADIO_OFF" ],
     "flags": [
       "TRADER_AVOID",
       "TWO_WAY_RADIO",
-      "ZERO_WEIGHT",
-      "USE_BIONIC_POWER",
+      "USES_BIONIC_POWER",
       "ZERO_WEIGHT",
       "INTEGRATED",
       "UNBREAKABLE",
@@ -204,8 +204,8 @@
       {
         "material": [ { "type": "superalloy", "covered_by_mat": 100, "thickness": 0.5 } ],
         "covers": [ "head" ],
-        "specifically_covers": [ "head_ear_r", "head_ear_l" ],
-        "coverage": 40,
+        "specifically_covers": [ "head_ear_l", "head_ear_r" ],
+        "coverage": 30,
         "encumbrance": 0
       }
     ]
