@@ -175,16 +175,35 @@
     ]
   },
   {
-    "id": "fake_radio",
+    "id": "integrated_radio",
     "type": "TOOL",
-    "name": { "str": "bionic radio" },
-    "material": [ "aluminum", "plastic" ],
+    "name": { "str": "integrated radio" },
+    "material": [ "superalloy" ],
     "symbol": "@",
     "color": "light_gray",
     "weight": "1 g",
     "volume": "1 ml",
-    "description": "Fake item for radio bionic (you shouldn't see this).",
+    "description": "A bionic radio system built into your ears.",
     "use_action": [ "RADIO_OFF" ],
-    "flags": [ "TRADER_AVOID", "TWO_WAY_RADIO", "ZERO_WEIGHT" ]
+    "flags": [ "TRADER_AVOID", "TWO_WAY_RADIO", "ZERO_WEIGHT", "USE_BIONIC_POWER", "ZERO_WEIGHT", "INTEGRATED", "UNBREAKABLE", "PERSONAL", "WATER_FRIENDLY", "SOFT", "NO_REPAIR", "ALLOWS_NATURAL_ATTACKS" ],
+    "armor": [
+      { 
+        "material": [ { "type": "superalloy", "covered_by_mat": 100, "thickness": 0.5 } ],
+        "covers": [ "head" ],
+        "specifically_covers": [ "head_ear_r", "head_ear_l" ],
+        "coverage": 25,
+        "encumbrance": 0
+      }
+    ]
+  },
+  {
+    "id": "integrated_radio_on",
+    "copy-from": "integrated_radio",
+    "type": "TOOL",
+    "name": { "str": "integrated_radio (on)", "str_pl": "integrated_radios (on)" },
+    "description": "A bionic radio system built into your ears.  It is currently tuned into local channels.",
+    "power_draw": "500 mW",
+    "revert_to": "integrated_radio",
+    "use_action": [ "RADIO_ON" ]
   }
 ]
