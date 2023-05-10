@@ -274,6 +274,8 @@ static const itype_id itype_granade_act( "granade_act" );
 static const itype_id itype_handrolled_cig( "handrolled_cig" );
 static const itype_id itype_heatpack_used( "heatpack_used" );
 static const itype_id itype_hygrometer( "hygrometer" );
+static const itype_id itype_integrated_radio( "integrated_radio" );
+static const itype_id itype_integrated_radio_on( "integrated_radio_on" );
 static const itype_id itype_joint( "joint" );
 static const itype_id itype_liquid_soap( "liquid_soap" );
 static const itype_id itype_log( "log" );
@@ -2455,11 +2457,21 @@ std::optional<int> iuse::water_purifier( Character *p, item *it, bool, const tri
 
 std::optional<int> iuse::radio_off( Character *p, item *it, bool, const tripoint & )
 {
-    if( !it->ammo_sufficient( p ) ) {
-        p->add_msg_if_player( _( "It's dead." ) );
+    // if it's a bionic it needs special handling
+    if( it->has_flag( flag_INTEGRATED ) ) {
+        if( !it->ammo_sufficient( p ) ) {
+            p->add_msg_if_player( _( "You don't have enough bionic energy" ) );
+        } else {
+            p->add_msg_if_player( _( "You tune your bionic into local chanels." ) );
+            it->convert( itype_integrated_radio_on ).active = true;
+        }
     } else {
-        p->add_msg_if_player( _( "You turn the radio on." ) );
-        it->convert( itype_radio_on ).active = true;
+        if( !it->ammo_sufficient( p ) ) {
+            p->add_msg_if_player( _( "It's dead." ) );
+        } else {
+            p->add_msg_if_player( _( "You turn the radio on." ) );
+            it->convert( itype_radio_on ).active = true;
+        }
     }
     return 1;
 }
@@ -2631,9 +2643,16 @@ std::optional<int> iuse::radio_on( Character *p, item *it, bool t, const tripoin
             }
             break;
             case 1:
-                p->add_msg_if_player( _( "The radio dies." ) );
-                it->convert( itype_radio ).active = false;
-                sfx::fade_audio_channel( sfx::channel::radio, 300 );
+                // if it's a bionic handle it differently
+                if( it->has_flag( flag_INTEGRATED ) ) {
+                    p->add_msg_if_player( _( "Your bionic radio shuts down." ) );
+                    it->convert( itype_integrated_radio ).active = false;
+                    sfx::fade_audio_channel( sfx::channel::radio, 300 );
+                } else {
+                    p->add_msg_if_player( _( "The radio dies." ) );
+                    it->convert( itype_radio ).active = false;
+                    sfx::fade_audio_channel( sfx::channel::radio, 300 );
+                }
                 break;
             default:
                 break;
