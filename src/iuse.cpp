@@ -2460,9 +2460,9 @@ std::optional<int> iuse::radio_off( Character *p, item *it, bool, const tripoint
     // if it's a bionic it needs special handling
     if( it->has_flag( flag_INTEGRATED ) ) {
         if( !it->ammo_sufficient( p ) ) {
-            p->add_msg_if_player( _( "You don't have enough bionic energy" ) );
+            p->add_msg_if_player( _( "You don't have enough bionic energy." ) );
         } else {
-            p->add_msg_if_player( _( "You tune your bionic into local chanels." ) );
+            p->add_msg_if_player( _( "You tune your bionic into local channels." ) );
             it->convert( itype_integrated_radio_on ).active = true;
         }
     } else {
