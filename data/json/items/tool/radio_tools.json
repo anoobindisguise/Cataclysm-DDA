@@ -185,7 +185,20 @@
     "volume": "1 ml",
     "description": "A bionic radio system built into your ears.",
     "use_action": [ "RADIO_OFF" ],
-    "flags": [ "TRADER_AVOID", "TWO_WAY_RADIO", "ZERO_WEIGHT", "USE_BIONIC_POWER", "ZERO_WEIGHT", "INTEGRATED", "UNBREAKABLE", "PERSONAL", "WATER_FRIENDLY", "SOFT", "NO_REPAIR", "ALLOWS_NATURAL_ATTACKS" ],
+    "flags": [
+      "TRADER_AVOID",
+      "TWO_WAY_RADIO",
+      "ZERO_WEIGHT",
+      "USE_BIONIC_POWER",
+      "ZERO_WEIGHT",
+      "INTEGRATED",
+      "UNBREAKABLE",
+      "PERSONAL",
+      "WATER_FRIENDLY",
+      "SOFT",
+      "NO_REPAIR",
+      "ALLOWS_NATURAL_ATTACKS"
+    ],
     "armor": [
       {
         "material": [ { "type": "superalloy", "covered_by_mat": 100, "thickness": 0.5 } ],
