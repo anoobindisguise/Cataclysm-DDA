@@ -1201,7 +1201,7 @@
     "type": "BIONIC_ITEM",
     "name": { "str": "Radio System CBM" },
     "description": "A bionic that integrates with the user's ears to provide radio functionality at all times.",
-    "weight": "60 g",
+    "weight": "120 g",
     "difficulty": 4
   },
   {
