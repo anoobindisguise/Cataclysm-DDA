@@ -179,7 +179,7 @@
     "type": "TOOL_ARMOR",
     "category": "armor",
     "name": { "str": "integrated radio" },
-    "material": [ "superalloy" ],
+    "material": [ "superalloy", "plastic" ],
     "symbol": "@",
     "color": "light_gray",
     "weight": "100 g",
