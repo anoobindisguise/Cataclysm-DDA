@@ -1011,5 +1011,57 @@
       { "item": "sheet_metal_small", "count": [ 1, 4 ] }
     ],
     "damage_reduction": { "all": 50 }
+  },
+  {
+    "type": "vehicle_part",
+    "id": "ap_veh_tools_kitchen",
+    "name": "kitchen station",
+    "copy-from": "veh_tools_kitchen",
+    "extend": { "flags": [ "APPLIANCE" ] }
+  },
+  {
+    "type": "vehicle_part",
+    "id": "ap_veh_tools_workshop",
+    "name": "workshop station",
+    "copy-from": "veh_tools_workshop",
+    "extend": { "flags": [ "APPLIANCE" ] }
+  },
+  {
+    "type": "vehicle_part",
+    "id": "ap_generator_lawnmower",
+    "name": { "str": "makeshift gasoline generator" },
+    "symbol": "H",
+    "looks_like": "lawnmower",
+    "categories": [ "energy" ],
+    "color": "dark_gray",
+    "broken_symbol": "#",
+    "broken_color": "dark_gray",
+    "damage_modifier": 80,
+    "durability": 100,
+    "description": "A lawnmower rigged up with a motorbike alternator with its lawn mowing parts removed to act as a power generator.",
+    "//": "Use average consumption, not the max on the appliance rating plate. 30W ~ 260kWh per annum",
+    "power": "-750 W",
+    "epower": "350 W",
+    "energy_consumption": "750 W"
+    "item": "generator_lawnmower",
+    "requirements": {
+      "removal": { "time": "2 m" },
+      "repair": {
+        "skills": [ [ "mechanics", 4 ] ],
+        "time": "60 m",
+        "using": [ [ "repair_welding_standard", 3 ], [ "soldering_standard", 5 ] ]
+      }
+    },
+    "flags": [ "OBSTACLE", "APPLIANCE", "REACTOR", "CTRL_ELECTRONIC", "ALTERNATOR", "ENGINE", "E_COMBUSTION", "E_ALTERNATOR", "FLUIDTANK" ],
+    "fuel_type": "gasoline",
+    "breaks_into": [
+      { "item": "alternator_motorbike", "count": [ 0, 1 ] },
+      { "item": "sheet_metal_small", "count": [ 1, 3 ] },
+      { "item": "steel_chunk", "count": [ 0, 3 ] },
+      { "item": "scrap", "count": [ 4, 12 ] },
+      { "item": "plastic_chunk", "count": [ 0, 2 ] },
+      { "item": "cable", "charges": [ 0, 4 ] }
+    ],
+    "damage_reduction": { "all": 15 }
   }
 ]
