@@ -183,7 +183,7 @@
     "symbol": "@",
     "color": "light_gray",
     "weight": "100 g",
-    "volume": "50 ml",
+    "volume": "25 ml",
     "charges_per_use": 1,
     "description": "A bionic radio system built into your ears.",
     "use_action": [ "RADIO_OFF" ],
