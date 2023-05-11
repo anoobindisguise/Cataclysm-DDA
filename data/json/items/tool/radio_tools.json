@@ -205,7 +205,7 @@
         "material": [ { "type": "superalloy", "covered_by_mat": 100, "thickness": 0.6 } ],
         "covers": [ "head" ],
         "specifically_covers": [ "head_ear_l", "head_ear_r" ],
-        "coverage": 80,
+        "coverage": 40,
         "encumbrance": 0
       }
     ]
