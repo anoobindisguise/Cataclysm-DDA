@@ -382,5 +382,19 @@
     "price_postapoc": 2000,
     "symbol": "&",
     "color": "light_gray"
+  },
+  {
+    "type": "GENERIC",
+    "category": "other",
+    "id": "generator_lawnmower",
+    "name": { "str_sp": "makeshift gasoline generator" },
+    "description": "This push mower has been fitted with a motorbike alternator and had its superfluous lawn mowing parts stripped away.  It can serve as a gasoline generator in a pinch.",
+    "weight": "30 kg",
+    "material": [ "steel", "iron" ],
+    "volume": "10 L",
+    "longest_side": "100 cm",
+    "price_postapoc": 2000,
+    "symbol": "&",
+    "color": "light_gray"
   }
 ]
