@@ -214,8 +214,9 @@
     "id": "integrated_radio_on",
     "copy-from": "integrated_radio",
     "type": "TOOL",
-    "name": { "str": "integrated_radio (on)", "str_pl": "integrated_radios (on)" },
+    "name": { "str": "integrated radio (on)", "str_pl": "integrated radios (on)" },
     "description": "A bionic radio system built into your ears.  It is currently tuned into local channels.",
+    "charges_per_use": 0,
     "power_draw": "500 mW",
     "revert_to": "integrated_radio",
     "use_action": [ "RADIO_ON" ]
