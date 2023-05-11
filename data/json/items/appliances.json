@@ -389,12 +389,22 @@
     "id": "generator_lawnmower",
     "name": { "str_sp": "makeshift gasoline generator" },
     "description": "This push mower has been fitted with a motorbike alternator and had its superfluous lawn mowing parts stripped away.  It can serve as a gasoline generator in a pinch.",
-    "weight": "30 kg",
+    "weight": "40 kg",
     "material": [ "steel", "iron" ],
-    "volume": "10 L",
+    "volume": "24 L",
     "longest_side": "100 cm",
     "price_postapoc": 2000,
     "symbol": "&",
-    "color": "light_gray"
+    "color": "light_gray",
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "rigid": true,
+        "watertight": true,
+        "max_contains_volume": "20 L",
+        "max_item_volume": "32 ml",
+        "max_contains_weight": "25 kg"
+      }
+    ]
   }
 ]
