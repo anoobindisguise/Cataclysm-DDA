@@ -1042,7 +1042,7 @@
     "//": "Use average consumption, not the max on the appliance rating plate. 30W ~ 260kWh per annum",
     "power": "-750 W",
     "epower": "350 W",
-    "energy_consumption": "750 W"
+    "energy_consumption": "750 W",
     "item": "generator_lawnmower",
     "requirements": {
       "removal": { "time": "2 m" },
