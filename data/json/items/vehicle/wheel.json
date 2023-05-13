@@ -151,6 +151,18 @@
     "melee_damage": { "bash": 6 }
   },
   {
+    "id": "tire_medium_or",
+    "type": "GENERIC",
+    "category": "veh_parts",
+    "looks_like": "wheel",
+    "name": { "str": "17\" winter car tire" },
+    "description": "A winterized 17\" car tire for fitting to a medium steel rim.  Compared to a standard tire the rubber is a bit thicker and it has steel studs for traction.",
+    "copy-from": "tire_medium",
+    "material": [ "rubber", "steel" ],
+    "flags": [ "NONCONDUCTIVE" ],
+    "proportional": { "price_postapoc": 2.0, "weight": 1.2 }
+  },
+  {
     "id": "tire_medium_slick",
     "type": "GENERIC",
     "category": "veh_parts",
