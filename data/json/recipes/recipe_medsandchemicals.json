@@ -1472,9 +1472,10 @@
       { "proficiency": "prof_distilling" },
       { "proficiency": "prof_intro_chem_synth" }
     ],
+    "//": "50x4 for the water and an extra 50 for the wood",
     "qualities": [ { "id": "BOIL", "level": 2 }, { "id": "DISTILL", "level": 1 } ],
-    "tools": [ [ [ "surface_heat", 25, "LIST" ] ] ],
-    "components": [ [ [ "splinter", 55 ] ], [ [ "water", 50 ], [ "water_clean", 50 ] ] ]
+    "tools": [ [ [ "water_boiling_heat", 250, "LIST" ] ], [ [ "water", 50 ], [ "water_clean", 50 ] ] ],
+    "components": [ [ [ "splinter", 55 ] ] ]
   },
   {
     "type": "recipe",
