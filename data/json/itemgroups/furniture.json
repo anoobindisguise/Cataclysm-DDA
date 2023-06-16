@@ -30,18 +30,22 @@
   {
     "type": "item_group",
     "id": "bed",
+    "//": "assumptions: blahaj subreddit has ~80k members, so assume ~100k total blahajs in the USA (1/3000 beds)",
+    "//1": "assume 20% of americans fall into the category of anime fan (part of anime culture). Assume 1/1000 of those people have a body pillow. So about ~50k bodypillows (1/6000 beds)",
+    
     "subtype": "distribution",
     "entries": [
-      { "item": "blanket", "prob": 25 },
-      { "item": "down_blanket", "prob": 13 },
-      { "item": "pillow", "prob": 30 },
-      { "item": "down_pillow", "prob": 15 },
-      { "item": "electric_blanket", "prob": 4 },
-      { "item": "quilt", "prob": 10 },
-      { "item": "quilt_patchwork", "prob": 8 },
-      { "item": "teddy_bear", "prob": 2 },
-      { "item": "shark_plushie", "prob": 2 },
-      { "item": "bodypillow", "prob": 1 }
+      { "item": "blanket", "prob": 2500 },
+      { "item": "down_blanket", "prob": 1300 },
+      { "item": "pillow", "prob": 3000 },
+      { "item": "down_pillow", "prob": 1500 },
+      { "item": "electric_blanket", "prob": 400 },
+      { "item": "quilt", "prob": 1000 },
+      { "item": "quilt_patchwork", "prob": 800 },
+      { "item": "teddy_bear", "variant": "toy_plush_teddy", "prob": 190 },
+      { "item": "teddy_bear", "prob": 10 },
+      { "item": "shark_plushie", "prob": 5 },
+      { "item": "bodypillow", "prob": 2 }
     ]
   },
   {
