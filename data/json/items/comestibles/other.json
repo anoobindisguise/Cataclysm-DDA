@@ -101,7 +101,7 @@
     "fun": -25,
     "healthy": -25,
     "vitamins": [ [ "mutant_toxin", 500 ], [ "mutagen", 500 ], [ "mutagen_insect", 500 ] ],
-    "contamination": [ { disease": "bad_food", "probability": 5 } ],
+    "contamination": [ { "disease": "bad_food", "probability": 5 } ],
     "parasites": 10,
     "use_message": "Tentatively, you prepare to eat the strange jelly.  It quivers excitedly, the bites you take forcing their way down your throat as though it wanted to be eaten.  The taste is abhorrent, like rotten meat and vomit, leaving you desperate for something to wash it way."
   },
