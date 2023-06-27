@@ -1530,6 +1530,17 @@
   },
   {
     "type": "mutation",
+    "id": "VEGAN",
+    "name": { "str": "Strict Vegan" },
+    "points": -6,
+    "description": "You are a committed vegan, and you're not going to let the apocalypse change that.  You refuse to eat or wear animal products under any circumstance.",
+    "starting_trait": true,
+    "purifiable": false,
+    "types": [ "DIET" ],
+    "cancels": [ "CANNIBAL", "STRICT_HUMANITARIAN" ]
+  },
+  {
+    "type": "mutation",
     "id": "THINSKIN",
     "name": { "str": "Thin-Skinned" },
     "points": -1,
