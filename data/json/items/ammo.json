@@ -197,7 +197,7 @@
     "volume": "1 ml",
     "weight": "1 mg",
     "//": "50 wt thread is the standard for sewing projects (50 meters of thread per gram) and each unit is 50 cm (~20 inches).",
-    "//1" "This thread is about 0.125m thick, about half that of heavy duty canvas thread.",
+    "//1": "This thread is about 0.125m thick, about half that of heavy duty canvas thread.",
     "ammo_type": "thread",
     "count": 50,
     "stack_size": 160
@@ -250,7 +250,7 @@
     "looks_like": "thread",
     "description": "A tough sinew cut from a corpse which has been cut into strands and dried.  It can be used as thread.",
     "//": "50 cm of sinew strands (~20cm) flesh isn't quite as dense as cotton, but the two have similar material strength:weight.",
-    "//1" "This thread is about 0.15-0.2mm thick, but it will be treated like cotton thread (which is thinner).",
+    "//1": "This thread is about 0.15-0.2mm thick, but it will be treated like cotton thread (which is thinner).",
     "material": [ "flesh" ],
     "volume": "1 ml",
     "weight": "1 mg",
@@ -273,7 +273,7 @@
     "weight": "1 mg",
     "ammo_type": "thread",
     "//": "Represents fibers that are specifically strong enough to mimic cotton like hemp or triffid.",
-    "//1" "50 cm (~20 inches) per unit, similar thread weight to standard thread.",
+    "//1": "50 cm (~20 inches) per unit, similar thread weight to standard thread.",
     "count": 100,
     "stack_size": 150
   },
@@ -293,7 +293,7 @@
     "weight": "1 mg",
     "ammo_type": "thread",
     "//": "yarn is measured differently than cotton thread, but for simplicity this will assume 40-50wt.",
-    "//1" "50 cm (~20 inches) per unit, similar thread weight to standard thread.",
+    "//1": "50 cm (~20 inches) per unit, similar thread weight to standard thread.",
     "count": 10,
     "stack_size": 140
   },
