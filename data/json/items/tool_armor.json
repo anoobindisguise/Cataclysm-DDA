@@ -3869,5 +3869,80 @@
     "revert_to": "ice_utility_exoskeleton_off",
     "weight_capacity_bonus": "190 kg",
     "use_action": { "type": "transform", "menu_text": "Turn off", "msg": "The %s disengages.", "target": "ice_utility_exoskeleton_off" }
+  },
+  {
+    "id": "rm12_vest",
+    "type": "TOOL_ARMOR",
+    "looks_like": "modularvest",
+    "category": "armor",
+    "symbol": "[",
+    "color": "dark_gray",
+    "name": { "str": "RM12 ballistic vest" },
+    "description": "The RM12 series of \"powered combat vests\" were experimental body armor developed by the Rivtech corporation a few years before the Cataclysm.  Though ordinarily only roughly as durable as the military standard IOTV it becomes substantially more protective when charged with electrical power, bringing its protection to levels similar to that of ESAPI inserts while weighing less and covering more of the torso.  Military testing proved it to be quite reliable, but due to its expense of production and it bearing only incremental advantages over standard Kevlar-backed ceramic plates it only found adoption among a small number of spec-ops units before the Cataclysm struck.",
+    "flags": [
+      "STURDY",
+      "NO_REPAIR",
+      "NANOFAB_REPAIR",
+      "COMBAT_TOGGLEABLE",
+      "OUTER"
+    ],
+    "price": 10000000,
+    "price_postapoc": 6000,
+    "material": [ "hyperweave_off" ],
+    "weight": "3500 g",
+    "volume": "2 L",
+    "to_hit": -3,
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "rigid": true,
+        "flag_restriction": [ "BATTERY_HEAVY" ],
+        "default_magazine": "heavy_plus_battery_cell"
+      }
+    ],
+    "ammo": "battery",
+    "use_action": { "type": "transform", "msg": "The %s engages.", "target": "rm12_vest_active", "active": true, "need_charges": 1, "need_charges_msg": "The batteries are dead." },
+    "warmth": 30,
+    "environmental_protection": 2,
+    "material_thickness": 4,
+      {
+        "material": [ { "type": "hyperweave_off", "covered_by_mat": 100, "thickness": 4.0 } ],
+        "encumbrance": 6,
+        "coverage": 95,
+        "covers": [ "torso" ],
+        "volume_encumber_modifier": 0
+      }
+    ]
+  },
+  {
+    "id": "rm12_vest_on",
+    "copy-from": "rm12_vest",
+    "looks_like": "modularvest",
+    "type": "TOOL_ARMOR",
+    "name": { "str": "RM12 ballistic vest (on)", "str_pl": "RM12 ballistic vest (on)" },
+    "description": "The RM12 series of \"powered combat vests\" were experimental body armor developed by the Rivtech corporation a few years before the Cataclysm.  Powered on, it will provide substantial protection from bullets and other threats while also shielding your vital organs from radiological and chemical hazards.",
+    "flags": [
+      "STURDY",
+      "NO_REPAIR",
+      "NANOFAB_REPAIR",
+      "RAD_RESIST",
+      "COMBAT_TOGGLEABLE",
+      "OUTER",
+      "TRADER_AVOID",
+      "USE_POWER_WHEN_HIT",
+      "NO_UNLOAD"
+    ],
+    "environmental_protection": 10,
+      {
+        "material": [ { "type": "hyperweave_on", "covered_by_mat": 100, "thickness": 4.0 } ],
+        "encumbrance": 6,
+        "coverage": 95,
+        "covers": [ "torso" ],
+        "volume_encumber_modifier": 0
+      }
+    ],
+    "power_draw": "20 W",
+    "revert_to": "rm12_vest",
+    "use_action": { "type": "transform", "menu_text": "Turn off", "msg": "The %s disengages.", "target": "rm12_vest" }
   }
 ]
