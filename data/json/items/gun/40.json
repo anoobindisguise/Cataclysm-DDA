@@ -342,11 +342,6 @@
       }
     ],
     "ammo": [ "40" ],
-    "pocket_data": [
-      {
-        "pocket_type": "MAGAZINE_WELL",
-        "item_restriction": [ "90two40mag" ]
-      }
-    ]
+    "pocket_data": [ { "pocket_type": "MAGAZINE_WELL", "item_restriction": [ "90two40mag" ] } ]
   }
 ]
