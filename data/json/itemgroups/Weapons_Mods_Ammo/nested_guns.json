@@ -612,6 +612,19 @@
     ]
   },
   {
+    "id": "nested_cx40",
+    "type": "item_group",
+    "//": "this is a distribution for the gun, reasonable number of backup mags, and some ammo to repack",
+    "subtype": "collection",
+    "ammo": 100,
+    "entries": [
+      { "item": "cx40", "charges-min": 0, "charges-max": 12 },
+      { "item": "90two40mag" },
+      { "item": "90two40mag", "prob": 50 },
+      { "group": "on_hand_40" }
+    ]
+  },
+  {
     "id": "nested_bond_410",
     "type": "item_group",
     "//": "this is a distribution for the gun, reasonable number of backup mags, and some ammo to repack",
