@@ -195,12 +195,13 @@
     "material": [ "cotton" ],
     "flags": [ "NO_SALVAGE" ],
     "volume": "1 ml",
-    "weight": "1 mg",
-    "//": "50 wt thread is the standard for sewing projects (50 meters of thread per gram) and each unit is 50 cm (~20 inches).",
+    "weight": "8 mg",
+    "//": "50 wt thread is the standard for sewing projects (50 meters of thread per gram) and each unit is 40 cm (~16 in) so 125 threads per 50 meters or per 1 gram.",
     "//1": "This thread is about 0.125m thick, about half that of heavy duty canvas thread.",
     "ammo_type": "thread",
     "count": 50,
-    "stack_size": 160
+    "//2": "cc of 1 gram of thread is 0.625, so 200 threads is 1 ml (the smallest possible unit of measurement)",
+    "stack_size": 200
   },
   {
     "type": "AMMO",
@@ -216,9 +217,9 @@
     "material": [ "flesh" ],
     "//": "one of these cuts into 10 sinew_prepped",
     "volume": "10 ml",
-    "weight": "10 mg",
+    "weight": "160 mg",
     "count": 10,
-    "stack_size": 55
+    "stack_size": 70
   },
   {
     "type": "AMMO",
@@ -234,9 +235,9 @@
     "material": [ "flesh" ],
     "//": "twice the weight and volume of sinew_usable due to water weight. ",
     "volume": "1 ml",
-    "weight": "2 mg",
-    "count": 10,
-    "stack_size": 55
+    "weight": "16 mg",
+    "count": 100,
+    "stack_size": 70
   },
   {
     "type": "AMMO",
@@ -249,13 +250,13 @@
     "color": "light_red",
     "looks_like": "thread",
     "description": "A tough sinew cut from a corpse which has been cut into strands and dried.  It can be used as thread.",
-    "//": "50 cm of sinew strands (~20cm) flesh isn't quite as dense as cotton, but the two have similar material strength:weight.",
+    "//": "40 cm (~16 in) strands of flesh isn't quite as dense as cotton, but the two have similar material strength:weight.",
     "//1": "This thread is about 0.15-0.2mm thick, but it will be treated like cotton thread (which is thinner).",
     "material": [ "flesh" ],
     "volume": "1 ml",
-    "weight": "1 mg",
-    "count": 10,
-    "stack_size": 110
+    "weight": "8 mg",
+    "count": 100,
+    "stack_size": 140
   },
   {
     "type": "AMMO",
@@ -270,12 +271,12 @@
     "description": "Tough, thin fiber taken from a plant.  Can be used as thread.",
     "material": [ "veggy" ],
     "volume": "1 ml",
-    "weight": "1 mg",
+    "weight": "8 mg",
     "ammo_type": "thread",
     "//": "Represents fibers that are specifically strong enough to mimic cotton like hemp or triffid.",
-    "//1": "50 cm (~20 inches) per unit, similar thread weight to standard thread.",
-    "count": 100,
-    "stack_size": 150
+    "//1": "40 cm (~16 in) per unit, similar thread weight to standard thread.",
+    "count": 50,
+    "stack_size": 160
   },
   {
     "type": "AMMO",
@@ -290,12 +291,12 @@
     "description": "A length of wool yarn that could be used to knit wool clothing.",
     "material": [ "wool" ],
     "volume": "1 ml",
-    "weight": "1 mg",
+    "weight": "8 mg",
     "ammo_type": "thread",
     "//": "yarn is measured differently than cotton thread, but for simplicity this will assume 40-50wt.",
-    "//1": "50 cm (~20 inches) per unit, similar thread weight to standard thread.",
-    "count": 10,
-    "stack_size": 140
+    "//1": "40 cm (~16 in) per unit, similar thread weight to standard thread.",
+    "count": 100,
+    "stack_size": 180
   },
   {
     "type": "AMMO",
