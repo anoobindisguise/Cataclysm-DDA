@@ -331,13 +331,13 @@
     "type": "GUN",
     "copy-from": "cx4",
     "name": { "str": ".40 S&W pistol-caliber carbine" },
-    "description": "A Beretta rifle chambered in .40 S&W, virtually identical to its more common 9mm sibling in most respects.  By factory standard it uses magazines from Beretta 90-two pistols, though it can easily be converted to use Px4 magazines as well.",
+    "description": "A Beretta rifle chambered in .40 S&W, virtually identical to its more common 9mm sibling in most respects.  By factory standard it uses magazines from Beretta 90-two pistols.",
     "variant_type": "gun",
     "variants": [
       {
         "id": "cx4",
         "name": { "str": "Cx4 Storm .40" },
-        "description": A Beretta rifle chambered in .40 S&W, virtually identical to its more common 9mm sibling in most respects.  By factory standard it uses magazines from the Beretta 90-two series of pistols, though it can easily be converted to use Px4 magazines as well.",
+        "description": "A Beretta rifle chambered in .40 S&W, virtually identical to its more common 9mm sibling in most respects.  By factory standard it uses magazines from the Beretta 90-two series of pistols.",
         "weight": 1
       }
     ],
