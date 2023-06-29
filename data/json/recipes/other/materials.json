@@ -367,7 +367,7 @@
     "time": "10 m",
     "autolearn": true,
     "//": "8 mg per thread, balls weigh 66 grams total",
-    "charges": 8250
+    "charges": 8250,
     "proficiencies": [ { "proficiency": "prof_spinning", "skill_penalty": 0.5 } ],
     "tools": [ [ [ "distaff_spindle", -1 ] ] ],
     "components": [ [ [ "cotton_ball", 3 ] ] ]
@@ -384,7 +384,7 @@
     "time": "30 s",
     "autolearn": true,
     "//": "8 mg per thread, balls weigh total 66 grams total",
-    "charges": 8250
+    "charges": 8250,
     "proficiencies": [ { "proficiency": "prof_spinning", "skill_penalty": 0.5 } ],
     "tools": [ [ [ "spinwheelitem", -1 ] ] ],
     "components": [ [ [ "cotton_ball", 3 ] ] ]
@@ -401,7 +401,7 @@
     "time": "30 s",
     "autolearn": true,
     "//": "8 mg per thread, balls weigh 66 grams total",
-    "charges": 8250
+    "charges": 8250,
     "proficiencies": [ { "proficiency": "prof_spinning", "skill_penalty": 0.5 } ],
     "tools": [ [ [ "electric_spinwheel", 20 ] ] ],
     "components": [ [ [ "cotton_ball", 3 ] ] ]
@@ -451,7 +451,7 @@
     "time": "10 m",
     "autolearn": true,
     "//": "32 mg per thread, balls weigh 66 grams total",
-    "charges": 2062
+    "charges": 2062,
     "proficiencies": [ { "proficiency": "prof_spinning", "skill_penalty": 0.5 } ],
     "tools": [ [ [ "distaff_spindle", -1 ] ] ],
     "components": [ [ [ "cotton_ball", 3 ] ] ]
@@ -468,7 +468,7 @@
     "time": "5 m",
     "autolearn": true,
     "//": "32 mg per thread, balls weigh 66 grams total",
-    "charges": 2062
+    "charges": 2062,
     "tools": [ [ [ "spinwheelitem", -1 ] ] ],
     "proficiencies": [ { "proficiency": "prof_spinning", "required": false, "time_multiplier": 1.5 } ],
     "components": [ [ [ "cotton_ball", 3 ] ] ]
@@ -485,7 +485,7 @@
     "time": "5 m",
     "autolearn": true,
     "//": "32 mg per thread, balls weigh 66 grams total",
-    "charges": 2062
+    "charges": 2062,
     "tools": [ [ [ "electric_spinwheel", 20 ] ] ],
     "proficiencies": [ { "proficiency": "prof_spinning", "required": false, "time_multiplier": 1.5 } ],
     "components": [ [ [ "cotton_ball", 3 ] ] ]
