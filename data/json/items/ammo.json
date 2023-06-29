@@ -201,7 +201,8 @@
     "ammo_type": "thread",
     "count": 50,
     "//2": "cc of 1 gram of thread is 0.625, so 200 threads is 1 ml (the smallest possible unit of measurement)",
-    "stack_size": 200
+    "stack_size": 200,
+    "default_container": "thread_spool"
   },
   {
     "type": "AMMO",
@@ -300,7 +301,8 @@
     "//": "yarn is measured differently than cotton thread, but for simplicity this will assume 40-50wt.",
     "//1": "40 cm (~16 in) per unit, similar thread weight to standard thread.",
     "count": 100,
-    "stack_size": 180
+    "stack_size": 180,
+    "default_container": "thread_spool"
   },
   {
     "type": "AMMO",
