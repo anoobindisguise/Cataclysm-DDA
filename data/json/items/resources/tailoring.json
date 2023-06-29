@@ -674,7 +674,7 @@
     "ammo_type": "thread",
     "count": 50,
     "stack_size": 50,
-    "default_container": "thread_spool"
+    "container": "thread_spool"
   },
   {
     "id": "scrap_canvas",
