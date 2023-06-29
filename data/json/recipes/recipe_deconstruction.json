@@ -2416,7 +2416,7 @@
     "result": "cotton_patchwork",
     "type": "uncraft",
     "activity_level": "NO_EXERCISE",
-    "time": "1 m",
+    "time": "10 s",
     "qualities": [ { "id": "CUT", "level": 2 } ],
     "components": [ [ [ "scrap_cotton", 4 ] ] ]
   },
@@ -2424,9 +2424,10 @@
     "result": "scrap_cotton",
     "type": "uncraft",
     "activity_level": "NO_EXERCISE",
-    "time": "1 m",
+    "time": "10 m",
     "qualities": [ { "id": "CUT", "level": 2 } ],
-    "components": [ [ [ "thread", 1 ] ] ]
+    "//": "raw weight is 125 threads but not all will be reusable",
+    "components": [ [ [ "thread", 50 ] ] ]
   },
   {
     "result": "sheet_canvas_patchwork",
@@ -2456,9 +2457,10 @@
     "result": "scrap_canvas",
     "type": "uncraft",
     "activity_level": "NO_EXERCISE",
-    "time": "1 m",
+    "time": "10 m",
     "qualities": [ { "id": "CUT", "level": 2 } ],
-    "components": [ [ [ "thread_canvas", 1 ] ] ]
+    "//": "raw weight is 148 threads but not all will be reusable",
+    "components": [ [ [ "thread_canvas", 50 ] ] ]
   },
   {
     "result": "sheet_neoprene_patchwork",
@@ -2490,7 +2492,8 @@
     "activity_level": "NO_EXERCISE",
     "time": "35 m",
     "qualities": [ { "id": "CUT_FINE", "level": 1 } ],
-    "components": [ [ [ "thread_nomex", 2 ] ] ],
+    "components": [ [ [ "thread_nomex", 10 ] ] ],
+    "//0": "raw weight is ~150 threads but not all will be reusable",
     "//": "Thread is odd so we're just kind of giving you some whole pieces of thread, when it shouldn't be near that, but we need a source."
   },
   {
@@ -6083,11 +6086,12 @@
     "result": "sheet_kevlar",
     "type": "uncraft",
     "activity_level": "LIGHT_EXERCISE",
-    "time": "10 m",
+    "time": "60 m",
     "skill_used": "tailor",
     "difficulty": 3,
     "qualities": [ { "id": "CUT_FINE", "level": 2 } ],
-    "components": [ [ [ "thread_kevlar", 80 ] ] ],
+    "//0": "raw weight is ~5000 threads but not all will be reusable",
+    "components": [ [ [ "thread_kevlar", 500 ] ] ],
     "//": "Realistically, this may be out of the question (though I have not found info to the contrary), and a full sheet would give way more thread, but this is to keep the time down"
   },
   {
@@ -6096,7 +6100,8 @@
     "activity_level": "NO_EXERCISE",
     "time": "1 m",
     "qualities": [ { "id": "CUT", "level": 2 } ],
-    "components": [ [ [ "thread_kevlar", 2 ] ] ]
+    "//": "raw weight is ~150 threads but not all will be reusable",
+    "components": [ [ [ "thread_kevlar", 10 ] ] ]
   },
   {
     "result": "sheet_kevlar_layered",
