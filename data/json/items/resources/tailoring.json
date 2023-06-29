@@ -667,12 +667,14 @@
     "description": "Some tough canvas-weight thread, sturdier than ordinary thread.  You could meticulously weave this into a sheet of canvas cloth.  It would also be useful for stitching such sheets together, though it's fine to use for normal tailoring projects too.",
     "material": [ "canvas" ],
     "flags": [ "NO_SALVAGE" ],
-    "volume": "200 ml",
-    "weight": "1 g",
-    "//": "30 meters of thread per 1g, roughly 6 inches of thread per unit.",
+    "volume": "1 ml",
+    "weight": "32 mg",
+    "//": "12-13wt canvas threads. each unit is 40 cm (~16 in) so ~32 threads per ~13 meters or per ~1 gram.",
+    "//1": "This thread is about 0.25mm thick, about half that of heavy duty canvas thread. 4x the weight per length.",
     "ammo_type": "thread",
     "count": 50,
-    "stack_size": 200
+    "stack_size": 50,
+    "default_container": "thread_spool"
   },
   {
     "id": "scrap_canvas",
@@ -719,5 +721,38 @@
     "material": [ "canvas" ],
     "symbol": "=",
     "color": "dark_gray"
+  },
+  {
+    "id": "thread_spool",
+    "type": "GENERIC",
+    "category": "other",
+    "name": { "str_sp": "plastic spool" },
+    "description": "A small plastic spool used to contain a roll of thread.",
+    "weight": "200 g",
+    "volume": "200 ml",
+    "price": 200,
+    "price_postapoc": 5,
+    "material": [ "plastic" ],
+    "looks_like": "thread",
+    "symbol": "]",
+    "color": "dark_gray",
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "holster": true,
+        "max_contains_volume": "500 ml",
+        "max_contains_weight": "2 kg",
+        "moves": 50,
+        "item_restriction": [
+          "thread",
+          "sinew_usable",
+          "thread_canvas",
+          "thread_kevlar",
+          "thread_nomex",
+          "yarn",
+          "plant_fibre"
+        ]
+      }
+    ]
   }
 ]
