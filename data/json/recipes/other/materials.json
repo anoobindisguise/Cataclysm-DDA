@@ -450,8 +450,8 @@
     "skills_required": [ "fabrication", 1 ],
     "time": "10 m",
     "autolearn": true,
-    "//": "16 mg per thread, balls weigh 66 grams total",
-    "charges": 4125
+    "//": "32 mg per thread, balls weigh 66 grams total",
+    "charges": 2062
     "proficiencies": [ { "proficiency": "prof_spinning", "skill_penalty": 0.5 } ],
     "tools": [ [ [ "distaff_spindle", -1 ] ] ],
     "components": [ [ [ "cotton_ball", 3 ] ] ]
@@ -467,8 +467,8 @@
     "skill_used": "tailor",
     "time": "5 m",
     "autolearn": true,
-    "//": "16 mg per thread, balls weigh 66 grams total",
-    "charges": 4125
+    "//": "32 mg per thread, balls weigh 66 grams total",
+    "charges": 2062
     "tools": [ [ [ "spinwheelitem", -1 ] ] ],
     "proficiencies": [ { "proficiency": "prof_spinning", "required": false, "time_multiplier": 1.5 } ],
     "components": [ [ [ "cotton_ball", 3 ] ] ]
@@ -484,8 +484,8 @@
     "skill_used": "tailor",
     "time": "5 m",
     "autolearn": true,
-    "//": "16 mg per thread, balls weigh 66 grams total",
-    "charges": 4125
+    "//": "32 mg per thread, balls weigh 66 grams total",
+    "charges": 2062
     "tools": [ [ [ "electric_spinwheel", 20 ] ] ],
     "proficiencies": [ { "proficiency": "prof_spinning", "required": false, "time_multiplier": 1.5 } ],
     "components": [ [ [ "cotton_ball", 3 ] ] ]
@@ -760,7 +760,8 @@
     "proficiencies": [ { "proficiency": "prof_weaving" }, { "proficiency": "prof_closures_waterproofing" } ],
     "tools": [ [ [ "loom_frame", -1 ] ], [ [ "shed_stick", -1 ] ] ],
     "qualities": [ { "id": "CUT", "level": 2 } ],
-    "components": [ [ [ "thread_canvas", 4800 ] ], [ [ "wax", 1 ] ] ]
+    "//": "half the thread requirements to make a cotton sheet, because threads are 4x the weight and 2x as wide too",
+    "components": [ [ [ "thread_canvas", 2400 ] ], [ [ "wax", 1 ] ] ]
   },
   {
     "result": "sheet_canvas",
@@ -776,7 +777,7 @@
     "proficiencies": [ { "proficiency": "prof_weaving" }, { "proficiency": "prof_closures_waterproofing" } ],
     "tools": [ [ [ "spinwheelitem", -1 ] ] ],
     "qualities": [ { "id": "CUT", "level": 1 } ],
-    "components": [ [ [ "thread_canvas", 4800 ] ], [ [ "wax", 1 ] ] ]
+    "components": [ [ [ "thread_canvas", 2400 ] ], [ [ "wax", 1 ] ] ]
   },
   {
     "result": "sheet_canvas",
@@ -792,7 +793,7 @@
     "proficiencies": [ { "proficiency": "prof_weaving" }, { "proficiency": "prof_closures_waterproofing" } ],
     "tools": [ [ [ "electric_spinwheel", 181 ] ] ],
     "qualities": [ { "id": "CUT", "level": 1 } ],
-    "components": [ [ [ "thread_canvas", 4800 ] ], [ [ "wax", 1 ] ] ]
+    "components": [ [ [ "thread_canvas", 2400 ] ], [ [ "wax", 1 ] ] ]
   },
   {
     "result": "sheet_denim_patchwork",
