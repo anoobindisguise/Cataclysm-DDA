@@ -743,15 +743,7 @@
         "max_contains_volume": "500 ml",
         "max_contains_weight": "2 kg",
         "moves": 50,
-        "item_restriction": [
-          "thread",
-          "sinew_usable",
-          "thread_canvas",
-          "thread_kevlar",
-          "thread_nomex",
-          "yarn",
-          "plant_fibre"
-        ]
+        "item_restriction": [ "thread", "sinew_usable", "thread_canvas", "thread_kevlar", "thread_nomex", "yarn", "plant_fibre" ]
       }
     ]
   }
