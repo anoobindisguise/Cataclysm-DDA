@@ -3589,7 +3589,7 @@
     "activity_level": "LIGHT_EXERCISE",
     "time": "60 m",
     "qualities": [ { "id": "CUT", "level": 2 } ],
-    "components": [ [ [ "plant_fibre", 20000 ] ] ]
+    "components": [ [ [ "plant_fibre", 5000 ] ] ]
   },
   {
     "result": "ref_lighter",
