@@ -51,7 +51,7 @@
     "reversible": true,
     "autolearn": true,
     "using": [ [ "sewing_standard", 12 ] ],
-    "components": [ [ [ "cotton_patchwork", 4 ] ], [ [ "cotton_ball", 8 ] ] ]
+    "components": [ [ [ "cotton_patchwork", 4 ] ], [ [ "cotton_ball", 8 ], [ "cottonwood_tree_boll", 8 ] ] ]
   },
   {
     "type": "recipe",
@@ -2380,9 +2380,10 @@
     "subcategory": "CSC_OTHER_MATERIALS",
     "skill_used": "survival",
     "difficulty": 1,
-    "time": "6 m",
+    "time": "15 m",
     "autolearn": true,
-    "components": [ [ [ "dogbane", 1 ], [ "cattail_stalk", 1 ], [ "cottonwood_tree_boll", 1 ] ] ]
+    "charges": 500,
+    "components": [ [ [ "dogbane", 1 ] ] ]
   },
   {
     "type": "recipe",
@@ -2397,8 +2398,8 @@
     "batch_time_factors": [ 50, 2 ],
     "autolearn": true,
     "tools": [ [ [ "scutcheritem", -1 ] ] ],
-    "components": [ [ [ "dogbane", 8 ], [ "cattail_stalk", 8 ], [ "stick_fiber", 1 ], [ "cottonwood_tree_boll", 8 ] ] ],
-    "charges": 80
+    "components": [ [ [ "dogbane", 2 ], [ "stick_fiber", 1 ] ] ],
+    "charges": 10000
   },
   {
     "type": "recipe",
