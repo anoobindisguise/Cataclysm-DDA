@@ -332,7 +332,7 @@
     "type": "GENERIC",
     "category": "spare_parts",
     "name": { "str": "imitation cotton sheet" },
-    "description": "A 12-inch by 24-inch sheet of woven-together material, such as hemp, sinew or walking alien plant monster.  It is similar enough to cotton that you can use it in place of it in tailoring projects.",
+    "description": "A 12-inch by 24-inch sheet of woven-together material, such as hemp, sinew or walking alien plant monster.  It is similar enough to cotton that you can use this in place of it in tailoring projects.",
     "weight": "38 g",
     "volume": "55 ml",
     "//": "Materials less dense than cotton, but of similar structural strength overall.",
