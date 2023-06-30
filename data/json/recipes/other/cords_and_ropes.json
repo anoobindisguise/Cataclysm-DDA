@@ -10,7 +10,7 @@
     "reversible": true,
     "autolearn": true,
     "proficiencies": [ { "proficiency": "prof_fibers" } ],
-    "components": [ [ [ "filament", 50, "LIST" ] ] ]
+    "components": [ [ [ "filament", 750, "LIST" ] ] ]
   },
   {
     "type": "recipe",
@@ -26,7 +26,7 @@
     "autolearn": true,
     "tools": [ [ [ "spinwheelitem", -1 ] ] ],
     "proficiencies": [ { "proficiency": "prof_fibers" } ],
-    "components": [ [ [ "filament", 50, "LIST" ] ] ]
+    "components": [ [ [ "filament", 750, "LIST" ] ] ]
   },
   {
     "type": "recipe",
@@ -70,7 +70,7 @@
     "reversible": true,
     "autolearn": true,
     "proficiencies": [ { "proficiency": "prof_fibers", "skill_penalty": 0.5 }, { "proficiency": "prof_fibers_rope" } ],
-    "components": [ [ [ "filament", 1800, "LIST" ] ] ]
+    "components": [ [ [ "filament", 27000, "LIST" ] ] ]
   },
   {
     "type": "recipe",
@@ -86,7 +86,7 @@
     "autolearn": true,
     "tools": [ [ [ "spinwheelitem", -1 ] ] ],
     "proficiencies": [ { "proficiency": "prof_fibers", "skill_penalty": 0.5 }, { "proficiency": "prof_fibers_rope" } ],
-    "components": [ [ [ "filament", 1800, "LIST" ] ] ]
+    "components": [ [ [ "filament", 27000, "LIST" ] ] ]
   },
   {
     "type": "recipe",
@@ -101,7 +101,7 @@
     "autolearn": true,
     "qualities": [ { "id": "CUT", "level": 2 } ],
     "proficiencies": [ { "proficiency": "prof_fibers" }, { "proficiency": "prof_fibers_rope" } ],
-    "components": [ [ [ "cotton_patchwork", 30 ], [ "leather", 30 ], [ "felt_patch", 30 ], [ "tanned_hide", 5 ] ] ]
+    "components": [ [ [ "cotton_patchwork", 45 ],  [ "felt_patch", 75 ] ] ]
   },
   {
     "type": "recipe",
@@ -118,7 +118,7 @@
     "tools": [ [ [ "spinwheelitem", -1 ] ] ],
     "qualities": [ { "id": "CUT", "level": 2 } ],
     "proficiencies": [ { "proficiency": "prof_fibers" }, { "proficiency": "prof_fibers_rope" } ],
-    "components": [ [ [ "cotton_patchwork", 30 ], [ "leather", 30 ], [ "felt_patch", 30 ], [ "tanned_hide", 5 ] ] ]
+    "components": [ [ [ "cotton_patchwork", 45 ],  [ "felt_patch", 75 ] ] ]
   },
   {
     "type": "recipe",
@@ -131,7 +131,7 @@
     "reversible": true,
     "autolearn": true,
     "proficiencies": [ { "proficiency": "prof_fibers" } ],
-    "components": [ [ [ "string_6", 6 ], [ "filament", 300, "LIST" ] ] ]
+    "components": [ [ [ "string_6", 6 ], [ "filament", 4500, "LIST" ] ] ]
   },
   {
     "type": "recipe",
@@ -147,7 +147,7 @@
     "autolearn": true,
     "tools": [ [ [ "spinwheelitem", -1 ] ] ],
     "proficiencies": [ { "proficiency": "prof_fibers" } ],
-    "components": [ [ [ "string_6", 6 ], [ "filament", 300, "LIST" ] ] ]
+    "components": [ [ [ "string_6", 6 ], [ "filament", 4500, "LIST" ] ] ]
   },
   {
     "type": "recipe",
@@ -191,7 +191,7 @@
     "autolearn": true,
     "qualities": [ { "id": "CUT", "level": 2 } ],
     "proficiencies": [ { "proficiency": "prof_fibers" }, { "proficiency": "prof_fibers_rope" } ],
-    "components": [ [ [ "cotton_patchwork", 150 ], [ "leather", 150 ], [ "felt_patch", 150 ], [ "tanned_hide", 25 ] ] ]
+    "components": [ [ [ "cotton_patchwork", 270 ],  [ "felt_patch", 450 ] ] ]
   },
   {
     "type": "recipe",
@@ -208,7 +208,7 @@
     "tools": [ [ [ "spinwheelitem", -1 ] ] ],
     "qualities": [ { "id": "CUT", "level": 2 } ],
     "proficiencies": [ { "proficiency": "prof_fibers" }, { "proficiency": "prof_fibers_rope" } ],
-    "components": [ [ [ "cotton_patchwork", 150 ], [ "leather", 150 ], [ "felt_patch", 150 ], [ "tanned_hide", 25 ] ] ]
+    "components": [ [ [ "cotton_patchwork", 270 ],  [ "felt_patch", 450 ] ] ]
   },
   {
     "type": "recipe",
@@ -268,7 +268,7 @@
     "autolearn": true,
     "tools": [ [ [ "spinwheelitem", -1 ] ] ],
     "proficiencies": [ { "proficiency": "prof_fibers", "skill_penalty": 0.5 }, { "proficiency": "prof_fibers_rope" } ],
-    "components": [ [ [ "filament", 10800, "LIST" ] ] ]
+    "components": [ [ [ "filament", 162000, "LIST" ] ] ]
   },
   {
     "type": "recipe",
@@ -550,7 +550,7 @@
     "tools": [ [ [ "electric_spinwheel", 7 ] ] ],
     "qualities": [ { "id": "CUT", "level": 2 } ],
     "proficiencies": [ { "proficiency": "prof_fibers" }, { "proficiency": "prof_fibers_rope" } ],
-    "components": [ [ [ "cotton_patchwork", 30 ], [ "leather", 30 ], [ "felt_patch", 30 ], [ "tanned_hide", 5 ] ] ]
+    "components": [ [ [ "cotton_patchwork", 45 ], [ "felt_patch", 75 ] ] ]
   },
   {
     "type": "recipe",
@@ -566,7 +566,7 @@
     "autolearn": true,
     "tools": [ [ [ "electric_spinwheel", 4 ] ] ],
     "proficiencies": [ { "proficiency": "prof_fibers" } ],
-    "components": [ [ [ "string_6", 6 ], [ "filament", 300, "LIST" ] ] ]
+    "components": [ [ [ "string_6", 6 ], [ "filament", 4500, "LIST" ] ] ]
   },
   {
     "type": "recipe",
@@ -599,7 +599,7 @@
     "tools": [ [ [ "electric_spinwheel", 32 ] ] ],
     "qualities": [ { "id": "CUT", "level": 2 } ],
     "proficiencies": [ { "proficiency": "prof_fibers" }, { "proficiency": "prof_fibers_rope" } ],
-    "components": [ [ [ "cotton_patchwork", 150 ], [ "leather", 150 ], [ "felt_patch", 150 ], [ "tanned_hide", 25 ] ] ]
+    "components": [ [ [ "cotton_patchwork", 270 ], [ "felt_patch", 450 ] ] ]
   },
   {
     "type": "recipe",
@@ -631,7 +631,7 @@
     "autolearn": true,
     "tools": [ [ [ "electric_spinwheel", 63 ] ] ],
     "proficiencies": [ { "proficiency": "prof_fibers", "skill_penalty": 0.5 }, { "proficiency": "prof_fibers_rope" } ],
-    "components": [ [ [ "filament", 10800, "LIST" ] ] ]
+    "components": [ [ [ "filament", 162000, "LIST" ] ] ]
   },
   {
     "type": "recipe",
