@@ -126,6 +126,7 @@
       [
         [ "cotton_patchwork", 8 ],
         [ "sheet_cotton_patchwork", 1 ],
+        [ "sheet_cotton_imitation", 1 ],
         [ "sheet_cotton", 1 ],
         [ "sheet_lycra", 1 ],
         [ "sheet_lycra_patchwork", 1 ],
@@ -160,6 +161,7 @@
         [ "cotton_patchwork", 8 ],
         [ "sheet_cotton_patchwork", 1 ],
         [ "sheet_cotton", 1 ],
+        [ "sheet_cotton_imitation", 1 ],
         [ "lycra_patch", 8 ],
         [ "sheet_lycra_patchwork", 1 ],
         [ "sheet_lycra", 1 ],
@@ -187,6 +189,7 @@
         [ "cotton_patchwork", 8 ],
         [ "sheet_cotton_patchwork", 1 ],
         [ "sheet_cotton", 1 ],
+        [ "sheet_cotton_imitation", 1 ],
         [ "nylon", 8 ],
         [ "sheet_nylon_patchwork", 1 ],
         [ "sheet_nylon", 1 ],
