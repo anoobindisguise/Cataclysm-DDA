@@ -687,8 +687,7 @@
     "//1": "This thread is about 0.25mm thick, about half that of heavy duty canvas thread. 4x the weight per length.",
     "ammo_type": "thread",
     "count": 50,
-    "stack_size": 50,
-    "container": "thread_spool"
+    "stack_size": 50
   },
   {
     "id": "scrap_canvas",
