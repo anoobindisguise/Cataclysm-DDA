@@ -272,8 +272,8 @@
     "skills_required": [ "survival", 3 ],
     "difficulty": 1,
     "time": "15 m",
-    "//1": "8 mg per yarn, staple weighs 200 grams",
-    "charges": 25000,
+    "//1": "3 g per patch, staple weighs 200 grams",
+    "result_mult": 65,
     "autolearn": true,
     "components": [ [ [ "soap", 5 ] ], [ [ "water_clean", 3 ] ], [ [ "wool_staple", 1 ] ] ]
   },
