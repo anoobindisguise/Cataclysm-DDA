@@ -262,7 +262,7 @@
       [ "awl_steel", 40 ],
       { "item": "sewing_kit", "prob": 5, "charges": 200 },
       { "item": "tailors_kit", "prob": 50, "charges": 400 },
-      [ "thread", 10 ],
+      { "item": "thread", "prob": 10, "charges": [ 0, 24000 ], "container-item": "thread_spool" },
       [ "string_6", 50 ],
       [ "leather", 10 ],
       [ "fur", 7 ],
