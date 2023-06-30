@@ -2117,7 +2117,7 @@
     "activity_level": "LIGHT_EXERCISE",
     "time": "5 m",
     "qualities": [ { "id": "CUT", "level": 2 } ],
-    "components": [ [ [ "weed", 20 ] ], [ [ "plant_fibre", 100 ] ], [ [ "withered", 1 ] ] ],
+    "components": [ [ [ "weed", 20 ] ], [ [ "plant_fibre", 1000 ] ], [ [ "withered", 1 ] ] ],
     "flags": [ "BLIND_HARD" ]
   },
   {
@@ -3587,9 +3587,9 @@
     "result": "stick_fiber",
     "type": "uncraft",
     "activity_level": "LIGHT_EXERCISE",
-    "time": "30 m",
+    "time": "60 m",
     "qualities": [ { "id": "CUT", "level": 2 } ],
-    "components": [ [ [ "plant_fibre", 80 ] ] ]
+    "components": [ [ [ "plant_fibre", 20000 ] ] ]
   },
   {
     "result": "ref_lighter",
