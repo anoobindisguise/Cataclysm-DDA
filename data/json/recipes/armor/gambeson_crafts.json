@@ -1310,12 +1310,12 @@
         [ "cotton_patchwork", 40 ],
         [ "felt_patch", 67 ],
         [ "wool_staple", 1 ],
-        [ "sinew", 200 ],
-        [ "thread", 200 ],
-        [ "yarn", 200 ],
-        [ "plant_fibre", 200 ],
+        [ "sinew_usable", 25000 ],
+        [ "thread", 25000 ],
+        [ "yarn", 25000 ],
+        [ "plant_fibre", 25000 ],
         [ "straw_pile", 10 ],
-        [ "cable", 37 ]
+        [ "scrap_carpet", 1 ]
       ]
     ]
   },
