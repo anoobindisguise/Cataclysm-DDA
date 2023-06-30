@@ -82,7 +82,7 @@
       { "item": "yarn", "prob": 60, "charges": [ 0, 36000 ], "container-item": "thread_spool" },
       { "item": "thread", "prob": 6, "charges": [ 0, 20000 ], "container-item": "thread_spool" },
       { "item": "thread", "prob": 9, "charges": [ 0, 20000 ], "container-item": "thread_spool" },
-      { "item": "thread", "prob": 18, "charges": [ 0, 12000 ], "container-item": "thread_spool" },
+      { "item": "thread", "prob": 18, "charges": [ 0, 12000 ], "container-item": "thread_spool" }
     ]
   },
   {
