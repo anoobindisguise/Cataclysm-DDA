@@ -567,12 +567,12 @@
     "description": "Very durable Kevlar thread that would be particularly useful for making ballistic armor, though it's fine to use in place of normal thread too, in most cases.  Making armor-grade Kevlar sheets from this would need a particularly tight weave, and so would require some specialized machinery.",
     "material": [ "kevlar" ],
     "flags": [ "NO_SALVAGE" ],
-    "volume": "200 ml",
-    "weight": "1 g",
-    "//": "30 meters of thread per 1g, roughly 6 inches of thread per unit.",
+    "volume": "1 ml",
+    "weight": "33 mg",
+    "//": "0.275mm diameter or so, threads measured in 40 cm units.",
     "ammo_type": "thread",
     "count": 50,
-    "stack_size": 200
+    "stack_size": 42
   },
   {
     "type": "AMMO",
@@ -587,9 +587,9 @@
     "description": "Heat-resistant Nomex thread that would be particularly useful for making heat protection gear, though it's fine to use in place of normal thread too, in most cases.",
     "material": [ "nomex" ],
     "flags": [ "NO_SALVAGE" ],
-    "volume": "200 ml",
-    "weight": "1 g",
-    "//": "30 meters of thread per 1g, roughly 6 inches of thread per unit.",
+    "volume": "1 ml",
+    "weight": "5 mg",
+    "//": "0.12mm diameter or so, threads measured in 40 cm units.",
     "ammo_type": "thread",
     "count": 50,
     "stack_size": 200
