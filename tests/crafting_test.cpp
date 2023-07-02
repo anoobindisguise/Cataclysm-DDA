@@ -2032,7 +2032,7 @@ TEST_CASE( "tools_with_charges_as_components", "[crafting]" )
     item sew_kit( itype_sewing_kit );
     item thread( "thread" );
     item sheet_cotton( "sheet_cotton" );
-    thread.charges = 100;
+    thread.charges = 1000;
     sew_kit.put_in( thread, item_pocket::pocket_type::MAGAZINE );
     REQUIRE( sew_kit.ammo_remaining() == 100 );
     clear_and_setup( c, m, pocketknife );
@@ -2067,7 +2067,7 @@ TEST_CASE( "tools_with_charges_as_components", "[crafting]" )
                     }
                 }
                 CHECK( cotton_sheets == 0 );
-                CHECK( threads == 100 - threads_in_recipe );
+                CHECK( threads == 1000 - threads_in_recipe );
                 CHECK( threads_in_tool == 100 );
             }
         }
