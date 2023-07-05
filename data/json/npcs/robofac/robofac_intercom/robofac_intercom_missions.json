@@ -414,6 +414,11 @@
         "condition": { "u_has_perception": 8 },
         "topic": "MISSION_ROBOFAC_INTERCOM_2_COMPLETE_Hardcase"
       },
+      {
+        "text": "[Show the intercom the armor] The researcher was wearing some kind of body armor.  Obviously it didn't save them, but what is it exactly?",
+        "condition": { "or": [ { "u_has_item": "RM12_vest" }, { "u_has_item": "RM12_vest_on" } ],
+        "topic": "MISSION_ROBOFAC_INTERCOM_2_COMPLETE_RM12"
+      },
       { "text": "I'm interested in that map.", "topic": "TALK_ROBOFAC_INTERCOM_BUY_LOCAL_MAP" },
       { "text": "Thank you.", "topic": "TALK_ROBOFAC_INTERCOM_SERVICES" }
     ]
@@ -422,6 +427,13 @@
     "id": "MISSION_ROBOFAC_INTERCOM_2_COMPLETE_Hardcase",
     "type": "talk_topic",
     "dynamic_line": "&The intercom is silent."
+  },
+  {
+    "id": "MISSION_ROBOFAC_INTERCOM_2_COMPLETE_RM12",
+    "type": "talk_topic",
+    "//": "gives access to the prototype menu",
+    "dynamic_line": "&The intercom is silent for a moment before responding.\n\n\"That is a Model B RM12 powered combat vest.  In short, it offers equivalent protection to a level IV ESAPI insert if continually powered; otherwise it is roughly equivalent to a standard Modular Tactical Vest.  Standby power drain is minimal but power usage will spike dramatically when it is struck.  Yours appears to be essentially undamaged, and while we do not issue that armor to our operatives due to expense and power logistics we can repair it for a small fee should it sustain damage.  We hope that this answers your question in a satisfactory manner.\"",
+    "speaker_effect": { "effect": [ { "u_add_var": "u_hub_prototypes", "type": "dialogue", "context": "intercom", "value": "yes" } ] }
   },
   {
     "id": "MISSION_ROBOFAC_INTERCOM_3",
