@@ -108,6 +108,16 @@
         "topic": "TALK_ROBOFAC_INTERCOM_RM13_REPAIR"
       },
       {
+        "text": "My RM12 vest has taken some damage.  Could someone repair it for me?",
+        "condition": {
+          "and": [
+            { "u_has_items": { "item": "rm12_armor", "count": 1 } },
+            { "not": { "u_has_var": "u_project_ongoing", "type": "dialogue", "context": "hub_rnd", "value": "yes" } }
+          ]
+        },
+        "topic": "TALK_ROBOFAC_INTERCOM_RM13_REPAIR"
+      },
+      {
         "text": "How are my armor repairs coming?",
         "condition": {
           "and": [
@@ -156,6 +166,41 @@
           ]
         },
         "topic": "TALK_ROBOFAC_INTERCOM_RM13_REPAIR_COMPLETE"
+      },
+      {
+        "text": "How are my armor repairs coming?",
+        "condition": {
+          "and": [
+            { "u_compare_time_since_var": "u_waiting_on_hub", "type": "timer", "context": "hub_rnd", "op": ">", "time": "1 d" },
+            {
+              "u_has_var": "u_current_project",
+              "type": "dialogue",
+              "context": "hub_rnd",
+              "value": "phase_immersion_suit"
+            }
+          ]
+        },
+        "topic": "TALK_ROBOFAC_INTERCOM_PHASE_REPAIR_COMPLETE"
+      },
+      {
+        "text": "How are my armor repairs coming?",
+        "condition": {
+          "and": [
+            { "u_compare_time_since_var": "u_waiting_on_hub", "type": "timer", "context": "hub_rnd", "op": "<", "time": "1 d" },
+            { "u_has_var": "u_current_project", "type": "dialogue", "context": "hub_rnd", "value": "rm12_armor" }
+          ]
+        },
+        "topic": "TALK_ROBOFAC_INTERCOM_PROTOTYPE_ONGOING"
+      },
+      {
+        "text": "How are my armor repairs coming?",
+        "condition": {
+          "and": [
+            { "u_compare_time_since_var": "u_waiting_on_hub", "type": "timer", "context": "hub_rnd", "op": ">", "time": "1 d" },
+            { "u_has_var": "u_current_project", "type": "dialogue", "context": "hub_rnd", "value": "rm12_armor" }
+          ]
+        },
+        "topic": "TALK_ROBOFAC_INTERCOM_RM12_REPAIR_COMPLETE"
       },
       {
         "text": "I've found this piece of XEDRA tech; it seems to offer some kind of protection.  I'm curious what you all can make of it.",
@@ -518,6 +563,46 @@
           { "u_add_var": "u_current_project", "type": "dialogue", "context": "hub_rnd", "value": "none" },
           { "u_add_var": "u_project_ongoing", "type": "dialogue", "context": "hub_rnd", "value": "no" },
           { "u_spawn_item": "rm13_armor" }
+        ],
+        "topic": "TALK_ROBOFAC_INTERCOM_SERVICES"
+      }
+    ]
+  },
+  {
+    "id": "TALK_ROBOFAC_INTERCOM_RM12_REPAIR",
+    "//": "repairing RM12 Armor",
+    "type": "talk_topic",
+    "dynamic_line": "Certainly; for a fee of one coin, repairs and adjustments could be completed by tomorrow.  I'd ask you to make sure everything has been removed from the vest before giving it to us.",
+    "responses": [
+      {
+        "text": "[1 HGC, armor] See you tomorrow.",
+        "condition": { "u_has_items": { "item": "RobofacCoin", "count": 1 } },
+        "effect": [
+          { "u_sell_item": "RobofacCoin", "count": 1 },
+          { "u_consume_item": "rm12_armor", "count": 1, "popup": true },
+          { "u_add_var": "u_waiting_on_hub", "type": "timer", "context": "hub_rnd", "time": true },
+          { "u_add_var": "u_project_ongoing", "type": "dialogue", "context": "hub_rnd", "value": "yes" },
+          { "u_add_var": "u_current_project", "type": "dialogue", "context": "hub_rnd", "value": "rm12_armor" }
+        ],
+        "topic": "TALK_ROBOFAC_INTERCOM_REPAIR_STARTED"
+      },
+      { "text": "What about another project?", "topic": "TALK_ROBOFAC_INTERCOM_PROTOTYPE_MENU" },
+      { "text": "I want to talk about something else.", "topic": "TALK_ROBOFAC_INTERCOM_SERVICES" },
+      { "text": "I'll check in later.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "id": "TALK_ROBOFAC_INTERCOM_RM12_REPAIR_COMPLETE",
+    "//": "repairing RM12 armor",
+    "type": "talk_topic",
+    "dynamic_line": "The repairs and tuneup are complete.  Should be good as new or better.",
+    "responses": [
+      {
+        "text": "Thanks.",
+        "effect": [
+          { "u_add_var": "u_current_project", "type": "dialogue", "context": "hub_rnd", "value": "none" },
+          { "u_add_var": "u_project_ongoing", "type": "dialogue", "context": "hub_rnd", "value": "no" },
+          { "u_spawn_item": "rm12_armor" }
         ],
         "topic": "TALK_ROBOFAC_INTERCOM_SERVICES"
       }
