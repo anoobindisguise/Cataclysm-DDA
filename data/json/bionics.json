@@ -153,7 +153,16 @@
       "FAT",
       "SLIME_SPRAY",
       "MUCUS_SECRETION",
-      "MUCUS_SECRETION2"
+      "MUCUS_SECRETION2",
+      "SKIN_SMOOTH",
+      "SKIN_RASHY",
+      "CHITIN_MOLTED",
+      "CHITIN2_MOLTED",
+      "CHITIN3_MOLTED",
+      "CRUSTACEAN_CARAPACE_MOLTED",
+      "SPARSE_SCALES",
+      "GOOSEBUMPS",
+      "SKIN_PEELING"
     ]
   },
   {
@@ -277,7 +286,16 @@
       "SLIME_SPRAY",
       "MUCUS_SECRETION",
       "MUCUS_SECRETION2",
-      "WIDE_MOUTH"
+      "WIDE_MOUTH",
+      "SKIN_SMOOTH",
+      "SKIN_RASHY",
+      "CHITIN_MOLTED",
+      "CHITIN2_MOLTED",
+      "CHITIN3_MOLTED",
+      "CRUSTACEAN_CARAPACE_MOLTED",
+      "SPARSE_SCALES",
+      "GOOSEBUMPS",
+      "SKIN_PEELING"
     ]
   },
   {
@@ -376,7 +394,16 @@
       "GASTROPOD_FOOT",
       "GASTROPOD_BALANCE",
       "MUCUS_SECRETION",
-      "MUCUS_SECRETION2"
+      "MUCUS_SECRETION2",
+      "SKIN_SMOOTH",
+      "SKIN_RASHY",
+      "CHITIN_MOLTED",
+      "CHITIN2_MOLTED",
+      "CHITIN3_MOLTED",
+      "CRUSTACEAN_CARAPACE_MOLTED",
+      "SPARSE_SCALES",
+      "GOOSEBUMPS",
+      "SKIN_PEELING"
     ]
   },
   {
@@ -461,7 +488,16 @@
       "SLIME_SPRAY",
       "INSECT_RESERVOIR",
       "MUCUS_SECRETION",
-      "MUCUS_SECRETION2"
+      "MUCUS_SECRETION2",
+      "SKIN_SMOOTH",
+      "SKIN_RASHY",
+      "CHITIN_MOLTED",
+      "CHITIN2_MOLTED",
+      "CHITIN3_MOLTED",
+      "CRUSTACEAN_CARAPACE_MOLTED",
+      "SPARSE_SCALES",
+      "GOOSEBUMPS",
+      "SKIN_PEELING"
     ]
   },
   {
@@ -551,6 +587,18 @@
       [ "hand_l", 1 ],
       [ "hand_r", 1 ],
       [ "mouth", 1 ]
+    ],
+    "encumbrance": [
+      [ "torso", 1 ],
+      [ "arm_l", 1 ],
+      [ "arm_r", 1 ],
+      [ "leg_l", 1 ],
+      [ "leg_r", 1 ],
+      [ "hand_l", 1 ],
+      [ "hand_r", 1 ],
+      [ "foot_l", 1 ],
+      [ "foot_r", 1 ],
+      [ "head", 1 ]
     ],
     "flags": [ "BIONIC_NPC_USABLE", "BIONIC_SHOCKPROOF" ],
     "protec": [
