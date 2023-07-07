@@ -3905,6 +3905,7 @@
     "warmth": 30,
     "environmental_protection": 2,
     "material_thickness": 4,
+    "armor": [
       {
         "material": [ { "type": "hyperweave_off", "covered_by_mat": 100, "thickness": 4.0 } ],
         "encumbrance": 6,
@@ -3933,6 +3934,7 @@
       "NO_UNLOAD"
     ],
     "environmental_protection": 10,
+    "armor": [
       {
         "material": [ { "type": "hyperweave_on", "covered_by_mat": 100, "thickness": 4.0 } ],
         "encumbrance": 6,
