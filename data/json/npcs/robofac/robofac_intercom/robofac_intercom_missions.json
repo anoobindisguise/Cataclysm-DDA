@@ -416,7 +416,7 @@
       },
       {
         "text": "[Show the intercom the armor] The researcher was wearing some kind of body armor.  Obviously it didn't save them, but what is it exactly?",
-        "condition": { "or": [ { "u_has_item": "RM12_vest" }, { "u_has_item": "RM12_vest_on" } ],
+        "condition": { "or": [ { "u_has_item": "RM12_vest" }, { "u_has_item": "RM12_vest_on" } ] },
         "topic": "MISSION_ROBOFAC_INTERCOM_2_COMPLETE_RM12"
       },
       { "text": "I'm interested in that map.", "topic": "TALK_ROBOFAC_INTERCOM_BUY_LOCAL_MAP" },
