@@ -2565,6 +2565,10 @@ bool Character::practice( const skill_id &id, int amount, int cap, bool suppress
             handle_skill_warning( id, false );
         }
     }
+
+    // every skill beyond the first one learned in the same 24 hr period starts increasing slower
+    amount /= skills_learned_today_penalty();
+
     bool level_up = false;
     if( amount > 0 && level.isTraining() ) {
         int old_practical_level = static_cast<int>( get_skill_level( id ) );
@@ -2591,6 +2595,9 @@ bool Character::practice( const skill_id &id, int amount, int cap, bool suppress
                      skill_name );
         }
 
+        set_skills_learned_today( get_skills_learned_today() + new_practical_level - old_practical_level );
+
+
         // Apex Predators don't think about much other than killing.
         // They don't lose Focus when practicing combat skills.
         if( !( has_flag( json_flag_PRED4 ) && skill.is_combat_skill() ) ) {
@@ -2613,6 +2620,10 @@ bool Character::practice( const skill_id &id, int amount, int cap, bool suppress
 
     get_skill_level_object( id ).practice();
     return level_up;
+}
+
+float Character::skills_learned_today_penalty() const {
+    return 1 + std::max( get_skills_learned_today() - 1, 0 );
 }
 
 // Returned values range from 1.0 (unimpeded vision) to 11.0 (totally blind).
@@ -4340,6 +4351,11 @@ int Character::get_fatigue() const
 int Character::get_sleep_deprivation() const
 {
     return sleep_deprivation;
+}
+
+void Character::set_skills_learned_today( float amt )
+{
+    skills_learned_today = amt;
 }
 
 bool Character::is_deaf() const
