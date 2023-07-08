@@ -478,6 +478,9 @@ class Character : public Creature, public visitable
         int int_cur;
         int per_cur;
 
+        float skills_learned_today = 0;
+        // the number of practical skill points learned, resets to 0 each midnight
+
         int kill_xp = 0;
         // Level-up points spent on Stats through Kills
         int spent_upgrade_points = 0;
