@@ -111,11 +111,11 @@
         "text": "My RM12 vest has taken some damage.  Could someone repair it for me?",
         "condition": {
           "and": [
-            { "u_has_items": { "item": "rm12_armor", "count": 1 } },
+            { "u_has_items": { "item": "rm12_vest", "count": 1 } },
             { "not": { "u_has_var": "u_project_ongoing", "type": "dialogue", "context": "hub_rnd", "value": "yes" } }
           ]
         },
-        "topic": "TALK_ROBOFAC_INTERCOM_RM13_REPAIR"
+        "topic": "TALK_ROBOFAC_INTERCOM_RM12_REPAIR"
       },
       {
         "text": "How are my armor repairs coming?",
@@ -176,18 +176,18 @@
               "u_has_var": "u_current_project",
               "type": "dialogue",
               "context": "hub_rnd",
-              "value": "phase_immersion_suit"
+              "value": "rm12_vest"
             }
           ]
         },
-        "topic": "TALK_ROBOFAC_INTERCOM_PHASE_REPAIR_COMPLETE"
+        "topic": "TALK_ROBOFAC_INTERCOM_RM12_REPAIR_COMPLETE"
       },
       {
         "text": "How are my armor repairs coming?",
         "condition": {
           "and": [
             { "u_compare_time_since_var": "u_waiting_on_hub", "type": "timer", "context": "hub_rnd", "op": "<", "time": "1 d" },
-            { "u_has_var": "u_current_project", "type": "dialogue", "context": "hub_rnd", "value": "rm12_armor" }
+            { "u_has_var": "u_current_project", "type": "dialogue", "context": "hub_rnd", "value": "rm12_vest" }
           ]
         },
         "topic": "TALK_ROBOFAC_INTERCOM_PROTOTYPE_ONGOING"
@@ -197,7 +197,7 @@
         "condition": {
           "and": [
             { "u_compare_time_since_var": "u_waiting_on_hub", "type": "timer", "context": "hub_rnd", "op": ">", "time": "1 d" },
-            { "u_has_var": "u_current_project", "type": "dialogue", "context": "hub_rnd", "value": "rm12_armor" }
+            { "u_has_var": "u_current_project", "type": "dialogue", "context": "hub_rnd", "value": "rm12_vest" }
           ]
         },
         "topic": "TALK_ROBOFAC_INTERCOM_RM12_REPAIR_COMPLETE"
@@ -579,10 +579,10 @@
         "condition": { "u_has_items": { "item": "RobofacCoin", "count": 1 } },
         "effect": [
           { "u_sell_item": "RobofacCoin", "count": 1 },
-          { "u_consume_item": "rm12_armor", "count": 1, "popup": true },
+          { "u_consume_item": "rm12_vest", "count": 1, "popup": true },
           { "u_add_var": "u_waiting_on_hub", "type": "timer", "context": "hub_rnd", "time": true },
           { "u_add_var": "u_project_ongoing", "type": "dialogue", "context": "hub_rnd", "value": "yes" },
-          { "u_add_var": "u_current_project", "type": "dialogue", "context": "hub_rnd", "value": "rm12_armor" }
+          { "u_add_var": "u_current_project", "type": "dialogue", "context": "hub_rnd", "value": "rm12_vest" }
         ],
         "topic": "TALK_ROBOFAC_INTERCOM_REPAIR_STARTED"
       },
@@ -602,7 +602,7 @@
         "effect": [
           { "u_add_var": "u_current_project", "type": "dialogue", "context": "hub_rnd", "value": "none" },
           { "u_add_var": "u_project_ongoing", "type": "dialogue", "context": "hub_rnd", "value": "no" },
-          { "u_spawn_item": "rm12_armor" }
+          { "u_spawn_item": "rm12_vest" }
         ],
         "topic": "TALK_ROBOFAC_INTERCOM_SERVICES"
       }
