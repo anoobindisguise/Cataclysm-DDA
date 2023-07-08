@@ -433,6 +433,7 @@
     "type": "talk_topic",
     "//": "gives access to the prototype menu",
     "dynamic_line": "&The intercom is silent for a moment before responding.\n\n\"That is a Model B RM12 powered combat vest.  In short, it offers equivalent protection to a level IV ESAPI insert if continually powered; otherwise it is roughly equivalent to a standard Modular Tactical Vest.  Standby power drain is minimal but power usage will spike dramatically when it is struck.  Yours appears to be essentially undamaged, and while we do not issue that armor to our operatives due to expense and power logistics we can repair it for a small fee should it sustain damage.  We hope that this answers your question in a satisfactory manner.\"",
+    "not": { "u_has_var": "u_hub_prototypes", "type": "dialogue", "context": "intercom", "value": "yes" }
     "speaker_effect": { "effect": [ { "u_add_var": "u_hub_prototypes", "type": "dialogue", "context": "intercom", "value": "yes" } ] }
   },
   {
