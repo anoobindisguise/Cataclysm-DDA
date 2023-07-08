@@ -518,6 +518,7 @@ Character::Character() :
     per_max = 8;
     set_dodges_left(1);
     blocks_left = 1;
+    skills_learned_today = 0;
     str_bonus = 0;
     dex_bonus = 0;
     per_bonus = 0;
@@ -1086,6 +1087,11 @@ double Character::aim_per_move( const item &gun, double recoil,
 
     // Never improve by more than the currently used sights permit.
     return std::min( aim_speed, recoil - limit );
+}
+
+float Character::get_skills_learned_today() const
+{
+    return skills_learned_today;
 }
 
 int Character::get_dodges_left() const
