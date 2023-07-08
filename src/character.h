@@ -548,6 +548,9 @@ class Character : public Creature, public visitable
         void mod_per_bonus( int nper );
         void mod_int_bonus( int nint );
 
+        // Set the value to amt (reset to 0 every midnight, increases by amount of skills learned each day)
+        void set_skills_learned_today( float amt );
+
         /** Setters for stats shared with other creatures */
         using Creature::mod_speed_bonus;
         void mod_speed_bonus( int nspeed, const std::string &desc );
