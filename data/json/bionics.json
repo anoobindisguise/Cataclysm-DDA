@@ -1794,7 +1794,7 @@
     "name": { "str": "Bionic Detritus" },
     "occupied_bodyparts": [ [ "torso", 2 ], [ "arm_l", 1 ], [ "arm_r", 1 ], [ "leg_l", 1 ], [ "leg_r", 1 ] ],
     "dupes_allowed": true,
-    "description": "Random bits of ruined bionic haphazardly \"installed\" throughout your body. They seem to be harmless, at least.",
+    "description": "Random bits of ruined bionic haphazardly \"installed\" throughout your body.  They seem to be harmless, at least.",
     "flags": [ "BIONIC_FAULTY" ]
   },
   {
