@@ -1559,12 +1559,7 @@
     "warmth": 0,
     "environmental_protection": 2,
     "flags": [ "INTEGRATED", "ALLOWS_NATURAL_ATTACKS", "UNBREAKABLE", "PERSONAL", "ZERO_WEIGHT" ],
-    "armor": [
-      {
-        "material": [ { "type": "bioskin", "covered_by_mat": 100, "thickness": 1 } ],
-        "covers": [ "torso" ]
-      }
-    ]
+    "armor": [ { "material": [ { "type": "bioskin", "covered_by_mat": 100, "thickness": 1 } ], "covers": [ "torso" ] } ]
   },
   {
     "id": "integrated_bio_armor_head",
@@ -1582,11 +1577,6 @@
     "warmth": 0,
     "environmental_protection": 2,
     "flags": [ "INTEGRATED", "ALLOWS_NATURAL_ATTACKS", "UNBREAKABLE", "PERSONAL", "ZERO_WEIGHT" ],
-    "armor": [
-      {
-        "material": [ { "type": "bioskin", "covered_by_mat": 100, "thickness": 1 } ],
-        "covers": [ "head", "mouth" ]
-      }
-    ]
+    "armor": [ { "material": [ { "type": "bioskin", "covered_by_mat": 100, "thickness": 1 } ], "covers": [ "head", "mouth" ] } ]
   }
 ]
