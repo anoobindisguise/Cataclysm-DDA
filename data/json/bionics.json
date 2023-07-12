@@ -1798,22 +1798,13 @@
     "flags": [ "BIONIC_FAULTY" ]
   },
   {
-    "id": "bio_faulty_detritus",
-    "type": "bionic",
-    "name": { "str": "Bionic Detritus" },
-    "occupied_bodyparts": [ [ "torso", 2 ], [ "arm_l", 1 ], [ "arm_r", 1 ], [ "leg_l", 1 ], [ "leg_r", 1 ] ],
-    "dupes_allowed": true,
-    "description": "Random bits of ruined bionic haphazardly \"installed\" throughout your body. They seem to be harmless, at least.",
-    "flags": [ "BIONIC_FAULTY" ]
-  },
-  {
     "id": "bio_faulty_storage",
     "type": "bionic",
     "name": { "str": "Faulty Power Storage" },
     "capacity": "90 kJ",
     "power_trickle": "-1 J",
     "dupes_allowed": true,
-    "description": "This power storage CBM was damaged during installation and seems to be gradually bleeding charge.",
+    "description": "This power storage CBM was damaged at some point and seems to be gradually bleeding charge.",
     "flags": [ "BIONIC_FAULTY" ]
   },
   {
