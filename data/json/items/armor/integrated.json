@@ -1496,5 +1496,97 @@
     "relic_data": {
       "passive_effects": [ { "has": "WORN", "condition": { "not": "u_has_weapon" }, "values": [ { "value": "ATTACK_SPEED", "add": 20 } ] } ]
     }
+  },
+  {
+    "id": "integrated_bio_armor_arms",
+    "type": "ARMOR",
+    "category": "armor",
+    "name": { "str": "synthetic skin - arms" },
+    "description": "Self-mending, chemical-tolerant nanocomposite and semiconductor polymer which replaces the skin on your arms.",
+    "weight": "0 g",
+    "volume": "0 ml",
+    "price": 0,
+    "price_postapoc": 0,
+    "material": [ "bioskin" ],
+    "symbol": "x",
+    "color": "pink",
+    "warmth": 0,
+    "environmental_protection": 2,
+    "flags": [ "INTEGRATED", "ALLOWS_NATURAL_ATTACKS", "UNBREAKABLE", "PERSONAL", "ZERO_WEIGHT" ],
+    "armor": [
+      {
+        "material": [ { "type": "bioskin", "covered_by_mat": 100, "thickness": 1 } ],
+        "covers": [ "hand_l", "hand_r", "arm_l", "arm_r", "torso" ]
+      }
+    ]
+  },
+  {
+    "id": "integrated_bio_armor_legs",
+    "type": "ARMOR",
+    "category": "armor",
+    "name": { "str": "synthetic skin - legs" },
+    "description": "Self-mending, chemical-tolerant nanocomposite and semiconductor polymer which replaces the skin on your legs.",
+    "weight": "0 g",
+    "volume": "0 ml",
+    "price": 0,
+    "price_postapoc": 0,
+    "material": [ "bioskin" ],
+    "symbol": "x",
+    "color": "pink",
+    "warmth": 0,
+    "environmental_protection": 2,
+    "flags": [ "INTEGRATED", "ALLOWS_NATURAL_ATTACKS", "UNBREAKABLE", "PERSONAL", "ZERO_WEIGHT" ],
+    "armor": [
+      {
+        "material": [ { "type": "bioskin", "covered_by_mat": 100, "thickness": 1 } ],
+        "covers": [ "leg_l", "leg_r", "leg_l", "leg_r" ]
+      }
+    ]
+  },
+  {
+    "id": "integrated_bio_armor_torso",
+    "type": "ARMOR",
+    "category": "armor",
+    "name": { "str": "synthetic skin - torso" },
+    "description": "Self-mending, chemical-tolerant nanocomposite and semiconductor polymer which replaces the skin on your torso.",
+    "weight": "0 g",
+    "volume": "0 ml",
+    "price": 0,
+    "price_postapoc": 0,
+    "material": [ "bioskin" ],
+    "symbol": "x",
+    "color": "pink",
+    "warmth": 0,
+    "environmental_protection": 2,
+    "flags": [ "INTEGRATED", "ALLOWS_NATURAL_ATTACKS", "UNBREAKABLE", "PERSONAL", "ZERO_WEIGHT" ],
+    "armor": [
+      {
+        "material": [ { "type": "bioskin", "covered_by_mat": 100, "thickness": 1 } ],
+        "covers": [ "torso" ]
+      }
+    ]
+  },
+  {
+    "id": "integrated_bio_armor_head",
+    "type": "ARMOR",
+    "category": "armor",
+    "name": { "str": "synthetic skin - head" },
+    "description": "Self-mending, chemical-tolerant nanocomposite and semiconductor polymer which replaces the skin on your head.  Fitted with artificial hair to mimic your old style.",
+    "weight": "0 g",
+    "volume": "0 ml",
+    "price": 0,
+    "price_postapoc": 0,
+    "material": [ "bioskin" ],
+    "symbol": "x",
+    "color": "pink",
+    "warmth": 0,
+    "environmental_protection": 2,
+    "flags": [ "INTEGRATED", "ALLOWS_NATURAL_ATTACKS", "UNBREAKABLE", "PERSONAL", "ZERO_WEIGHT" ],
+    "armor": [
+      {
+        "material": [ { "type": "bioskin", "covered_by_mat": 100, "thickness": 1 } ],
+        "covers": [ "head", "mouth" ]
+      }
+    ]
   }
 ]
