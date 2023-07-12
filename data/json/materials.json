@@ -2842,5 +2842,27 @@
     "soft": true,
     "burn_products": [ [ "corpse_ash", 0.035 ] ],
     "resist": { "bash": 2.2, "cut": 3.5, "acid": 7, "heat": 1, "bullet": 1.4 }
+  },
+  {
+    "type": "material",
+    "id": "bioskin",
+    "name": "Synthetic Skin",
+    "//": "Synthetic self-mending skin substitute",
+    "density": 1.0,
+    "specific_heat_liquid": 1.6,
+    "specific_heat_solid": 1.6,
+    "latent_heat": 50,
+    "chip_resist": 4,
+    "wind_resist": 5,
+    "dmg_adj": [ "scratched", "cut", "cracked", "shattered" ],
+    "bash_dmg_verb": "dented",
+    "cut_dmg_verb": "gouged",
+    "burn_data": [
+      { "fuel": 0.01, "smoke": 1, "burn": 0.0002 },
+      { "fuel": 0.04, "smoke": 1, "burn": 0.0006 },
+      { "fuel": 0.1, "smoke": 2, "burn": 0.0098 }
+    ],
+    "resist": { "bash": 3, "cut": 3, "acid": 6, "heat": 6, "bullet": 3, "stab": 3 },
+    "repair_difficulty": 10
   }
 ]
