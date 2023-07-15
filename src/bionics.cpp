@@ -2119,7 +2119,7 @@ bool Character::can_uninstall_bionic( const bionic &bio, Character &installer, b
         return false;
     }
 
-    String conflicts_list;
+    std::string conflicts_list;
     for( const bionic_id &bid : get_bionics() ) {
         if( bio.id == bid->required_bionic.id ) {
             conflicts_list += " ";
@@ -2344,7 +2344,7 @@ ret_val<void> Character::is_installable( const item *it, const bool by_autodoc )
                it->is_upgrade() ) {
         return ret_val<void>::make_failure( _( "No base version installed." ) );
     } else if( bid->required_bionics && !has_requisite_bionics( bid ) ) {
-        String conflicts_list;
+        std::string conflicts_list;
         for( const bionic_id &bid2 : bio.required_bionics ) {
             if( !has_bionic( bid2 ) ) {
                 conflicts_list += " ";
