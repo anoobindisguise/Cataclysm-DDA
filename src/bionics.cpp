@@ -2127,7 +2127,7 @@ bool Character::can_uninstall_bionic( const bionic &bio, Character &installer, b
         }
     }
     if( conflicts_list != "" ) {
-            popup( _( "%s cannot be removed because it is required by:%s." ), bio.id->name, conflicts_list );
+        popup( _( "%s cannot be removed because it is required by:%s." ), bio.id->name, conflicts_list );
     }
 
     // removal of bionics adds +2 difficulty over installation
