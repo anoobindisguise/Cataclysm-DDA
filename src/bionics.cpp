@@ -2120,8 +2120,8 @@ bool Character::can_uninstall_bionic( const bionic &bio, Character &installer, b
     }
 
     std::string conflicts_list;
-    for( const bionic_id &bid : get_bionics() ) {
-        if( bio.id == bid->required_bionic.id ) {
+    for( const bionic_id &bid : bio.required_bionics ) {
+        if( bio.id == bid.id ) {
             conflicts_list += " ";
             conflicts_list += bid.id->name;
         }
@@ -2345,14 +2345,13 @@ ret_val<void> Character::is_installable( const item *it, const bool by_autodoc )
         return ret_val<void>::make_failure( _( "No base version installed." ) );
     } else if( bid->required_bionics && !has_requisite_bionics( bid ) ) {
         std::string conflicts_list;
-        for( const bionic_id &bid2 : bio.required_bionics ) {
+        for( const bionic_id &bid2 : bio->required_bionics ) {
             if( !has_bionic( bid2 ) ) {
                 conflicts_list += " ";
                 conflicts_list += bid2.id->name;
             }
         }
-        return ret_val<void>::make_failure( _( "Bionic requires prior installation of:%s.",
-                                               conflicts_list ) );
+        return ret_val<void>::make_failure( string_format( _( "Bionic requires prior installation of:%s." ), conflicts_list ) );        
     } else if( std::any_of( bid->available_upgrades.begin(),
                             bid->available_upgrades.end(),
     [this]( const bionic_id & b ) {
