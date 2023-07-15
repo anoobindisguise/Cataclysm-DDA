@@ -1566,6 +1566,8 @@ class Character : public Creature, public visitable
         float bionics_adjusted_skill( bool autodoc, int skill_level = -1 ) const;
         /** Calculate non adjusted skill for (un)installing bionics */
         int bionics_pl_skill( bool autodoc, int skill_level = -1 ) const;
+        /** if a bionic requires other bionics to be installed do you have all of those bionics
+        bool has_requisite_bionics( const bionic_id &bio ) const;
         /**Is the installation possible*/
         bool can_install_bionics( const itype &type, Character &installer, bool autodoc = false,
                                   int skill_level = -1 ) const;
