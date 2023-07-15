@@ -2351,7 +2351,8 @@ ret_val<void> Character::is_installable( const item *it, const bool by_autodoc )
                 conflicts_list += bid2.id->name;
             }
         }
-        return ret_val<void>::make_failure( _( "Bionic requires prior installation of:%s.", conflicts_list ) );
+        return ret_val<void>::make_failure( _( "Bionic requires prior installation of:%s.",
+                                               conflicts_list ) );
     } else if( std::any_of( bid->available_upgrades.begin(),
                             bid->available_upgrades.end(),
     [this]( const bionic_id & b ) {
