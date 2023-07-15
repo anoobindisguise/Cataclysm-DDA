@@ -2347,7 +2347,7 @@ ret_val<void> Character::is_installable( const item *it, const bool by_autodoc )
         String conflicts_list;
         for( const bionic_id &bid2 : bio.required_bionics ) {
             if( !has_bionic( bid2 ) ) {
-                conflicts_list += " ",
+                conflicts_list += " ";
                 conflicts_list += bid2.id->name;
             }
         }
