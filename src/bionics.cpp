@@ -364,6 +364,7 @@ void bionic_data::load( const JsonObject &jsobj, const std::string &src )
     optional( jsobj, was_loaded, "included_bionics", included_bionics );
     optional( jsobj, was_loaded, "included", included );
     optional( jsobj, was_loaded, "upgraded_bionic", upgraded_bionic );
+    optional( jsobj, was_loaded, "required_bionic", required_bionic );
     optional( jsobj, was_loaded, "fuel_options", fuel_opts );
     optional( jsobj, was_loaded, "activated_on_install", activated_on_install, false );
 
@@ -2118,6 +2119,14 @@ bool Character::can_uninstall_bionic( const bionic &bio, Character &installer, b
         return false;
     }
 
+    for( const bionic_id &bid : get_bionics() ) {
+        if( bid->required_bionic && bio.id == bid->required_bionic.id ) {
+            popup( _( "%s cannot be removed because it is required by %s." ), bio.id->name,
+                   bid.id->name );
+            return false;
+        }
+    }
+
     // removal of bionics adds +2 difficulty over installation
     int chance_of_success = bionic_success_chance( autodoc, skill_level, difficulty + 2,
                             installer );
@@ -2331,6 +2340,9 @@ ret_val<void> Character::is_installable( const item *it, const bool by_autodoc )
                !has_bionic( bid->upgraded_bionic ) &&
                it->is_upgrade() ) {
         return ret_val<void>::make_failure( _( "No base version installed." ) );
+    } else if( bid->required_bionic &&
+               !has_bionic( bid->required_bionic ) ) {
+        return ret_val<void>::make_failure( _( "Bionic requires prior installation of %s to be installed.", bid->required_bionic.id->name ) );
     } else if( std::any_of( bid->available_upgrades.begin(),
                             bid->available_upgrades.end(),
     [this]( const bionic_id & b ) {
