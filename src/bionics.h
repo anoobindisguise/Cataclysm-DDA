@@ -155,7 +155,7 @@ struct bionic_data {
      * Bionic that must already be installed for this to be installed.
      * You also can't unstall bionics that are required by a bionic you also have.
      */
-    bionic_id required_bionic;
+    std::vector<bionic_id> required_bionics;
     /**
      * Bionics that are incompatible with this bionic and will be
      * deactivated automatically when this bionic is activated.
