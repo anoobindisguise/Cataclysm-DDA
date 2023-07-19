@@ -687,7 +687,7 @@
     "tools": [ [ [ "loom_frame", -1 ] ], [ [ "shed_stick", -1 ] ] ],
     "qualities": [ { "id": "CUT", "level": 2 } ],
     "//": "one thread weighs 8 milligrams. one sheet weighs 38 grams.  A little will be lost/wasted in the process.",
-    "components": [ [ [ "thread", 4800 ] ] ]
+    "components": [ [ [ "thread", 4800 ], [ "plant_fiber", 5000 ] ] ]
   },
   {
     "result": "sheet_cotton",
@@ -704,7 +704,7 @@
     "tools": [ [ [ "spinwheelitem", -1 ] ] ],
     "qualities": [ { "id": "CUT", "level": 1 } ],
     "//": "one thread weighs 8 milligrams. one sheet weighs 38 grams.  A little will be lost/wasted in the process.",
-    "components": [ [ [ "thread", 4800 ] ] ]
+    "components": [ [ [ "thread", 4800 ], [ "plant_fiber", 5000 ] ] ]
   },
   {
     "result": "sheet_cotton",
@@ -721,7 +721,7 @@
     "tools": [ [ [ "electric_spinwheel", 101 ] ] ],
     "qualities": [ { "id": "CUT", "level": 1 } ],
     "//": "one thread weighs 8 milligrams. one sheet weighs 38 grams.  A little will be lost/wasted in the process.",
-    "components": [ [ [ "thread", 4800 ] ] ]
+    "components": [ [ [ "thread", 4800 ], [ "plant_fiber", 5000 ] ] ]
   },
   {
     "result": "sheet_cotton_patchwork",
