@@ -435,8 +435,8 @@
     "autolearn": true,
     "batch_time_factors": [ 83, 3 ],
     "qualities": [ { "id": "COOK", "level": 1 } ],
-    "tools": [ [ [ "smoking_heat", 1, "LIST" ] ] ],
-    "//": "10g of sinew for 1 smoking_heat",
+    "tools": [ [ [ "dehydrating_heat", 1, "LIST" ] ] ],
+    "//": "10g of sinew for 1 dehydrating_heat",
     "components": [ [ [ "sinew_prepped", 600 ] ] ]
   },
   {
