@@ -328,20 +328,6 @@
     "price_postapoc": 20
   },
   {
-    "id": "sheet_cotton_imitation",
-    "type": "GENERIC",
-    "category": "spare_parts",
-    "name": { "str": "imitation cotton sheet" },
-    "description": "A 12-inch by 24-inch sheet of woven-together material, such as hemp, sinew or walking alien plant monster.  It is similar enough to cotton that you can use this in place of it in tailoring projects.",
-    "weight": "38 g",
-    "volume": "55 ml",
-    "//": "Materials less dense than cotton, but of similar structural strength overall.",
-    "price_postapoc": 8,
-    "looks_like": "sheet_cotton",
-    "symbol": "=",
-    "color": "dark_gray"
-  },
-  {
     "id": "sheet_faux_fur",
     "type": "GENERIC",
     "category": "spare_parts",
