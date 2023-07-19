@@ -51,7 +51,7 @@
     "reversible": true,
     "autolearn": true,
     "using": [ [ "sewing_standard", 12 ] ],
-    "components": [ [ [ "cotton_patchwork", 4 ] ], [ [ "cotton_ball", 8 ], [ "cottonwood_tree_boll", 8 ] ] ]
+    "components": [ [ [ "cotton_patchwork", 4 ] ], [ [ "cotton_ball", 8 ], [ "cottonwood_tree_boll", 10 ] ] ]
   },
   {
     "type": "recipe",
@@ -77,7 +77,7 @@
     "difficulty": 2,
     "autolearn": true,
     "using": [ [ "sewing_standard", 12 ], [ "drawing_tool", 20 ] ],
-    "components": [ [ [ "sheet", 1 ] ], [ [ "cotton_ball", 20 ] ] ]
+    "components": [ [ [ "sheet", 1 ] ], [ [ "cotton_ball", 20 ], [ "cottonwood_tree_boll", 24 ] ] ]
   },
   {
     "type": "recipe",
