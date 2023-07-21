@@ -6342,7 +6342,8 @@ void iexamine::smoker_options( Character &you, const tripoint &examp )
         case 5: {
             //remove charcoal
             for( map_stack::iterator it = items_here.begin(); it != items_here.end(); ) {
-                if( ( rem_f_opt && ( it->is_food() || it->typeId() == itype_sinew_usable ) ) || ( !rem_f_opt && ( it->typeId() == itype_charcoal ) ) ) {
+                if( ( rem_f_opt && ( it->is_food() || it->typeId() == itype_sinew_usable ) ) || ( !rem_f_opt &&
+                        ( it->typeId() == itype_charcoal ) ) ) {
                     // get handling cost before the item reference is invalidated
                     const int handling_cost = -you.item_handling_cost( *it );
 
