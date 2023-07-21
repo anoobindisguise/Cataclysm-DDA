@@ -227,7 +227,7 @@
     "id": "sinew_prepped",
     "category": "spare_parts",
     "comestible_type": "FOOD",
-	  "fun": -1,
+    "fun": -1,
     "price": 0,
     "price_postapoc": 0,
     "name": { "str": "prepared sinew" },
