@@ -186,6 +186,7 @@ class enchantment
         struct bodypart_changes {
             bodypart_str_id gain;
             bodypart_str_id lose;
+            bodypart_str_id cyberize;
             bool was_loaded = false;
             void serialize( JsonOut &jsout ) const;
             void deserialize( const JsonObject &jo );
