@@ -7428,7 +7428,7 @@
     "description": "You have a growling, rough voice.  Persuading NPCs will be more difficult, but threatening them will be easier.",
     "types": [ "VOICE_TONE" ],
     "changes_to": [ "SNARL" ],
-    "category": [ "RAT", "URSINE", "LUPINE", "BEAST", "CHIMERA", "FELINE", "BRUTE"  ],
+    "category": [ "RAT", "URSINE", "LUPINE", "BEAST", "CHIMERA", "FELINE", "BRUTE" ],
     "social_modifiers": { "persuade": -20, "lie": -10, "intimidate": 10 }
   },
   {
