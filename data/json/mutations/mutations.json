@@ -4741,7 +4741,15 @@
     "social_modifiers": { "intimidate": 2 },
     "types": [ "DURABILITY" ],
     "prereqs": [ "LARGE_OK", "HUGE_OK", "STR_UP_3", "STR_UP_4" ],
-    "threshreq": [ "THRESH_URSINE", "THRESH_CATTLE", "THRESH_CHIMERA", "THRESH_LIZARD", "THRESH_BEAST", "THRESH_CRUSTACEAN", "THRESH_BRUTE" ],
+    "threshreq": [
+      "THRESH_URSINE",
+      "THRESH_CATTLE",
+      "THRESH_CHIMERA",
+      "THRESH_LIZARD",
+      "THRESH_BEAST",
+      "THRESH_CRUSTACEAN",
+      "THRESH_BRUTE"
+    ],
     "changes_to": [ "MUT_TOUGH2" ],
     "category": [ "URSINE", "CATTLE", "CHIMERA", "BEAST", "LIZARD", "CRUSTACEAN", "BRUTE" ],
     "hp_modifier_secondary": 0.2
