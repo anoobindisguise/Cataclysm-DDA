@@ -296,5 +296,16 @@
     "mutagen_message": "",
     "memorial_message": "Dissolved into the collective.",
     "vitamin": "null"
+  },
+  {
+    "type": "mutation_category",
+    "id": "BRUTE",
+    "name": "Brute",
+    "threshold_mut": "THRESH_BRUTE",
+    "mutagen_message": "Your muscles ripple and bulge, surging with newfound strength.",
+    "memorial_message": "Graduated to heavyweight.",
+    "vitamin": "mutagen_brute",
+    "base_removal_chance": 25,
+    "base_removal_cost_mul": 2.5
   }
 ]
