@@ -389,7 +389,7 @@
     "name": { "str": "Normal Human" },
     "points": 0,
     "description": "You're a normal human; there's nothing wrong with you.  No need to worry.",
-    "category": [ "MEDICAL" ],
+    "category": [ "MEDICAL", "BRUTE" ],
     "triggers": [
       [
         {
@@ -492,7 +492,7 @@
     "starting_trait": true,
     "types": [ "CARDIO" ],
     "changes_to": [ "GOODCARDIO2" ],
-    "category": [ "FISH", "LUPINE", "MOUSE", "INSECT", "RABBIT" ],
+    "category": [ "FISH", "LUPINE", "MOUSE", "INSECT", "RABBIT", "BRUTE" ],
     "cardio_multiplier": 1.3
   },
   {
@@ -662,7 +662,7 @@
     "description": "You have a high tolerance for pain.",
     "starting_trait": true,
     "types": [ "PAIN" ],
-    "category": [ "MEDICAL", "TROGLOBITE" ],
+    "category": [ "MEDICAL", "TROGLOBITE", "BRUTE" ],
     "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "PAIN", "multiply": -0.33 } ] } ]
   },
   {
@@ -733,18 +733,18 @@
     "description": "The bottoms of your feet are tough, and you are accustomed to going barefoot.  You receive no movement penalty for not wearing shoes.",
     "starting_trait": true,
     "types": [ "SOLES" ],
-    "category": [ "GASTROPOD" ],
+    "category": [ "GASTROPOD", "BRUTE" ],
     "flags": [ "TOUGH_FEET" ]
   },
   {
     "type": "mutation",
     "id": "BOVINE_BULK",
-    "name": { "str": "Bovine Bulk" },
+    "name": { "str": "Bulky" },
     "points": 2,
     "description": "You've added a lot of weight, much of it muscle!  You get a 10% bonus to all hit points.  Swimming will be more difficult from now on.",
     "types": [ "BUILD" ],
     "changes_to": [ "BOVINE_BULK2" ],
-    "category": [ "CATTLE" ],
+    "category": [ "CATTLE", "BRUTE" ],
     "movecost_modifier": 1.02,
     "movecost_swim_modifier": 1.3,
     "hp_modifier": 0.1
@@ -805,8 +805,19 @@
     "points": 1,
     "description": "Your skin is tough.  Cutting and bashing damage is slightly reduced for you.  There's a small chance you don't cut yourself on sharp terrain.",
     "types": [ "ARMOR" ],
-    "category": [ "LIZARD", "CATTLE", "CHIMERA", "RAPTOR", "GASTROPOD", "CEPHALOPOD" ],
+    "category": [ "LIZARD", "CATTLE", "CHIMERA", "RAPTOR", "GASTROPOD", "CEPHALOPOD", "BRUTE" ],
     "armor": [ { "part_types": [ "torso", "head", "arm", "hand", "leg", "foot", "mouth", "tail" ], "cut": 1, "bash": 1 } ]
+  },
+  {
+    "type": "mutation",
+    "id": "THICKSKIN2",
+    "name": { "str": "Very Thick-Skinned" },
+    "points": 3,
+    "description": "Your skin is inhumanly tough.  All damage is reduced for you.",
+    "types": [ "ARMOR" ],
+    "category": [ "BRUTE" ],
+    "threshreq": [ "THRESH_BRUTE" ],
+    "armor": [ { "part_types": [ "torso", "head", "arm", "hand", "leg", "foot", "mouth", "tail" ], "cut": 2, "bash": 2, "bullet": 1, "stab": 1  } ]
   },
   {
     "type": "mutation",
@@ -828,6 +839,7 @@
     "starting_trait": true,
     "valid": false,
     "cancels": [ "BADBACK" ],
+    "category": [ "BRUTE" ],
     "weight_capacity_modifier": 1.35
   },
   {
@@ -977,7 +989,7 @@
     "description": "There's something about you that creatures find frightening, and they are more likely to try to flee.",
     "starting_trait": true,
     "types": [ "ANIMAL_EMPATHY" ],
-    "category": [ "BEAST", "INSECT", "CHIMERA", "CRUSTACEAN" ],
+    "category": [ "BEAST", "INSECT", "CHIMERA", "CRUSTACEAN", "BRUTE" ],
     "social_modifiers": { "intimidate": 15 }
   },
   {
@@ -1324,7 +1336,7 @@
     "description": "Without glasses, your seeing radius is severely reduced!  However, you are guaranteed to start with a pair of glasses.",
     "starting_trait": true,
     "cancels": [ "URSINE_EYE" ],
-    "category": [ "BEAST", "TROGLOBITE" ],
+    "category": [ "BEAST", "TROGLOBITE", "BRUTE" ],
     "flags": [ "MYOPIC" ]
   },
   {
@@ -1335,6 +1347,7 @@
     "description": "Your wounds heal a little slower than most.  Your HP whilst asleep, as well as your broken limbs, heal at 75% of the regular rate.",
     "starting_trait": true,
     "types": [ "HEALING" ],
+    "category": [ "BRUTE" ],
     "healing_multiplier": 0.75,
     "mending_modifier": 0.75
   },
@@ -1447,7 +1460,7 @@
     "description": "Things just keep getting you down.  You tend to be unhappy, and it takes some doing to cheer you up.",
     "starting_trait": true,
     "types": [ "ATTITUDE" ],
-    "category": [ "URSINE", "LIZARD", "CHIMERA" ]
+    "category": [ "URSINE", "LIZARD", "CHIMERA", "BRUTE" ]
   },
   {
     "type": "mutation",
@@ -1501,6 +1514,7 @@
     "description": "You are slow to grasp new ideas, and thus learn things more slowly than others.  Note that this only applies to real-world experience, not to skill gain from other sources like books.",
     "starting_trait": true,
     "valid": false,
+    "category": [ "BRUTE" ],
     "cancels": [ "FASTLEARNER" ],
     "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "LEARNING_FOCUS", "multiply": -0.15 } ] } ]
   },
@@ -1546,6 +1560,7 @@
     "valid": false,
     "starting_trait": true,
     "vitamins_absorb_multi": [ [ "veggy", [ [ "vitC", 0 ], [ "calcium", 0 ], [ "iron", 0 ] ] ] ],
+    "category": [ "BRUTE" ],
     "cancels": [ "HERBIVORE", "RUMINANT", "GRAZER" ]
   },
   {
@@ -1555,6 +1570,7 @@
     "points": -1,
     "description": "Reading is for nerds!  Boring books are more boring, and you can't have fun by reading books.",
     "valid": false,
+    "category": [ "BRUTE" ],
     "cancels": [ "ILLITERATE", "LOVES_BOOKS" ]
   },
   {
@@ -1640,7 +1656,7 @@
     "social_modifiers": { "lie": -5 },
     "skill_rust_multiplier": 1.33,
     "starting_trait": true,
-    "category": [ "BEAST", "MEDICAL", "CHIMERA", "MOUSE", "INSECT", "RABBIT" ]
+    "category": [ "BEAST", "MEDICAL", "CHIMERA", "MOUSE", "INSECT", "RABBIT", "BRUTE" ]
   },
   {
     "type": "mutation",
@@ -1726,6 +1742,7 @@
     "reading_speed_multiplier": 1.3,
     "starting_trait": true,
     "valid": false,
+    "category": [ "BRUTE" ],
     "cancels": [ "FASTREADER", "ILLITERATE" ]
   },
   {
@@ -1753,7 +1770,7 @@
     "points": -1,
     "description": "You make more noise while walking.  You're also more likely to set off traps.",
     "starting_trait": true,
-    "category": [ "CRUSTACEAN" ],
+    "category": [ "CRUSTACEAN", "BRUTE" ],
     "cancels": [ "LIGHTSTEP" ],
     "noise_modifier": 1.7
   },
@@ -1802,7 +1819,7 @@
     "points": -1,
     "description": "Your morale will shift up and down at random, often dramatically.",
     "starting_trait": true,
-    "category": [ "MEDICAL", "ELFA" ]
+    "category": [ "MEDICAL", "ELFA", "BRUTE" ]
   },
   {
     "type": "mutation",
@@ -1896,7 +1913,8 @@
       "RAT",
       "CHIMERA",
       "SPIDER",
-      "CRUSTACEAN"
+      "CRUSTACEAN",
+      "BRUTE"
     ]
   },
   {
@@ -2010,7 +2028,7 @@
     "description": "Your body hair is growing in thicker than it used to.  It's almost like you're going through a second puberty or something.",
     "types": [ "SKIN", "BODY_ARMOR", "ARMOR", "BODY_ARMOR_MOD" ],
     "changes_to": [ "LIGHTFUR" ],
-    "category": [ "MOUSE", "BEAST", "CATTLE", "RAT", "FELINE", "LUPINE", "RABBIT", "URSINE" ]
+    "category": [ "MOUSE", "BEAST", "CATTLE", "RAT", "FELINE", "LUPINE", "RABBIT", "URSINE", "BRUTE" ]
   },
   {
     "type": "mutation",
@@ -3877,13 +3895,23 @@
   },
   {
     "type": "mutation",
+    "id": "DUMB_MUSCLE",
+    "name": { "str": "Barbarian" },
+    "points": 0,
+    "visibility": 0,
+    "description": "Your body diverts some resources that used to go to your brain to power your muscles instead.  It's a little harder to think clearly than before but you're also stronger.",
+    "category": [ "BRUTE" ],
+    "passive_mods": { "int_mod": -1, "str_mod": 1 }
+  },
+  {
+    "type": "mutation",
     "id": "GASTROPOD_EXTREMITY1",
     "name": { "str": "Muscle Consolidation" },
     "points": 1,
     "visibility": 1,
     "description": "Your extremities have gained strength but lost fine motor skills.  -1 Dexterity +2 Strength.",
     "changes_to": [ "GASTROPOD_EXTREMITY2" ],
-    "category": [ "GASTROPOD" ],
+    "category": [ "GASTROPOD", "BRUTE" ],
     "passive_mods": { "dex_mod": -1, "str_mod": 2 }
   },
   {
@@ -3962,9 +3990,9 @@
     "description": "Your legs have gained muscle mass to propel you across any terrain.",
     "types": [ "LEGS" ],
     "leads_to": [ "LEAPING_LEGS", "FELINE_LEAP" ],
-    "prereqs": [ "PADDED_FEET" ],
+    "prereqs": [ "PADDED_FEET", "TOUGH_FEET" ],
     "movecost_modifier": 0.88,
-    "category": [ "BATRACHIAN", "RABBIT", "FELINE", "LUPINE", "SPIDER" ]
+    "category": [ "BATRACHIAN", "RABBIT", "FELINE", "LUPINE", "SPIDER", "BRUTE" ]
   },
   {
     "type": "mutation",
@@ -4705,9 +4733,9 @@
     "social_modifiers": { "intimidate": 2 },
     "types": [ "DURABILITY" ],
     "prereqs": [ "LARGE_OK", "HUGE_OK", "STR_UP_3", "STR_UP_4" ],
-    "threshreq": [ "THRESH_URSINE", "THRESH_CATTLE", "THRESH_CHIMERA", "THRESH_LIZARD", "THRESH_BEAST", "THRESH_CRUSTACEAN" ],
+    "threshreq": [ "THRESH_URSINE", "THRESH_CATTLE", "THRESH_CHIMERA", "THRESH_LIZARD", "THRESH_BEAST", "THRESH_CRUSTACEAN", "THRESH_BRUTE" ],
     "changes_to": [ "MUT_TOUGH2" ],
-    "category": [ "URSINE", "CATTLE", "CHIMERA", "BEAST", "LIZARD", "CRUSTACEAN" ],
+    "category": [ "URSINE", "CATTLE", "CHIMERA", "BEAST", "LIZARD", "CRUSTACEAN", "BRUTE" ],
     "hp_modifier_secondary": 0.2
   },
   {
@@ -4746,7 +4774,7 @@
     "types": [ "PAIN_RECOVERY" ],
     "description": "You recover from pain slightly faster than normal.",
     "changes_to": [ "PAINREC2" ],
-    "category": [ "MEDICAL" ]
+    "category": [ "MEDICAL", "BRUTE" ]
   },
   {
     "type": "effect_on_condition",
@@ -4765,7 +4793,7 @@
     "description": "You recover from pain faster than normal.",
     "prereqs": [ "PAINREC1" ],
     "changes_to": [ "PAINREC3" ],
-    "category": [ "MEDICAL" ]
+    "category": [ "MEDICAL", "BRUTE" ]
   },
   {
     "type": "effect_on_condition",
@@ -4804,7 +4832,7 @@
     "types": [ "MASOCHISM" ],
     "prereqs": [ "MASOCHIST", "PAINRESIST", "ADDICTIVE" ],
     "prereqs2": [ "PAINREC2", "PAINREC3" ],
-    "threshreq": [ "THRESH_MEDICAL" ],
+    "threshreq": [ "THRESH_MEDICAL", "THRESH_BRUTE" ],
     "changes_to": [ "CENOBITE" ],
     "//": "MASOCHIST_MED and NOPAIN don't cancel each other.  By design.  Poor painless folks...",
     "category": [ "MEDICAL" ]
@@ -4882,7 +4910,7 @@
     "purifiable": false,
     "types": [ "PREDATION" ],
     "changes_to": [ "PRED2" ],
-    "prereqs": [ "CARNIVORE", "CARNIVORE_FAKE" ],
+    "prereqs": [ "CARNIVORE", "CARNIVORE_FAKE", "DUMB_MUSCLE" ],
     "threshreq": [
       "THRESH_BEAST",
       "THRESH_RAPTOR",
@@ -4892,10 +4920,11 @@
       "THRESH_URSINE",
       "THRESH_LIZARD",
       "THRESH_SPIDER",
-      "THRESH_BATRACHIAN"
+      "THRESH_BATRACHIAN",
+      "THRESH_BRUTE"
     ],
     "cancels": [ "MANSBESTFRIEND" ],
-    "category": [ "BEAST", "RAPTOR", "CHIMERA", "LUPINE", "FELINE", "URSINE", "LIZARD", "SPIDER", "BATRACHIAN" ],
+    "category": [ "BEAST", "RAPTOR", "CHIMERA", "LUPINE", "FELINE", "URSINE", "LIZARD", "SPIDER", "BATRACHIAN", "BRUTE" ],
     "flags": [ "PRED1" ]
   },
   {
@@ -5406,7 +5435,7 @@
     "prereqs": [ "STR_UP", "STR_UP_2", "STR_UP_3", "STR_UP_4", "MASOCHIST_MED" ],
     "prereqs2": [ "DENSE_BONES" ],
     "changes_to": [ "LARGE_OK", "HUGE" ],
-    "category": [ "URSINE", "CATTLE", "LIZARD", "CHIMERA", "CRUSTACEAN" ],
+    "category": [ "URSINE", "CATTLE", "LIZARD", "CHIMERA", "CRUSTACEAN", "BRUTE" ],
     "passive_mods": { "str_mod": 2 },
     "stomach_size_multiplier": 1.5,
     "weight_capacity_modifier": 1.05
@@ -5422,9 +5451,9 @@
     "types": [ "SIZE" ],
     "prereqs": [ "LARGE" ],
     "prereqs2": [ "STR_UP", "STR_UP_2", "STR_UP_3", "STR_UP_4" ],
-    "threshreq": [ "THRESH_URSINE", "THRESH_CATTLE", "THRESH_LIZARD", "THRESH_CHIMERA", "THRESH_CRUSTACEAN" ],
+    "threshreq": [ "THRESH_URSINE", "THRESH_CATTLE", "THRESH_LIZARD", "THRESH_CHIMERA", "THRESH_CRUSTACEAN", "THRESH_BRUTE" ],
     "changes_to": [ "HUGE" ],
-    "category": [ "URSINE", "CATTLE", "LIZARD", "CHIMERA", "CRUSTACEAN" ],
+    "category": [ "URSINE", "CATTLE", "LIZARD", "CHIMERA", "CRUSTACEAN", "BRUTE" ],
     "passive_mods": { "str_mod": 2 },
     "stomach_size_multiplier": 1.5,
     "weight_capacity_modifier": 1.05
@@ -5443,7 +5472,7 @@
     "prereqs": [ "LARGE", "LARGE_OK" ],
     "prereqs2": [ "STR_UP_3", "STR_UP_4" ],
     "changes_to": [ "HUGE_OK" ],
-    "category": [ "URSINE", "CATTLE", "CRUSTACEAN" ],
+    "category": [ "URSINE", "CATTLE", "CRUSTACEAN", "BRUTE" ],
     "passive_mods": { "str_mod": 4 },
     "hp_adjustment": -6,
     "fatigue_modifier": 0.15,
@@ -5465,8 +5494,8 @@
     "types": [ "SIZE" ],
     "prereqs": [ "HUGE" ],
     "prereqs2": [ "STR_UP_3", "STR_UP_4" ],
-    "threshreq": [ "THRESH_URSINE", "THRESH_CATTLE", "THRESH_CRUSTACEAN" ],
-    "category": [ "URSINE", "CATTLE", "CRUSTACEAN" ],
+    "threshreq": [ "THRESH_URSINE", "THRESH_CATTLE", "THRESH_CRUSTACEAN", "THRESH_BRUTE" ],
+    "category": [ "URSINE", "CATTLE", "CRUSTACEAN", "BRUTE" ],
     "passive_mods": { "str_mod": 4 },
     "restricts_gear": [ "torso", "leg_l", "leg_r", "arm_l", "arm_r", "hand_l", "hand_r", "head", "foot_l", "foot_r" ],
     "destroys_gear": true,
@@ -5493,7 +5522,8 @@
       "TROGLOBITE",
       "BEAST",
       "URSINE",
-      "CRUSTACEAN"
+      "CRUSTACEAN",
+      "BRUTE"
     ],
     "passive_mods": { "str_mod": 1 }
   },
@@ -5506,7 +5536,7 @@
     "types": [ "STR" ],
     "prereqs": [ "STR_UP" ],
     "changes_to": [ "STR_UP_3", "STR_ALPHA" ],
-    "category": [ "LIZARD", "CATTLE", "PLANT", "ALPHA", "CHIMERA", "LUPINE", "TROGLOBITE", "BEAST", "URSINE", "CRUSTACEAN" ],
+    "category": [ "LIZARD", "CATTLE", "PLANT", "ALPHA", "CHIMERA", "LUPINE", "TROGLOBITE", "BEAST", "URSINE", "CRUSTACEAN", "BRUTE" ],
     "passive_mods": { "str_mod": 2 }
   },
   {
@@ -5519,7 +5549,7 @@
     "types": [ "STR" ],
     "prereqs": [ "STR_UP_2" ],
     "changes_to": [ "STR_UP_4" ],
-    "category": [ "CHIMERA", "LUPINE", "TROGLOBITE", "BEAST", "URSINE", "CATTLE", "CRUSTACEAN" ],
+    "category": [ "CHIMERA", "LUPINE", "TROGLOBITE", "BEAST", "URSINE", "CATTLE", "CRUSTACEAN", "BRUTE" ],
     "threshreq": [
       "THRESH_CHIMERA",
       "THRESH_LUPINE",
@@ -5527,7 +5557,8 @@
       "THRESH_BEAST",
       "THRESH_URSINE",
       "THRESH_CATTLE",
-      "THRESH_CRUSTACEAN"
+      "THRESH_CRUSTACEAN",
+      "THRESH_BRUTE"
     ],
     "passive_mods": { "str_mod": 4 }
   },
@@ -5541,7 +5572,7 @@
     "description": "Your muscles are noticeably bulging.  +7 Strength.",
     "types": [ "STR" ],
     "prereqs": [ "STR_UP_3" ],
-    "threshreq": [ "THRESH_BEAST", "THRESH_URSINE", "THRESH_CRUSTACEAN" ],
+    "threshreq": [ "THRESH_BEAST", "THRESH_URSINE", "THRESH_CRUSTACEAN", "THRESH_BRUTE" ],
     "category": [ "BEAST", "URSINE", "CRUSTACEAN" ],
     "passive_mods": { "str_mod": 7 }
   },
@@ -6411,7 +6442,7 @@
     "mixed_effect": true,
     "description": "Your bones are particularly dense and durable.  Your tougher frame grants 5% more HP and 15% more carry capacity plus bashing attacks injure you less, but your higher weight makes attacking and moving 5% slower.  Also, dodging and swimming are harder.",
     "types": [ "BONES" ],
-    "category": [ "URSINE", "CATTLE", "CHIMERA", "BEAST", "LIZARD", "CRUSTACEAN" ],
+    "category": [ "URSINE", "CATTLE", "CHIMERA", "BEAST", "LIZARD", "CRUSTACEAN", "BRUTE" ],
     "movecost_modifier": 1.05,
     "movecost_swim_modifier": 1.2,
     "attackcost_modifier": 1.05,
@@ -6505,7 +6536,7 @@
     "starting_trait": true,
     "types": [ "METABOLISM" ],
     "changes_to": [ "HUNGER2", "MET_RAT" ],
-    "category": [ "RAT", "ALPHA", "MEDICAL", "ELFA", "BEAST", "SLIME", "RAPTOR", "CHIMERA", "MOUSE", "RABBIT" ],
+    "category": [ "RAT", "ALPHA", "MEDICAL", "ELFA", "BEAST", "SLIME", "RAPTOR", "CHIMERA", "MOUSE", "RABBIT", "BRUTE" ],
     "metabolism_modifier": 0.5,
     "stamina_regen_modifier": 0.1
   },
@@ -6534,7 +6565,7 @@
     "prereqs": [ "HUNGER" ],
     "changes_to": [ "HUNGER3" ],
     "types": [ "METABOLISM" ],
-    "category": [ "BEAST", "SLIME", "RAPTOR", "CHIMERA" ],
+    "category": [ "BEAST", "SLIME", "RAPTOR", "CHIMERA", "BRUTE" ],
     "metabolism_modifier": 1.0,
     "stamina_regen_modifier": 0.3
   },
@@ -6847,6 +6878,25 @@
         "values": [ { "value": "MOVE_COST", "multiply": -0.5 } ]
       }
     ]
+  },
+  {
+    "type": "mutation",
+    "id": "BIGHANDS",
+    "name": { "str": "Large Hands" },
+    "points": 0,
+    "visibility": 2,
+    "ugliness": 1,
+    "mixed_effect": true,
+    "description": "Your hands have grown in size somewhat and feel noticeably stronger.  They're great for delivering powerful unarmed blows and crushing apples, but fine manipulation is a little bit trickier than before.",
+    "encumbrance_always": [ [ "hand_l", 5 ], [ "hand_r", 5 ] ],
+    "restricts_gear": [ "hand_l", "hand_r" ],
+    "craft_skill_bonus": [ [ "electronics", -1 ], [ "tailor", -1 ], [ "mechanics", -1 ] ],
+    "types": [ "HANDS" ],
+    "prereqs": [ "THICKSKIN", "THICKSKIN2" ],
+    "cancels": [ "TALONS" ],
+    "category": [ "BRUTE" ],
+    "armor": [ { "part_types": [ "hand" ], "cut": 1, "bash": 1 } ],
+    "bash_dmg_bonus": 2
   },
   {
     "type": "mutation",
@@ -7362,7 +7412,7 @@
     "description": "You have a growling, rough voice.  Persuading NPCs will be more difficult, but threatening them will be easier.",
     "types": [ "VOICE_TONE" ],
     "changes_to": [ "SNARL" ],
-    "category": [ "RAT", "URSINE", "LUPINE", "BEAST", "CHIMERA", "FELINE" ],
+    "category": [ "RAT", "URSINE", "LUPINE", "BEAST", "CHIMERA", "FELINE", "BRUTE"  ],
     "social_modifiers": { "persuade": -20, "lie": -10, "intimidate": 10 }
   },
   {
@@ -7417,7 +7467,7 @@
     "points": -2,
     "description": "You occasionally shout uncontrollably.",
     "changes_to": [ "SHOUT2" ],
-    "category": [ "RAPTOR", "BEAST", "CHIMERA", "LUPINE" ]
+    "category": [ "RAPTOR", "BEAST", "CHIMERA", "LUPINE", "BRUTE" ]
   },
   {
     "type": "mutation",
@@ -8012,6 +8062,16 @@
     "points": 1,
     "description": "Who needs skin when you can have a hard carapace?",
     "flags": [ "INVERTEBRATEBLOOD" ],
+    "valid": false,
+    "purifiable": false,
+    "threshold": true
+  },
+  {
+    "type": "mutation",
+    "id": "THRESH_BRUTE",
+    "name": { "str": "Brutish" },
+    "points": 1,
+    "description": "You are mighty!  Crush them underfoot!",
     "valid": false,
     "purifiable": false,
     "threshold": true
