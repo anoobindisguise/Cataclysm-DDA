@@ -817,7 +817,15 @@
     "types": [ "ARMOR" ],
     "category": [ "BRUTE" ],
     "threshreq": [ "THRESH_BRUTE" ],
-    "armor": [ { "part_types": [ "torso", "head", "arm", "hand", "leg", "foot", "mouth", "tail" ], "cut": 2, "bash": 2, "bullet": 1, "stab": 1  } ]
+    "armor": [
+      {
+        "part_types": [ "torso", "head", "arm", "hand", "leg", "foot", "mouth", "tail" ],
+        "cut": 2,
+        "bash": 2,
+        "bullet": 1,
+        "stab": 1
+      }
+    ]
   },
   {
     "type": "mutation",
