@@ -3020,7 +3020,7 @@ units::mass Character::weight_capacity() const
     // then apply player-only mutation and trait effects.
     units::mass ret = Creature::weight_capacity();
     /** @EFFECT_STR increases carrying capacity */
-    ret += get_str() * 4_kilogram;
+    ret += str_cur * 4_kilogram;
     ret *= mutation_value( "weight_capacity_modifier" );
 
     units::mass worn_weight_bonus = 0_gram;
