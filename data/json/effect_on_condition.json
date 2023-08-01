@@ -1324,5 +1324,16 @@
       { "u_add_trait": "CHITIN2" },
       { "u_add_trait": "CRUSTACEAN_CARAPACE" }
     ]
-  }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "huge_vehicle_cramps",
+    "recurrence": [ "1 minutes", "2 minutes" ],
+    "condition": { "and": [ { "u_driving": true }, "or": [ { "u_has_trait": "HUGE" }, { "u_has_trait": "HUGE_OK" } ] },
+    "deactivate_condition": { "not": { "u_driving": false } },
+    "effect": [
+      { "u_message": "You're cramping from trying to operate this vehicle.", "type": "bad" },
+      { "math": [ "u_pain()", "++" ] }
+    ]
+  },
 ]
