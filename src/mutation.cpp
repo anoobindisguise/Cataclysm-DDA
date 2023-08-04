@@ -1062,14 +1062,14 @@ bool Character::roll_bad_mutation() const
     const float I50 = 2800.0;
 
     //Static to avoid recalculating this every time - std::log is not constexpr
-    static const float exp = std::log( 2 ) / std::log( I50 / I0 );
+    static const float exp = std::log( 2 ) / std::log( I50 / I10 );
 
     if( vitamin_get( vitamin_instability ) == 0 ) {
         add_msg_debug( debugmode::DF_MUTATION, "No instability, minimum 10% chance of bad mutation" );
         return ret;
     } else {
-        //A curve that is 10 until I0, crosses 0.5 at I50, then slowly approaches 1
-        float chance = std::max( 0.1f, 1 - std::pow( I0 / vitamin_get( vitamin_instability ), exp ) );
+        //A curve that is 10 until I10, crosses 0.5 at I50, then slowly approaches 1
+        float chance = std::max( 0.1f, 1 - std::pow( I10 / vitamin_get( vitamin_instability ), exp ) );
         ret = rng_float( 0, 1 ) < chance;
         add_msg_debug( debugmode::DF_MUTATION,
                        "Bad mutation chance caused by instability %.1f, roll_bad_mutation returned %s", chance,
