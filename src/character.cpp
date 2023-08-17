@@ -386,6 +386,7 @@ static const scenttype_id scent_sc_human( "sc_human" );
 static const skill_id skill_archery( "archery" );
 static const skill_id skill_dodge( "dodge" );
 static const skill_id skill_driving( "driving" );
+static const skill_id skill_gun( "gun" );
 static const skill_id skill_melee( "melee" );
 static const skill_id skill_pistol( "pistol" );
 static const skill_id skill_speech( "speech" );
@@ -1103,13 +1104,12 @@ double Character::aim_per_move( const item &gun, double recoil,
     }
 
     // finally multiply everything by a harsh function that is eliminated by 7.5 gunskill
-    aim_speed /= std::max( 1.0, 2.5 - 0.2 * get_skill_level( gun_skill ) );
+    aim_speed /= std::max( 1.0, 2.5 - 0.1 * ( get_skill_level( gun_skill ) + get_skill_level( skill_gun ) ) );
     // Use a milder attenuation function to replace the previous logarithmic attenuation function when recoil is closed to 0.
     aim_speed *= std::max( recoil / MAX_RECOIL, 1 - logarithmic_range( 0, MAX_RECOIL, recoil ) );
 
     // add 4 max aim speed per skill up to 5 skill, then 1 per skill for skill 5-10
-    double base_aim_speed_cap = 5.0 +  1.0 * get_skill_level( gun_skill ) + std::max( 10.0,
-                                3.0 * get_skill_level( gun_skill ) );
+    double base_aim_speed_cap = 5.0 +  0.5 * ( get_skill_level( gun_skill ) + get_skill_level( skill_gun ) ) + std::max( 10.0, 1.5 * ( get_skill_level( gun_skill ) + get_skill_level( skill_gun ) ) );
     if( !use_cache ) {
         // This upper limit usually only affects the first half of the aiming process
         // Pistols have a much higher aiming speed limit
