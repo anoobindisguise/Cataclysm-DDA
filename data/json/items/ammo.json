@@ -1654,5 +1654,21 @@
     "stack_size": 200,
     "loudness": 9,
     "effects": [ "NOGIB", "NEVER_MISFIRES", "NON_FOULING" ]
+  },
+  {
+    "type": "AMMO",
+    "id": "heatsink",
+    "category": "spare_parts",
+    "price_postapoc": 0,
+    "name": { "str_sp": "heatsink" },
+    "symbol": "=",
+    "color": "yellow",
+    "description": "Heat absorption capability of the Exodii energy sidearm.",
+    "flags": [ "TRADER_AVOID", "ZERO_WEIGHT", "NEVER_MISFIRES" ],
+    "damage": { "damage_type": "elecctric", "amount": 10, "armor_penetration": 2 },
+    "effects": [ "COOKOFF" ],
+    "volume": "100 ml",
+    "ammo_type": "heatsink",
+    "count": 100,
   }
 ]
