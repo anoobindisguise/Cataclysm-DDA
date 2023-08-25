@@ -277,6 +277,6 @@
       "msg": "You swap the pistol to standard mode."
     },
     "ammo_to_fire": 50,
-    "ammo_effects": [ "LASER", "INCENDIARY", "PLASMA_BUBBLE", "FLAME" ],
+    "ammo_effects": [ "LASER", "INCENDIARY", "PLASMA_BUBBLE", "FLAME" ]
   }
 ]
