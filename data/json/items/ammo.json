@@ -1664,7 +1664,7 @@
     "symbol": "=",
     "color": "yellow",
     "description": "Heat absorption capability of the Exodii energy sidearm.",
-    "flags": [ "TRADER_AVOID", "ZERO_WEIGHT", "NEVER_MISFIRES" ],
+    "flags": [ "TRADER_AVOID", "ZERO_WEIGHT", "NON_FOULING" ],
     "damage": { "damage_type": "elecctric", "amount": 10, "armor_penetration": 2 },
     "effects": [ "COOKOFF" ],
     "volume": "100 ml",
