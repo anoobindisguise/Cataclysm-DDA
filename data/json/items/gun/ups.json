@@ -223,7 +223,7 @@
     "type": "GUN",
     "reload_noise_volume": 10,
     "name": { "str": "Exodii energy sidearm (standard)" },
-    "description": "An energy pistol made of dull metal fitted with various external tubing, wiring and what looks to be a heat indicator on a simplistic display screen.  It looks like it's designed to be plugged into your bionic energy reserves.  The weapon has a dial that can be tuned to three settings, labeled \"SAFE\", \"STANDARD\" and \"OVERCHARGE\", and it is currently tuned to \"STANDARD"\.",
+    "description": "An energy pistol made of dull metal fitted with various external tubing, wiring and what looks to be a heat indicator on a simplistic display screen.  It looks like it's designed to be plugged into your bionic energy reserves.  The weapon has a dial that can be tuned to three settings, labeled \"SAFE\", \"STANDARD\" and \"OVERCHARGE\", and it is currently tuned to \"STANDARD\".",
     "weight": "1525 g",
     "volume": "1 L",
     "longest_side": "285 mm",
