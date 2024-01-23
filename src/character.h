@@ -3214,7 +3214,7 @@ class Character : public Creature, public visitable
         /** Returns an enumeration of visible mutations with colors */
         std::string visible_mutations( int visibility_cap ) const;
 
-        /** 
+        /**
         * generates an integer based on how many times we've gained non-negative mutations.
         * this is asked for any given tree, but counts all of our mutations in total.
         * different than mutation_category_level[] in many ways:
@@ -3223,7 +3223,7 @@ class Character : public Creature, public visitable
         * - individually counts each step of a multi level mutation (it counts Strong *and* Very Strong as their own mutations)
         * - to explain the above: your display only shows Very Strong, but you still have Strong too under the hood, it's just suppressed.
         * - mutation_category_level[] ignores Strong and counts Very Strong as slightly more than 1 mutation, but not 2 mutations.
-        * - Meanwhile this counts Very Strong as 2 mutations, since you had to mutate Strong and then mutate that into Very Strong 
+        * - Meanwhile this counts Very Strong as 2 mutations, since you had to mutate Strong and then mutate that into Very Strong
         * - this is to mimic the behavior of the old instability vitamin, which increased by 100 each time you mutated (so Very Strong was 200 instability)
         * The final result is used to calculate our current instability (likelihood of a negative mutation)
         * so each mutation we have that belongs to a different tree than the one we specified counts double.

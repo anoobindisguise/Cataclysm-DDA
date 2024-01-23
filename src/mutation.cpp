@@ -2466,7 +2466,6 @@ std::string Character::visible_mutations( const int visibility_cap ) const
         return std::string();
     } );
 }
- 
 int Character::get_instability_per_category( const mutation_category_id &categ ) const
 {
     int mut_count = 0;
