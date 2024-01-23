@@ -2466,3 +2466,33 @@ std::string Character::visible_mutations( const int visibility_cap ) const
         return std::string();
     } );
 }
+
+// generates an integer based on how many times we've gained non-negative mutations.
+// this is asked for any given tree, but counts all of our mutations in total.
+// different than mutation_category_level[] in many ways:
+// - Does not count negative mutations
+// - assigns 1 point to each level of mutation in our category, and 2 for each level out of it
+// - individually counts each step of a multi level mutation (it counts Strong *and* Very Strong as their own mutations)
+// - to explain the above: your display only shows Very Strong, but you still have Strong too under the hood, it's just suppressed.
+// - mutation_category_level[] ignores Strong and counts Very Strong as slightly more than 1 mutation, but not 2 mutations.
+// - Meanwhile this counts Very Strong as 2 mutations, since you had to mutate Strong and then mutate that into Very Strong 
+// - this is to mimic the behavior of the old instability vitamin, which increased by 100 each time you mutated (so Very Strong was 200 instability)
+// The final result is used to calculate our current instability (likelihood of a negative mutation)
+// so each mutation we have that belongs to a different tree than the one we specified counts double.
+// example: you start with Trog and mutate Slimy and Light Sensitive. Within Trog you have 2 points.
+// you then go to mutate Rat. Rat has Light Sensitive but not Slimy, so you have 1+2=3 points. 
+int Character::get_instability_per_category( const mutation_category_id &categ ) const
+{
+    int mut_count = 0;
+    for( const trait_id &mut : get_mutations() ) {
+        const mutation_branch &mdata = mut.obj();
+        if( mdata.points > -1 !mdata.flags.count( json_flag_NON_THRESH ) ) {
+            if( mdata.category == categ ) {
+                mut_count += 1;
+            } else {
+                mut_count += 2;
+            }
+        }
+    }
+    return mut_count;
+}
