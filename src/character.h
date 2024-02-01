@@ -3230,7 +3230,7 @@ class Character : public Creature, public visitable
         * example: you start with Trog and mutate Slimy and Light Sensitive. Within Trog you have 2 points.
         * you then go to mutate Rat. Rat has Light Sensitive but not Slimy, so you have 1+2=3 points.
         */
-        int get_instability_per_category( mutation_category_id &categ );
+        int get_instability_per_category( mutation_category_id &categ ) const;
 
         player_activity get_destination_activity() const;
         void set_destination_activity( const player_activity &new_destination_activity );
