@@ -176,7 +176,13 @@ int Character::get_instability_per_category( const mutation_category_id &categ )
     for( const trait_id &mut : get_mutations() ) {
         const mutation_branch &mdata = mut.obj();
         if( mdata.points > -1 && !mdata.threshold ) {
-            if( mdata.category == categ ) {
+            bool in_categ = false;
+            for( const mutation_category_id &Ch_cat : mdata.allowed_category ) {
+                if( Ch_cat == categ ) {
+                    in_categ = true;
+                }
+            }
+            if( in_categ ) {
                 mut_count += 1;
             } else {
                 mut_count += 2;
