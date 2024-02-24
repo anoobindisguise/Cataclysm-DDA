@@ -364,7 +364,7 @@ static const trait_id trait_MARLOSS_AVOID( "MARLOSS_AVOID" );
 static const trait_id trait_MARLOSS_BLUE( "MARLOSS_BLUE" );
 static const trait_id trait_MARLOSS_YELLOW( "MARLOSS_YELLOW" );
 static const trait_id trait_M_DEPENDENT( "M_DEPENDENT" );
-static const trait_id trait_PSYCHOPATH( "PSYCHOPATH" );
+static const trait_id trait_NUMB( "NUMB" );
 static const trait_id trait_PYROMANIA( "PYROMANIA" );
 static const trait_id trait_SPIRITUAL( "SPIRITUAL" );
 static const trait_id trait_THRESH_MARLOSS( "THRESH_MARLOSS" );
@@ -5639,7 +5639,7 @@ std::optional<int> iuse::einktabletpc( Character *p, item *it, const tripoint & 
 
             p->moves -= to_moves<int>( rng( 3_seconds, 7_seconds ) );
 
-            if( p->has_trait( trait_PSYCHOPATH ) ) {
+            if( p->has_trait( trait_NUMB ) ) {
                 p->add_msg_if_player( m_info, _( "Wasted time.  These pictures do not provoke your senses." ) );
             } else {
                 p->add_morale( MORALE_PHOTOS, rng( 15, 30 ), 100 );
