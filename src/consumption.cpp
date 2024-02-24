@@ -1332,14 +1332,10 @@ void Character::modify_morale( item &food, const int nutr )
         const bool sapiovore = has_flag( json_flag_SAPIOVORE );
         const bool spiritual = has_flag( json_flag_SPIRITUAL );
         const bool numb = has_flag( json_flag_NUMB );
-        if( cannibal && psycho && spiritual ) {
-            add_msg_if_player( m_good,
-                               _( "You feast upon the human flesh, and in doing so, devour their spirit." ) );
-            // You're not really consuming anything special; you just think you are.
-            add_morale( MORALE_CANNIBAL, 25, 300 );
-        } else if( cannibal && psycho ) {
+        if( cannibal && psycho ) {
+            // no benefit over being just a cannibal, but flavortext acknowledges you don't feel as ashamed
             add_msg_if_player( m_good, _( "You feast upon the human flesh." ) );
-            add_morale( MORALE_CANNIBAL, 15, 200 );
+            add_morale( MORALE_CANNIBAL, 10, 50 );
         } else if( cannibal && spiritual ) {
             add_msg_if_player( m_good, _( "You consume the sacred human flesh." ) );
             // Boosted because you understand the philosophical implications of your actions, and YOU LIKE THEM.
@@ -1350,14 +1346,10 @@ void Character::modify_morale( item &food, const int nutr )
         } else if( cannibal ) {
             add_msg_if_player( m_good, _( "You indulge your shameful hunger." ) );
             add_morale( MORALE_CANNIBAL, 10, 50 );
-        } else if( psycho && spiritual ) {
-            add_msg_if_player( _( "You greedily devour the taboo meat." ) );
-            // Small bonus for violating a taboo.
-            add_morale( MORALE_CANNIBAL, 5, 50 );
         } else if( has_flag( json_flag_BLOODFEEDER ) && food.has_flag( flag_HEMOVORE_FUN ) ) {
             add_msg_if_player( _( "The human blood tastes as good as any other." ) );
         } else if( psycho ) {
-            add_msg_if_player( _( "Meh.  You've eaten worse." ) );
+            add_msg_if_player( _( "Waste not, want not, right?" ) );
         } else if( sapiovore ) {
             add_msg_if_player( _( "Mmh.  Tastes like venison." ) );
         } else if( has_flag( json_flag_HEMOVORE ) && food.has_flag( flag_HEMOVORE_FUN ) ) {
