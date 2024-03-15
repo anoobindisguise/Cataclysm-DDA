@@ -123,9 +123,7 @@
       [ "mutagen_rat", 1 ],
       [ "mutagen_spider", 1 ],
       [ "mutagen_troglobite", 1 ],
-      [ "mutagen_chiropteran", 1 ],
       [ "mutagen_ursine", 1 ],
-      [ "instability", 1 ],
       [ "mutant_toxin", 2 ]
     ]
   },
@@ -423,17 +421,6 @@
     "disease_excess": [ [ 100, 500 ], [ 501, 2199 ], [ 2200, 2500 ] ]
   },
   {
-    "id": "mutagen_chiropteran",
-    "type": "vitamin",
-    "vit_type": "counter",
-    "name": { "str": "Chiropteran Primer" },
-    "excess": "mutagen_chiropteran",
-    "min": 0,
-    "max": 2500,
-    "rate": "1 h",
-    "disease_excess": [ [ 100, 500 ], [ 501, 2199 ], [ 2200, 2500 ] ]
-  },
-  {
     "id": "mutagen_slime",
     "type": "vitamin",
     "vit_type": "counter",
@@ -486,7 +473,7 @@
     "min": 0,
     "max": 8000,
     "flags": [ "NO_DISPLAY" ],
-    "rate": "2 h",
+    "rate": "1 s",
     "disease_excess": [ [ 1, 899 ], [ 900, 2799 ], [ 2800, 8000 ] ]
   },
   {

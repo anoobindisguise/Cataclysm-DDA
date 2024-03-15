@@ -32,6 +32,7 @@
 #include "character_id.h"
 #include "city.h"
 #include "coordinates.h"
+#include "craft_command.h"
 #include "creature.h"
 #include "damage.h"
 #include "debug.h"
@@ -47,6 +48,7 @@
 #include "player_activity.h"
 #include "point.h"
 #include "ranged.h"
+#include "recipe.h"
 #include "ret_val.h"
 #include "stomach.h"
 #include "string_formatter.h"
@@ -64,7 +66,6 @@ class SkillLevelMap;
 class basecamp;
 class bionic_collection;
 class character_martial_arts;
-class craft_command;
 class dispersion_sources;
 class effect;
 class effect_source;
@@ -105,7 +106,6 @@ template <typename E> struct enum_traits;
 
 enum npc_attitude : int;
 enum action_id : int;
-enum class recipe_filter_flags : int;
 enum class steed_type : int;
 enum class proficiency_bonus_type : int;
 
@@ -575,8 +575,6 @@ class Character : public Creature, public visitable
         // Level-up points spent on Stats through Kills
         int spent_upgrade_points = 0;
 
-        float cached_organic_size;
-
         const profession *prof;
         std::set<const profession *> hobbies;
 
@@ -610,21 +608,6 @@ class Character : public Creature, public visitable
         int get_dex_bonus() const;
         int get_per_bonus() const;
         int get_int_bonus() const;
-
-        /** Cache variables to store stamina use info
-        *   these will be updated when the player's limb makeup changes
-        *   _power_use is how many joules to spend per stamina instead of stamina (default 0)
-        *   _stam_mult is how much to multiply the incoming stamina cost's stamina drain (default of 1)
-        */
-        int arms_power_use;     // millijoules
-        int legs_power_use;     // millijoules
-        float arms_stam_mult;
-        float legs_stam_mult;
-        /** Getters for above stats */
-        int get_arms_power_use() const;
-        int get_legs_power_use() const;
-        float get_arms_stam_mult() const;
-        float get_legs_stam_mult() const;
 
     private:
         /** Modifiers to character speed, with descriptions */
@@ -745,11 +728,17 @@ class Character : public Creature, public visitable
         using Creature::add_msg_if_player;
         void add_msg_if_player( const std::string &msg ) const override;
         void add_msg_if_player( const game_message_params &params, const std::string &msg ) const override;
+        using Creature::add_msg_debug_if_player;
+        void add_msg_debug_if_player( debugmode::debug_filter type,
+                                      const std::string &msg ) const override;
         using Creature::add_msg_player_or_npc;
         void add_msg_player_or_npc( const std::string &player_msg,
                                     const std::string &npc_str ) const override;
         void add_msg_player_or_npc( const game_message_params &params, const std::string &player_msg,
                                     const std::string &npc_msg ) const override;
+        using Creature::add_msg_debug_player_or_npc;
+        void add_msg_debug_player_or_npc( debugmode::debug_filter type, const std::string &player_msg,
+                                          const std::string &npc_msg ) const override;
         using Creature::add_msg_player_or_say;
         void add_msg_player_or_say( const std::string &player_msg,
                                     const std::string &npc_speech ) const override;
@@ -816,7 +805,7 @@ class Character : public Creature, public visitable
         float get_stamina_dodge_modifier() const;
 
         /** Called after the player has successfully dodged an attack */
-        void on_dodge( Creature *source, float difficulty, float training_level = 0.0f ) override;
+        void on_dodge( Creature *source, float difficulty ) override;
         /** Called after the player has tryed to dodge an attack */
         void on_try_dodge() override;
 
@@ -832,12 +821,6 @@ class Character : public Creature, public visitable
         bool uncanny_dodge() override;
         bool check_avoid_friendly_fire() const override;
         float get_hit_base() const override;
-
-        /** total hitsize of all non cybernetic body parts */
-        void tally_organic_size();
-        float get_cached_organic_size() const;
-        /** Called on limb change to update the usage values */
-        void recalc_limb_energy_usage();
 
         /** Returns the player's sight range */
         int sight_range( float light_level ) const override;
@@ -948,7 +931,7 @@ class Character : public Creature, public visitable
             const item *aid = nullptr;
         };
         /** Rate point's ability to serve as a bed. Only takes certain mutations into account, and not fatigue nor stimulants. */
-        comfort_response_t base_comfort_value( const tripoint_bub_ms &p ) const;
+        comfort_response_t base_comfort_value( const tripoint &p ) const;
 
         /** Returns focus equilibrium cap due to fatigue **/
         int focus_equilibrium_fatigue_cap( int equilibrium ) const;
@@ -1030,6 +1013,7 @@ class Character : public Creature, public visitable
         bool is_running() const;
         bool is_walking() const;
         bool is_crouching() const;
+        bool is_runallfours() const;
         bool is_prone() const;
 
         int footstep_sound() const;
@@ -1041,6 +1025,23 @@ class Character : public Creature, public visitable
         bool can_switch_to( const move_mode_id &mode ) const;
         steed_type get_steed_type() const;
         virtual void set_movement_mode( const move_mode_id &mode ) = 0;
+
+        /**
+        * generates an integer based on how many times we've gained non-negative mutations.
+        * this is asked for any given tree, but counts all of our mutations in total.
+        * different than mutation_category_level[] in many ways:
+        * - Does not count negative mutations
+        * - assigns 1 point to each level of mutation in our category, and 2 for each level out of it
+        * - individually counts each step of a multi level mutation (it counts Strong *and* Very Strong as their own mutations)
+        * - mutation_category_level[] ignores Strong and counts Very Strong as slightly more than 1 mutation, but not 2 mutations.
+        * - Meanwhile this counts Very Strong as 2 mutations, since you had to mutate Strong and then mutate that into Very Strong
+        * - this is to mimic the behavior of the old instability vitamin, which increased by 100 each time you mutated (so Very Strong was 200 instability)
+        * The final result is used to calculate our current instability (likelihood of a negative mutation)
+        * so each mutation we have that belongs to a different tree than the one we specified counts double.
+        * example: you start with Trog and mutate Slimy and Light Sensitive. Within Trog you have 2 points.
+        * you then go to mutate Rat. Rat has Light Sensitive but not Slimy, so you have 1+2=3 points.
+        */
+        int get_instability_per_category( const mutation_category_id &categ ) const;
 
         /**Determine if character is susceptible to dis_type and if so apply the symptoms*/
         void expose_to_disease( const diseasetype_id &dis_type );
@@ -1199,7 +1200,9 @@ class Character : public Creature, public visitable
         bool is_stealthy() const;
         /** Returns true if the current martial art works with the player's current weapon */
         bool can_melee() const;
-        /** Returns value of player's stable footing */
+        /** Returns value of player's footing on narrow or slippery terrain */
+        float balance_roll() const;
+        /** Returns value of player's footing on skates or similar */
         float stability_roll() const override;
         /** Returns true if the player can learn the entered martial art */
         bool can_autolearn( const matype_id &ma_id ) const;
@@ -1584,8 +1587,8 @@ class Character : public Creature, public visitable
                           const vitamin_id &mut_vit ) const;
         bool mutation_ok( const trait_id &mutation, bool allow_good, bool allow_bad,
                           bool allow_neutral ) const;
-        /** Roll, based on instability, whether next mutation should be good or bad */
-        bool roll_bad_mutation() const;
+        /** Roll, based on category and total mutations in/out of it, whether next mutation should be good or bad */
+        bool roll_bad_mutation( const mutation_category_id &categ ) const;
         /** Opens a menu which allows players to choose from a list of mutations */
         bool mutation_selector( const std::vector<trait_id> &prospective_traits,
                                 const mutation_category_id &cat, const bool &use_vitamins );
@@ -1610,7 +1613,7 @@ class Character : public Creature, public visitable
         /** Try to cross The Threshold */
         void test_crossing_threshold( const mutation_category_id &mutation_category );
         /** Returns how many steps are required to reach a mutation */
-        int mutation_height( const trait_id &mut );
+        int mutation_height( const trait_id &mut ) const;
         /** Recalculates mutation_category_level[] values for the player */
         void calc_mutation_levels();
         /** Returns a weighted list of mutation categories based on blood vitamin levels */
@@ -1623,6 +1626,8 @@ class Character : public Creature, public visitable
         */
         bool is_category_allowed( const std::vector<mutation_category_id> &category ) const;
         bool is_category_allowed( const mutation_category_id &category ) const;
+
+        bool is_weak_to_water() const;
 
         /**Check for mutation disallowing the use of an healing item*/
         bool can_use_heal_item( const item &med ) const;
@@ -2367,13 +2372,6 @@ class Character : public Creature, public visitable
          * Only required for rendering.
          */
         std::vector<std::pair<std::string, std::string>> get_overlay_ids() const;
-        /**
-         * Returns a list of the IDs of overlays on this character if the character has override look mutations
-         * sorted from "lowest" to "highest".
-         *
-         * Only required for rendering.
-         */
-        std::vector<std::pair<std::string, std::string>> get_overlay_ids_when_override_look() const;
 
         // --------------- Skill Stuff ---------------
         float get_skill_level( const skill_id &ident ) const;
@@ -2417,8 +2415,6 @@ class Character : public Creature, public visitable
         int intimidation() const;
 
         void set_skills_from_hobbies();
-
-        void set_bionics_from_hobbies();
 
         // --------------- Proficiency Stuff ----------------
         bool has_proficiency( const proficiency_id &prof ) const;
@@ -2613,10 +2609,8 @@ class Character : public Creature, public visitable
         /** Get the idents of all base traits. */
         std::vector<trait_id> get_base_traits() const;
         /** Get the idents of all traits/mutations. */
-        std::vector<trait_id> get_mutations(
-            bool include_hidden = true,
-            bool ignore_enchantment = false,
-            const std::function<bool( const mutation_branch & )> &filter = nullptr ) const;
+        std::vector<trait_id> get_mutations( bool include_hidden = true,
+                                             bool ignore_enchantment = false ) const;
         /** Same as above, but also grab the variant ids (or empty string if none) */
         std::vector<trait_and_var> get_mutations_variants( bool include_hidden = true,
                 bool ignore_enchantment = false ) const;
@@ -2740,7 +2734,6 @@ class Character : public Creature, public visitable
         std::optional<tripoint> last_target_pos;
         // Save favorite ammo location
         item_location ammo_location;
-        // FIXME: The presence of camps should be global objects, this should only be knowledge of camps (at best)
         std::set<tripoint_abs_omt> camps;
 
         std::vector <addiction> addictions;
@@ -3057,12 +3050,6 @@ class Character : public Creature, public visitable
         int get_stamina() const;
         int get_stamina_max() const;
         void set_stamina( int new_stamina );
-        // burn_energy looks at whether to use bionic power depending on how many limbs are cybernetic, then passes to mod_stamina after
-        void burn_energy_arms( int mod );
-        void burn_energy_legs( int mod );
-        void burn_energy_all( int mod );
-        // how many bionic arms/legs we have vs how many arms/legs we have total
-        float get_bionic_limb_percentage() const;
         void mod_stamina( int mod );
         void burn_move_stamina( int moves );
         /** Regenerates stamina */
@@ -3680,9 +3667,6 @@ class Character : public Creature, public visitable
         /** Creates an auditory hallucination */
         void sound_hallu();
 
-        /** All nearby obstacles make a very quiet sound */
-        void echo_pulse();
-
         /** Checks if a Character is driving */
         bool is_driving() const;
 
@@ -3758,7 +3742,7 @@ class Character : public Creature, public visitable
         /** Checked each turn during "lying_down", returns true if the player falls asleep */
         bool can_sleep();
         /** Rate point's ability to serve as a bed. Takes all mutations, fatigue and stimulants into account. */
-        int sleep_spot( const tripoint_bub_ms &p ) const;
+        int sleep_spot( const tripoint &p ) const;
         /** Processes human-specific effects of effects before calling Creature::process_effects(). */
         void process_effects() override;
         /** Handles the still hard-coded effects. */
