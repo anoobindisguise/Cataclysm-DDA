@@ -166,6 +166,28 @@ int Character::count_trait_flag( const json_character_flag &b ) const
     return ret;
 }
 
+int Character::get_instability_per_category( const mutation_category_id &categ ) const
+{
+    int mut_count = 0;
+    for( const trait_id &mut : get_mutations() ) {
+        const mutation_branch &mdata = mut.obj();
+        if( mdata.points > -1 && !mdata.threshold ) {
+            bool in_categ = false;
+            for( const mutation_category_id &Ch_cat : mdata.allowed_category ) {
+                if( Ch_cat == categ ) {
+                    in_categ = true;
+                }
+            }
+            if( in_categ ) {
+                mut_count += 1;
+            } else {
+                mut_count += 2;
+            }
+        }
+    }
+    return mut_count;
+}
+
 bool Character::has_base_trait( const trait_id &b ) const
 {
     // Look only at base traits
