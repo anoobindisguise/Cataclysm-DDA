@@ -2778,6 +2778,11 @@ bool Character::practice( const skill_id &id, int amount, int cap, bool suppress
             // apply many turns of gains at once.
             int focus_drain = std::max( focus_pool / 100, amount );
 
+            // run the focus drain through the intelligence bonus but backwards
+            // this is so that smarter characters don't become less focused faster
+            amount /= ( amount->modify_value( enchant_vals::mod::LEARNING_FOCUS, effective_focus ) );
+            amount /= ( 1.0 + ( 0.01f * ( get_int() - get_option<int>( "INT_BASED_LEARNING_BASE_VALUE" ) ) * get_option<int>( "INT_BASED_LEARNING_FOCUS_ADJUSTMENT" ) ) );
+
             // The purpose of having this squared is that it makes focus drain dramatically slower
             // as it approaches zero. As such, the square function would not be used if the drain is
             // larger or equal to 1000 to avoid the runaway, and the original drain gets applied instead.
