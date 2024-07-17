@@ -2780,7 +2780,7 @@ bool Character::practice( const skill_id &id, int amount, int cap, bool suppress
 
             // run the focus drain through the intelligence bonus but backwards
             // this is so that smarter characters don't become less focused faster
-            amount /= ( amount->modify_value( enchant_vals::mod::LEARNING_FOCUS, effective_focus ) );
+            amount /= ( enchantment_cache->modify_value( enchant_vals::mod::LEARNING_FOCUS, amount ) );
             amount /= ( 1.0 + ( 0.01f * ( get_int() - get_option<int>( "INT_BASED_LEARNING_BASE_VALUE" ) ) *
                                 get_option<int>( "INT_BASED_LEARNING_FOCUS_ADJUSTMENT" ) ) );
 
