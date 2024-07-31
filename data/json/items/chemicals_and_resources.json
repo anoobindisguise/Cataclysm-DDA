@@ -1953,6 +1953,22 @@
     "stack_size": 100
   },
   {
+    "id": "matchhead_powder",
+    "type": "AMMO",
+    "ammo_type": "components",
+    "category": "chems",
+    "name": { "str_sp": "matchhead powder" },
+    "description": "Powder shorn and sieved from the heads of common safety matches.  Mostly potassium chlorate, although it isn't pure enough to be used in chemistry projects.  It can be used in handloading as a low quality and somewhat unsafe propellant instead of smokeless powder, although you'd have to be pretty desperate.",
+    "weight": "100 mg",
+    "volume": "5 ml",
+    "container": "bottle_plastic_small",
+    "symbol": "=",
+    "color": "red",
+    "price": "50 cent",
+    "price_postapoc": "2 cent",
+    "stack_size": 100
+  },
+  {
     "id": "white_phosphorous",
     "type": "AMMO",
     "ammo_type": "components",
