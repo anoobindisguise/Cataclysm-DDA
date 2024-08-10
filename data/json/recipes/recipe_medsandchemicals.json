@@ -1547,7 +1547,7 @@
     "time": "2 m",
     "autolearn": true,
     "qualities": [ { "id": "FINE_GRIND", "level": 1 }, { "id": "CUT", "level": 1 }, { "id": "SIEVE", "level": 1 } ],
-    "//": "based on https://www.youtube.com/watch?v=CMGYUmYLhAo" yielding slightly more than 100 mg of powder per book of twenty matches.",
+    "//": "based on https://www.youtube.com/watch?v=CMGYUmYLhAo yielding slightly more than 100 mg of powder per book of twenty matches.",
     "components": [ [ [ "match", 17 ] ] ]
   },
   {
