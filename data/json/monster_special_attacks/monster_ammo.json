@@ -82,5 +82,11 @@
     "id": "BILE_BLIND",
     "type": "ammo_effect",
     "on_hit_effects": [ { "effect": "boomered", "duration": "30 s", "intensity": 1, "need_touch_skin": true } ]
+  },
+  {
+    "id": "BLOOD_JET",
+    "type": "ammo_effect",
+    "//": "Creates a trail of blood",
+    "trail": [ { "field_type": "fd_blood", "intensity_min": 1, "intensity_max": 2, "chance": 75 } ]
   }
 ]

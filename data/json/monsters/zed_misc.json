@@ -1038,5 +1038,123 @@
     "death_drops": { "subtype": "collection", "groups": [ [ "default_zombie_clothes", 100 ], [ "zombie_fursuits", 100 ] ] },
     "armor": { "bash": 5, "cut": 5, "bullet": 1, "electric": 1 },
     "//": "The torn fursuit offers slightly more protection."
+  },
+  {
+    "id": "mon_zombie_lobber",
+    "type": "MONSTER",
+    "name": { "str": "zombie lobber" },
+    "description": "It's hard to believe this abomination was ever human.  A tumorous mass has overtaken half of this zombie's torso, subsuming its head and one of its arms entirely.  The other arm terminates in a bloody, melted stump.  As its eyes look upon you, it reaches into an orifice in the overgrowth and pulls out some kind of clump of cancerous, melted organ tissue and readies to throw the awful mass at you.",
+    "copy-from": "mon_zombie_base",
+    "hp": 120,
+    "speed": 60,
+    "color": "red_cyan",
+    "scents_tracked": [ "sc_human", "sc_fetid" ],
+    "volume": "112500 ml",
+    "weight": "130 kg",
+    "melee_skill": 3,
+    "melee_dice": 3,
+    "melee_dice_sides": 3,
+    "melee_damage": [ { "damage_type": "acid", "amount": 1 } ],
+    "//": "No grabs, no bites.",
+    "special_attacks": [
+      {
+        "type": "gun",
+        "cooldown": 8,
+        "move_cost": 100,
+        "gun_type": "organ_lob",
+        "fake_skills": [ [ "gun", 6 ], [ "rifle", 6 ] ],
+        "fake_dex": 8,
+        "fake_per": 8,
+        "require_targeting_player": false,
+        "target_moving_vehicles": true,
+        "description": "The zombie lobber collects a ball of corrosive organs from within and throws it!",
+        "ranges": [ [ 2, 30, "DEFAULT" ] ]
+      },
+      [ "ACID_BARF", 5 ]
+    ],
+    "dodge": 0,
+    "regenerates": 1,
+    "upgrades": { "half_life": 140, "into_group": "GROUP_LOBBER_UPGRADES" },
+    "armor": { "bash": 8, "cut": 1, "stab": 9, "bullet": 7, "electric": 1 },
+    "extend": {
+      "flags": [ "ACIDPROOF", "ACID_BLOOD", "RANGED_ATTACKER" ]
+    }
+  },
+  {
+    "id": "mon_zombie_lobber_electric",
+    "type": "MONSTER",
+    "name": { "str": "electric zombie lobber" },
+    "description": "The rancid scent of decaying flesh intermingles with ozone as this zombie lobber shambles slowly, evidently weighed down by the mass of the biological ammo \"factory\" its body has become.  The flesh is blueish in places and its remaining arm crackles with visible electricity.",
+    "copy-from": "mon_zombie_lobber",
+    "hp": 150,
+    "volume": "130000 ml",
+    "weight": "150 kg",
+    "speed": 65,
+    "color": "red_cyan",
+    "scents_tracked": [ "sc_human", "sc_fetid" ],
+    "melee_skill": 3,
+    "bleed_rate": 50,
+    "melee_dice": 3,
+    "melee_dice_sides": 3,
+    "melee_damage": [ { "damage_type": "acid", "amount": 2 }, { "damage_type": "electric", "amount": 3 } ],
+    "//": "No grabs, no bites.",
+    "special_attacks": [
+      {
+        "type": "gun",
+        "cooldown": 8,
+        "move_cost": 100,
+        "gun_type": "organ_lob_electric",
+        "fake_skills": [ [ "gun", 6 ], [ "rifle", 6 ] ],
+        "fake_dex": 8,
+        "fake_per": 8,
+        "require_targeting_player": false,
+        "target_moving_vehicles": true,
+        "description": "The electric zombie lobber collects a ball of electric organs from within and throws it!",
+        "ranges": [ [ 2, 30, "DEFAULT" ] ]
+      },
+      [ "ACID_BARF", 5 ]
+    ],
+    "regenerates": 3,
+    "upgrades": { "half_life": 140, "into_group": "GROUP_LOBBER_UPGRADES" },
+    "armor": { "bash": 12, "cut": 2, "stab": 15, "bullet": 12, "electric": 10 },
+    "extend": { "flags": [ "ZAPBACK" ] }
+  },
+  {
+    "id": "mon_zombie_lobber_electric",
+    "type": "MONSTER",
+    "name": { "str": "toxic zombie lobber" },
+    "description": "Foul, clearly-poisonous gas belches from the oozing orifices of this zombie lobber's overgrown flesh-sack, giving off an unbelievably foul odor.  Its skin is cracked in many places, rotten pus oozing from within, and its sole arm is worn down to bone with faint strips of muscle left, all eaten away by the soup of flesh-melting tumors growing within its bulk.",
+    "copy-from": "mon_zombie_lobber",
+    "hp": 150,
+    "speed": 65,
+    "volume": "130000 ml",
+    "weight": "150 kg",
+    "color": "red_cyan",
+    "scents_tracked": [ "sc_human", "sc_fetid" ],
+    "melee_skill": 3,
+    "melee_dice": 3,
+    "melee_dice_sides": 4,
+    "melee_damage": [ { "damage_type": "acid", "amount": 4 } ],
+    "//": "No grabs, no bites.",
+    "special_attacks": [
+      {
+        "type": "gun",
+        "cooldown": 8,
+        "move_cost": 100,
+        "gun_type": "organ_lob_poison",
+        "fake_skills": [ [ "gun", 6 ], [ "rifle", 6 ] ],
+        "fake_dex": 8,
+        "fake_per": 8,
+        "require_targeting_player": false,
+        "target_moving_vehicles": true,
+        "description": "The poisonous zombie lobber collects a ball of corrosive organs from within and throws it!",
+        "ranges": [ [ 2, 30, "DEFAULT" ] ]
+      },
+      [ "ACID_BARF", 5 ]
+    ],
+    "regenerates": 3,
+    "upgrades": { "half_life": 140, "into_group": "GROUP_LOBBER_UPGRADES" },
+    "armor": { "bash": 12, "cut": 2, "stab": 15, "bullet": 12, "electric": 2 },
+    "death_function": { "message": "The %s explodes!", "effect": { "id": "death_gas", "hit_self": true }, "corpse_type": "NO_CORPSE" }
   }
 ]
