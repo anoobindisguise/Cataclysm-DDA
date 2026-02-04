@@ -369,5 +369,57 @@
     "range": 10,
     "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "bile": 1000 }, "watertight": true } ],
     "melee_damage": { "bash": 9 }
+  },
+  {
+    "id": "organ_lob",
+    "type": "ITEM",
+    "subtypes": [ "GUN" ],
+    "copy-from": "fake_item",
+    "name": { "str": "acidic organ lobber", "//~": "NO_I18N" },
+    "description": { "str": "Fake gun that fires a ball of corrosive organ tissue.", "//~": "NO_I18N" },
+    "flags": [
+      "PRIMITIVE_RANGED_WEAPON",
+      "PSEUDO",
+      "NEVER_JAMS",
+      "NONCONDUCTIVE",
+      "NO_REPAIR",
+      "WATERPROOF_GUN",
+      "NO_SALVAGE",
+      "NO_UNLOAD",
+      "RELOAD_AND_SHOOT"
+    ],
+    "ammo_effects": [ "BLOOD_JET", "BLINDS_EYES", "NO_PENETRATE_OBSTACLES", "ACIDBOMB", "CORROSIVE" ],
+    "material": [ "flesh" ],
+    "skill": "rifle",
+    "durability": 10,
+    "range": 30,
+    "dispersion": 800,
+    "ranged_damage": [ { "damage_type": "acid", "amount": 8 }, { "damage_type": "cut", "amount": 15 } ]
+  },
+  {
+    "id": "organ_lob_poison",
+    "type": "ITEM",
+    "subtypes": [ "GUN" ],
+    "copy-from": "organ_lob",
+    "name": { "str": "toxic gas acidic organ lobber", "//~": "NO_I18N" },
+    "description": { "str": "Fake gun that fires a ball of corrosive organ tissue loaded with aerosolized toxin.", "//~": "NO_I18N" },
+    "ammo_effects": [ "BLOOD_JET", "BLINDS_EYES", "NO_PENETRATE_OBSTACLES", "ACIDBOMB", "CORROSIVE", "TOXICGAS" ],
+    "material": [ "flesh" ],
+    "skill": "rifle",
+    "dispersion": 800,
+    "ranged_damage": [ { "damage_type": "acid", "amount": 9 }, { "damage_type": "cut", "amount": 17 } ]
+  },
+  {
+    "id": "organ_lob_electric",
+    "type": "ITEM",
+    "subtypes": [ "GUN" ],
+    "copy-from": "organ_lob",
+    "name": { "str": "toxic gas acidic organ lobber", "//~": "NO_I18N" },
+    "description": { "str": "Fake gun that fires a ball of corrosive organ tissue overloaded with intense electricity.", "//~": "NO_I18N" },
+    "ammo_effects": [ "BLOOD_JET", "BLINDS_EYES", "NO_PENETRATE_OBSTACLES", "ACIDBOMB", "CORROSIVE", "LIGHTNING" ],
+    "material": [ "flesh" ],
+    "skill": "rifle",
+    "dispersion": 800,
+    "ranged_damage": [ { "damage_type": "acid", "amount": 9 }, { "damage_type": "cut", "amount": 17 }, { "damage_type": "electric", "amount": 5 } ]
   }
 ]
