@@ -3051,6 +3051,7 @@ std::map<damage_type_id, int> Character::smash_ability() const
         const int min_ret = bonus * best_part.first->smash_efficiency;
         const int max_ret = bonus * ( 1.0f + best_part.first->smash_efficiency );
         damage = std::min( best_part.second + min_ret, max_ret );
+        damage = enchantment_cache->modify_melee_damage( damage_bash, damage );
     }
     ret[damage_bash] = calculate_by_enchantment( damage, enchant_vals::mod::MELEE_DAMAGE, true );
 
