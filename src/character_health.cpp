@@ -2122,7 +2122,6 @@ float Character::carried_factor() const
     // 4.0f is the maximum.
     units::mass curr = weight_carried();
     units::mass limit = weight_capacity();
-    units::mass ideal = weight_capacity() / 5.0f;
     float ratio = weight_carried() / weight_capacity();
     float penalty = 1.0;
     if( ratio <= 0.2f ) {
@@ -2141,9 +2140,7 @@ float Character::carried_factor() const
 
 int Character::get_bmr() const
 {
-    float carried_factor =
-        return base_bmr() * carried_factor() * std::ceil( clamp( activity_history.average_activity(),
-                NO_EXERCISE, maximum_exertion_level() ) );
+    return base_bmr() * carried_factor() * std::ceil( clamp( activity_history.average_activity(), NO_EXERCISE, maximum_exertion_level() ) );
 }
 
 int Character::get_stim() const
