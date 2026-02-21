@@ -2113,10 +2113,34 @@ int Character::ugliness() const
     return ugliness;
 }
 
+float Character::carried_factor() const
+{
+    // increase calorie burn from standard activities according to carried weight.
+    // below 20% of maximum carry weight, there is no penalty.
+    // above 20%, penalty scales linearly to 2x calorie burn at max carry weight.
+    // above 100%, penalty scales linearly to 4x calorie burn at twice max carry weight.
+    // 4.0f is the maximum.
+    units::mass curr = weight_carried();
+    units::mass limit = weight_capacity();
+    float ratio = weight_carried() / weight_capacity();
+    float penalty = 1.0;
+    if( ratio <= 0.2f ) {
+        return penalty;
+    } else {
+        penalty += ( ratio - 0.2f ) * 1.33f;
+        if( curr > limit ) {
+            penalty += ( ratio - 1.0f ) * 0.67f;
+        }
+        if( penalty > 4.0f ) {
+            penalty = 4.0f;
+        }
+        return penalty;
+    }
+}
+
 int Character::get_bmr() const
 {
-    return base_bmr() * std::ceil( clamp( activity_history.average_activity(), NO_EXERCISE,
-                                          maximum_exertion_level() ) );
+    return base_bmr() * carried_factor() * std::ceil( clamp( activity_history.average_activity(), NO_EXERCISE, maximum_exertion_level() ) );
 }
 
 int Character::get_stim() const

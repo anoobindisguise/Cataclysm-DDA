@@ -3123,6 +3123,8 @@ class Character : public Creature, public visitable
         float get_bmi_fat() const;
         float get_bmi_lean() const;
         bool has_calorie_deficit() const;
+        // apply a semilinear scaling factor to burnt calories based on carried weight
+        float carried_factor() const;
         // returns amount of calories burned in a day given various metabolic factors
         int get_bmr() const;
         // add spent calories to calorie diary (if avatar)
