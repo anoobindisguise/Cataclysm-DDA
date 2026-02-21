@@ -142,7 +142,7 @@
     "subtypes": [ "ARMOR" ],
     "category": "armor",
     "name": { "str": "survivor summer suit" },
-    "description": "A form-fitting coverall jumpsuit made from scratch, made with durably woven wool and Nomex and reinforced pockets.  The moisture wicking fabric keeps you cool and it's comfortable to wear day-to-day while maintaining a moderate level of protection.  Note that while the Nomex outer layer is chemical resistant, the garment's permeability means it is a poor defense against chemical attacks",
+    "description": "A form-fitting coverall jumpsuit made from scratch, made of durably woven wool and Nomex with reinforced pockets.  The moisture wicking fabric keeps you cool and it's comfortable to wear day-to-day while maintaining a moderate level of protection.  Note that while the Nomex layer is chemical resistant, the garment's permeability means it is a poor defense against chemical attacks",
     "weight": "3500 g",
     "//": "Human surface area is roughly 18600 cm^2, based off of rules of 9 the torso is 36%, both arms are 18%, both legs are 36% leaving us with 16740 cm^2.",
     "//1": "Wool has a density of 1.31g/cm^3, thickness of 0.1 cm leaves us with 2192 grams.",
@@ -268,7 +268,7 @@
           { "type": "kevlar", "covered_by_mat": 95, "thickness": 1.0 },
           { "type": "nylon_quilted", "covered_by_mat": 100, "thickness": 1.5 }
         ],
-        "covers": [ "torso", "leg_l", "leg_r", "arm_l", "arm_r" ],
+        "covers": [ "torso", "leg_l", "leg_r" ],
         "coverage": 100,
         "encumbrance": [ 13, 15 ]
       },
@@ -278,7 +278,7 @@
           { "type": "kevlar", "covered_by_mat": 95, "thickness": 1.0 },
           { "type": "nylon_quilted", "covered_by_mat": 100, "thickness": 1.5 }
         ],
-        "covers": [ "torso", "leg_l", "leg_r", "arm_l", "arm_r" ],
+        "covers": [ "arm_l", "arm_r" ],
         "coverage": 100,
         "encumbrance": [ 13, 13 ]
       }
@@ -353,7 +353,7 @@
     "subtypes": [ "ARMOR" ],
     "category": "armor",
     "name": { "str": "survivor hazard suit" },
-    "description": "A heavy, restrictive coverall jumpsuit consisting of layered Kevlar and tough canvas.  Most importantly, it is sealed with a polymer coating, making it almost impermeable to chemical attacks.  It does not mitigate radiation or electrical dangers, and is a real pain to wear all the time.",
+    "description": "A heavy, restrictive coverall jumpsuit consisting of layered Kevlar and tough canvas.  Most importantly, it is sealed with a flexible polymer coating, making it almost impermeable to chemical attacks.  It does not mitigate radiation or electrical dangers, and is a real pain to wear all the time.",
     "weight": "10100 g",
     "//": "Human surface area is roughly 18600 cm^2, based off of rules of 9 the torso is 36%, both arms are 18%, both legs are 36% leaving us with 16740 cm^2.",
     "//1": "Canvas density at 1.6 g/cm^3, thickness of 0.15 cm leaves us with 4015 grams.",
