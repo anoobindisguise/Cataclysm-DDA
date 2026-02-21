@@ -477,5 +477,65 @@
     "type": "MIGRATION",
     "id": "washboard",
     "replace": "wash_kit"
+  },
+  {
+    "type": "MIGRATION",
+    "id": "fsurvivor_jumpsuit",
+    "replace": "lsurvivor_jumpsuit"
+  },
+  {
+    "type": "MIGRATION",
+    "id": "xl_fsurvivor_jumpsuit",
+    "replace": "xl_lsurvivor_jumpsuit"
+  },
+  {
+    "type": "MIGRATION",
+    "id": "xs_fsurvivor_jumpsuit",
+    "replace": "xs_lsurvivor_jumpsuit"
+  },
+  {
+    "type": "MIGRATION",
+    "id": "h20survivor_jumpsuit",
+    "replace": "survivor_jumpsuit"
+  },
+  {
+    "type": "MIGRATION",
+    "id": "xl_h20survivor_jumpsuit",
+    "replace": "xl_survivor_jumpsuit"
+  },
+  {
+    "type": "MIGRATION",
+    "id": "xs_h20survivor_jumpsuit",
+    "replace": "xs_survivor_jumpsuit"
+  },
+  {
+    "type": "MIGRATION",
+    "id": "thick_h20survivor_jumpsuit",
+    "replace": "hsurvivor_jumpsuit"
+  },
+  {
+    "type": "MIGRATION",
+    "id": "xl_thick_h20survivor_jumpsuit",
+    "replace": "xl_hsurvivor_jumpsuit"
+  },
+  {
+    "type": "MIGRATION",
+    "id": "xs_thick_h20survivor_jumpsuit",
+    "replace": "xs_hsurvivor_jumpsuit"
+  },
+  {
+    "type": "MIGRATION",
+    "id": "h20survivor_jumpsuit_light",
+    "replace": "survivor_jumpsuit"
+  },
+  {
+    "type": "MIGRATION",
+    "id": "xl_h20survivor_jumpsuit_light",
+    "replace": "xl_survivor_jumpsuit"
+  },
+  {
+    "type": "MIGRATION",
+    "id": "xs_h20survivor_jumpsuit_light",
+    "replace": "xs_survivor_jumpsuit"
   }
 ]
