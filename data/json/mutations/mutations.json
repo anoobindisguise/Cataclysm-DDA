@@ -3971,7 +3971,7 @@
     "points": 1,
     "vitamin_cost": 80,
     "visibility": 4,
-    "ugliness": 1,
+    "ugliness": 2,
     "enchantments": [ { "values": [ { "value": "HEARING_MULT", "multiply": 0.25 } ] } ]
   },
   {
@@ -4049,7 +4049,7 @@
     "points": 1,
     "vitamin_cost": 60,
     "visibility": 4,
-    "ugliness": 1,
+    "ugliness": 2,
     "enchantments": [ { "values": [ { "value": "HEARING_MULT", "multiply": 0.5 } ] } ]
   },
   {
@@ -4063,7 +4063,7 @@
     "points": 1,
     "vitamin_cost": 80,
     "visibility": 4,
-    "ugliness": 1,
+    "ugliness": 2,
     "enchantments": [ { "values": [ { "value": "HEARING_MULT", "multiply": 0.75 } ] } ]
   },
   {
@@ -4189,7 +4189,7 @@
     "points": 1,
     "vitamin_cost": 80,
     "visibility": 4,
-    "ugliness": 1,
+    "ugliness": 2,
     "enchantments": [ { "values": [ { "value": "HEARING_MULT", "multiply": 0.25 } ] } ]
   },
   {
@@ -4275,7 +4275,7 @@
     "points": 1,
     "vitamin_cost": 60,
     "visibility": 9,
-    "ugliness": 1,
+    "ugliness": 2,
     "enchantments": [ { "values": [ { "value": "HEARING_MULT", "multiply": 0.8 } ] } ]
   },
   {
@@ -4332,7 +4332,7 @@
     "points": 1,
     "vitamin_cost": 80,
     "visibility": 8,
-    "ugliness": 1,
+    "ugliness": 2,
     "enchantments": [ { "values": [ { "value": "HEARING_MULT", "multiply": 1 } ] } ]
   },
   {
@@ -4693,8 +4693,8 @@
     "prereqs": [ "GOODHEARING" ],
     "points": 5,
     "vitamin_cost": 210,
-    "visibility": 8,
-    "ugliness": 8,
+    "visibility": 6,
+    "ugliness": 2,
     "flags": [ "HEARING_PROTECTION", "SAFECRACK_NO_TOOL" ],
     "enchantments": [ { "values": [ { "value": "HEARING_MULT", "multiply": 5.3 } ] } ],
     "//": "A bat mutant is a bit better at hearing overall than someone with GOODHEARING and a CBM."
