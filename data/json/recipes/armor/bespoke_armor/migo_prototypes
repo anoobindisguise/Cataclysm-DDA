@@ -1,0 +1,60 @@
+[
+  {
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "name": "research mi-go resin expression techniques",
+    "id": "armor_prototype_migo_1",
+    "description": "Study information found in the WX010 Living Armor Observations document and work with mi-go resin to figure out how it can be shaped into proper armor.",
+    "category": "CSC_CHEM",
+    "subcategory": "CSC_CHEM_OTHER",
+    "skill_used": "chemistry",
+    "difficulty": 6,
+    "time": "16 h",
+    "tools": [
+      [ [ "laptop", -1 ] ],
+      [ [ "muriatic_acid", -1 ] ],
+      [ [ "sulfuric_acid", -1 ] ],
+      [ [ "nitric_acid", -1 ] ],
+      [ [ "alien_pod_resin", -1 ] ]
+    ],
+    "proficiencies": [
+      { "proficiency": "prof_intro_chemistry", "required": true },
+      { "proficiency": "prof_intro_biology", "required": true },
+      { "proficiency": "prof_wp_mi-go_advanced", "required": true },
+      { "proficiency": "prof_biochemistry", "required": true },
+      { "proficiency": "prof_armorsmithing", "required": true },
+      { "proficiency": "prof_psionic_ritual", "required": false }
+    ],
+    "flags": [ "SECRET", "BLIND_HARD" ],
+    "result_eocs": [
+      {
+        "id": "EOC_UNLOCK_MIGO_PLATE",
+        "condition": {
+          "and": [
+            { "roll_contested": { "math": [ "u_intelligence" ] }, "difficulty": 20 },
+            { "roll_contested": { "math": [ "u_skill('chemistry')" ] }, "difficulty": 10 }
+          ]
+        },
+        "effect": [
+          {
+            "u_message": "You've used your knowledge - and abundance of materials - to iterate upon the scientists' ballistic plate prototype.  In addition to producing more advanced shapes, you've figured out how to get the stuff to stop growing past a certain point, meaning you won't have to grind it down constantly.  The mi-go resin reacts with nitric acid by forming a rigid outer shell, ceasing growth beyond points where it made contact with the acid.  Using this principle, you believe you can mold the resin into useful armor shapes.",
+            "type": "good"
+          },
+          { "u_learn_recipe": "armor_prototype_migo_2" },
+          { "u_learn_recipe": "armor_resinplate_chest" },
+          { "u_learn_recipe": "armor_resinplate_arm" },
+          { "u_learn_recipe": "armor_resinplate_leg" },
+          { "u_forget_recipe": "armor_prototype_migo_1" }
+        ],
+        "false_effect": [
+          {
+            "u_message": "After extensive effort, you've gotten nowhere and it feels like you've hit a dead end.  The material is uncooperative, to say the least, and getting it to behave as you want is surprisingly difficult.",
+            "type": "bad"
+          },
+          { "run_eocs": "EOC_PSI_PRACTICE_FOCUS_MOD" },
+          { "u_forget_recipe": "psi_research_rad_powers" }
+        ]
+      }
+    ]
+  }
+]
