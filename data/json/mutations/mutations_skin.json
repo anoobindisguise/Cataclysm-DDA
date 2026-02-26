@@ -15,7 +15,7 @@
     "id": "THICKSKIN",
     "name": { "str": "Thick-Skinned" },
     "description": "Your skin is tough.  Cutting and bashing damage is slightly reduced for you.  There's a small chance you don't cut yourself on sharp terrain.",
-    "category": [ "LIZARD", "CATTLE", "CHIMERA", "RAPTOR", "GASTROPOD", "CEPHALOPOD" ],
+    "category": [ "LIZARD", "CATTLE", "CHIMERA", "RAPTOR", "GASTROPOD", "CEPHALOPOD", "HULK" ],
     "types": [ "ARMOR" ],
     "points": 1,
     "vitamin_cost": 60,
