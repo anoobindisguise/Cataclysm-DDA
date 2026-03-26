@@ -248,6 +248,26 @@
   },
   {
     "type": "MONSTER",
+    "id": "mon_amalgamation_scythe",
+    "copy-from": "mon_amalgamation_abstract_small",
+    "symbol": "ƨ",
+    "name": { "str": "bladed amalgamation" },
+    "description": "A bulbous body skittering about on nine short legs arranged in a circular fashion, scanning the area with nine bulging eyes each resting above the base of a leg.  Atop its body rests a large twin bladed scythe made of glistening bone, giving the impression of a toy top given malicious life.",
+    "special_attacks": [
+      {
+        "id": "scythe_spin",
+        "cooldown": 8,
+        "attack_upper": false,
+        "damage_max_instance": [ { "damage_type": "cut", "amount": 25 } ],
+        "condition": { "not": { "u_has_effect": "maimed_mandible" } }
+      }
+    ],
+    "vision_day": 15,
+    "melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
+    "armor": { "stab": 6, "acid": 3, "bullet": 7, "electric": 2, "bash": 6, "cut": 3 }
+  },
+  {
+    "type": "MONSTER",
     "id": "mon_amalgamation_jumper",
     "copy-from": "mon_amalgamation_abstract_med",
     "name": { "str": "leaping amalgamation" },
