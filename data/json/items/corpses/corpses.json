@@ -321,5 +321,13 @@
         "transparent": true
       }
     ]
+  },
+  {
+    "type": "ITEM",
+    "id": "corpse_generic_human_mutant",
+    "copy-from": "corpse_generic_human",
+    "name": { "str": "mutant corpse" },
+    "description": "A lifeless ex-human body.",
+    "material": [ "mutant_human_flesh" ]
   }
 ]
