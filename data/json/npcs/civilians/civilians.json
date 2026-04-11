@@ -23,7 +23,7 @@
     "id": "TALK_CIVILIAN_PETRIFIED",
     "dynamic_line": "&This person merely looks at you blanky, an expression of utter despair worn on their weary face.",
     "responses": [
-      { "text": "You need to get to safety!", "topic": "TALK_CIVILIAN_PETRIFIED_HELP },
+      { "text": "You need to get to safety!", "topic": "TALK_CIVILIAN_PETRIFIED_HELP" },
       { "text": "[Leave them to their sorrows.]", "topic": "TALK_DONE" }
     ]
   },
