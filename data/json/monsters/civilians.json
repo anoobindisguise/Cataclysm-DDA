@@ -283,6 +283,7 @@
     "//": "Used for deduplication only, so one does not have to repeat the same standard ratio over and over again",
     "type": "monstergroup",
     "monsters": [
+      { "monster": "mon_civilian_denial", "weight": 20, "cost_multiplier": 0, "ends": "12 days" },
       { "monster": "mon_civilian_stationary", "weight": 30, "cost_multiplier": 0, "ends": "12 days" },
       { "monster": "mon_civilian_zombiefighter", "weight": 16, "cost_multiplier": 0, "ends": "12 days" },
       { "monster": "mon_civilian_zombiegunner", "weight": 12, "cost_multiplier": 0, "ends": "12 days" },
