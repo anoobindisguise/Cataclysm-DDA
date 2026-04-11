@@ -3,7 +3,6 @@
     "id": "GROUP_PARK_SCENIC",
     "type": "monstergroup",
     "monsters": [
-      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 100, "cost_multiplier": 0 },
       { "monster": "mon_zombie", "weight": 100 },
       { "monster": "mon_zombie_child", "weight": 100 },
       { "monster": "mon_zombie_tough", "weight": 75, "cost_multiplier": 2 },
@@ -26,9 +25,7 @@
     "type": "monstergroup",
     "monsters": [
       { "monster": "mon_null", "weight": 540 },
-      { "monster": "mon_civilian_stationary", "weight": 20, "cost_multiplier": 0, "ends": "12 days" },
-      { "monster": "mon_civilian_zombiefighter", "weight": 5, "cost_multiplier": 0, "ends": "12 days" },
-      { "monster": "mon_civilian_panic", "weight": 30, "cost_multiplier": 0, "ends": "20 days" },
+      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 150, "cost_multiplier": 0 },
       { "monster": "mon_zombie", "weight": 50, "pack_size": [ 2, 3 ] },
       { "monster": "mon_zombie_tough", "weight": 75, "cost_multiplier": 2, "pack_size": [ 1, 2 ] },
       { "monster": "mon_zombie_fat", "weight": 50, "pack_size": [ 2, 3 ] },
@@ -45,7 +42,6 @@
     "id": "GROUP_PARK_PLAYGROUND",
     "type": "monstergroup",
     "monsters": [
-      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 100, "cost_multiplier": 0 },
       { "monster": "mon_zombie_child", "weight": 295, "pack_size": [ 1, 2 ] },
       { "monster": "mon_zombie", "weight": 100, "cost_multiplier": 2 },
       { "monster": "mon_zombie_tough", "weight": 75, "cost_multiplier": 3 },
@@ -60,7 +56,6 @@
     "id": "GROUP_PARK_DOG",
     "type": "monstergroup",
     "monsters": [
-      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 100, "cost_multiplier": 0 },
       { "monster": "mon_zombie", "weight": 125 },
       { "monster": "mon_zombie_dog", "weight": 125, "pack_size": [ 1, 2 ] },
       { "monster": "mon_dog_zombie_cop", "weight": 25 },
@@ -147,7 +142,7 @@
     "type": "monstergroup",
     "id": "GROUP_ZOMBIE",
     "monsters": [
-      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 500, "cost_multiplier": 0 },
+      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 300, "cost_multiplier": 0 },
       { "group": "GROUP_VANILLA_DORMANT", "weight": 250, "cost_multiplier": 0 },
       { "monster": "mon_zombie", "weight": 10, "cost_multiplier": 7, "pack_size": [ 5, 20 ] },
       { "monster": "mon_zombie", "weight": 10, "cost_multiplier": 13, "pack_size": [ 15, 40 ] },
@@ -200,7 +195,7 @@
     "type": "monstergroup",
     "id": "GROUP_ZOMBIE_GASSTATION",
     "monsters": [
-      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 100, "cost_multiplier": 0 },
+      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 200, "cost_multiplier": 0 },
       { "monster": "mon_zombie", "weight": 1, "cost_multiplier": 7, "pack_size": [ 5, 20 ] },
       { "monster": "mon_zombie", "weight": 1, "cost_multiplier": 13, "pack_size": [ 15, 40 ] },
       { "monster": "mon_zombie", "weight": 1, "cost_multiplier": 20, "pack_size": [ 25, 60 ] },
@@ -355,7 +350,7 @@
     "id": "GROUP_HOUSE",
     "//": "+15% child",
     "monsters": [
-      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 200, "cost_multiplier": 0 },
+      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 500, "cost_multiplier": 0 },
       { "group": "GROUP_VANILLA_DORMANT", "weight": 130, "cost_multiplier": 0 },
       { "monster": "mon_zombie", "weight": 483 },
       { "monster": "mon_zombie_fat", "weight": 130, "cost_multiplier": 2 },
@@ -424,7 +419,7 @@
     "id": "GROUP_PHARM",
     "//": "+13% fast",
     "monsters": [
-      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 100, "cost_multiplier": 0 },
+      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 150, "cost_multiplier": 0 },
       { "monster": "mon_zombie", "weight": 328 },
       { "monster": "mon_zombie_fat", "weight": 130, "cost_multiplier": 2 },
       { "monster": "mon_zombie_tough", "weight": 50, "cost_multiplier": 3 },
@@ -480,7 +475,7 @@
     "id": "GROUP_GROCERY",
     "//": "+15% fat",
     "monsters": [
-      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 200, "cost_multiplier": 0 },
+      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 250, "cost_multiplier": 0 },
       { "monster": "mon_zombie", "weight": 433 },
       { "monster": "mon_zombie_fat", "weight": 280, "cost_multiplier": 2 },
       { "monster": "mon_zombie_tough", "weight": 50, "cost_multiplier": 3 },
@@ -544,9 +539,7 @@
     "//": "School monster spawns.",
     "monsters": [
       { "monster": "mon_null", "weight": 10 },
-      { "monster": "mon_civilian_stationary", "weight": 20, "cost_multiplier": 0, "ends": "12 days" },
-      { "monster": "mon_civilian_zombiefighter", "weight": 10, "cost_multiplier": 0, "ends": "12 days" },
-      { "monster": "mon_civilian_panic", "weight": 50, "cost_multiplier": 0, "ends": "20 days" },
+      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 60, "cost_multiplier": 0 },
       { "monster": "mon_zombie_child", "weight": 50 },
       { "monster": "mon_zombie_fat", "weight": 10 },
       { "monster": "mon_zombie_tough", "weight": 10 },
@@ -607,7 +600,7 @@
     "type": "monstergroup",
     "id": "GROUP_CHURCH_ZOMBIE",
     "monsters": [
-      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 200, "cost_multiplier": 0 },
+      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 600, "cost_multiplier": 0 },
       { "monster": "mon_zombie", "weight": 694 },
       { "monster": "mon_zombie", "weight": 1, "cost_multiplier": 7, "pack_size": [ 5, 10 ] },
       { "monster": "mon_zombie", "weight": 1, "cost_multiplier": 13, "pack_size": [ 15, 20 ] },
@@ -657,7 +650,7 @@
     "//": "Flavor spawn group for scenario panic rooms for better story-telling.  Improved chance of dogs, fancy dogs, and (still) breathing people and children.",
     "monsters": [
       { "monster": "mon_zombie_child", "weight": 180 },
-      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 200 },
+      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 300 },
       { "group": "GROUP_PET_DOGS", "weight": 100, "cost_multiplier": 2 },
       { "monster": "mon_dog_rottweiler", "weight": 100, "cost_multiplier": 2 },
       { "monster": "mon_dog_gpyrenees", "weight": 100, "cost_multiplier": 2 }
@@ -1118,7 +1111,7 @@
     "id": "GROUP_RETIREMENT_COMMUNITY",
     "type": "monstergroup",
     "monsters": [
-      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 10, "cost_multiplier": 0 },
+      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 100, "cost_multiplier": 0 },
       { "monster": "mon_zombie", "weight": 34 },
       { "monster": "mon_zombie_fat", "weight": 14 },
       { "monster": "mon_zombie_runner", "weight": 6 },
@@ -1136,7 +1129,6 @@
     "id": "GROUP_NUCLEAR_PLANT_WORK_ZOMBIES",
     "type": "monstergroup",
     "monsters": [
-      { "group": "GROUP_CIVILIANS_STANDARD", "weight": 10, "cost_multiplier": 0 },
       { "monster": "mon_zombie_static", "weight": 5, "cost_multiplier": 4, "pack_size": [ 1, 2 ] },
       { "monster": "mon_zombie_technician", "weight": 100 },
       { "monster": "mon_feral_human_tool", "weight": 5 },
