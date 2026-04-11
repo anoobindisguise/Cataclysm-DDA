@@ -2,7 +2,7 @@
   {
     "type": "talk_topic",
     "id": "TALK_CIVILIAN_PANIC",
-    "dynamic_line": "&You see this crazed fellows eyes darting around anxiously, always anticipating impending doom.  Every now and then you can even hear them whimper in fear.  Although they do not seem aggressive, they definitely are out of their mind.",
+    "dynamic_line": "&You see this crazed fellow's eyes darting around anxiously, always anticipating impending doom.  Every now and then you can even hear them whimper in fear.  Although they do not seem aggressive, they definitely are out of their mind.",
     "responses": [
       { "text": "You need to get to safety!", "topic": "TALK_CIVILIAN_PANIC_EVAC" },
       { "text": "[Awkwardly distance yourself.]", "topic": "TALK_DONE" }
@@ -11,8 +11,57 @@
   {
     "type": "talk_topic",
     "id": "TALK_CIVILIAN_PANIC_EVAC",
-    "dynamic_line": "&They shriek and stumble backwards, as if you just became a threat.",
+    "dynamic_line": [
+      "No, no, no!  I can't trust you, can't trust anyone.  Leave me alone!",
+      "Oh god, please don't kill me!  I don't want to die!",
+      "You're with *them*, aren't you!?  This is just a trick!  Go away!"
+    ],
     "responses": [ { "text": "[Awkwardly distance yourself.]", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_CIVILIAN_PETRIFIED",
+    "dynamic_line": "&This person merely looks at you blanky, an expression of utter despair worn on their weary face.",
+    "responses": [
+      { "text": "You need to get to safety!", "topic": "TALK_CIVILIAN_PETRIFIED_HELP },
+      { "text": "[Leave them to their sorrows.]", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_CIVILIAN_PETRIFIED_HELP",
+    "dynamic_line": [
+      "What would be the point?  Everyone I knew is dead…",
+      "No…  I'm just so tired…  I've already given up…",
+      "Please, just worry about yourself…  I don't want to go on…",
+      "No point, there are zombies there too.  Better to just stay here…"
+    ],
+    "responses": [ { "text": "[Awkwardly distance yourself.]", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_CIVILIAN_DENIAL",
+    "dynamic_line": [
+      "Oh, hey there, friend!  Nice weather today, huh?",
+      "Lookin' forward to the game tonight.  Go Sox!",
+      "Nothin' like cracking open a cold one on my day off.  Too bad my buddy couldn't be here."
+    ],
+    "responses": [
+      { "text": "What?  The zombies are here, aren't you worried?", "topic": "TALK_CIVILIAN_DENIAL_REALITY" },
+      { "text": "[Leave them to their merry way.  Ignorance is bliss?]", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_CIVILIAN_DENIAL_REALITY",
+    "dynamic_line": [
+      "Huh?  The <zombies>?  Those are just a rumor.",
+      "Nah, I think the government's got this under control.  It'll all be back to normal soon, mark my words.",
+      "Not really, no!  As long as you don't bother them, they won't bother you.",
+      "Haha, well, we all die someday, right?  I'm not too worried.",
+      "I heard that this is a big social experiment and everyone is just pretending."
+    ],
+    "responses": [ { "text": "[Leave them to their merry way.  Ignorance is bliss?]", "topic": "TALK_DONE" } ]
   },
   {
     "type": "talk_topic",
@@ -47,9 +96,10 @@
     "type": "talk_topic",
     "id": "TALK_CIVILIAN_GUNNER",
     "dynamic_line": [
-      "I'm gonna kill all these <freaking> things!",
-      "&They let out a bellowing warcry and wave their gun.",
-      "I'M INVINCIBLE!"
+      "Hahaha, second amendment, assholes!  Look who's laughing now!",
+      "All that time at the range is paying off today, I'm on fire!",
+      "Come at me <zombies>, I've got bullets for all of you!",
+      "Hey buddy, got some spare mags?  I'll pay you back!"
     ],
     "responses": [
       { "text": "Are you crazy?  Get out of here!", "topic": "TALK_CIVILIAN_FIGHTER_EVAC" },
