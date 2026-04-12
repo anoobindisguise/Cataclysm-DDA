@@ -438,7 +438,13 @@
       "MAGIC_EMPTY"
     ],
     "flags": [ "ATTUNEMENT" ],
-    "enchantments": [ { "melee_damage_bonus": [ { "type": "bash", "multiply": 1.0 }, { "type": "cut", "multiply": 1.0 }, { "type": "stab", "multiply": 1.0 } ] }, { "values": [ { "value": "SPEED", "multiply": 0.2 } ] } ]  },
+    "enchantments": [
+      {
+        "melee_damage_bonus": [ { "type": "bash", "multiply": 1.0 }, { "type": "cut", "multiply": 1.0 }, { "type": "stab", "multiply": 1.0 } ]
+      },
+      { "values": [ { "value": "SPEED", "multiply": 0.2 } ] }
+    ]
+  },
   {
     "id": "GAIAS_CHOSEN",
     "type": "mutation",
